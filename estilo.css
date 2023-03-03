@@ -1,0 +1,154 @@
+.alinhar{
+    display: flex;
+    justify-content: center;
+}
+.alinhar2{
+    display: flex;
+    justify-content: center;
+}
+.area{
+    background-image: url(images/tec-enfermagem.jpg);
+    background-size: 100%;
+    width: 370px;
+    height: 370px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 19%;
+    right: 71%;
+}
+.texto{
+    position: absolute;
+    left: 51%;
+    bottom: 20%;
+}
+.texto-cuidado{
+    position: absolute;
+    left: 59%;
+    bottom: 62%;
+}
+.img{
+   width: 200px;
+   height: 200px;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+}
+.circulo{
+    background-image: url(images/circulo.png);
+    background-size: 100%;
+    width: 410px;
+    height: 410px;
+    position: absolute;
+    bottom: 16%;
+    right: 70%;
+}  
+.bolinhas{
+    position: absolute;
+    bottom: 50%;
+    right: 56%;
+}
+.bolinhas2{
+    position: absolute;
+    top: 78%;
+    left: 81%;
+}
+
+.cruz{
+    
+    position: absolute ;
+    top: 68%;
+
+}
+
+.frase1{
+    position: absolute;
+    top: 76%;
+    left: 27%;
+}
+.frase2{
+    position: absolute;
+    top: 79%;
+    left: 50%;
+}
+.frase3{
+    position: absolute;
+    top: 87%;
+    left: 63%;
+}
+.pele{
+text-align: left;
+}
+.emcima{
+    position: absolute;
+    top: 74%;
+    right: 55%;
+
+}
+.embaixo{
+    position: absolute;
+    top: 81%;
+    left: 58%;
+}
+.download{
+    position: absolute;
+    top: 96%;
+    left: 20%;
+}
+.download1{
+    width: 15%;
+    position: absolute;
+    top: 96%;
+    left: 66%;
+}
+.download2{
+    width: 15%;
+    position: absolute;
+    top: 96%;
+    left: 50%;
+    
+}
+.frufru{
+    width: 16%;
+    position: absolute;
+    left: 80%;
+    bottom: 34%;
+}
+.ambiente{
+    text-align: initial;
+}
+.recuperacao{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
+.texto-login{
+    position: absolute;
+    bottom: 60%;
+    left: 52%;
+    background-color: #FF8C00;
+    border-radius: 10%;
+    
+}
+.menino{ 
+    position: absolute;
+    bottom: 13%;
+    left: 6%;
+    border-radius: 10%;
+}
+/* .formulario1{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+}
+.formulario2{
+    position: absolute;
+    top: 45%;
+    left: 70%;
+} */
+/* .botao{
+    position: absolute;
+    top: 65%;
+    left: 65%;
+} */
+
+
