@@ -1,3 +1,16 @@
 .linha {
-    background-color: red;
+    background-color: #5CE1E6;
+}
+
+
+.buttonBoxMenu{
+    color: white;
+    border: solid 2px white;
+    text-decoration: none;
+    padding: 1px;
+    color: white;
+}
+
+.a{
+    margin-bottom: -50px;
 }
