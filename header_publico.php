@@ -29,7 +29,7 @@
                         </li>
                         
                     </ul>
-                    <div class="px-2">
+                    <div class="navbar-nav px-2">
                         <div class="nav-item buttonBoxMenu">
                           <a href="" class="nav-link " style="color: #fff; font-size: 20px;"> Entrar
                           <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
