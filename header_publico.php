@@ -27,7 +27,6 @@
                         <li class="nav-item buttonBoxMenu">
                             <a class="nav-link" href="index.php#sobre" style="color: #fff; font-size: 20px;">Sobre</a>
                         </li>
-                        
                     </ul>
                     <div class="navbar-nav px-2">
                         <div class="nav-item buttonBoxMenu">
