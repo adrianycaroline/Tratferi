@@ -13,7 +13,18 @@
     <div>
         <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #38B6FF;">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.php#">
+                 <!-- agrupamento mobile -->
+            <!-- <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="header_publico.php" aria-expanded="false">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+            </div> -->
+            <!-- fecha agrupamento mobile  -->
+            <a class="navbar-brand" href="index.php#">
                     <img src="images/logo.png" alt="logo" width="150">
                 </a>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -29,17 +40,18 @@
                         </li>
                     </ul>
                     <div class="navbar-nav px-2">
-                        <div class="nav-item buttonBoxMenu">
-                          <a href="" class="nav-link " style="color: #fff; font-size: 20px;"> Entrar
-                          <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                          <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
-                          </svg>
-                          </a>
+                        <div class="nav-item buttonBoxMenu" style="background-color: #E88F07;">
+                            <a href="" class="nav-link " style="color: #fff; font-size: 20px;"> Entrar
+                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                                </svg>
+                            </a>
                         </div>
-                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
+
         <div class="linha container-fluid py-5"></div>
     </div>
 <!-- JavaScript Bundle with Popper -->

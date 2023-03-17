@@ -18,9 +18,9 @@
 <figure>
 <blockquote class="blockquote">
 <div class="d-flex justify-content-around">
-<div>Atendimento <i class="bi bi-headset" style="color:white"></i></div>
-<div>Fale com noix </div>
-<div>Siga-nos <i class="bi bi-hand-thumbs-up" style="color:antiquewhite"></i></div>
+<div style="color: white;">Atendimento <i class="bi bi-headset" style="color: white;"></i></div>
+<div style="color: white;">Fale com noix </div>
+<div style="color: white;">Siga-nos <i class="bi bi-hand-thumbs-up" style="color:antiquewhite"></i></div>
 </div>
 </blockquote>
 
