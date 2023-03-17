@@ -27,14 +27,17 @@
                         <li class="nav-item buttonBoxMenu">
                             <a class="nav-link" href="index.php#sobre" style="color: #fff; font-size: 20px;">Sobre</a>
                         </li>
-                        <li class="nav-item">
-                          <a href="" class="nav-link" style="color: #fff;">
+                        
+                    </ul>
+                    <div class="px-2">
+                        <div class="nav-item buttonBoxMenu">
+                          <a href="" class="nav-link " style="color: #fff; font-size: 20px;"> Entrar
                           <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                           <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
                           </svg>
                           </a>
-                        </li>
-                    </ul>
+                        </div>
+                        </div>
                 </div>
             </div>
         </nav>
