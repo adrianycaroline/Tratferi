@@ -22,16 +22,16 @@ primary key(id));
 create table tel_func(
 id int not null auto_increment,
 telefone varchar(14) not null,
-id int not null,
+id_func int not null,
 primary key(id),
-foreign key(id) references funcionario(id));
+foreign key(id_func) references funcionario(id));
 
 create table email_func(
 id int not null auto_increment,
 email varchar(100) not null,
-id int not null,
+id_func int not null,
 primary key(id),
-foreign key(id) references funcionario(id));
+foreign key(id_func) references funcionario(id));
 
 
 create table end_func(
@@ -41,7 +41,7 @@ numero int(6) not null,
 cidade  varchar(50) not null,
 uf varchar(2) not null,
 cep varchar(14) not null,
-id int not null,
+id_func int not null,
 primary key(id),
 foreign key(id) references funcionario(id));
 
@@ -60,9 +60,9 @@ primary key(id));
 create table tel_paciente(
 id int not null auto_increment,
 telefone varchar(14) not null,
-id int not null,
+id_paci int not null,
 primary key(id),
-foreign key(id) references paciente (id));
+foreign key(id_paci) references paciente (id));
 
 create table end_paciente(
 id int not null auto_increment,
@@ -71,16 +71,16 @@ numero int(6) not null,
 cidade  varchar(50) not null,
 uf varchar(2) not null,
 cep varchar(9) not null,
-id int not null,
+id_paci int not null,
 primary key(id),
-foreign key(id) references paciente (id));
+foreign key(id_paci) references paciente (id));
 
 create table email_paciente(
 id int not null auto_increment,
 email varchar(100) not null,
-id int not null,
+id_paci int not null,
 primary key(id),
-foreign key(id) references paciente (id));
+foreign key(id_paci) references paciente (id));
 
 
 
@@ -92,8 +92,8 @@ id int not null auto_increment,
 data_consulta date not null,
 horario_consulta datetime not null,
 descricao text not null,
-id int not null,
-id int not null,
+id_paci int not null,
+id_func int not null,
 primary key(id),
 foreign key (id) references paciente(id),
 foreign key (id) references funcionario(id));
@@ -111,11 +111,11 @@ exsudato text not null,
 odor text not null,
 lateralidade varchar(25) not null,
 medidas varchar(25) not null,
-id int not null,
-id int not null,
+id_paci int not null,
+id_func int not null,
 primary key(id),
-foreign key (id) references paciente(id),
-foreign key (id) references funcionario(id));
+foreign key (id_paci) references paciente(id),
+foreign key (id_func) references funcionario(id));
 
 
 
@@ -125,9 +125,9 @@ nome_convenio varchar(30) not null,
 tipo_convenio varchar(20) not null,
 cpf varchar(14) not null,
 carteira_convenio varchar(25) not null,
-id int not null,
+id_paci int not null,
 primary key(id),
-foreign key (id) references paciente(id));
+foreign key (id_paci) references paciente(id));
 
 
 
@@ -137,8 +137,8 @@ anotacao_func text not null,
 acompanhamento text not null,
 medicamento_usado varchar(50) not null,
 finalizacao varchar(50) not null,
-id int not null,
-id int not null,
+id_func int not null,
+id_paci int not null,
 primary key(id),
 foreign key(id) references funcionario(id),
 foreign key(id) references paciente(id));
@@ -158,24 +158,24 @@ receita text not null,
 remedio varchar(25) not null,
 qntd_remedio text not null,
 data_retirada date not null,
-id int not null,
-id int not null,
-id int not null,
+id_est int not null,
+id_func int not null,
+id_paci int not null,
 primary key(id),
-foreign key(id) references estoque_med (id),
-foreign key(id) references funcionario(id),
-foreign key(id) references paciente(id));
+foreign key(id_est) references estoque_med (id),
+foreign key(id_func) references funcionario(id),
+foreign key(id_paci) references paciente(id));
 
 
 
 create table Epis(
 id int not null auto_increment,
 qntda_item int not null,
-id int not null,
-id int not null,
+id_est int not null,
+id_func int not null,
 primary key (id),
-foreign key(id)references estoque_med(id),
-foreign key(id)references funcionario(id));
+foreign key(id_est)references estoque_med(id),
+foreign key(id_func)references funcionario(id));
 
 create table adm(
 id int not null auto_increment primary key,
@@ -202,3 +202,28 @@ desc convenio;
 desc tratamento;
 desc medicamento;
 desc adm;
+
+create table Epis(
+id int not null auto_increment,
+qntda_item int not null,
+id_est int not null,
+id_func int not null,
+primary key (id),
+foreign key(id_est)references estoque_med(id),
+foreign key(id_func)references funcionario(id));
+
+create table Login(
+id int not null auto_increment,
+email varchar(100) null, 
+coren varchar(9) null,
+cpf varchar(14) null,
+senha varchar(25) not null,
+id_paci int null,
+id_email int null,
+id_func int null,
+primary key(id),
+foreign key(id_paci)references paciente(id),
+foreign key(id_func)references funcionario(id),
+foreign key(id_email)references email_paciente(id)
+);
+
