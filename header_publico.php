@@ -9,7 +9,6 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
 <nav class="navbar navbar-expand-lg fixed navbar fixed-top navbar-inverse" style="background-color: #38B6FF;">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php#">
