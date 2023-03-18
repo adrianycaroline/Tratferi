@@ -14,3 +14,9 @@
 .a{
     margin-bottom: -50px;
 }
+
+.banner{
+    background: url(../images/banner.jpg) no-repeat;
+    height: 300px;
+    width: 100%;
+}
