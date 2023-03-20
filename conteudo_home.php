@@ -15,7 +15,7 @@
     <!-- fim barra de pesquisa -->
 
     <!-- banner -->
-    <img src="images/bn2.jpg" class="img-responsive">
+    <img src="images/bn4.jpg" class="img-responsive">
     <!-- fim do banner -->
     <br>
     <br>
@@ -70,7 +70,31 @@
     <br>
 </div>
 </div>
+<br>
+<br>
 <!-- fim cards -->
+<!-- ------------------------------------------ -->
+<div class="d-flex gap-5 justify-content-around">
+<div class="card" style="width: 18rem;">
+  <img src="images/test.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src="images/test.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src="images/test.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+</div>
+<!-- ------------------------------------------ -->
 <br>
 <br>
 <br>
