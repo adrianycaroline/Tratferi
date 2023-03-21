@@ -1,3 +1,64 @@
+drop database tratferi;
+
+create database tratferi;
+use tratferi;
+
+
+create table funcionario(
+id int not null auto_increment,
+nome varchar(50) not null,
+data_nasc date not null,
+cpf varchar(14) not null,
+coren varchar(9) not null,
+CRM varchar(9) not null,
+rg varchar(12) not null,
+cargo varchar(15) not null,
+funcao text not null,
+periodo varchar(20) not null,
+salario float(7,2) not null,
+data_entrada date not null,
+data_saida date,
+primary key(id));
+
+
+create table tel_func(
+id int not null auto_increment,
+telefone varchar(14) not null,
+id_func int not null,
+primary key(id),
+foreign key(id_func) references funcionario(id));
+
+create table email_func(
+id int not null auto_increment,
+email varchar(100) not null,
+id_func int not null,
+primary key(id),
+foreign key(id_func) references funcionario(id));
+
+
+create table end_func(
+id int not null auto_increment,
+logradouro varchar(70) not null,
+numero int(6) not null,
+cidade  varchar(50) not null,
+uf varchar(2) not null,
+cep varchar(14) not null,
+id_func int not null,
+primary key(id),
+foreign key(id_func) references funcionario(id));
+
+
+
+create table paciente(
+id int not null auto_increment,
+nome varchar(50) not null,
+data_nasc date not null,
+cpf varchar(14) not null,
+rg varchar(12) not null,
+card_SUS varchar(16) null,
+primary key (id));
+
+
 create table tel_paciente(
 id int not null auto_increment,
 telefone varchar(14) not null,
@@ -122,9 +183,6 @@ funcao text not null
 
 create table Login(
 id int not null auto_increment,
-email varchar(100) null, 
-coren varchar(9) null,
-cpf varchar(14) null,
 senha varchar(25) not null,
 id_paci int null,
 id_email int null,
@@ -164,3 +222,6 @@ desc tratamento;
 desc medicamento;
 
 desc adm;
+
+
+
