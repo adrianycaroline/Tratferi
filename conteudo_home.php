@@ -15,7 +15,7 @@
     <!-- fim barra de pesquisa -->
 
     <!-- banner -->
-    <img src="images/bn4.jpg" class="img-responsive">
+    <img src="images/bn2.jpg" class="img-responsive">
     <!-- fim do banner -->
     <br>
     <br>
