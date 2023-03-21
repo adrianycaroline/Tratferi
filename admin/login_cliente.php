@@ -1,12 +1,10 @@
-<php?>
-
-</php>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href='../CSS/estilo.css'>
+    <title>teste</title>
     <link rel="shortcut icon" href="../images/logo_minimizada.png" type="image/x-icon">
     <title>Login</title>
 </head>
@@ -19,12 +17,12 @@
                     <h2>Login Paciente</h2>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
-                        <input type="email" required>
+                        <input type="text" name="cpf" required>
                         <label for="">CPF</label>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" required>
+                        <input type="password" name="password" required>
                         <label for="">Senha</label>
                     </div>
                     <div class="forget">
