@@ -136,14 +136,21 @@ foreign key(id_email)references email_paciente(id)
 );
 
 desc funcionario;
+
 desc tel_func;
+
 desc end_func;
+
 desc email_func;
 
 desc paciente;
+
 desc tel_paciente;
+
 desc end_paciente;
+
 desc email_paciente;
+
 desc ferida;
 
 desc consulta;
@@ -153,5 +160,7 @@ desc estoque_med;
 desc convenio;
 
 desc tratamento;
+
 desc medicamento;
+
 desc adm;
