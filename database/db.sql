@@ -43,7 +43,7 @@ uf varchar(2) not null,
 cep varchar(14) not null,
 id_func int not null,
 primary key(id),
-foreign key(id) references funcionario(id));
+foreign key(id_func) references funcionario(id));
 
 
 create table paciente(
@@ -90,8 +90,8 @@ descricao text not null,
 id_paci int not null,
 id_func int not null,
 primary key(id),
-foreign key (id) references paciente(id),
-foreign key (id) references funcionario(id));
+foreign key (id_paci) references paciente(id),
+foreign key (id_func) references funcionario(id));
 
 
 create table ferida(
@@ -133,8 +133,8 @@ finalizacao varchar(50) not null,
 id_func int not null,
 id_paci int not null,
 primary key(id),
-foreign key(id) references funcionario(id),
-foreign key(id) references paciente(id));
+foreign key(id_func) references funcionario(id),
+foreign key(id_paci) references paciente(id));
 
 
 create table estoque_med(
