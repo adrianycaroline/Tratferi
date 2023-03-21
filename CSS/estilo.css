@@ -8,6 +8,24 @@
     max-width: 100%;
 }
 
+.flex{
+    display: flex;
+}
+.pesquisar{
+    padding: 10px 300px 10px 10px;
+
+    
+}
+.border{
+    border: none;
+}
+
+.embaixo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .buttonBoxMenu{
     color: white;
     border: solid 2px white;
