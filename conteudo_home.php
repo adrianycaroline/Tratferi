@@ -94,21 +94,34 @@
 <!-- ------------------------------------------ -->
 <div class="d-flex gap-5 justify-content-around">
 <div class="card" style="width: 18rem;">
-  <img src="images/test.jpg" class="img-responsive card-img-top" alt="...">
+  <img src="images/atendimento.jpg" class="card-img-top" alt="...">
   <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-text">Nossos ideais como empresa 
+    <br> <br>  
+    é pensar na acessibilidade entre
+Paciente e cliente dessa forma colocando você e sua saúde em
+Primeiro lugar sempre esse é nosso objetivo como uma marca.</p>
   </div>
 </div>
 <div class="card" style="width: 18rem;">
-  <img src="images/test.jpg" class="img-responsive card-img-top" alt="...">
+  <img src="images/anota.jpg" class="card-img-top" alt="...">
   <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-text"> Como Entregamos nosso atendimento ?
+      <br> <br> 
+dentro da sua casa.<br>
+Nossos profissionais acompanharão o seu tratamento<br>
+Pensando na melhor forma pra você sentir-se bem.<br>
+</p>
   </div>
 </div>
 <div class="card" style="width: 18rem;">
-  <img src="images/test.jpg" class="img-responsive card-img-top" alt="...">
+  <img src="images/pc.jpg" class="card-img-top" alt="...">
   <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-text">Porque confiar no tratferi ?
+<br><br>
+Precisamos de informações basicas sobre o paciente<br>
+Para atender da melhor forma possivel apenas isso,<br>
+Nosso plano é a sua saúde.</p>
   </div>
 </div>
 </div>
