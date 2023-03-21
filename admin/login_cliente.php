@@ -1,6 +1,3 @@
-<php?>
-
-</php>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,20 +8,20 @@
     <title>Login</title>
 </head>
 <body>
-<?php include '../logo_superior.php';?>
-    <section>
+    <section id="fundo" style="display: flex; flex-direction: column;">
+        <?php include '../logo_superior.php';?>
         <div class="formbox">
             <div class="form-value">
                 <form action="">
                     <h2>Login Paciente</h2>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
-                        <input type="email" required>
+                        <input type="text" name="cpf" required>
                         <label for="">CPF</label>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" required>
+                        <input type="password" name="password" required>
                         <label for="">Senha</label>
                     </div>
                     <div class="forget">
@@ -37,6 +34,7 @@
                 </form>
             </div>
         </div>
+        <?php include '../termos_texto.php';?>
     </section>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

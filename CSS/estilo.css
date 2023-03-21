@@ -48,6 +48,15 @@
     border-radius: 50px;
 }
 
+.redondobtn:hover{
+    border: 2px solid #ffffff;
+    -webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	text-decoration: none;
+}
+
 /* começo login */
 
 *{
@@ -158,8 +167,6 @@ input:focus ~ :valid{
     margin-right: 3px;
     color: #FFB800;
     margin-bottom: 30px;
-    
-    
 }
 
 .forget label a{
