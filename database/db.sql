@@ -46,7 +46,6 @@ primary key(id),
 foreign key(id) references funcionario(id));
 
 
-
 create table paciente(
 id int not null auto_increment,
 nome varchar(50) not null,
@@ -83,10 +82,6 @@ primary key(id),
 foreign key(id_paci) references paciente (id));
 
 
-
-
-
-
 create table consulta(
 id int not null auto_increment,
 data_consulta date not null,
@@ -97,7 +92,6 @@ id_func int not null,
 primary key(id),
 foreign key (id) references paciente(id),
 foreign key (id) references funcionario(id));
-
 
 
 create table ferida(
@@ -116,7 +110,6 @@ id_func int not null,
 primary key(id),
 foreign key (id_paci) references paciente(id),
 foreign key (id_func) references funcionario(id));
-
 
 
 create table convenio(
