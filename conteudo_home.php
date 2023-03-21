@@ -12,7 +12,9 @@
 <!-- fim barra de pesquisa -->
 
     <!-- banner -->
-    <img src="images/bn1.jpg" class="img-responsive">
+    <div class="">
+      <img src="images/psorrindo.avif" class="img-responsive" width="100%">
+    </div>
     <!-- fim do banner -->
     <br>
     <br>
