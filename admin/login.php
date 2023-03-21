@@ -2,12 +2,13 @@
 
 </php>
 <!DOCTYPE html>
-<html lang="pt_br">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href='../CSS/estilo.css'>
-    <title>teste</title>
+    <link rel="shortcut icon" href="../images/logo_minimizada.png" type="image/x-icon">
+    <title>Login</title>
 </head>
 <body>
     <section>
@@ -27,7 +28,6 @@
                     </div>
                     <div class="forget">
                         <label for=""><input type="checkbox">Lembrar senha <a href="#">Esqueci minha senha :</a></label>
-                      
                     </div>
                     <button>Entrar</button>
                     <div class="register">
