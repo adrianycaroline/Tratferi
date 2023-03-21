@@ -23,6 +23,9 @@
     width: 100%;
 }
 
+.redondobtn{
+    border-radius: 50px;
+}
 
 /* começo login */
 
@@ -60,7 +63,7 @@ section{
 
 }
 
-h2{
+.formbox h2{
     font-size: 2em;
     color: #fff;
     text-align: center;
@@ -75,12 +78,15 @@ h2{
     border-bottom: 2px solid #fff;
 
 }
+.inputbox input:hover{
+    background-color: transparent;
+}
 
 .inputbox label{
     position: absolute;
     top: 50%;
     left: 5px;
-    transform:translateY(-50%);
+    transform:translateY(-120%);
     color: #fff;
     font-size: 1em;
     pointer-events: none;
@@ -141,7 +147,7 @@ input:focus ~ :valid{
 
 }
 
-button{
+.form-value button{
     width: 100%;
     height: 40px;
     border-radius: 40px;

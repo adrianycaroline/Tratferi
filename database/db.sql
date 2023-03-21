@@ -214,16 +214,11 @@ foreign key(id_func)references funcionario(id));
 
 create table Login(
 id int not null auto_increment,
-email varchar(100) null, 
-coren varchar(9) null,
-cpf varchar(14) null,
 senha varchar(25) not null,
 id_paci int null,
-id_email int null,
 id_func int null,
 primary key(id),
 foreign key(id_paci)references paciente(id),
 foreign key(id_func)references funcionario(id),
-foreign key(id_email)references email_paciente(id)
 );
 
