@@ -183,9 +183,6 @@ funcao text not null
 
 create table Login(
 id int not null auto_increment,
-email varchar(100) null, 
-coren varchar(9) null,
-cpf varchar(14) null,
 senha varchar(25) not null,
 id_paci int null,
 id_email int null,
