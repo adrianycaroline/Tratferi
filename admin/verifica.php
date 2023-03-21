@@ -33,6 +33,11 @@
     .laranja{
         background-color: #E88F07;
     }
+
+    .tamanhoIcon{
+        font-size: 104px;
+        color: white;
+    }
   </style>
 </head>
 <body>
@@ -43,15 +48,15 @@
             <div class="d-flex align-items-center justify-content-center" style="height: 100vh">
                 <div class="card bg-transparent borda">
                     <div class="card-header text-center">
-                        <h3 class="mb-0 text-light">Escolha uma opção:</h3>
+                        <h3 class="mb-0 text-light">Como deseja entrar?</h3>
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-sm-6">
-                            <ion-icon name="people-outline"></ion-icon>
+                            <div class="col-sm-6 text-center">
+                                <ion-icon class="tamanhoIcon" name="people-outline"></ion-icon>
                                 <a href="login_cliente.php" class="btn btn-primary btn-block">Sou Paciente</a>
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-6 text-center">
                                 <a href="login_func.php" class="btn laranja btn-block text-light">Sou Funcionário</a>
                             </div>
                         </div>

@@ -71,7 +71,8 @@ section{
     align-items: center;
     min-height: 100vh;
     width: 100%;
-  
+}  
+#fundo_cli{
     /* fundo do cliente */
      background: url('../images/login.jfif')no-repeat;
      background-position: center;

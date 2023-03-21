@@ -8,7 +8,7 @@
     <title>Login</title>
 </head>
 <body>
-    <section id="fundo" style="display: flex; flex-direction: column;">
+    <section id="fundo_cli" style="display: flex; flex-direction: column;">
         <?php include '../logo_superior.php';?>
         <div class="formbox">
             <div class="form-value">
