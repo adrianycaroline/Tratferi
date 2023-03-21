@@ -14,7 +14,7 @@
     <title>Footer</title>
 </head>
 <body>
-<div class="bottom" style="background-color: #1977ad;" >
+<div class="" style="background-color: #1977ad;" >
 <figure>
 <blockquote class="blockquote">
 <div class="d-flex justify-content-around">
