@@ -11,15 +11,16 @@
     <title>Login</title>
 </head>
 <body>
+<?php include '../logo_superior.php';?>
     <section>
         <div class="formbox">
             <div class="form-value">
                 <form action="">
-                    <h2>Login</h2>
+                    <h2>Login Paciente</h2>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
                         <input type="email" required>
-                        <label for="">E-mail</label>
+                        <label for="">CPF</label>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
