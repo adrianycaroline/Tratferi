@@ -8,8 +8,8 @@
     <title>Login</title>
 </head>
 <body>
-<?php include '../logo_superior.php';?>
-    <section>
+    <section id="fundo" style="display: flex; flex-direction: column;">
+        <?php include '../logo_superior.php';?>
         <div class="formbox">
             <div class="form-value">
                 <form action="">
@@ -34,6 +34,7 @@
                 </form>
             </div>
         </div>
+        <?php include '../termos_texto.php';?>
     </section>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

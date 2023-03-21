@@ -219,7 +219,7 @@ VALUES('10','rodrygo22@gmail.com','10');
 
 
 insert into consulta 
-VALUES('1','2023/01/12','20:00','ferida grande com mau odor','7','9');
+VALUES('1','2023/01/12','20:00','ferida grande com mau odor','7','7');
 
 insert into consulta 
 VALUES('2','2022/01/12','19:30','coloracao estranha na ferida','7','4');
@@ -231,13 +231,13 @@ insert into consulta
 VALUES('4','2022/02/07','07:30','execo de pus na ferida','5','6');
 
 insert into consulta 
-VALUES('5','2022/02/02','15:30','reacao a o medicamento','6','8');
+VALUES('5','2022/02/02','15:30','reacao a o medicamento','6','3');
 
 insert into consulta 
 VALUES('6','2022/12/20','13:00','acompanhamento do tratamento','6','1');
 
 insert into consulta 
-VALUES('7','2022/12/27','17:00','retirada de ponto da ferida','6','10');
+VALUES('7','2022/12/27','17:00','retirada de ponto da ferida','6','6');
 
 insert into consulta 
 VALUES('8','2023/01/05','08:00','acompanhamento do tratamento','5','7');
@@ -245,7 +245,7 @@ VALUES('8','2023/01/05','08:00','acompanhamento do tratamento','5','7');
 
 
 insert into ferida
-VALUES('1','queda de moto','2023/01/01','nenhum uso de outra medicacao','perna','inferior','alto','mau odor','esquerda','30','7','9');
+VALUES('1','queda de moto','2023/01/01','nenhum uso de outra medicacao','perna','inferior','alto','mau odor','esquerda','30','7','5');
 
 insert into ferida
 VALUES('2','queda de biciclete','2023/02/16','faz o uso de hormonios','costela','superior','alto','sem mau odor','esquerda','21','7','4');
@@ -257,13 +257,13 @@ insert into ferida
 VALUES('4','mordida de cachorro','2022/12/18','nenhum uso de outra medicacao','braco','superior','baixo','mau odor','direita','26','5','6');
 
 insert into ferida
-VALUES('5','queda de moto','2023/01/22','esteroides anabolizantes','braco','superior','baixo','mau odor','esquerda','10','6','8');
+VALUES('5','queda de moto','2023/01/22','esteroides anabolizantes','braco','superior','baixo','mau odor','esquerda','10','6','3');
 
 insert into ferida
 VALUES('6','tiro','2023/01/04','nenhum uso de outra medicacao','ombro','superior','baixo','sem mau odor','direita','5','6','1');
 
 insert into ferida
-VALUES('7','acidente de bike','2023/01/15','antidepressivo','pe','inferior','alto','sem mau odor','esquerda','30','6','10');
+VALUES('7','acidente de bike','2023/01/15','antidepressivo','pe','inferior','alto','sem mau odor','esquerda','30','6','2');
 
 insert into ferida
 VALUES('8','queimadura','2023/09/11','antidepressivo','peito','superior','alto','sem mau odor','centro esquerda','25','5','7');
@@ -315,7 +315,7 @@ VALUES('6','oculos_protecao','Óculos de segurança modelo ampla-visão constitu
 
 
 insert into medicamento
-VALUES('1','dipirona em 8H em 8H','dipirona','2','2022/12/19','2','8','3');
+VALUES('1','dipirona em 8H em 8H','dipirona','2','2022/12/19','2','2','3');
 
 insert into medicamento
 VALUES('2','amoxicilina em 8H em 8H','amoxicilina','2','2023/02/19','2','1','3');
@@ -332,4 +332,4 @@ insert into Epis
 VALUES('2','5','3','5');
 
 insert into Epis
-VALUES('3','1','7','6');
+VALUES('3','1','2','6');
