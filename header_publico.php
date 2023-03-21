@@ -13,19 +13,8 @@
     <div>
         <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #38B6FF;">
             <div class="container-fluid">
-                 <!-- agrupamento mobile -->
-            <!-- <div class="navbar-header">
-                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="header_publico.php" aria-expanded="false">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                
-            </div> -->
-            <!-- fecha agrupamento mobile  -->
             <a class="navbar-brand" href="index.php#">
-                    <img src="images/logo.png" alt="logo" width="150">
+                    <img src="images/logo.png" class="img-responsive" alt="logo" width="150">
                 </a>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto me-auto d-flex gap-5">
@@ -50,6 +39,38 @@
                         </div>
                     </div>
                 </div>
+                
+            <!-- agrupamento mobile -->
+            <div class="pos-f-t">
+                <div class="collapse" id="navbarToggleExternalContent">
+                    <div class="p-4">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link text-white" href="index.php#">Home</a>
+                            <hr style="color: #fff;">
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link text-white" href="index.php#conscientizacao">Conscientização</a>
+                            <hr style="color: #fff;">
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="index.php#dowloads">Downloads</a>
+                            <hr style="color: #fff;">
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#index.php#sobre">Sobre</a>
+                            <hr style="color: #fff;">
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                <nav class="navbar">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Alterna navegação">
+                    <span class="navbar-toggler-icon" style="color: #fff;"></span>
+                    </button>
+                </nav>
+            </div>
+            <!-- fecha agrupamento mobile  -->
             </div>
         </nav>
 
