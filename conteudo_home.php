@@ -7,10 +7,6 @@
     <title>Conteudo Home</title>
 </head>
 <body>
-<!-- barra de pesquisa -->
-
-<!-- fim barra de pesquisa -->
-
     <!-- banner -->
     <div class="">
       <img src="images/psorrindo.avif" class="img-responsive" width="100%">
