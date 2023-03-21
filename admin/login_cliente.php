@@ -17,9 +17,7 @@
                     <h2>Login Paciente</h2>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
-                        <input type="email" name="email" required>
-                        <label for="">E-mail</label>
-                        <input type="email" required>
+                        <input type="text" name="cpf" required>
                         <label for="">CPF</label>
                     </div>
                     <div class="inputbox">
