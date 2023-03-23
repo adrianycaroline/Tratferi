@@ -181,17 +181,25 @@ id int not null auto_increment primary key,
 funcao text not null
 );
 
-create table Login(
+create table Login_paci(
 id int not null auto_increment,
 senha varchar(25) not null,
 id_paci int null,
-id_email int null,
-id_func int null,
 primary key(id),
-foreign key(id_paci)references paciente(id),
-foreign key(id_func)references funcionario(id),
-foreign key(id_email)references email_paciente(id)
+foreign key(id_paci)references paciente(id));
+
+create table Login_func(
+id int not null auto_increment primary key,
+senha varchar(25) not null,
+id_func int not null,
+foreign key(id_func)references funcionario(id)
 );
+
+
+
+
+
+
 
 desc funcionario;
 
@@ -222,6 +230,10 @@ desc tratamento;
 desc medicamento;
 
 desc adm;
+
+desc Login_func;
+
+desc Login_paci;
 
 
 
