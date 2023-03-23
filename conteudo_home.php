@@ -17,9 +17,9 @@
         </div>
         <form class="d-flex " role="search">
           <div class="embaixo">
-          <img src="images/logoPesq.png" alt="" width="300">
+          <img src="images/logoPesq.png" class="img-responsive" width="250">
         <div class="flex">
-          <input class="pesquisar" type="search" placeholder="Buscar" aria-label="Search">
+          <input class="pesquisar" type="search" placeholder="O que você procura?" aria-label="Search">
           <button class="border" type="submit" style="background-color: #38B6FF;">
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="35" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16" style="color: #fff;">
               <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>

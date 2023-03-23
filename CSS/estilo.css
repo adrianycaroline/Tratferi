@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 .linha {
-    background-color: #5CE1E6;
+    background-color: #00dbe7;
 }
 
 .bn{
@@ -13,7 +13,7 @@
 }
 .pesquisar{
     padding: 10px 300px 10px 10px;
-
+    border: none;
     
 }
 .border{
@@ -87,8 +87,8 @@ section{
 
 .formbox{
     position:relative;
-    width: 400px;
-    height: 450px;
+    width: 450px;
+    height: 550px;
     justify-content: center;
     display: flex;
     align-items: center;
