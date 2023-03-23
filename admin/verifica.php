@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="../images/logo_minimizada.png" type="image/x-icon">
-  <title>Tela de Login</title>
+  <title>Escolha de Forma de Login</title>
 
   <!-- Importando CSS do Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -57,6 +57,7 @@
                                 <a href="login_cliente.php" class="btn btn-primary btn-block">Sou Paciente</a>
                             </div>
                             <div class="col-sm-6 text-center">
+                                
                                 <a href="login_func.php" class="btn laranja btn-block text-light">Sou Funcionário</a>
                             </div>
                         </div>
