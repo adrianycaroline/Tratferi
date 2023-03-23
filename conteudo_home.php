@@ -17,9 +17,9 @@
         </div>
         <form class="d-flex " role="search">
           <div class="embaixo">
-          <img src="images/logoPesq.png" alt="" width="300">
+          <img src="images/logoPesq.png" class="img-responsive" width="250">
         <div class="flex">
-          <input class="pesquisar" type="search" placeholder="Buscar" aria-label="Search">
+          <input class="pesquisar" type="search" placeholder="O que você procura?" aria-label="Search">
           <button class="border" type="submit" style="background-color: #38B6FF;">
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="35" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16" style="color: #fff;">
               <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
@@ -94,21 +94,34 @@
 <!-- ------------------------------------------ -->
 <div class="d-flex gap-5 justify-content-around">
 <div class="card" style="width: 18rem;">
-  <img src="images/test.jpg" class="img-responsive card-img-top" alt="...">
+  <img src="images/atendimento.jpg" class="card-img-top" alt="...">
   <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-text">Nossos ideais como empresa 
+    <br> <br>  
+    é pensar na acessibilidade entre
+Paciente e cliente dessa forma colocando você e sua saúde em
+Primeiro lugar sempre esse é nosso objetivo como uma marca.</p>
   </div>
 </div>
 <div class="card" style="width: 18rem;">
-  <img src="images/test.jpg" class="img-responsive card-img-top" alt="...">
+  <img src="images/anota.jpg" class="card-img-top" alt="...">
   <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-text"> Como Entregamos nosso atendimento ?
+      <br> <br> 
+dentro da sua casa.<br>
+Nossos profissionais acompanharão o seu tratamento<br>
+Pensando na melhor forma pra você sentir-se bem.<br>
+</p>
   </div>
 </div>
 <div class="card" style="width: 18rem;">
-  <img src="images/test.jpg" class="img-responsive card-img-top" alt="...">
+  <img src="images/pc.jpg" class="card-img-top" alt="...">
   <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-text">Porque confiar no tratferi ?
+<br><br>
+Precisamos de informações basicas sobre o paciente<br>
+Para atender da melhor forma possivel apenas isso,<br>
+Nosso plano é a sua saúde.</p>
   </div>
 </div>
 </div>
