@@ -1,33 +1,5 @@
 <?php
-    include '../connection/connect.php';
-    // iniciar a verificação do login
-   if($_POST){
-       $login = $_POST['login_usuario'];
-       $senha = md5($_POST['senha_usuario']);
-       $loginRes = $conn->query("select * from tbusuarios where login_usuario = '$login' and senha_usuario = '$senha'");
-       $rowLogin = $loginRes->fetch_assoc();
-       $numRow = mysqli_num_rows($loginRes);
-       // se a sessão não existir 
-       if(!isset($_SESSION)){
-           $sessionAntiga = session_name('chulettaaa');
-           session_start();
-           $session_name_new = session_name();
-       }
-       if ($numRow>0){
-           $_SESSION['login_usuario'] = $login;
-           $_SESSION['login_usuario'] = $rowLogin['nivel_usuario'];
-           $_SESSION['nome_da_sessao'] = session_name();
-           if($rowLogin['nivel_usuario'] =='func'){
-               echo "<script>window.open('index.php','_self')</script>";
-               
-           }  
-       else{
-       echo "<script>window.open('../client/index.php?cliente=".$login."','_self')</script>";
-       }
-       }else{
-       echo "<script>window.open('invasor.php','_self')</script>";      
-       }
-   }
+   
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -43,20 +15,20 @@
         <?php include '../logo_superior.php';?>
         <div class="formbox">
             <div class="form-value">
-                <form action="">
+                <form action="login_func.php" name="form_login" id="form_login" method="POST" enctype="multipart/form-data">
                     <h2>Login Funcionario</h2>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
-                        <input type="email" required>
-                        <label for="">Email</label>
+                        <input type="text" name="cpf" id="cpf" onkeypress="$(this).mask('000.000.000-00');" required>
+                        <label for="">CPF</label>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" required>
+                        <input type="password" name="senha" required>
                         <label for="">Senha</label>
                     </div>
                     <div class="forget">
-                        <label for=""><input type="checkbox">Lembrar senha <a href="#">Esqueci minha senha :</a></label>
+                        <label for=""><input type="checkbox">Lembrar senha <a href="recuperacao.php">Esqueci minha senha :</a></label>
                     </div>
                     <button>Entrar</button>
                     <div class="register">
@@ -69,5 +41,10 @@
     </section>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 </body>
 </html>

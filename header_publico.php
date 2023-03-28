@@ -42,6 +42,7 @@
                 
             <!-- agrupamento mobile -->
             <div class="pos-f-t">
+                <div class="nav-item active" id="active-menu-item">
                 <div class="collapse" id="navbarToggleExternalContent">
                     <div class="p-4">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -81,6 +82,7 @@
             </div>
             <!-- fecha agrupamento mobile  -->
             </div>
+        </div>
         </nav>
 
         <div class="linha container-fluid py-5"></div>
@@ -88,5 +90,18 @@
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
+<script>
+    window.addEventListener("resize", function() {
+    if (window.innerWidth > 992) { // altere o valor aqui para corresponder ao ponto de interrupção do seu responsivo
+        var menu = document.querySelector("#navbarToggleExternalContent");
+        if (menu.classList.contains("show")) {
+            var activeItem = document.querySelector("#active-menu-item");
+            activeItem.classList.remove("active");
+            menu.classList.remove("show");
+        }
+    }
+});
+</script>
+
 </html>
 
