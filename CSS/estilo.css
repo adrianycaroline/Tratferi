@@ -256,3 +256,7 @@ button:hover{
 .texto-amarelo{
     color: #FFB800;
 }
+
+.se{
+    overflow-x: hidden;
+}
