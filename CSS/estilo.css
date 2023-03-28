@@ -88,7 +88,7 @@ section{
 .formbox{
     position:relative;
     width: 450px;
-    height: 550px;
+    height: 560px;
     justify-content: center;
     display: flex;
     align-items: center;
@@ -96,6 +96,7 @@ section{
     border: 2px solid white;
     border-radius: 20px; 
     backdrop-filter:blur(30px);
+
 
 
 }
@@ -243,8 +244,15 @@ button:hover{
 }
 
 .cad{
-text-decoration-color: black;
+    text-decoration-color: black;
+}
 
+/* /////////////////////// PAGINA DE TERMOS ////////////////////////// */
 
+.termos_fixo{
+    background: url('../images/fundo_termos.png') fixed no-repeat;
+}
 
+.texto-amarelo{
+    color: #FFB800;
 }
