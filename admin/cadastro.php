@@ -26,7 +26,6 @@
                         <label for="">Nome</label>
                     </div>
                     <div class="inputbox">
-<<<<<<< HEAD
                         <ion-icon name="mail-outline"></ion-icon>
                         <input type="email" name="email" required>
                         <label for="">Email</label>
@@ -34,7 +33,6 @@
                         <ion-icon name="lock-closed-outline"></ion-icon>
                         <input type="password" name="password" required>
                         <label for="">E-mail</label>
->>>>>>> b7f5df2fb1e48fecba5162fb4bec324dba8925c5
                     </div>
                     <div class="inputbox">
                         <ion-icon name="wallet-outline"></ion-icon>
