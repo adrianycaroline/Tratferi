@@ -42,6 +42,7 @@
                 
             <!-- agrupamento mobile -->
             <div class="pos-f-t">
+                <div class="nav-item active" id="active-menu-item">
                 <div class="collapse" id="navbarToggleExternalContent">
                     <div class="p-4">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -61,6 +62,15 @@
                             <a class="nav-link text-white" href="#index.php#sobre">Sobre</a>
                             <hr style="color: #fff;">
                         </li>
+                        <li class="nav-item">
+                        <a href="admin/verifica.php" class="nav-link" style="color: #fff;"> Entrar
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                            </svg>
+                            </a>
+                        </li>
+
                     </ul>
                     </div>
                 </div>
@@ -72,6 +82,7 @@
             </div>
             <!-- fecha agrupamento mobile  -->
             </div>
+        </div>
         </nav>
 
         <div class="linha container-fluid py-5"></div>
@@ -79,5 +90,18 @@
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
+<script>
+    window.addEventListener("resize", function() {
+    if (window.innerWidth > 992) { // altere o valor aqui para corresponder ao ponto de interrupção do seu responsivo
+        var menu = document.querySelector("#navbarToggleExternalContent");
+        if (menu.classList.contains("show")) {
+            var activeItem = document.querySelector("#active-menu-item");
+            activeItem.classList.remove("active");
+            menu.classList.remove("show");
+        }
+    }
+});
+</script>
+
 </html>
 

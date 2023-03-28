@@ -4,6 +4,7 @@ create database tratferi;
 use tratferi;
 
 
+
 create table funcionario(
 id int not null auto_increment,
 nome varchar(50) not null,
@@ -18,6 +19,8 @@ periodo varchar(20) not null,
 salario float(7,2) not null,
 data_entrada date not null,
 data_saida date,
+adm BIT NOT NULL,
+ativo BIT NOT NULL,
 primary key(id));
 
 
