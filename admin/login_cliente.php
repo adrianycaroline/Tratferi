@@ -36,7 +36,7 @@
                     </div>
                     <button>Entrar</button>
                     <div class="register">
-                        <p>Não tem uma conta?<a href="#">Cadastre-se!</a></p>
+                        <p>Não tem uma conta?<a href="cadastro.php">Cadastre-se!</a></p>
                     </div>
                 </form>
             </div>

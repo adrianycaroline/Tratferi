@@ -227,3 +227,24 @@ button:hover{
 }
 
 /* fim login */
+
+.formboxcad{
+    position:relative;
+    width: 450px;
+    height: 550px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 2px solid white;
+    border-radius: 20px; 
+    backdrop-filter:blur(30px);
+
+}
+
+.cad{
+text-decoration-color: black;
+
+
+
+}
