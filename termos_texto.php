@@ -35,7 +35,7 @@
 </style>
 <body>
     <div class="termos">
-        <ion-icon class="shieldbtn" name="shield-checkmark-outline"></ion-icon> <a href="../site/termos.php">Termos de proteção ao Usuário</a>
+        <ion-icon class="shieldbtn" name="shield-checkmark-outline"></ion-icon> <a href="../termos.php">Termos de Uso</a>
     </div>
     
 </body>
