@@ -28,7 +28,7 @@
                         <label for="">Senha</label>
                     </div>
                     <div class="forget">
-                        <label for=""><input type="checkbox">Lembrar senha <a href="#">Esqueci minha senha :</a></label>
+                        <label for=""><input type="checkbox">Lembrar senha <a href="recuperacao.php">Esqueci minha senha :</a></label>
                     </div>
                     <button>Entrar</button>
                     <div class="register">
