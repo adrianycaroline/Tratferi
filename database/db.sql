@@ -3,22 +3,41 @@ drop database tratferi;
 create database tratferi;
 use tratferi;
 
+CREATE TABLE IF NOT EXISTS `tratferi`.`funcionario` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(50) NOT NULL,
+  `data_nasc` DATE NOT NULL,
+  `cpf` VARCHAR(14) NOT NULL,
+  `coren` VARCHAR(9) NOT NULL,
+  `CRM` VARCHAR(9) NOT NULL,
+  `rg` VARCHAR(12) NOT NULL,
+  `cargo` VARCHAR(15) NOT NULL,
+  `funcao` TEXT NOT NULL,
+  `periodo` VARCHAR(20) NOT NULL,
+  `salario` FLOAT(7,2) NOT NULL,
+  `data_entrada` DATE NOT NULL,
+  `data_saida` DATE NULL DEFAULT NULL,
+  `adm` BIT NOT NULL,
+  `ativo` BIT NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4;
 
-create table funcionario(
-id int not null auto_increment,
-nome varchar(50) not null,
-data_nasc date not null,
-cpf varchar(14) not null,
-coren varchar(9) not null,
-CRM varchar(9) not null,
-rg varchar(12) not null,
-cargo varchar(15) not null,
-funcao text not null,
-periodo varchar(20) not null,
-salario float(7,2) not null,
-data_entrada date not null,
-data_saida date,
-primary key(id));
+-- create table funcionario(
+-- id int not null auto_increment,
+-- nome varchar(50) not null,
+-- data_nasc date not null,
+-- cpf varchar(14) not null,
+-- coren varchar(9) not null,
+-- CRM varchar(9) not null,
+-- rg varchar(12) not null,
+-- cargo varchar(15) not null,
+-- funcao text not null,
+-- periodo varchar(20) not null,
+-- salario float(7,2) not null,
+-- data_entrada date not null,
+-- data_saida date,
+-- primary key(id));
 
 
 create table tel_func(
