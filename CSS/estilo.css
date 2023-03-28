@@ -251,6 +251,7 @@ button:hover{
 
 .termos_fixo{
     background: url('../images/fundo_termos.png') fixed no-repeat;
+    background-size: cover;
 }
 
 .texto-amarelo{
