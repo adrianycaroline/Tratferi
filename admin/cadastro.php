@@ -22,13 +22,13 @@
                 <h2>Cadastro</h2>
                     <div class="inputbox">
                         <ion-icon name="person-outline"></ion-icon>
-                        <input type="text" name="nome" onkeypress="$(this).mask('000.000.000-00');" required>
+                        <input type="text" name="nome" required>
                         <label for="">Nome</label>
                     </div>
                     <div class="inputbox">
-                        <ion-icon name="mail-outline"></ion-icon>
+                        <ion-icon name="lock-closed-outline"></ion-icon>
                         <input type="email" name="email" required>
-                        <label for="">Email</label>
+                        <label for="">E-mail</label>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="wallet-outline"></ion-icon>
@@ -37,7 +37,7 @@
                     </div>
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="text" name="cpf" required>
+                        <input type="password" name="password" required>
                         <label for="">Senha</label>
                     </div>
                     <div class="inputbox">   
