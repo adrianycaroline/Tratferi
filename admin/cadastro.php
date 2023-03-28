@@ -29,7 +29,7 @@
                         <ion-icon name="mail-outline"></ion-icon>
                         <input type="email" name="email" required>
                         <label for="">Email</label>
-=======
+                    <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
                         <input type="password" name="password" required>
                         <label for="">E-mail</label>
