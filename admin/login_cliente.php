@@ -1,3 +1,26 @@
+<?php
+// include '../connection/connect.php';
+//       // iniciar a verificação do login
+//       if($_POST){
+//         $cpf = $_POST['cpf'];
+//         $senha = $_POST['password'];
+//         $loginRes = $conn->query("SELECT paciente.cpf as cpf, Login_paci.senha as senha FROM Login_paci
+//         inner join paciente ON(Login_paci.id_paci = paciente.id) where cpf = $cpf and senha = $senha");
+//         $rowLogin = $loginRes->fetch_assoc();
+//         $numRow = mysqli_num_rows($loginRes);
+//         // se a sessão existir ou não
+//         if(!isset($_SESSION)){
+//             $sessaoAntiga = session_name('chulettaaa');
+//             session_start();
+//             $session_name_new = session_name();
+//         }
+//         if($numRow>0){
+//                 echo "<script>window.open('../client/index.php','_self')</script>";
+//             }else{
+//                 echo "<script>window.open('login_cliente.php?acesso=n','_self')</script>";
+//             }
+//       }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -17,9 +40,14 @@
 <body>
     <section id="fundo_cli" style="display: flex; flex-direction: column;">
         <?php include '../logo_superior.php';?>
+        
+        <?php if($_GET){?>
+            <h1>Acesso Negado. Tente Novamente</h1>
+        <?php }?>
+
         <div class="formbox">
             <div class="form-value">
-                <form action="">
+                <form action="login_cliente.php" method="post">
                     <h2>Login Paciente</h2>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
