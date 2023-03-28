@@ -57,7 +57,7 @@
                                 <a href="login_cliente.php" class="btn btn-primary btn-block">Sou Paciente</a>
                             </div>
                             <div class="col-sm-6 text-center">
-                                
+                                <img src="../images/Simbol_medicina.png" alt="Simbolo Medicina" width="110vh">
                                 <a href="login_func.php" class="btn laranja btn-block text-light">Sou Funcionário</a>
                             </div>
                         </div>
