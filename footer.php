@@ -36,9 +36,11 @@
 <div style="color: white;">Siga-nos <i class="bi bi-hand-thumbs-up" style="color:antiquewhite"></i>
 <div>
 <ion-icon name="logo-facebook"></ion-icon>
+Tratferi
+</div>
+<div>
 <ion-icon name="logo-instagram"></ion-icon>
-<ion-icon name="logo-twitter"></ion-icon>
-<ion-icon name="logo-whatsapp"></ion-icon>
+@tratferi
 </div>
 </div>
 </div>
