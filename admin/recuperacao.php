@@ -12,7 +12,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     
-    <title>Login</title>
+    <title>Recuperação</title>
 </head>
 <body>
     <section id="fundo_cli" style="display: flex; flex-direction: column;">
@@ -20,24 +20,23 @@
         <div class="formbox">
             <div class="form-value">
                 <form action="">
-                    <h2>Login Paciente</h2>
+                    <h2>Esqueci minha senha</h2>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
-                        <input type="text" name="cpf" onkeypress="$(this).mask('000.000.000-00');" required>
-                        <label for="">CPF</label>
+                        <input type="email" name="email" required>
+                        <label for="">Email</label>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
                         <input type="password" name="password" required>
-                        <label for="">Senha</label>
+                        <label for="">Crie uma nova senha</label>
                     </div>
-                    <div class="forget">
-                        <label for=""><input type="checkbox">Lembrar senha <a href="recuperacao.php">Esqueci minha senha :</a></label>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" name="password" required>
+                        <label for="">Confirme a nova senha</label>
                     </div>
-                    <button>Entrar</button>
-                    <div class="register">
-                        <p>Não tem uma conta?<a href="cadastro.php">Cadastre-se!</a></p>
-                    </div>
+                    <button>Atualizar</button>
                 </form>
             </div>
         </div>
