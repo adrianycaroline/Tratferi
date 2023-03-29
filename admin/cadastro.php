@@ -16,10 +16,10 @@
 <body>
     <section id="fundo_cli" style="display: flex; flex-direction: column;">
         <?php include '../logo_superior.php'?>
-        <div class="formbox ">
+        <div id="formbox-cadastro">
             <div class="form-value">
                 <form action="">
-                <h2>Cadastro</h2>
+                    <h2>Cadastro</h2>
                     <div class="inputbox">
                         <ion-icon name="person-outline"></ion-icon>
                         <input type="text" name="nome" required>
@@ -35,15 +35,15 @@
                         <input type="text" name="cpf" onkeypress="$(this).mask('000.000.000-00');" required>
                         <label for="">CPF</label>
                     </div>
-                    <div class="inputbox">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" name="password" required>
+                    <div class="inputbox show-password">
+                        <input type="password" name="password" id="senha" required>
                         <label for="">Senha</label>
+                        <ion-icon name="eye-outline" type="button" onclick="mostrarSenha()"></ion-icon>
                     </div>
-                    <div class="inputbox">   
-                        <ion-icon name="lock-closed-outline"></ion-icon>  
-                        <input type="password" name="password" required>
+                    <div class="inputbox show-password">    
+                        <input type="password" name="password" id="senha2" required>
                         <label for="">Confirmar senha</label>
+                        <ion-icon name="eye-outline" type="button" onclick="mostrarSenha2()"></ion-icon>
                     </div>
                     <button>Entrar</button>
                     <div class="register">
@@ -53,7 +53,27 @@
         </div>
         <?php include '../termos_texto.php';?>
     </section>
+</body>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-</body>
+    <script>
+        function mostrarSenha() {
+            var senha = document.getElementById("senha");
+            if (senha.type === "password") {
+            senha.type = "text";
+            } else {
+            senha.type = "password";
+            }
+        }
+    </script>
+    <script>
+        function mostrarSenha2() {
+            var senha2 = document.getElementById("senha2");
+            if (senha2.type === "password") {
+            senha2.type = "text";
+            } else {
+            senha2.type = "password";
+            }
+        }
+    </script>
 </html>

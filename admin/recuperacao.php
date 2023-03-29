@@ -26,15 +26,15 @@
                         <input type="email" name="email" required>
                         <label for="">Email</label>
                     </div>
-                    <div class="inputbox">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" name="password" required>
+                    <div class="inputbox show-password">
+                        <input type="password" name="password" id="senha" required>
                         <label for="">Crie uma nova senha</label>
+                        <ion-icon name="eye-outline" type="button" onclick="mostrarSenha()"></ion-icon>
                     </div>
                     <div class="inputbox">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" name="password" required>
+                        <input type="password" name="password" id="senha2" required>
                         <label for="">Confirme a nova senha</label>
+                        <ion-icon name="eye-outline" type="button" onclick="mostrarSenha2()"></ion-icon>
                     </div>
                     <button>Atualizar</button>
                 </form>
@@ -45,4 +45,24 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
+    <script>
+        function mostrarSenha() {
+            var senha = document.getElementById("senha");
+            if (senha.type === "password") {
+            senha.type = "text";
+            } else {
+            senha.type = "password";
+            }
+        }
+    </script>
+    <script>
+        function mostrarSenha2() {
+            var senha2 = document.getElementById("senha2");
+            if (senha2.type === "password") {
+            senha2.type = "text";
+            } else {
+            senha2.type = "password";
+            }
+        }
+    </script>
 </html>

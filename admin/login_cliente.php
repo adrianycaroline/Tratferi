@@ -54,10 +54,10 @@
                         <input type="text" name="cpf" onkeypress="$(this).mask('000.000.000-00');" required>
                         <label for="">CPF</label>
                     </div>
-                    <div class="inputbox">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" name="password" required>
+                    <div class="inputbox show-password">
+                        <input type="password" name="password" id="senha" required>
                         <label for="">Senha</label>
+                        <ion-icon name="eye-outline" type="button" onclick="mostrarSenha()"></ion-icon>
                     </div>
                     <div class="forget">
                         <label for=""><input type="checkbox">Lembrar senha <a href="recuperacao.php">Esqueci minha senha :</a></label>
@@ -71,7 +71,22 @@
         </div>
         <?php include '../termos_texto.php';?>
     </section>
+</body>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-</body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script>
+        function mostrarSenha() {
+            var senha = document.getElementById("senha");
+            if (senha.type === "password") {
+            senha.type = "text";
+            } else {
+            senha.type = "password";
+            }
+        }
+    </script>
 </html>
