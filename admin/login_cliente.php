@@ -57,7 +57,7 @@
                     <div class="inputbox show-password">
                         <input type="password" name="password" id="senha" required>
                         <label for="">Senha</label>
-                        <ion-icon name="eye-outline" type="button" onclick="mostrarSenha()"></ion-icon>
+                        <ion-icon name="eye-outline" type="button" style="cursor: pointer;" onclick="mostrarSenha()"></ion-icon>
                     </div>
                     <div class="forget">
                         <label for=""><input type="checkbox">Lembrar senha <a href="recuperacao.php">Esqueci minha senha :</a></label>

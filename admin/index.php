@@ -15,6 +15,8 @@
         include 'menu_adm'; 
         include 'adm_options';
     ?>
+
+    area adm
 </body>
 </html>
 

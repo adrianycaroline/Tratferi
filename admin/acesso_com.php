@@ -6,9 +6,9 @@
     // segurança digital...
     
     // verificar se o usuário está logado na sessão
-    if(!isset($_SESSION['login_usuario'])) {
+    if(!isset($_SESSION['nome'])) {
         // se não existir, redirecionamos a sessão por segurança
-        header('location: ../admin/login.php');
+        header('location: ../admin/login_func.php');
         exit;
     }
 
@@ -17,7 +17,7 @@
         or ($_SESSION['nome_da_sessao']!=$nome_da_sessao)
     ) {
         session_destroy();
-        header('location: ../admin/login.php');
+        header('location: ../admin/login_func.php');
         exit;
     }
 ?>

@@ -29,12 +29,12 @@
                     <div class="inputbox show-password">
                         <input type="password" name="password" id="senha" required>
                         <label for="">Crie uma nova senha</label>
-                        <ion-icon name="eye-outline" type="button" onclick="mostrarSenha()"></ion-icon>
+                        <ion-icon name="eye-outline" type="button" style="cursor: pointer;" onclick="mostrarSenha()"></ion-icon>
                     </div>
                     <div class="inputbox">
                         <input type="password" name="password" id="senha2" required>
                         <label for="">Confirme a nova senha</label>
-                        <ion-icon name="eye-outline" type="button" onclick="mostrarSenha2()"></ion-icon>
+                        <ion-icon name="eye-outline" type="button" style="cursor: pointer;" onclick="mostrarSenha2()"></ion-icon>
                     </div>
                     <button>Atualizar</button>
                 </form>
