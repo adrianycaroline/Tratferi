@@ -88,7 +88,7 @@ section{
 .formbox{
     position:relative;
     width: 450px;
-    height: 550px;
+    height: 560px;
     justify-content: center;
     display: flex;
     align-items: center;
@@ -98,6 +98,7 @@ section{
     backdrop-filter:blur(30px);
 
 
+
 }
 
 .formbox h2{
@@ -105,7 +106,6 @@ section{
     color: #fff;
     text-align: center;
     font-weight: 500;
-
 }
 
 .inputbox{
@@ -227,3 +227,75 @@ button:hover{
 }
 
 /* fim login */
+
+.formboxcad{
+    position:relative;
+    width: 450px;
+    height: 550px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 2px solid white;
+    border-radius: 20px; 
+    backdrop-filter:blur(30px);
+
+}
+
+.cad{
+    text-decoration-color: black;
+}
+
+/* /////////////////////// PAGINA DE TERMOS ////////////////////////// */
+
+.termos_fixo{
+    background: url('../images/fundo_termos.png') fixed no-repeat;
+    background-size: cover;
+}
+
+.texto-amarelo{
+    color: #FFB800;
+}
+
+/* /////////////////////// PAGINAS DE LOGIN /////////////////////// */
+.show-password {
+    position: relative;
+    display: inline-block;
+}
+
+.show-password input {
+    padding-right: 25px;
+}
+
+.show-password button {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#formbox-cadastro{
+    position:relative;
+    width: 330px;
+    height: 560px;
+    padding: 20px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 20px; 
+    backdrop-filter:blur(30px);
+}
+
+#formbox-cadastro h2{
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+}
