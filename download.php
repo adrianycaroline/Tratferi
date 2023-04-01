@@ -9,6 +9,7 @@
 <body>
     <?php include 'header_publico.php'?>
     <main>
+        <br><br>
         <div class="d-flex flex-row bd-highlight mb-2">
             <div class="p-2 bd-highlight container text-center">
                 <h1>Download</h1>
@@ -41,6 +42,7 @@
                 <img src="images/celulares.png" alt="Celulares Download">
             </div>
         </div>
+        <br><br>
     </main>
     <?php include 'footer.php'?>
 </body>
