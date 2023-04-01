@@ -42,10 +42,10 @@
                               <a class="nav-link" href="index.php#conscientizacao" style="color: #fff; font-size: 20px;">Conscientização</a>
                             </tr>
                             <tr class="nav-item">
-                              <a class="nav-link" href="index.php#dowloads" style="color: #fff; font-size: 20px;">Downloads</a>
+                              <a class="nav-link" href="download.php" style="color: #fff; font-size: 20px;">Downloads</a>
                             </tr>
                             <tr class="nav-item">
-                              <a class="nav-link" href="index.php#sobre" style="color: #fff; font-size: 20px;">Sobre</a>
+                              <a class="nav-link" href="sobre.php" style="color: #fff; font-size: 20px;">Sobre</a>
                             </tr>
                             <tr class="nav-item">
                               <a class="nav-link" href="index.php#sobre" style="color: #fff; font-size: 20px;">Fale conosco</a>
