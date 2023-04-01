@@ -23,7 +23,7 @@
                     uma idéia de aplicação Web e Software que auxiliasse os profissionais de saúde com os 
                     pacientes, além de ser voltado para adultos que desejam consultar suas informações
                     e progresso do atendimento. <br>
-                    Assim, o TRATFERI (TRATamento de FERIdas) foi oficialmente produzido. Atendendo as
+                    Assim, o TRATFERI (Tratamento de Feridas) foi oficialmente produzido. Atendendo as
                     melhores funcionalidades esse sistema é de grande ajuda a profissionais que precisam
                     de respostas rápidas para certos atendimentos e até oferece um auxílio de ponta na
                     organização e no atendimento.</p>
