@@ -25,7 +25,7 @@
                             <a class="nav-link" href="index.php#dowloads" style="color: #fff; font-size: 20px;">Downloads</a>
                         </li>
                         <li class="nav-item buttonBoxMenu">
-                            <a class="nav-link" href="index.php#sobre" style="color: #fff; font-size: 20px;">Sobre</a>
+                            <a class="nav-link" href="sobre.php" style="color: #fff; font-size: 20px;">Sobre</a>
                         </li>
                     </ul>
                     <div class="navbar-nav px-2">

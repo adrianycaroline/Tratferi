@@ -1,7 +1,7 @@
 <?php
    include '../connection/connect.php';
 
-//    iniciar a verificação do login
+    //Iniciar a verificação do login
       if($_POST){
         $cpf = $_POST['cpf'];
         $senha = $_POST['senha'];
@@ -22,9 +22,9 @@
             if($rowLogin['adm'] == 1){
                 echo "<script>window.open('../admin/index.php','_self')</script>";
             }  
-        else if($rowLogin['adm'] == 0){
-            echo "<script>window.open('../func/index.php?funcionario=".$login."','_self')</script>";
-        }
+            else if($rowLogin['adm'] == 0){
+                echo "<script>window.open('../func/index.php?funcionario=".$login."','_self')</script>";
+            }
         }else{
             echo "<script>window.open('invasor.php','_self')</script>";      
         }
