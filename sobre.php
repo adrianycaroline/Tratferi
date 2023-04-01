@@ -17,7 +17,7 @@
             <div class="container">
                 <br>
                 <h1 class="text-center">Sobre</h1>
-                <div style="border-bottom: 2px solid black; margin-left: 200px; margin-right: 200px;"></div>
+                <div class="border-bottom border-2 border-dark mx-auto" style="width: 20%; "></div>
                 <br>
                 <p>O TRATFERI, fundado em 2023 pelo grupo de Enfermagem do Senac Itaquera veio ao mundo como 
                     uma idéia de aplicação Web e Software que auxiliasse os profissionais de saúde com os 

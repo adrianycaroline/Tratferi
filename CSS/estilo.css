@@ -311,3 +311,15 @@ button:hover{
 .nav-item:not(:hover) {
     transform: scale(0.9);
 }
+
+.item{
+    transition: transform 0.3s ease-in-out;
+}
+
+.item:hover {
+    transform: scale(1.1);
+}
+.item:not(:hover) {
+    transform: scale(0.9);
+}
+
