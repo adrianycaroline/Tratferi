@@ -19,7 +19,7 @@ periodo varchar(20) not null,
 salario float(7,2) not null,
 data_entrada date not null,
 data_saida date null,
-adm BIT not null,
+adm enum('func','adm') not null,
 ativo BIT NOT NULL,
 primary key(id));
 
