@@ -19,7 +19,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto me-auto d-flex gap-5">
                         <li class="nav-item buttonBoxMenu">
-                            <a class="nav-link" href="index.php#conscientizacao" style="color: #fff; font-size: 20px;">Conscientização</a>
+                            <a class="nav-link" href="conscientização.php" style="color: #fff; font-size: 20px;">Conscientização</a>
                         </li>
                         <li class="nav-item buttonBoxMenu">
                             <a class="nav-link" href="download.php" style="color: #fff; font-size: 20px;">Downloads</a>

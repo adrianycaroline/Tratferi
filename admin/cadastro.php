@@ -1,3 +1,23 @@
+<?php
+ include '../connection/connect.php';
+ if($_POST){
+    if($_Get['acesso']==p){
+        // iniciar o cadastro
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $email = $_POST['cpf'];
+        $loginRes = $conn->query("insert into pacientes (nome, )");
+       $rowLogin = $loginRes->fetch_assoc();
+       $numRow = mysqli_num_rows($loginRes);
+   
+    }else($_Get['acesso']==f){
+
+    }
+ }   
+
+    
+       
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

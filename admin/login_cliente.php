@@ -67,7 +67,7 @@
                     </div>
                     <button>Entrar</button>
                     <div class="register">
-                        <p>Não tem uma conta?<a href="cadastro.php">Cadastre-se!</a></p>
+                        <p>Não tem uma conta?<a href="cadastro.php?acesso=c">Cadastre-se!</a></p>
                     </div>
                 </form>
             </div>
