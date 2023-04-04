@@ -5,11 +5,9 @@
       if($_POST){
         $cpf = $_POST['cpf'];
         $senha = $_POST['senha'];
-        $loginRes = $conn->query("SELECT funcionario.cpf as cpf, Login_func.senha as senha FROM Login_func
+        $loginRes = $conn->query("SELECT funcionario.cpf as cpf, funcionario.adm as adm, Login_func.senha as senha FROM Login_func
         inner join funcionario ON (Login_func.id_func = funcionario.id) where cpf = '$cpf' AND senha = '$senha'");
-        $loginres2 = $conn->query("select * from funcionario");
-        $rowLogin2 = $loginRes->fetch_assoc();
-        // $rowLogin = $loginRes->fetch_assoc();
+        $rowLogin = $loginRes->fetch_assoc();
         $numRow = mysqli_num_rows($loginRes);
         // se a sessão existir ou não
         if(!isset($_SESSION)){
@@ -18,15 +16,16 @@
             $session_name_new = session_name();
         }
         if ($numRow>0){
-            $_SESSION['nome'] = $login;
-            $_SESSION['nome'] = $rowLogin2['adm'];
+            $_SESSION['cpf'] = $login;
+            $_SESSION['cpf'] = $rowLogin['adm'];
             $_SESSION['nome_da_sessao'] = session_name();
-            if($rowLogin2['adm'] == "adm"){
+            if($rowLogin['adm'] =='adm'){
                 echo "<script>window.open('../admin/index.php','_self')</script>";
+                
             }  
-            else if($rowLogin2['adm'] == "func"){
-                echo "<script>window.open('../func/index.php?funcionario=".$login."','_self')</script>";
-            }
+        else if($rowLogin['adm'] =='func'){
+            echo "<script>window.open('../client/index.php?cliente=".$login."','_self')</script>";
+        }
         }else{
             echo "<script>window.open('invasor.php','_self')</script>";      
         }
