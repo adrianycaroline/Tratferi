@@ -9,16 +9,23 @@
         $rowLogin = $loginRes->fetch_assoc();
         $numRow = mysqli_num_rows($loginRes);
         // se a sessão existir ou não
+
          if(!isset($_SESSION)){
              $sessaoAntiga = session_name('usuario');
-           session_start();
+             session_start();
              $session_name_new = session_name();
         }
-        if($numRow>0){
+        if ($numRow>0){
+            $_SESSION['cpf'] = $cpf;
+            $_SESSION['nome_da_sessao'] = session_name();
+            if($rowLogin['cpf'] == $cpf){
                 echo "<script>window.open('../client/index.php','_self')</script>";
-             }else{
-                echo "<script>window.open('invasor.php','_self')</script>";
-           }
+            } else {
+            echo "<script>window.open('../admin/login_cliente.php','_self')</script>"; 
+        }
+        } else{
+            echo "<script>window.open('invasor.php','_self')</script>";      
+        }
     }
 ?>
 <!DOCTYPE html>
