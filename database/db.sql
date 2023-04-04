@@ -3,10 +3,6 @@ drop database tratferi;
 create database tratferi;
 use tratferi;
 
-
-
-
-
 create table funcionario(
 id int not null auto_increment,
 nome varchar(50) not null,
