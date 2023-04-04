@@ -14,7 +14,7 @@
     <title>Verificação de duas Etapas</title>
 </head>
 <body>
-<section id="fundo_cli" style="display: flex; flex-direction: column;">
+    <section id="fundo_cli" style="display: flex; flex-direction: column;">
         <?php include '../logo_superior.php'?>
         <form class="form">
         <div class="info">
@@ -35,4 +35,21 @@
     </section>
     
 </body>
+<script>
+    // Selecionar todos os campos de entrada
+    const inputs = document.querySelectorAll('input[type="tel"]');
+
+    // Adicionar ouvinte de evento de entrada para cada campo
+    inputs.forEach((input, index) => {
+        input.addEventListener('input', (event) => {
+            // Se o campo atual estiver preenchido
+            if (input.value.length === input.maxLength) {
+                // Se houver um próximo campo de entrada, mover o foco para ele
+                if (index < inputs.length - 1) {
+                    inputs[index + 1].focus();
+                }
+            }
+        });
+    });
+</script>
 </html>
