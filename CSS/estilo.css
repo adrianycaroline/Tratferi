@@ -428,8 +428,6 @@ button:hover{
 .close:hover {
   background-color: rgba(255, 0, 0, 0.603);
 }
-
-
 /* ////////////////////// EFEITO HOVER DO MENU PUBLICO ///////////////////// */
 
 .nav-item {
@@ -452,5 +450,23 @@ button:hover{
 .item:not(:hover) {
     transform: scale(0.9);
 }
+/* //////////////////// Cards Conscientização /////////////////////// */
 
+#main_cont div div i {
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: clamp(70px, 6vw, 200px);
+  }
+
+.cards{
+
+justify-content: center;
+text-align:left
+
+}
 

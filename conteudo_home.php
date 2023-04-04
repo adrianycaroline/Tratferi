@@ -29,67 +29,14 @@
     </div>
   </nav>
   <!-- fim barra de pesquisa -->
-
-    </div>
+  </div>
     <!-- fim do banner -->
-    
+    <div style="background-color: #5CE1E6;">
     <br>
     <br>
-
-<!-- cards -->
-<div class="d-flex gap-5 justify-content-around">
-<div class="card" style="width: 18rem; background-color: #38B6FF;">
-<br>
-
-  <div class="card-body d-flex justify-content-around">
-    <div>
-    <img src="images/MicrosoftTeams-image (8).png" class="img-responsive" alt="" width="110">
-    </div>
-    <p class="card-text" style="color: #fff;"><br>Consultas</p>
-  </div>
-</div>
-
-<div class="card" style="width: 18rem; background-color: #38B6FF;">
-<br>
-  <div class="card-body d-flex justify-content-around">
-    <div>
-    <img src="images/MicrosoftTeams-image (7).png" class="img-responsive" alt="" width="110">
-    </div>
-    <div>
-    <p class="card-text" style="color: #fff;"><br> Agendamentos de Exames</p>
-    </div>
-  </div>
-</div>
-
-<div class="card" style="width: 18rem; background-color: #38B6FF;">
-<br>
-  <div class="card-body d-flex justify-content-around">
-    <div>
-    <img src="images/MicrosoftTeams-image (9).png" class="img-responsive" alt="" width="110">
-    </div>
-    <div>
-    <p class="card-text" style="color: #fff;"><br> Vacinas</p>
-    </div>
-  </div>
-</div>
-
-<div class="card" style="width: 18rem; background-color: #38B6FF;">
-    <br>
-    <div class="card-body d-flex justify-content-around">
-        <div>
-            <img src="images/MicrosoftTeams-image (6).png" class="img-responsive" alt="" width="110">
-        </div>
-        <div>
-            <p class="card-text" style="color: #fff;"><br> Resultados de Exames</p>
-        </div>
-    </div>
-    <br>
-</div>
-</div>
-<br>
-<br>
-<!-- fim cards -->
+<!-- começo dos cards  -->
 <!-- ------------------------------------------ -->
+
 <div class="d-flex gap-5 justify-content-around">
 <div class="card" style="width: 18rem;">
   <img src="images/atendimento.jpg" class="card-img-top" alt="...">
@@ -126,6 +73,44 @@ Nosso plano é a sua saúde.</p>
 <!-- ------------------------------------------ -->
 <br>
 <br>
+<div class="d-flex gap-5 justify-content-around">
+<div class="card" style="width: 18rem;">
+  <img src="images/atendimento.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Nossos ideais como empresa 
+    <br> <br>  
+    é pensar na acessibilidade entre
+Paciente e cliente dessa forma colocando você e sua saúde em
+Primeiro lugar sempre esse é nosso objetivo como uma marca.</p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src="images/anota.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text"> Como Entregamos nosso atendimento ?
+      <br> <br> 
+dentro da sua casa.<br>
+Nossos profissionais acompanharão o seu tratamento<br>
+Pensando na melhor forma pra você sentir-se bem.<br>
+</p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src="images/pc.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Porque confiar no tratferi ?
+<br><br>
+Precisamos de informações basicas sobre o paciente<br>
+Para atender da melhor forma possivel apenas isso,<br>
+Nosso plano é a sua saúde.</p>
+  </div>
+</div>
+</div>
+
+<!-- fim cards -->
 <br>
+<br>
+<br>
+</div>
 </body>
 </html>
