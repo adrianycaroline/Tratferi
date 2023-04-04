@@ -24,7 +24,7 @@
                 
             }  
         else if($rowLogin['adm'] =='func'){
-            echo "<script>window.open('../client/index.php?cliente=".$login."','_self')</script>";
+            echo "<script>window.open('../func/index.php?funcionario=".$login."','_self')</script>";
         }
         }else{
             echo "<script>window.open('invasor.php','_self')</script>";      
