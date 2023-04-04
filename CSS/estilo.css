@@ -299,7 +299,7 @@ button:hover{
     text-align: center;
     font-weight: 500;
 }
-<<<<<<< HEAD
+
 /* /////////// cod verificação  //////////////*/
 .form {
   display: -webkit-box;
@@ -428,7 +428,7 @@ button:hover{
 .close:hover {
   background-color: rgba(255, 0, 0, 0.603);
 }
-=======
+
 
 /* ////////////////////// EFEITO HOVER DO MENU PUBLICO ///////////////////// */
 
@@ -453,4 +453,4 @@ button:hover{
     transform: scale(0.9);
 }
 
->>>>>>> 3fe2f042f2b6721d09c1c089c020e01cda286071
+
