@@ -40,4 +40,30 @@
     </section>
     
 </body>
+<script>
+    document.querySelector('button').addEventListener('click', function(event) {
+    var senha1 = document.getElementById('senha').value;
+    var senha2 = document.getElementById('senha2').value;
+    if (senha1 !== senha2) {
+        event.preventDefault();
+        alert('As senhas não são iguais.');
+    }
+});
+function mostrarSenha() {
+            var senha = document.getElementById("senha");
+            if (senha.type === "password") {
+            senha.type = "text";
+            } else {
+            senha.type = "password";
+            }
+        }
+function mostrarSenha2() {
+            var senha = document.getElementById("senha2");
+            if (senha.type === "password") {
+            senha.type = "text";
+            } else {
+            senha.type = "password";
+            }
+}
+</script>
 </html>
