@@ -1,23 +1,46 @@
-insert into funcionario
-VALUES('1','daniel','2004/10/07','145.326.268-23','102.658','596.987','90.156.984-8','enfermeiro','realizar triagens, preencher prontuários, oferecer os primeiros atendimentos, coletar exames, administrar medicamentos e monitorar o estado de saúde dos pacientes.','noite','3300,00','2020/02/01','null');
+
+select * from  paciente;
+
+
 
 insert into funcionario
-VALUES('2','andrey','2000/03/10','359.742.031-98','032.987','158.387','88.032.603-7','auxiliar enfermagem','realiza a coleta de sangue para exames, faz curativos simples, administra remédios, ajuda na higiene dos pacientes, entre outras funções.','manha','2429,00','2020/02/01','null');
+VALUES('1','daniel','2004/10/07','145.326.268-23','102.658','596.987','90.156.984-8','enfermeiro','realizar triagens, preencher prontuários, oferecer os primeiros atendimentos, coletar exames, administrar medicamentos e monitorar o estado de saúde dos pacientes.','noite','3300,00','2020/02/01','null','func','1');
 
 insert into funcionario
-VALUES('3','felipe','2001/11/03','031.084.871-32','951.311','014.741','03.156.741-9','enfermeiro','realizar triagens, preencher prontuários, oferecer os primeiros atendimentos, coletar exames, administrar medicamentos e monitorar o estado de saúde dos pacientes.','manha','3136,00','2020/01/09','null');
+VALUES('2','andrey','2000/03/10','359.742.031-98','032.987','158.387','88.032.603-7','auxiliar enfermagem','realiza a coleta de sangue para exames, faz curativos simples, administra remédios, ajuda na higiene dos pacientes, entre outras funções.','manha','2429,00','2020/02/01','null','func','1');
 
 insert into funcionario
-VALUES('4','joao','1999/11/25','953.148.348-71','731.871','348.321','78.136.468-1','Cirurgião geral','especialista treinado para o manejo cirúrgico das afecções mais diversas do organismo como um todo, resolvendo todas as questões de atendimento primário e secundário, com ênfase no trauma, urgência e emergência além da captação de órgãos..','tarde','8461,00','2010/01/09','2019/11/11');
+VALUES('3','felipe','2001/11/03','031.084.871-32','951.311','014.741','03.156.741-9','enfermeiro','realizar triagens, preencher prontuários, oferecer os primeiros atendimentos, coletar exames, administrar medicamentos e monitorar o estado de saúde dos pacientes.','manha','3136,00','2020/01/09','null','func','1');
 
 insert into funcionario
-VALUES('5','mario','1998/06/05','841.168.031-94','324.014','494.684','34.887.341-5','clínico gera','responsável por diagnosticar doenças, desde as mais simples até as mais complexas.','manha','8461,00','2017/01/09','null');
+VALUES('4','joao','1999/11/25','953.148.348-71','731.871','348.321','78.136.468-1','Cirurgião geral','especialista treinado para o manejo cirúrgico das afecções mais diversas do organismo como um todo, resolvendo todas as questões de atendimento primário e secundário, com ênfase no trauma, urgência e emergência além da captação de órgãos..','tarde','8461,00','2010/01/09','2019/11/11','func','');
 
 insert into funcionario
-VALUES('6','daniel','2000/10/07','097.631.712-22','568.445','911.200','52.641.785-9','clínico gera','responsável por diagnosticar doenças, desde as mais simples até as mais complexas.','tarde','8461,00','2017/01/09','null');
+VALUES('5','mario','1998/06/05','841.168.031-94','324.014','494.684','34.887.341-5','clínico gera','responsável por diagnosticar doenças, desde as mais simples até as mais complexas.','manha','8461,00','2017/01/09','null','func','1');
 
 insert into funcionario
-VALUES('7','maria','1998/06/05','257.987.099-97','784.565','988.655','98.795.521-7','clínico gera','responsável por diagnosticar doenças, desde as mais simples até as mais complexas.','noite','8461,00','2017/01/09','null');
+VALUES('6','daniel','2000/10/07','097.631.712-22','568.445','911.200','52.641.785-9','clínico gera','responsável por diagnosticar doenças, desde as mais simples até as mais complexas.','tarde','8461,00','2017/01/09','null','func','1');
+
+insert into funcionario
+VALUES('7','maria','1998/06/05','257.987.099-97','784.565','988.655','98.795.521-7','clínico gera','responsável por diagnosticar doenças, desde as mais simples até as mais complexas.','noite','8461,00','2017/01/09','null','func','1');
+
+
+
+insert into funcionario
+VALUES('8','texeira','2000/07/05','111.222.333-44','000.000','000.000','10.547.241-4','Desenvolvedor de sistemas','Responsavel por cuidar do sistema e cadastro de novos funcionarios e novos adm','noite','11000,00','2017/01/09','null','adm','1');
+
+insert into funcionario
+VALUES('9','paula','1999/11/01','323.454.686-45','000.000','000.000','10.654.486-7','Desenvolvedor de sistemas','Responsavel por cuidar do sistema e cadastro de novos funcionarios','noite','5000,00','2017/01/09','null','adm','1');
+
+
+
+insert into funcionario
+VALUES('10','joao','1999/11/01','874.777.845-93','000.000','000.000','12.568.101-9','Desenvolvedor de sistemas','Responsavel','manha','2000,00','2018/01/01','null','adm','1');
+
+insert into funcionario
+VALUES('11','mario','1999/08/11','315.100.002-31','545.345','213.211','01.365.545-5','estagioario de enfermagem','Fazer tarefas designadas a ele','tarde','1000,00','2022/11/01','null','func','1');
+
+
 
 
 
@@ -222,7 +245,7 @@ insert into consulta
 VALUES('1','2023/01/12','20:00','ferida grande com mau odor','7','7');
 
 insert into consulta 
-VALUES('2','2022/01/12','19:30','coloracao estranha na ferida','7','4');
+VALUES('2','2022/01/12','19:30','coloracao estranha na ferida','7','1');
 
 insert into consulta 
 VALUES('3','2022/01/12','19:00','inflamacao no local da ferida','7','2');
@@ -243,12 +266,11 @@ insert into consulta
 VALUES('8','2023/01/05','08:00','acompanhamento do tratamento','5','7');
 
 
-
 insert into ferida
 VALUES('1','queda de moto','2023/01/01','nenhum uso de outra medicacao','perna','inferior','alto','mau odor','esquerda','30','7','5');
 
 insert into ferida
-VALUES('2','queda de biciclete','2023/02/16','faz o uso de hormonios','costela','superior','alto','sem mau odor','esquerda','21','7','4');
+VALUES('2','queda de biciclete','2023/02/16','faz o uso de hormonios','costela','superior','alto','sem mau odor','esquerda','21','7','3');
 
 insert into ferida
 VALUES('3','corte com faca','2023/01/22','faz uso de insulina','mao','superior','baixo','mau odor','direita','16','7','2');
@@ -281,7 +303,6 @@ VALUES('3','NotreDame Intermedica','individual','871.653.765-86','01.3210255.651
 
 
 
-
 insert into tratamento 
 VALUES ('1','possui fratura exposta','se recuperando da cirurgia','amoxicilina','prevista para 1 mes','1','1');
 
@@ -289,7 +310,7 @@ insert into tratamento
 VALUES ('2','queimadura severa','processo de cicatrizacao em andamento','dipirona','2 meses','3','8');
 
 insert into tratamento 
-VALUES ('3','cicatrizacao','se recuperando da cirurgia','amoxicilina','3 semanas','4','6');
+VALUES ('3','cicatrizacao','se recuperando da cirurgia','amoxicilina','3 semanas','5','6');
 
 
 
@@ -324,12 +345,26 @@ insert into medicamento
 VALUES('3','dipirona em 8H em 8H','dipirona','2','2022/01/06','2','6','1');
 
 
-
 insert into Epis
-VALUES('1','4','1','4');
+VALUES('1','4','1','2');
 
 insert into Epis
 VALUES('2','5','3','5');
 
 insert into Epis
 VALUES('3','1','2','6');
+
+
+
+insert into login_func
+VALUES ('','1234','1');
+
+insert into login_func
+VALUES ('','1234','8');
+
+insert into login_func
+VALUES ('','1234','10');
+
+insert into login_func
+VALUES ('','1234','11');
+
