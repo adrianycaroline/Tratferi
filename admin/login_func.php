@@ -24,7 +24,9 @@
                 
             }  
         else if($rowLogin['adm'] =='func'){
-            echo "<script>window.open('../client/index.php?cliente=".$login."','_self')</script>";
+            echo "<script>window.open('../func/index.php?funcionario=".$login."','_self')</script>";
+        }{
+
         }
         }else{
             echo "<script>window.open('invasor.php','_self')</script>";      
@@ -62,7 +64,7 @@
                     </div>
                     <button>Entrar</button>
                     <div class="register">
-                        <p>Não tem uma conta?<a href="cadastro.php">Cadastre-se!</a></p>
+                        <p>Não tem uma conta?<a href="cadastro.php?acesso=f">Cadastre-se!</a></p>
                     </div>
                 </form>
             </div>

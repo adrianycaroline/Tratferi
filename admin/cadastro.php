@@ -1,3 +1,23 @@
+<?php
+ include '../connection/connect.php';
+ if($_POST){
+    if($_Get['acesso']==p){
+        // iniciar o cadastro
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $email = $_POST['cpf'];
+        $loginRes = $conn->query("insert into pacientes (nome, )");
+       $rowLogin = $loginRes->fetch_assoc();
+       $numRow = mysqli_num_rows($loginRes);
+   
+    }else($_Get['acesso']==f){
+
+    }
+ }   
+
+    
+       
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -18,7 +38,7 @@
         <?php include '../logo_superior.php'?>
         <div id="formbox-cadastro">
             <div class="form-value">
-                <form action="">
+                <form action="prosseguir.php">
                     <h2>Cadastro</h2>
                     <div class="inputbox">
                         <ion-icon name="person-outline"></ion-icon>
@@ -35,17 +55,7 @@
                         <input type="text" name="cpf" onkeypress="$(this).mask('000.000.000-00');" required>
                         <label for="">CPF</label>
                     </div>
-                    <div class="inputbox show-password">
-                        <input type="password" name="password" id="senha" required>
-                        <label for="">Senha</label>
-                        <ion-icon name="eye-outline" type="button" style="cursor: pointer;" onclick="mostrarSenha()"></ion-icon>
-                    </div>
-                    <div class="inputbox show-password">    
-                        <input type="password" name="password" id="senha2" required>
-                        <label for="">Confirmar senha</label>
-                        <ion-icon name="eye-outline" type="button" style="cursor: pointer;" onclick="mostrarSenha2()"></ion-icon>
-                    </div>
-                    <button>Entrar</button>
+                    <button action="">Prosseguir</button>
                     <div class="register">
                     </div>
                 </form>

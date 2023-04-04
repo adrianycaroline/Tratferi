@@ -6,7 +6,7 @@
     // segurança digital...
     
     // verificar se o usuário está logado na sessão
-    if(!isset($_SESSION['usuario'])) {
+    if(!isset($_SESSION['cpf'])) {
         // se não existir, redirecionamos a sessão por segurança
         header('location: ../admin/verifica.php');
         exit;
