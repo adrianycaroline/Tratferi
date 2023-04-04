@@ -2,6 +2,7 @@
     session_name('usuario');
     if(!isset($_SESSION)){
         session_start();
+        
     }
     // segurança digital...
     
