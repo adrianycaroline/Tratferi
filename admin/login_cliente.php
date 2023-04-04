@@ -10,14 +10,14 @@
         $numRow = mysqli_num_rows($loginRes);
         // se a sessão existir ou não
          if(!isset($_SESSION)){
-             $sessaoAntiga = session_name('chulettaaa');
+             $sessaoAntiga = session_name('usuario');
            session_start();
              $session_name_new = session_name();
         }
         if($numRow>0){
                 echo "<script>window.open('../client/index.php','_self')</script>";
              }else{
-                echo "<script>window.open('login_cliente.php?acesso=n','_self')</script>";
+                echo "<script>window.open('invasor.php','_self')</script>";
            }
     }
 ?>
@@ -40,10 +40,6 @@
 <body>
     <section id="fundo_cli" style="display: flex; flex-direction: column;">
         <?php include '../logo_superior.php';?>
-        
-        <?php if($_GET){?>
-            <h1>Acesso Negado. Tente Novamente</h1>
-        <?php }?>
 
         <div class="formbox">
             <div class="form-value">
