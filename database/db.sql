@@ -5,6 +5,8 @@ use tratferi;
 
 
 
+
+
 create table funcionario(
 id int not null auto_increment,
 nome varchar(50) not null,
@@ -19,7 +21,7 @@ periodo varchar(20) not null,
 salario float(7,2) not null,
 data_entrada date not null,
 data_saida date null,
-adm BIT NOT NULL,
+adm enum('func','adm') not null,
 ativo BIT NOT NULL,
 primary key(id));
 
@@ -49,6 +51,13 @@ cep varchar(14) not null,
 id_func int not null,
 primary key(id),
 foreign key(id_func) references funcionario(id));
+
+create table estagio(
+id int not null auto_increment primary key,
+area enum('ti','med','enf','rep') not null,
+id_func int not null,
+foreign key (id_func) references funcionario(id));
+
 
 
 
