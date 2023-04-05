@@ -498,6 +498,45 @@ text-align:left
 
 }
 
+/*////////// CONTATO //////////////////////*/
+.content{
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    padding: 0 5%;
+    margin-bottom: 45px;
+}
+
+.left-side{
+    width: 100%;
+    margin-top: 45px;
+    padding-right: 5%;
+}
+
+.left-side h4{
+    font-size: 50px;
+    color: #38B6FF;
+}
+
+.rigth-side{
+    width: 100%;
+    margin-top: 45px;
+}
+
+.rigth-side img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.botao{
+    transition: transform 0.3s ease-in-out;
+}
+
+.botao:hover {
+    transform: scale(1.1);
+}
+.botao:not(:hover) {
+    transform: scale(1);
+}
 
 /*///////// FOOTER //////////////////////////*/
  .ancora{
@@ -505,5 +544,5 @@ text-align:left
     color: #fff;
  }
  .ancora:hover{
-    color: #fff;
+    color: #bdd1da;
  }
