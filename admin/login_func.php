@@ -17,10 +17,8 @@
             if($rowLogin['adm'] =='adm'){
                 echo "<script>window.open('../admin/index.php','_self')</script>";
             }  
-        else if($rowLogin['adm'] =='func'){
+        else if($rowLogin['adm'] == 'func'){
             echo "<script>window.open('../func/index.php?funcionario=".$login."','_self')</script>";
-        }{
-
         }
         }else{
             echo "<script>window.open('invasor.php','_self')</script>";      

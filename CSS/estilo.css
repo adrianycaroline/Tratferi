@@ -26,6 +26,11 @@
     align-items: center;
 }
 
+.fundo_areas{
+    background: url(../images/fundo.png) no-repeat fixed;
+    background-size: cover;
+}
+
 .buttonBoxMenu{
     color: white;
     border: solid 2px white;
@@ -451,7 +456,10 @@ button:hover{
     transform: scale(0.9);
 }
 /* //////////////////// Cards Conscientização /////////////////////// */
+.cards{
 
+    width: 50%;
+}
 
  /*///////// CONTATO //////////////////////////*/
  .form_container {
