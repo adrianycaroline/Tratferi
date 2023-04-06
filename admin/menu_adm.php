@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -11,68 +12,64 @@
         <div>
             <figure style="display: flex;">
                 <img src="../images/logoPesq.png" alt="Logo Tratferi" width="75vw"> 
-                <a href="" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none" style="font-size: 32pt;">
+                <a href="../index.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none" style="font-size: 32pt;">
                     Tratferi
                 </a> 
             </figure>
         </div>
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-            <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-            <span class="fs-4">Sidebar</span>
-        </a>
         
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
                 <a href="#" class="nav-link active" aria-current="page">
-                    <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+                    <img src="../images/dashboard.svg" alt="" width="20vw">
                     Dashboard
                 </a>
             </li>
             <li>
                 <a href="#" class="nav-link text-white">
-                    <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                    <img src="../images/usuarios.svg" alt="" width="20vw">
                     Pacientes
                 </a>
             </li>
             <li>
                 <a href="#" class="nav-link text-white">
-                    <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+                    <img src="../images/prontuario.svg" alt="" width="20vw">
                     Prontuário
                 </a>
             </li>
             <li>
                 <a href="#" class="nav-link text-white">
-                    <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+                    <img src="../images/cama.svg" alt="" width="20vw">
                     Leitos
                 </a>
             </li>
             <li>
                 <a href="#" class="nav-link text-white">
-                    <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+                    <img src="../images/predio.svg" alt="" width="20vw">    
                     Departamentos
                 </a>
             </li>
             <li>
                 <a href="#" class="nav-link text-white">
-                    <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+                    <img src="../images/predio.svg" alt="" width="20vw">    
                     Designação
                 </a>
             </li>
             <li>
                 <a href="#" class="nav-link text-white">
-                    <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+                    <img src="../images/predio.svg" alt="" width="20vw">    
                     RH
                 </a>
             </li>
             <li>
                 <a href="#" class="nav-link text-white">
-                    <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+                    <img src="../images/coracao.svg" alt="" width="20vw">    
                     Ajuda
                 </a>
             </li>
             <li>
                 <a href="#" class="nav-link text-white">
-                    <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+                    <img src="../images/anuncio.svg" alt="" width="20vw">
                     Anuncios
                 </a>
             </li>
@@ -81,7 +78,7 @@
         <div class="dropdown">
             <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                <strong>mdo</strong>
+                <strong><?php //echo($_SESSION['nome']); ?>Carlos</strong>
             </a>
             <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
                 <li><a class="dropdown-item" href="#">New project...</a></li>
@@ -93,4 +90,6 @@
         </div>
     </div>
 </body>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </html>
