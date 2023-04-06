@@ -26,6 +26,11 @@
     align-items: center;
 }
 
+.fundo_areas{
+    background: url(../images/fundo.png) no-repeat fixed;
+    background-size: cover;
+}
+
 .buttonBoxMenu{
     color: white;
     border: solid 2px white;
