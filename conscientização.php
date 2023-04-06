@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="Pt-Br">
 <head>
@@ -8,28 +9,35 @@
     <link rel="shortcut icon" href="images/logo_minimizada.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conscientização</title>
+<style>
+body {
+        background: url('images/FUNDO_VERIFICA.png') no-repeat;  
+        background-size: cover;
+    }
+</style>
 </head>
 <body>
 <?php include 'header_publico.php'?>
+
 <main>
     <!-- card 1  -->
     <div class="cards">
-    <div id="card1">
+    <div>
     <div class="card mb-3 card_focus">
           <div class="row no-gutters">
             <div class="col-md-4">
-              <div class ="card text-white d-flex" img src="images/celular.jpg" style="max-width: 100%; height: 20rem">
-              <img src="images/celular.jpg" alt="Descrição da imagem" style="max-width: 60rem; height: 100%">
-                <div class="card-body">
-                  <i class="fas fa-file-code"></i>
+              <div class ="card text-white">
+              <img src="images/celular.jpg" alt="Descrição da imagem" style="max-width: 100%; height: 20rem; ">
+                <div class="card-body" style="max-width: 100%; padding: 0%; height: 0%;>
+                  <i> class="fas fa-file-code"></i>
                 </div>
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
               <div class="card-body">
                 <h5 class="card-title">TRATFERI</h5>
                 <p class="card-text">
-                Informando Sobre Como Fazemos Nossos Serviços: <br>
+                Informando Sobre Como Fazemos Nossos Serviços: 
                  trabalharemos com voce pra levarmos <br>
                  o atendimento a sua casa <br>
                 Com Auxilio do Site e do aplicativo, <br>Seguramos Sua Mão Até a consulta <br>
@@ -50,9 +58,9 @@
         <div class="card mb-3 card_focus">
           <div class="row no-gutters">
             <div class="col-md-4">
-              <div class ="card text-white d-flex" img src="images/celular.jpg" style="max-width: 100%; height: 20rem">
+              <div class ="card text-white d-flex">
               <img src="images/alimento.jpg" alt="Descrição da imagem" style="max-width: 60rem; height: 100%">
-                <div class="card-body">
+                <div class="card-body"style="max-width: 100%; padding: 0%; height: 0%;>
                   <i class="fas fa-file-code"></i>
                 </div>
               </div>
@@ -85,9 +93,9 @@
         <div class="card mb-3 card_focus">
           <div class="row no-gutters">
             <div class="col-md-4">
-              <div class ="card text-white d-flex" img src="images/celular.jpg" style="max-width: 100%; height: 20rem">
+              <div class ="card text-white d-flex" img src="images/celular.jpg">
               <img src="images/exercicio.jpg" alt="Descrição da imagem" style="max-width: 60rem; height: 100%">
-                <div class="card-body">
+                <div class="card-body" style="max-width: 100%; padding: 0%; height: 0%;>>
                   <i class="fas fa-file-code"></i>
                 </div>
               </div>

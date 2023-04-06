@@ -54,7 +54,7 @@
                         <div class="row">
                             <div class="col-sm-6 text-center">
                                 <ion-icon class="tamanhoIcon" name="people-outline"></ion-icon>
-                                <a href="login_cliente.php" class="btn btn-primary btn-block">Sou Paciente</a>
+                                <a href="../client/index.php" class="btn btn-primary btn-block">Sou Paciente</a>
                             </div>
                             <div class="col-sm-6 text-center">
                                 <img src="../images/Simbol_medicina.png" alt="Simbolo Medicina" width="110vh">

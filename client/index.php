@@ -1,7 +1,3 @@
 <?php 
-    include '../admin/acesso_com.php';
-    if(!isset($_GET["acesso"])){
-        header('location: ../admin/verifica.php');
-        exit;
-    }
+    include '../admin/acesso_com_pac.php';
 ?>

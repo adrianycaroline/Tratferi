@@ -461,6 +461,11 @@ button:hover{
     transform: scale(0.9);
 }
 /* //////////////////// Cards Conscientização /////////////////////// */
+.cards{
+
+    width: 50%;
+}
+
 
 
  /*///////// CONTATO //////////////////////////*/

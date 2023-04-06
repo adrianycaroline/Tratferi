@@ -11,14 +11,11 @@
         $numRow = mysqli_num_rows($loginRes);
         // se a sessão existir ou não
         if ($numRow>0){
-            session_name('usuario');
+            $_SESSION['cpf'] = $login;
             session_start();
-            $_SESSION['login'] = "tratferi";
-            $_SESSION['cpf'] = $rowLogin['adm'];
-            $_SESSION['nome_da_sessao'] = session_name();
-            if($rowLogin['adm'] == 'adm'){
+            $_SESSION['login'] = "tratferiFun";
+            if($rowLogin['adm'] =='adm'){
                 echo "<script>window.open('../admin/index.php','_self')</script>";
-                
             }  
         else if($rowLogin['adm'] == 'func'){
             echo "<script>window.open('../func/index.php?funcionario=".$login."','_self')</script>";
