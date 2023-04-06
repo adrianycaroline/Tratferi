@@ -26,10 +26,10 @@ body {
     <div class="card mb-3 card_focus">
           <div class="row no-gutters">
             <div class="col-md-4">
-              <div class ="card text-white " img src="images/celular.jpg" style="max-width: 100%; height: 20rem">
-              <img src="images/celular.jpg" alt="Descrição da imagem" style="max-width: 100%; height: 20rem; object-fit: cover">
-                <div class="card-body">
-                  <i class="fas fa-file-code"></i>
+              <div class ="card text-white">
+              <img src="images/celular.jpg" alt="Descrição da imagem" style="max-width: 100%; height: 20rem; ">
+                <div class="card-body" style="max-width: 100%; padding: 0%; height: 0%;>
+                  <i> class="fas fa-file-code"></i>
                 </div>
               </div>
             </div>
@@ -58,9 +58,9 @@ body {
         <div class="card mb-3 card_focus">
           <div class="row no-gutters">
             <div class="col-md-4">
-              <div class ="card text-white d-flex" img src="images/celular.jpg" style="max-width: 100%; height: 20rem">
+              <div class ="card text-white d-flex">
               <img src="images/alimento.jpg" alt="Descrição da imagem" style="max-width: 60rem; height: 100%">
-                <div class="card-body">
+                <div class="card-body"style="max-width: 100%; padding: 0%; height: 0%;>
                   <i class="fas fa-file-code"></i>
                 </div>
               </div>
@@ -93,9 +93,9 @@ body {
         <div class="card mb-3 card_focus">
           <div class="row no-gutters">
             <div class="col-md-4">
-              <div class ="card text-white d-flex" img src="images/celular.jpg" style="max-width: 100%; height: 20rem">
+              <div class ="card text-white d-flex" img src="images/celular.jpg">
               <img src="images/exercicio.jpg" alt="Descrição da imagem" style="max-width: 60rem; height: 100%">
-                <div class="card-body">
+                <div class="card-body" style="max-width: 100%; padding: 0%; height: 0%;>>
                   <i class="fas fa-file-code"></i>
                 </div>
               </div>
