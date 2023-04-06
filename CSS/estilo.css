@@ -26,6 +26,11 @@
     align-items: center;
 }
 
+.card {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
 .fundo_areas{
     background: url(../images/fundo.png) no-repeat fixed;
     background-size: cover;
