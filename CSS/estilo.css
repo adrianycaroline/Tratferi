@@ -27,8 +27,8 @@
 }
 
 .card {
-    margin-left: 25px;
     margin-right: 25px;
+    margin-bottom: 20px;
 }
 
 .fundo_areas{
@@ -561,3 +561,5 @@ text-align:left
  .ancora:hover{
     color: #bdd1da;
  }
+
+

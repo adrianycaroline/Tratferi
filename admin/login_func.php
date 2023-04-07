@@ -5,7 +5,7 @@
       if($_POST){
         $cpf = $_POST['cpf'];
         $senha = $_POST['senha'];
-        $loginRes = $conn->query("SELECT funcionario.cpf as cpf, funcionario.adm as adm, Login_func.senha as senha FROM Login_func
+        $loginRes = $conn->query("SELECT funcionario.nome as nome, funcionario.cpf as cpf, funcionario.adm as adm, Login_func.senha as senha FROM Login_func
         inner join funcionario ON (Login_func.id_func = funcionario.id) where cpf = '$cpf' AND senha = '$senha'");
         $rowLogin = $loginRes->fetch_assoc();
         $numRow = mysqli_num_rows($loginRes);
@@ -13,6 +13,7 @@
         if ($numRow>0){
             $_SESSION['cpf'] = $login;
             session_start();
+            $_SESSION['nome'] = $rowLogin['nome'];
             $_SESSION['login'] = "tratferiFun";
             if($rowLogin['adm'] =='adm'){
                 echo "<script>window.open('../admin/index.php','_self')</script>";
