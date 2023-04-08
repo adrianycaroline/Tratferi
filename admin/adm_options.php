@@ -22,7 +22,7 @@
         </div>
         <div>
             <br>
-            <div style="display: flex; justify-content: end; flex-wrap: wrap;">
+            <div style="display: flex; flex-wrap: wrap; margin-left: 20px;">
                 <div class="card bg-dark" style="width: 18rem; height: 12rem;">
                     <div class="d-flex" style="justify-content: space-between;">
                         <img src="../images/users.png" alt="Usuários" style="margin: 10px;" width="50vw">
