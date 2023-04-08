@@ -8,8 +8,8 @@
     <title>Barra Lateral</title>
 </head>
 <body>
-    <div>
-        <div class="d-flex flex-column flex-shrink-0 p-3 bg-azul" style="position: fixed; top: 0; left: 0; bottom: 0; width: 280px;">
+    <div id="escondido">
+        <div class="d-flex flex-column flex-shrink-0 p-3 bg-azul"  style="position: fixed; top: 0; left: 0; bottom: 0; width: 280px;">
             <div>
                 <figure style="display: flex;">
                     <img src="../images/logoPesq.png" alt="Logo Tratferi" width="75vw"> 
@@ -76,8 +76,8 @@
             </ul>
             <hr>
             <div class="dropdown">
-                <button class="dropdown-toggle bg-azul border-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                <button class="dropdown-toggle bg-azul border-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="" aria-expanded="false">
+                    <img src="https://github.com/mdo.png" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="32" height="32" class="rounded-circle me-2">
                     <strong><a style="text-decoration: none; color: white;" href="../admin/logout_Fun.php">Sair</a></strong>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">

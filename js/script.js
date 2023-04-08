@@ -11,6 +11,3 @@ function atualizarHoras() {
     document.getElementById("horas").innerHTML = horas + ":" + minutos + ":" + segundos;
     setTimeout(atualizarHoras, 1000);
 }
-
-
-

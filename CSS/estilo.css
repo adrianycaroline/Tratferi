@@ -610,3 +610,28 @@ text-align:left
 .card:not(:hover) {
     transform: scale(1.0);
 }
+
+#escondido2{
+    margin-left: 280px;
+}
+
+#img-bloqueado{
+    display: none;
+}
+
+@media (max-width: 926px) {
+    #escondido{
+        display: none;
+    }
+
+    #escondido2{
+        margin-left: 0;
+    }
+
+    #img-bloqueado{
+        display: block;
+    }
+}
+
+
+
