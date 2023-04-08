@@ -1,4 +1,5 @@
 <?php
+    include '../admin/acesso_com_fun.php';
    include '../connection/connect.php';
 
     //Iniciar a verificação do login
