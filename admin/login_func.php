@@ -23,7 +23,7 @@
             echo "<script>window.open('../func/index.php?funcionario=".$login."','_self')</script>";
         }
         }else{
-            echo "<script>window.open('invasor.php','_self')</script>";      
+            echo "<script>alert('Senha ou CPF incorretos!');</script>";
         }
     }
 ?>
@@ -45,18 +45,18 @@
                     <h2>Login Funcionario</h2>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
-                        <input type="text" name="cpf" id="cpf" onkeypress="$(this).mask('000.000.000-00');" required>
+                        <input type="text" name="cpf" placeholder="Digite o seu CPF..." id="cpf" onkeypress="$(this).mask('000.000.000-00');" required>
                         <label for="">CPF</label>
                     </div>
                     <div class="inputbox show-password">
-                        <input type="password" name="senha" id="senha" required>
+                        <input type="password" name="senha" placeholder="Digite a sua Senha..." id="senha" required>
                         <label for="">Senha</label>
                         <ion-icon name="eye-outline" type="button" style="cursor: pointer;" onclick="mostrarSenha()"></ion-icon>
                     </div>
                     <div class="forget">
                         <label for=""><input type="checkbox">Lembrar senha <a href="recuperacao.php">Esqueci minha senha :</a></label>
                     </div>
-                    <button>Entrar</button>
+                    <button id="loginBtn">Entrar</button>
                     <div class="register">
                         <p>Não tem uma conta?<a href="cadastro.php">Cadastre-se!</a></p>
                     </div>

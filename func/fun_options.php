@@ -99,15 +99,14 @@
             </ul>
             <hr>
             <div class="dropdown">
-                <button class="dropdown-toggle bg-azul border-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="bg-azul border-0 dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                    <strong><a style="text-decoration: none; color: white;" href="../admin/logout_Fun.php">Sair</a></strong>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Novo Projeto</a>
-                    <a class="dropdown-item" href="#">Configurações</a>
-                    <a class="dropdown-item" href="#">Perfil</a>
-                </div>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">Novo Projeto</a></li>
+                    <li><a class="dropdown-item" href="#">Configurações</a></li>
+                    <li><a class="dropdown-item" href="#">Perfil</a></li>
+                </ul>
             </div>
         </div>
         </div>
@@ -193,12 +192,17 @@ imgBloqueado.addEventListener('click', function() {
         menuDropdown.style.display = 'none';
         escondido2.style.marginLeft = '0px';
         menuAberto = false;
+        window.location.reload();
     }else{
         menuDropdown.style.display = 'block';
         escondido2.style.marginLeft = '80px';
         menuAberto = true;
+        window.addEventListener("resize", function(){
+            if (window.innerWidth > 926) {
+                window.location.reload();
+            }
+        });
     }
 });
-
 </script>
 </html>

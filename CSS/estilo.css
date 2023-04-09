@@ -633,5 +633,12 @@ text-align:left
     }
 }
 
+#cpf::placeholder{
+    color: rgb(199, 199, 199);
+}
 
+#senha::placeholder{
+    color: rgb(199, 199, 199);
+}
+  
 
