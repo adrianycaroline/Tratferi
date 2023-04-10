@@ -42,8 +42,9 @@
                 <img src="images/celulares.png" alt="Celulares Download">
             </div>
         </div>
-        <br><br>
+        <br><br><br><br><br><br><br><br> 
     </main>
-    <?php include 'footer.php'?>
+   
 </body>
+<?php include 'footer.php'?>
 </html>
