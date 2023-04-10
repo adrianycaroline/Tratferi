@@ -56,10 +56,27 @@
                                 <ion-icon class="tamanhoIcon" name="people-outline"></ion-icon>
                                 <a href="../client/index.php" class="btn btn-primary btn-block">Sou Paciente</a>
                             </div>
+                                <?php 
+                                   session_start();
+                                ?>
+                                <?php if((isset($_SESSION['login'])) && ($_SESSION['login'] != "tratferi")) {?>
+                                <?php if($_SESSION['login'] == "tratferiFun") {?>
                             <div class="col-sm-6 text-center">
                                 <img src="../images/Simbol_medicina.png" alt="Simbolo Medicina" width="110vh">
-                                <a href="login_func.php" class="btn laranja btn-block text-light">Sou Funcionário</a>
+                                <a href="../func/index.php" class="btn laranja btn-block text-light">Sou Funcionário</a>
                             </div>
+                                <?php }elseif($_SESSION['login'] == "tratferiAdm") {?>
+                            <div class="col-sm-6 text-center">
+                                <img src="../images/Simbol_medicina.png" alt="Simbolo Medicina" width="110vh">
+                                <a href="../admin/index.php" class="btn laranja btn-block text-light">Sou Administrador</a>
+                            </div>
+                                <?php }?>
+                                <?php }else {?>
+                            <div class="col-sm-6 text-center">
+                                <img src="../images/Simbol_medicina.png" alt="Simbolo Medicina" width="110vh">
+                                <a href="../admin/login_func.php" class="btn laranja btn-block text-light">Sou Funcionário</a>
+                            </div>
+                                <?php }?>     
                         </div>
                     </div>
                 </div>

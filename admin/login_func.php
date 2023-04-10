@@ -1,5 +1,4 @@
 <?php
-    include '../admin/acesso_com_fun.php';
    include '../connection/connect.php';
 
     //Iniciar a verificação do login
@@ -15,11 +14,12 @@
             $_SESSION['cpf'] = $login;
             session_start();
             $_SESSION['nome'] = $rowLogin['nome'];
-            $_SESSION['login'] = "tratferiFun";
             if($rowLogin['adm'] =='adm'){
+                $_SESSION['login'] = "tratferiAdm";
                 echo "<script>window.open('../admin/index.php','_self')</script>";
             }  
         else if($rowLogin['adm'] == 'func'){
+            $_SESSION['login'] = "tratferiFun";
             echo "<script>window.open('../func/index.php?funcionario=".$login."','_self')</script>";
         }
         }else{
