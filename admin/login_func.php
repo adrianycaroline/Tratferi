@@ -18,10 +18,10 @@
                 $_SESSION['login'] = "tratferiAdm";
                 echo "<script>window.open('../admin/index.php','_self')</script>";
             }  
-        else if($rowLogin['adm'] == 'func'){
-            $_SESSION['login'] = "tratferiFun";
-            echo "<script>window.open('../func/index.php?funcionario=".$login."','_self')</script>";
-        }
+            else if($rowLogin['adm'] == 'func'){
+                $_SESSION['login'] = "tratferiFun";
+                echo "<script>window.open('../func/index.php?funcionario=".$login."','_self')</script>";
+            }
         }else{
             echo "<script>alert('Senha ou CPF incorretos!');</script>";
         }
