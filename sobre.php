@@ -30,6 +30,7 @@
             </div>
         </div>
     </main>
+    <br>
     <?php include 'footer.php';?>
 </body>
 <!-- link para bootstrap -->
