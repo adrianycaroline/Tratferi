@@ -22,10 +22,10 @@
         <p class="description">Por favor insira o código que lhe enviamos.</p>
         </div>
             <div class="inputs">
-            <input placeholder="" type="tel" maxlength="1">
-            <input placeholder="" type="tel" maxlength="1">
-            <input placeholder="" type="tel" maxlength="1">
-            <input placeholder="" type="tel" maxlength="1">
+            <input placeholder="" type="tel" maxlength="1" id="meuInput">
+            <input placeholder="" type="tel" maxlength="1" id="meuInput">
+            <input placeholder="" type="tel" maxlength="1" id="meuInput">
+            <input placeholder="" type="tel" maxlength="1" id="meuInput">
         </div>
             <a class="validate"  href="verifica.php">Verificar</a>
         <p class="resend">Você não recebeu o código?<a class="resend-action">reenviar</a></p>
@@ -48,8 +48,26 @@
                 if (index < inputs.length - 1) {
                     inputs[index + 1].focus();
                 }
+            }else if (input.value.length != input.maxLength){
+                if (index < inputs.length + 1) {
+                    inputs[index - 1].focus();
+                }
             }
         });
     });
+</script>
+<script>
+const input = document.getElementById("meuInput");
+
+input.addEventListener("keydown", (event) => {
+  // Obtem o código da tecla pressionada
+  const keyCode = event.keyCode || event.which;
+
+  // Verifica se a tecla pressionada é um número
+  if (keyCode < 48 || keyCode > 57) {
+    // Impede a propagação do evento
+    event.preventDefault();
+  }
+});
 </script>
 </html>

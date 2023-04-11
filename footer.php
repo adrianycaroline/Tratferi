@@ -39,6 +39,9 @@
                         <div class="">
                           <table class="">
                             <tr class="nav-item">
+                              <a class="nav-link" href="index.php#conscientizacao" style="color: #fff; font-size: 20px;">Home</a>
+                            </tr>
+                            <tr class="nav-item">
                               <a class="nav-link" href="index.php#conscientizacao" style="color: #fff; font-size: 20px;">Conscientização</a>
                             </tr>
                             <tr class="nav-item">
