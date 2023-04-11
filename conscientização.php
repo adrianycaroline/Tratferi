@@ -3,10 +3,14 @@
 <html lang="Pt-Br">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="CSS/estilo.css">
+    <link rel="stylesheet" href='CSS/estilo.css'>
     <link rel="shortcut icon" href="images/logo_minimizada.png" type="image/x-icon">
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conscientização</title>
 <style>
@@ -28,7 +32,7 @@ body {
             <div class="col-md-4">
               <div class ="card text-white">
               <img src="images/celular.jpg" alt="Descrição da imagem" style="max-width: 100%; height: 20rem; ">
-                <div class="card-body" style="max-width: 100%; padding: 0%; height: 0%;>
+                <div class="card-body" style="max-width: 100%; padding: 0%; height: 0%;">
                   <i> class="fas fa-file-code"></i>
                 </div>
               </div>
@@ -60,7 +64,7 @@ body {
             <div class="col-md-4">
               <div class ="card text-white d-flex">
               <img src="images/alimento.jpg" alt="Descrição da imagem" style="max-width: 60rem; height: 100%">
-                <div class="card-body"style="max-width: 100%; padding: 0%; height: 0%;>
+                <div class="card-body"style="max-width: 100%; padding: 0%; height: 0%;">
                   <i class="fas fa-file-code"></i>
                 </div>
               </div>
@@ -95,7 +99,7 @@ body {
             <div class="col-md-4">
               <div class ="card text-white d-flex" img src="images/celular.jpg">
               <img src="images/exercicio.jpg" alt="Descrição da imagem" style="max-width: 60rem; height: 100%">
-                <div class="card-body" style="max-width: 100%; padding: 0%; height: 0%;>>
+                <div class="card-body" style="max-width: 100%; padding: 0%; height: 0%;">
                   <i class="fas fa-file-code"></i>
                 </div>
               </div>
