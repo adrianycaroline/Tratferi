@@ -39,10 +39,10 @@
                         <div class="">
                           <table class="">
                             <tr class="nav-item">
-                              <a class="nav-link" href="index.php#conscientizacao" style="color: #fff; font-size: 20px;">Home</a>
+                              <a class="nav-link" href="index.php#" style="color: #fff; font-size: 20px;">Home</a>
                             </tr>
                             <tr class="nav-item">
-                              <a class="nav-link" href="index.php#conscientizacao" style="color: #fff; font-size: 20px;">Conscientização</a>
+                              <a class="nav-link" href="conscientização.php" style="color: #fff; font-size: 20px;">Conscientização</a>
                             </tr>
                             <tr class="nav-item">
                               <a class="nav-link" href="download.php" style="color: #fff; font-size: 20px;">Downloads</a>
@@ -51,7 +51,7 @@
                               <a class="nav-link" href="sobre.php" style="color: #fff; font-size: 20px;">Sobre</a>
                             </tr>
                             <tr class="nav-item">
-                              <a class="nav-link" href="index.php#sobre" style="color: #fff; font-size: 20px;">Fale conosco</a>
+                              <a class="nav-link" href="" style="color: #fff; font-size: 20px;">Fale conosco</a>
                             </tr>
                           </table>
                         </div>

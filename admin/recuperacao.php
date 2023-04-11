@@ -5,46 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href='../CSS/estilo.css'>
     <link rel="shortcut icon" href="../images/logo_minimizada.png" type="image/x-icon">
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-    
     <title>Recuperação</title>
 </head>
 <body>
     <section id="fundo_cli" style="display: flex; flex-direction: column;">
-        <?php include '../logo_superior.php';?>
-        <div class="formbox">
+        <?php include '../logo_superior.php'?>
+        <div id="formbox-cadastro" class="sombra">
             <div class="form-value">
-                <form action="">
-                    <h2>Esqueci minha senha</h2>
+                <form action="prosseguirRecuperar.php">
+                    <h2>Recuperação de Senha</h2>
                     <div class="inputbox">
-                        <ion-icon name="mail-outline"></ion-icon>
+                        <ion-icon name="person-outline"></ion-icon>
+                        <input type="text" name="nome" required>
+                        <label for="">Nome</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
                         <input type="email" name="email" required>
-                        <label for="">Email</label>
-                    </div>
-                    <div class="inputbox show-password">
-                        <input type="password" name="password" id="senha" required>
-                        <label for="">Crie uma nova senha</label>
-                        <ion-icon name="eye-outline" type="button" style="cursor: pointer;" onclick="mostrarSenha()"></ion-icon>
+                        <label for="">E-mail</label>
                     </div>
                     <div class="inputbox">
-                        <input type="password" name="password" id="senha2" required>
-                        <label for="">Confirme a nova senha</label>
-                        <ion-icon name="eye-outline" type="button" style="cursor: pointer;" onclick="mostrarSenha2()"></ion-icon>
+                        <ion-icon name="wallet-outline"></ion-icon>
+                        <input type="text" name="cpf" onkeypress="$(this).mask('000.000.000-00');" required>
+                        <label for="">CPF</label>
                     </div>
-                    <button>Atualizar</button>
+                    <button action="">Prosseguir</button>
+                    <div class="register">
+                    </div>
                 </form>
             </div>
         </div>
         <?php include '../termos_texto.php';?>
     </section>
+</body>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-</body>
     <script>
         function mostrarSenha() {
             var senha = document.getElementById("senha");

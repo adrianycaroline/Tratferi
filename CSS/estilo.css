@@ -66,6 +66,10 @@
 	transition: all 0.3s ease;
 	text-decoration: none;
 }
+.sombra{
+    -webkit-box-shadow: 0px 87px 78px -39px rgba(0,0,0,0.4);
+    box-shadow: 0px 87px 78px -39px rgba(0,0,0,0.4);
+}
 
 /* começo login */
 
@@ -106,9 +110,8 @@ section{
     border: 2px solid white;
     border-radius: 20px; 
     backdrop-filter:blur(30px);
-
-
-
+    -webkit-box-shadow: 0px 87px 78px -39px rgba(0,0,0,0.4);
+    box-shadow: 0px 87px 78px -39px rgba(0,0,0,0.4);
 }
 
 .formbox h2{

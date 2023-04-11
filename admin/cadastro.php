@@ -38,7 +38,7 @@
 <body>
     <section id="fundo_cli" style="display: flex; flex-direction: column;">
         <?php include '../logo_superior.php'?>
-        <div id="formbox-cadastro">
+        <div id="formbox-cadastro" class="sombra">
             <div class="form-value">
                 <form action="prosseguir.php">
                     <h2>Cadastro</h2>
