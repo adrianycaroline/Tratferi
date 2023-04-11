@@ -513,7 +513,7 @@ text-align:left
 
 }
 
-/*////////// CONTATO //////////////////////*/
+/*////////// FORMULÁRIO DE CONTATO //////////////////////*/
 .content{
     display: flex;
     font-family: 'Poppins', sans-serif;
@@ -553,6 +553,19 @@ text-align:left
     transform: scale(1);
 }
 
+.fundo_cont{
+    /* fundo do contato */
+     background: url('../images/fundo_contato.png');
+     background-position: center;
+     background-size: cover;
+}
+
+.texto_contato{
+    text-align: center;
+    margin-top: 10%;
+    color: #2b8af7;
+    font-family: 'Poppins', sans-serif;
+}
 /*///////// FOOTER //////////////////////////*/
  .ancora{
     text-decoration: none;

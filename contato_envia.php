@@ -3,48 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo_minimizada.png" type="image/x-icon">
     <link rel="stylesheet" href="CSS/estilo.css">
-    <title>Document</title>
+    <title>Contato</title>
 </head>
-<body>
-<?php 
-$nome = $_POST['nome_contato'];
-$email = $_POST['email_contato'];
-$mensagem = $_POST['comentario_contato'];
+    <body class="fundo_cont">
+        <?php
+        $nome = $_POST['nome_contato'];
+        $email = $_POST['email_contato'];
+        $mensagem = $_POST['comentario_contato'];
 
-require 'php-mailer/PHPMailerAutoload.php';
+        use PHPMailer\PHPMailer\PHPMailer;
+        use PHPMailer\PHPMailer\SMTP;
+        use PHPMailer\PHPMailer\Exception;
 
-$mail = new PHPMailer;
-$mail->isSMTP();
+require './lib/vendor/autoload.php';
 
-//Configurando Servidor de e-mail
+        $mail = new PHPMailer(true);
 
-$mail->Host = "smtp.office365.com";
-$mail->Port = "587";
-$mail->SMTPSecure = "STARTTLS";
-$mail->SMTPAuth = "true";
-$mail->Username = "";
-$mail->Password = "";
+        try {
+            //$mail->SMTPDebug = SMTP::DEBUG_SERVER;
+            $mail->CharSet = 'UTF-8';
+            $mail->isSMTP();
+            $mail->Host = 'smtp.office365.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'tratferi_site@outlook.com';
+            $mail->Password = 'Trat@123';
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = 587;
 
-//configuração da mensagem
+            $mail->setFrom('tratferi_site@outlook.com', 'Atendimento TratFeri'); // site
+            $mail->addAddress('tratferi@gmail.com', 'TratFeri'); //ADM
+            
+            $mail->isHTML(true);                                 
+            $mail->Subject = "Mensagem de $nome";
+            $mail->Body = "$mensagem<br>Email de contato: $email";
 
-$mail->setFrom($mail->Username, ""); //Rementente Site
-$mail->addAddress("gustoliv10@gmail.com"); //Destinatário ADM
-$mail->Subject = "Fale Conosco"; //Assunto
+            $mail->send(); ?>
+            <!-- se funcionar -->
+            <h3 class="texto_contato">E-mail enviado com sucesso! Agradecemos o Contato</h3>
 
-$conteudo_email = "Você recebeu uma mensagem de $nome. E-mail: $email.
-<br><br>
-Mensagem:<br>
-$mensagem";
-
-$mail->isHTML(true);
-$mail->Body = $conteudo_email;
-
-if($mail->send()){?>
-    <h1>Mensagem Enviada com Sucesso. Agradecemos por Entrar em Contato!</h1>
-<?php }else{ ?>
-    <h1>Mensagem Não Enviada. Tente Novamente</h1>
-<?php }?>
-
-</body>
+        <?php } catch (Exception $e) { ?>
+            <!-- se não funcionar  -->
+            <h3 class="texto_contato">E-mail não enviado com sucesso. Tente novamente</h3>
+        <?php }?>
+        
+    </body>
 </html>
