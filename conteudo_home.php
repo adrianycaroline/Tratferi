@@ -31,7 +31,7 @@
   <!-- fim barra de pesquisa -->
   </div>
     <!-- fim do banner -->
-    <div style="background-color: #5CE1E6;">
+    <div style="background-color: #b2f8f9;">
     <br>
     <br>
 <!-- começo dos cards  -->
