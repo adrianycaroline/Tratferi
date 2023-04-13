@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/bootstrap.min.css">
     <link rel="stylesheet" href="../CSS/estilo.css">
+    <link rel="stylesheet" href="../CSS/dropdown.css">
     <title>Barra Lateral</title>
 </head>
 <body>
@@ -26,10 +27,16 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link">
-                        <img src="../images/usuarios.svg" alt="" width="20vw">
-                        Pacientes
-                    </a>
+                    <div class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" role="button" id="dropdownMenuCadastro" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="../images/usuarios.svg" alt="" width="20vw">
+                            Cadastrar
+                        </a>
+                        <div class="dropdown-menu cadas" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Paciente</a>
+                            <a class="dropdown-item" href="#">Funcionário</a>
+                        </div>
+                    </div>
                 </li>
                 <li>
                     <a href="#" class="nav-link">
@@ -80,7 +87,7 @@
                     <img src="https://github.com/mdo.png" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="32" height="32" class="rounded-circle me-2">
                     <strong><a style="text-decoration: none; color: white;" href="../admin/logout_Fun.php">Sair</a></strong>
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <div class="dropdown-menu user" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="#">Novo Projeto</a>
                     <a class="dropdown-item" href="#">Configurações</a>
                     <a class="dropdown-item" href="#">Perfil</a>
@@ -93,4 +100,5 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="../js/script.js"></script>
+    <script src="../js/dropdown.js"></script>
 </html>
