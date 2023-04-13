@@ -1,0 +1,30 @@
+/* Menu dropdown usuário */
+.dropdown-menu {
+    display: none;
+  }
+  
+  .show {
+    display: block;
+}
+
+.dropdown {
+    position: relative;
+  }
+  
+  .user {
+    position: absolute;
+    top: -80px;
+    left: 37%;
+    margin-left: .5rem;
+    border: 1.8px solid black;
+  }
+
+/* Menu dropdown Cadastrar */
+  .cadas {
+    position: absolute;
+    top: 32px;
+    left: 15%;
+    margin-left: .5rem;
+    border: 1.8px solid black;
+  }
+  
