@@ -465,7 +465,6 @@ button:hover{
 }
 /* //////////////////// Cards Conscientização /////////////////////// */
 .cards{
-
     width: 50%;
 }
 
@@ -510,10 +509,8 @@ button:hover{
   }
 
 .cards{
-
-justify-content: center;
-text-align:left
-
+    justify-content: center;
+    text-align:left
 }
 
 /*////////// FORMULÁRIO DE CONTATO //////////////////////*/
@@ -656,40 +653,3 @@ text-align:left
 #senha::placeholder{
     color: rgb(199, 199, 199);
 }
-
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-  
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    z-index: 1;
-}
-  
-.dropdown-menu a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-}
-  
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-  
-.dropbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-  
-.dropbtn:hover {
-    background-color: #3e8e41;
-}
-  
