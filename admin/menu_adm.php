@@ -33,8 +33,8 @@
                             Cadastrar
                         </a>
                         <div class="dropdown-menu cadas" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Paciente</a>
-                            <a class="dropdown-item" href="#">Funcionário</a>
+                            <a class="dropdown-item" href="../admin/cadastrar_funcionario.php">Paciente</a>
+                            <a class="dropdown-item" href="../admin/cadastrar_paciente.php">Funcionário</a>
                         </div>
                     </div>
                 </li>
