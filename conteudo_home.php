@@ -29,7 +29,7 @@
       </div>
     </nav>
   </div> <!-- fim barra de pesquisa --><!-- fim do banner -->
-  <div style="background-color: #fff;">
+  <div style="background-color: #b2f8f9;">
     <br>
     <br>
     <!-- começo dos cards  -->

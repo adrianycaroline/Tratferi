@@ -701,6 +701,7 @@ input:focus ~ :valid{
     backface-visibility: hidden;
     border: 1px solid #5CE1E6;
     border-radius: 1rem;
+    background-color: white; 
   }
   
   .flip-card-front {
