@@ -207,7 +207,7 @@ input:focus ~ :valid{
 
 }
 
-button:hover{
+#loginBtn:hover{
     background-color: rgb(23, 182, 23);
     color: #fff;
     transition: 0.5s;

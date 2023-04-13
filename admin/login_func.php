@@ -57,9 +57,6 @@
                         <label for=""><input type="checkbox">Lembrar senha <a href="recuperacao.php">Esqueci minha senha :</a></label>
                     </div>
                     <button id="loginBtn">Entrar</button>
-                    <div class="register">
-                        <p>Não tem uma conta?<a href="cadastro.php">Cadastre-se!</a></p>
-                    </div>
                 </form>
             </div>
         </div>

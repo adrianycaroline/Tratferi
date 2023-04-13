@@ -9,7 +9,7 @@
 <body>
   <!-- banner -->
   <div class="position-relative">
-    <img src="images/bann.png" class="img-responsive" width="100%">
+    <img src="images/bann2.jpg" class="img-responsive" width="100%">
     <!-- barra de pesquisa -->
     <nav class="navbar bg-body-tertiary position-absolute top-50 start-50 translate-middle">
       <div class="container-fluid">

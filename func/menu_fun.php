@@ -76,7 +76,7 @@
             </ul>
             <hr>
             <div class="dropdown">
-                <a class="dropdown-toggle bg-azul border-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="dropdown bg-azul border-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img src="https://github.com/mdo.png" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="32" height="32" class="rounded-circle me-2">
                     <strong><a style="text-decoration: none; color: white;" href="../admin/logout_Fun.php">Sair</a></strong>
                 </a>
