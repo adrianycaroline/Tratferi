@@ -29,8 +29,7 @@
                         <p class="text-light" style="font-size: 28pt; margin-right: 15px;">3</p>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-light">Médicos Ativos</h5>
-                    
+                        <h5 class="card-title text-light"><a href="../admin/adm_cadastrar_user.php" id="AdmOpcoesbtn">Cadastrar Usuários</a></h5>
                     </div>
                 </div>
                 <div class="card bg-dark" style="width: 18rem; height: 12rem;">
@@ -39,7 +38,7 @@
                         <p class="text-light" style="font-size: 28pt; margin-right: 15px;">3</p>
                     </div>    
                     <div class="card-body">
-                        <h5 class="card-title text-light">Pacientes Ativos</h5>
+                        <h5 class="card-title text-light"><a href="../admin/adm_solicitacoes_user.php" id="AdmOpcoesbtn">Solicitações de Cadastro</a></h5>
                     </div>
                 </div>
                 <div class="card bg-dark" style="width: 18rem; height: 12rem;">
@@ -48,7 +47,7 @@
                         <p class="text-light" style="font-size: 28pt; margin-right: 15px;">3</p>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-light">Representantes</h5>
+                        <h5 class="card-title text-light"><a href="../admin/adm_lista_users.php" id="AdmOpcoesbtn">Usuários Cadastrados</a></h5>
                     </div>
                 </div>
                 <div class="card bg-dark" style="width: 18rem; height: 12rem;">

@@ -44,12 +44,7 @@ uf varchar(2) not null,
 cep varchar(14) not null,
 id_func int not null,
 primary key(id),
-foreign key(id_func) references funcionario(id));
-
-
-
-
-
+foreign key(id_func) references funcionario(id))
 
 create table paciente(
 id int not null auto_increment,
