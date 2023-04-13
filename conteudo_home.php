@@ -41,10 +41,10 @@
     <div class="flip-card-front">
       <img src="images/atendimento.jpg" alt="">
       <br> 
+      <p class="card-text"> Nossos ideais como empresa</p>
       <p class="card-text" style="color: #38B6FF;">Saiba mais...</p>
-           <br><br>
       <small class="text-muted">©2023 Tratferi-Todos os direitos reservados</small>
-        </p>
+      </p>
     </div>
     <div class="flip-card-back">
     <p class="card-text text-muted">
@@ -64,10 +64,10 @@
     <div class="flip-card-front">
       <img src="images/anota.jpg" alt="">
       <br> 
+      <p class="card-text">Como Entregamos nosso atendimento ?</p>
       <p class="card-text" style="color: #38B6FF;">Saiba mais...</p>
-           <br><br>
       <small class="text-muted">©2023 Tratferi-Todos os direitos reservados</small>
-        </p>
+      </p>
     </div>
     <div class="flip-card-back">
     <p class="card-text text-muted">
@@ -88,8 +88,8 @@
     <div class="flip-card-front">
       <img src="images/pc.jpg" alt="">
       <br> 
+      <p class="card-text">Porque confiar no tratferi ?</p>
       <p class="card-text" style="color: #38B6FF;">Saiba mais...</p>
-           <br><br>
       <small class="text-muted">©2023 Tratferi-Todos os direitos reservados</small>
         </p>
     </div>
@@ -117,12 +117,10 @@
     <div class="flip-card-front">
       <img src="images/atendimento.jpg" alt="">
       <br> 
-      
       <p class="card-text"> Nossos ideais como empresa</p>
-            
       <p class="card-text" style="color: #38B6FF;">Saiba mais...</p>
       <small class="text-muted">©2023 Tratferi-Todos os direitos reservados</small>
-        </p>
+      </p>
     </div>
     <div class="flip-card-back">
     <p class="card-text text-muted">
@@ -142,8 +140,8 @@
     <div class="flip-card-front">
       <img src="images/anota.jpg" alt="">
       <br> 
+      <p class="card-text"> Como Entregamos nosso atendimento ? </p>
       <p class="card-text" style="color: #38B6FF;">Saiba mais...</p>
-           <br><br>
       <small class="text-muted">©2023 Tratferi-Todos os direitos reservados</small>
         </p>
     </div>
@@ -166,8 +164,8 @@
     <div class="flip-card-front">
       <img src="images/pc.jpg" alt="">
       <br> 
+      <p class="card-text">Porque confiar no tratferi ?</p>
       <p class="card-text" style="color: #38B6FF;">Saiba mais...</p>
-           <br><br>
       <small class="text-muted">©2023 Tratferi-Todos os direitos reservados</small>
         </p>
     </div>

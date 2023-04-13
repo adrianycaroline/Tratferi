@@ -715,3 +715,7 @@ input:focus ~ :valid{
 
     transform: rotateY(180deg);
   }
+  .borda{
+    border: 2px solid;
+    border-radius: 2rem;
+  }
