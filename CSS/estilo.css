@@ -553,27 +553,18 @@ input:focus ~ :valid{
     transform: scale(1);
 }
 
-.fundo_cont{
-    /* fundo do contato */
-     background: url('../images/fundo_contato.png');
-     background-position: center;
-     background-size: cover;
+.img_contato img{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .texto_contato{
     text-align: center;
-    margin-top: 10%;
+    margin-top: 5%;
     color: #2b8af7;
     font-family: 'Poppins', sans-serif;
 }
-/*///////// FOOTER //////////////////////////*/
- .ancora{
-    text-decoration: none;
-    color: #fff;
- }
- .ancora:hover{
-    color: #bdd1da;
- }
 
 /* //////////////////////  AREA DO ADM /////////////////// */
 
