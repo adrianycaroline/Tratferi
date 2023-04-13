@@ -1,8 +1,3 @@
-
-select * from  paciente;
-
-
-
 insert into funcionario
 VALUES('1','daniel','2004/10/07','145.326.268-23','102.658','596.987','90.156.984-8','enfermeiro','realizar triagens, preencher prontuários, oferecer os primeiros atendimentos, coletar exames, administrar medicamentos e monitorar o estado de saúde dos pacientes.','noite','3300,00','2020/02/01','null','func','1');
 
@@ -368,3 +363,9 @@ VALUES ('','1234','10');
 insert into login_func
 VALUES ('','1234','11');
 
+
+insert into login_func
+VALUES ('','1234','1');
+
+insert into login_func
+VALUES ('','1234','2');
