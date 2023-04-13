@@ -38,7 +38,7 @@
     <main id="escondido2"  style="bottom: 0;">
         <div class="bg-azul"> 
             <figure id="img-bloqueado" style="position:absolute; cursor: pointer;">
-                <img src="../images/logoPesq.png" width="50vw" alt="" srcset="">
+                <img src="../images/menu-svgrepo-com.svg" style="margin-left: 5px;" width="40vw" alt="" srcset="">
             </figure>
             <div class="text-light" style="display: flex; justify-content: end; margin-right: 20px;">
                 <div style="margin: 10px;">
