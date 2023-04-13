@@ -4,7 +4,7 @@
        if($_POST){
          $cpf = $_POST['cpf'];
          $senha = $_POST['password'];
-         $loginRes = $conn->query("SELECT paciente.cpf as cpf, Login_paci.senha as senha FROM Login_paci
+         $loginRes = $conn->query("SELECT paciente.cpf as cpf, paciente.nome  as nome, Login_paci.senha as senha FROM Login_paci
          inner join paciente ON(Login_paci.id_paci = paciente.id) where cpf = '$cpf' and senha = '$senha'");
         $rowLogin = $loginRes->fetch_assoc();
         $numRow = mysqli_num_rows($loginRes);
@@ -12,15 +12,14 @@
         if ($numRow>0){
             session_start();
             $_SESSION['login'] = "tratferi";
+            $_SESSION['nome'] = $rowLogin['nome'];
             if($rowLogin['cpf'] == $cpf){
                 echo "<script>window.open('../client/index.php','_self')</script>";
-            } else {
-            echo "<script>window.open('../admin/login_cliente.php','_self')</script>"; 
+            } 
+        }else {
+            echo "<script>window.open('../admin/login_cliente.php?acesso=n','_self')</script>"; 
         }
-        } else{
-            echo "<script>window.open('invasor.php','_self')</script>";      
-        }
-        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -40,8 +39,10 @@
 </head>
 <body>
     <section id="fundo_cli" style="display: flex; flex-direction: column;">
-        <?php include '../logo_superior.php';?>
-
+        <?php include '../logo_superior.php';
+        if(isset($_GET['acesso']) && ($_GET['acesso'] == "n")){?>
+             <br><h2 style="color:aliceblue">Acesso Negado! Tente Novamente</h2>
+         <?php }?>
         <div class="formbox">
             <div class="form-value">
                 <form action="login_cliente.php" method="post">
