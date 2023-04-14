@@ -18,16 +18,16 @@
                 </a>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto me-auto d-flex gap-5">
-                    <li class="nav-item buttonBoxMenu">
+                    <li class="nav-item buttonBoxMenu" id="nav-item-flutuante">
                             <a class="nav-link" href="index.php" style="color: #fff; font-size: 20px;">Home</a>
                         </li>
-                        <li class="nav-item buttonBoxMenu">
+                        <li class="nav-item buttonBoxMenu" id="nav-item-flutuante">
                             <a class="nav-link" href="conscientização.php" style="color: #fff; font-size: 20px;">Conscientização</a>
                         </li>
-                        <li class="nav-item buttonBoxMenu">
+                        <li class="nav-item buttonBoxMenu" id="nav-item-flutuante">
                             <a class="nav-link" href="download.php" style="color: #fff; font-size: 20px;">Downloads</a>
                         </li>
-                        <li class="nav-item buttonBoxMenu">
+                        <li class="nav-item buttonBoxMenu" id="nav-item-flutuante">
                             <a class="nav-link" href="sobre.php" style="color: #fff; font-size: 20px;">Sobre</a>
                         </li>
                     </ul>
@@ -82,8 +82,20 @@
                             <hr style="color: #fff;">
                         </li>
                         <li class="nav-item">
-                        
-                        <a href="admin/verifica.php" class="nav-link" style="color: #fff;"> Entrar
+                            <?php if((isset($_SESSION['login'])) && ($_SESSION['login'] != "tratferi")) {?>
+                                <?php if($_SESSION['login'] == "tratferiFun") {?>
+                                    <a href="func/index.php" class="nav-link" style="color: #fff;">
+                                    <?php echo $_SESSION['nome'];?>
+                                <?php }elseif($_SESSION['login'] == "tratferiAdm") {?>
+                                    <a href="admin/index.php" class="nav-link" style="color: #fff;">
+                                    <?php echo $_SESSION['nome'];?>
+                                <?php }?>
+                            <?php }elseif((isset($_SESSION['login'])) && ($_SESSION['login'] == "tratferi")){?>
+                                <a href="client/index.php" class="nav-link" style="color: #fff;">
+                                    <?php echo $_SESSION['nome'];?>
+                            <?php }else{?>   
+                                <a href="admin/verifica.php" class="nav-link" style="color: #fff;"> Entrar
+                            <?php }?>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                                 <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
