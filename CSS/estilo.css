@@ -721,6 +721,7 @@ background-color: white;
 /* ///////////////////////// MENU PERFIL ADM //////////////////////////// */
 #texto-navs{
     color: white;
+    font-size: 11pt;
 }
 
 #texto-navs:hover{
