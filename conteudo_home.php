@@ -41,14 +41,14 @@
     <div class="flip-card-front">
       <img src="images/atendimento.jpg" alt="">
       <br> 
-      <p class="card-text"> Nossos ideais como empresa</p>
+      <p class="card-text"> Quais os nossos ideias como empresa ?</p>
       <p class="card-text" style="color: #38B6FF;">Saiba mais...</p>
       <small class="text-muted">©2023 Tratferi-Todos os direitos reservados</small>
       </p>
     </div>
     <div class="flip-card-back">
     <p class="card-text text-muted">
-            Nossos ideais como empresa </p>
+    Quais os nossos ideias como empresa ?</p>
     <img src="images/linha.svg" alt="">
     <br><br>
             é pensar na acessibilidade <br>entre
@@ -115,21 +115,22 @@
     <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="images/atendimento.jpg" alt="">
+      <img src="images/din.jpg" alt="">
       <br> 
-      <p class="card-text"> Nossos ideais como empresa</p>
+      <p class="card-text">Tudo no serviço é gratuito ? </p>
       <p class="card-text" style="color: #38B6FF;">Saiba mais...</p>
       <small class="text-muted">©2023 Tratferi-Todos os direitos reservados</small>
       </p>
     </div>
     <div class="flip-card-back">
     <p class="card-text text-muted">
-            Nossos ideais como empresa </p>
+    Tudo no serviço é gratuito ? </p>
     <img src="images/linha.svg" alt="">
     <br><br>
-            é pensar na acessibilidade <br>entre
-            Paciente e cliente dessa <br>forma colocando você e sua saúde em
-            Primeiro <br> lugar sempre esse é nosso objetivo como uma marca.      
+    Todos Os Nossos Recursos São Totalmente Gratuitos <br>
+    e já agradecemos Pela Preferencia ao Tratferi <br>
+    fizemos o possivel pra trazer a comunicação de paciente <br>
+    e medico sendo gratuito todos poderão ser atendidos.  
  </p>
     </div>
   </div>
@@ -138,22 +139,22 @@
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="images/anota.jpg" alt="">
+      <img src="images/objetivo.jpg" alt="">
       <br> 
-      <p class="card-text"> Como Entregamos nosso atendimento ? </p>
+      <p class="card-text"> Nosso objetivo com o site ?</p>
       <p class="card-text" style="color: #38B6FF;">Saiba mais...</p>
       <small class="text-muted">©2023 Tratferi-Todos os direitos reservados</small>
         </p>
     </div>
     <div class="flip-card-back">
     <p class="card-text text-muted">
-    Como Entregamos nosso atendimento ?
+    Nosso objetivo com o site ?
 </p>
     <img src="images/linha.svg" alt="">
     <br><br>
-    dentro da sua casa.
-   Nossos profissionais acompanharão o seu tratamento
-   Pensando na melhor forma pra você sentir-se bem.   
+    É compartilhar o tratferi com o maximo de pessoas possiveis <br>
+    pra ter a possibilidade de experimentar nossos serviços de atendimento <br>
+     e explicar como funciona o nosso serviço da melhor forma possivel.
  </p>
     </div>
   </div>
@@ -162,22 +163,25 @@
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="images/pc.jpg" alt="">
+      <img src="images/comprimento.jpg" alt="">
       <br> 
-      <p class="card-text">Porque confiar no tratferi ?</p>
+      <p class="card-text">Temos Patricionadores ? 
+</p>
       <p class="card-text" style="color: #38B6FF;">Saiba mais...</p>
       <small class="text-muted">©2023 Tratferi-Todos os direitos reservados</small>
         </p>
     </div>
     <div class="flip-card-back">
     <p class="card-text text-muted">
-    Porque confiar no tratferi ?
+    Temos Patricionadores ? 
+
 </p>
     <img src="images/linha.svg" alt="">
     <br><br>
-    Precisamos de informações basicas sobre o paciente<br>
-    Para atender da melhor forma possivel apenas isso,<br>
-    Nosso plano é a sua saúde. 
+    Temos uma parceria que idealizou esse projeto e trouxe a oportunidade <br> 
+    de colocar em pratica,Senac em especial o Senac itaquera que esteve conosco <br>
+    por todo esse caminho com seus profissionais da rede Senac.
+
  </p>
     </div>
   </div>
