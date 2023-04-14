@@ -90,7 +90,7 @@
                 <div class="dropdown-menu user" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="#">Novo Projeto</a>
                     <a class="dropdown-item" href="#">Configurações</a>
-                    <a class="dropdown-item" href="#">Perfil</a>
+                    <a class="dropdown-item" href="../admin/perfil_adm_index.php">Perfil</a>
                 </div>
             </div>
         </div>

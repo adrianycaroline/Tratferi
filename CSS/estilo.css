@@ -717,3 +717,16 @@ background-color: white;
     border: 2px solid;
     border-radius: 2rem;
 }
+
+/* ///////////////////////// MENU PERFIL ADM //////////////////////////// */
+#texto-navs{
+    color: white;
+}
+
+#texto-navs:hover{
+    color: #879bd3;
+}
+
+.container-navs-menu{
+    
+}
