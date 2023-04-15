@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../CSS/estilo.css">
     <title>Configurações de Perfil - <?php echo $_SESSION['nome']; ?></title>
 </head>
-<body class="fundo_areas">
+<body>
     <!-- Menu lateral -->
     <?php include '../admin/perfil_adm_menu.php';?>
 </body>
