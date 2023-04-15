@@ -5,7 +5,7 @@
       if($_POST){
         $cpf = $_POST['cpf'];
         $senha = $_POST['senha'];
-        $loginRes = $conn->query("SELECT funcionario.nome as nome, funcionario.cpf as cpf, funcionario.adm as adm, Login_func.senha as senha FROM Login_func
+        $loginRes = $conn->query("SELECT funcionario.periodo as periodo, funcionario.funcao as funcao, funcionario.cargo as cargo, funcionario.coren as coren, funcionario.data_nasc as datanasc, funcionario.nome as nome, funcionario.cpf as cpf, funcionario.adm as adm, Login_func.senha as senha FROM Login_func
         inner join funcionario ON (Login_func.id_func = funcionario.id) where cpf = '$cpf' AND senha = '$senha'");
         $rowLogin = $loginRes->fetch_assoc();
         $numRow = mysqli_num_rows($loginRes);
@@ -14,6 +14,12 @@
             $_SESSION['cpf'] = $login;
             session_start();
             $_SESSION['nome'] = $rowLogin['nome'];
+            $_SESSION['DataNasc'] = $rowLogin['datanasc'];
+            $_SESSION['Cpf'] = $rowLogin['cpf'];
+            $_SESSION['Coren'] = $rowLogin['coren'];
+            $_SESSION['Cargo'] = $rowLogin['cargo'];
+            $_SESSION['Funcao'] = $rowLogin['funcao'];
+            $_SESSION['Periodo'] = $rowLogin['periodo'];
             if($rowLogin['adm'] =='adm'){
                 $_SESSION['login'] = "tratferiAdm";
                 echo "<script>window.open('../admin/index.php','_self')</script>";

@@ -31,9 +31,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/estilo.css">
+    <script src="../js/script.js"></script>
     <title>Área do Funcionário</title>
 </head>
-<body>
+<body onload="atualizarHoras()">
 <div>
     <main id="escondido2"  style="bottom: 0;">
         <div class="bg-azul"> 
@@ -113,7 +114,7 @@
         <div>
             <figure style="display: flex; margin: 10px;">
                 <img src="../images/logo_areas.png" alt="Logo Tratferi" width="45vw" height="45vw">
-                <h1 style="color: #0CA6FF;">Área do Funcionário - <?php echo($_SESSION['nome']); ?></h1>
+                <h1 style="color: #0CA6FF;">Área do Paciente - <?php echo($_SESSION['nome']); ?></h1>
             </figure>
             <div style="display: flex; justify-content: end;">
                 <div class="border-bottom border-2 border-dark" style="width: 96%; margin-right: 30px;"></div>

@@ -364,8 +364,8 @@ insert into login_func
 VALUES ('','1234','11');
 
 
-insert into login_func
+insert into login_paci
 VALUES ('','1234','1');
 
-insert into login_func
+insert into login_paci
 VALUES ('','1234','2');

@@ -33,8 +33,8 @@
                             Cadastrar
                         </a>
                         <div class="dropdown-menu cadas" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="../admin/cadastrar_funcionario.php">Paciente</a>
-                            <a class="dropdown-item" href="../admin/cadastrar_paciente.php">Funcionário</a>
+                            <a class="dropdown-item" href="../admin/cadastrar_funcionario.php">Novo Paciente</a>
+                            <a class="dropdown-item" href="../admin/cadastrar_paciente.php">Novo Funcionário</a>
                         </div>
                     </div>
                 </li>
@@ -85,12 +85,12 @@
             <div class="dropdown">
                 <img src="https://github.com/mdo.png" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="32" height="32" class="rounded-circle me-2">
                 <strong><a style="text-decoration: none; color: white;" href="../admin/logout_Fun.php">Sair</a></strong>
-                <button class="dropdown-toggle bg-dark border-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="dropdown-toggle bg-dark border-0" style="color: white;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 </button>
                 <div class="dropdown-menu user" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="#">Novo Projeto</a>
                     <a class="dropdown-item" href="#">Configurações</a>
-                    <a class="dropdown-item" href="#">Perfil</a>
+                    <a class="dropdown-item" href="../admin/perfil_adm_index.php">Perfil</a>
                 </div>
             </div>
         </div>

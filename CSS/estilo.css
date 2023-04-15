@@ -443,13 +443,13 @@ input:focus ~ :valid{
 }
 /* ////////////////////// EFEITO HOVER DO MENU PUBLICO ///////////////////// */
 
-.nav-item {
+#nav-item-flutuante {
     transition: transform 0.3s ease-in-out;
 }
-.nav-item:hover {
+#nav-item-flutuante:hover {
     transform: scale(1.1);
 }
-.nav-item:not(:hover) {
+#nav-item-flutuante:not(:hover) {
     transform: scale(0.9);
 }
 
@@ -667,29 +667,29 @@ input:focus ~ :valid{
     height: 350px;
     perspective: 1000px;
     font-family: sans-serif;
-  }
+}
   
-  .title {
+.title {
     font-size: 1.5em;
     font-weight: 900;
     text-align: center;
     margin: 0;
-  }
+}
   
-  .flip-card-inner {
+.flip-card-inner {
     position: relative;
     width: 100%;
     height: 100%;
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
-  }
+ }
   
-  .flip-card:hover .flip-card-inner {
+.flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
-  }
+}
   
-  .flip-card-front, .flip-card-back {
+.flip-card-front, .flip-card-back {
     box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
     position: absolute;
     display: flex;
@@ -701,20 +701,34 @@ input:focus ~ :valid{
     border: 4px solid #5CE1E6;
     border-radius: 1rem;
     background-color: white; 
-  }
+}
   
-  .flip-card-front {
-    background-color: white; 
+.flip-card-front {
+background-color: white; 
        
     
-  }
+}
   
-  .flip-card-back {
-
-
+.flip-card-back {
     transform: rotateY(180deg);
-  }
-  .borda{
+}
+  
+.borda{
     border: 2px solid;
     border-radius: 2rem;
-  }
+}
+
+/* ///////////////////////// MENU PERFIL ADM //////////////////////////// */
+#texto-navs{
+    color: white;
+    font-size: 11pt;
+}
+
+#texto-navs:hover{
+    color: #879bd3;
+}
+
+.container-navs-menu{
+    
+}
+
