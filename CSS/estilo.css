@@ -8,6 +8,20 @@
     max-width: 100%;
 }
 
+#polit{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+#polit:hover{
+    color: #aeb6c0;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
 .flex{
     display: flex;
 }

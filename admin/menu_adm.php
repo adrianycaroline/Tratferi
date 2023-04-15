@@ -84,13 +84,14 @@
             <hr>
             <div class="dropdown">
                 <img src="https://github.com/mdo.png" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="32" height="32" class="rounded-circle me-2">
-                <strong><a style="text-decoration: none; color: white;" href="../admin/logout_Fun.php">Sair</a></strong>
+                <strong><a style="text-decoration: none; color: white;"><?php echo $_SESSION['nome'];?></a></strong>
                 <button class="dropdown-toggle bg-dark border-0" style="color: white;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 </button>
                 <div class="dropdown-menu user" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="#">Novo Projeto</a>
                     <a class="dropdown-item" href="#">Configurações</a>
                     <a class="dropdown-item" href="../admin/perfil_adm_index.php">Perfil</a>
+                    <a class="dropdown-item" href="../admin/logout_Fun.php">Sair</a>
                 </div>
             </div>
         </div>

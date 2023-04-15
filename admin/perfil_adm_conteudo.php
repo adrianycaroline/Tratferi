@@ -7,19 +7,20 @@
     <link rel="stylesheet" href="../CSS/dropdown.css">
     <title>Conteudo Perfil Adm</title>
 </head>
-<body style="margin-left: 280px;">
+<body style="margin-left: 280px; display: flex; justify-content: left;">
     <div ng-switch="opcao">
-        <!-- Inicio COnfigurações de perfil  -->
+        <!-- Inicio Configurações de perfil  -->
         <div ng-switch-when="ConfigPerfil">
-            <div>
+            <div class="container">
                 <div class="text-center" style="margin-top: 10px;">
                     <h2>Configurações de Perfil</h2>
                     <p>Gerencie os detalhes de sua conta.</p>
                 </div>
                 <div class="border-bottom border-2 border-dark" style="width: 97%; margin-left: 15px; margin-bottom: 10px;"></div>
-                <div>
-                    <div style="margin-left: 50px;">
-                        <div class="d-flex container">
+                <div class="container">
+                    <div>
+                        <!-- Começo das informações da conta  -->
+                        <div class="d-flex">
                             <div>
                                 <h3 >INFORMAÇÕES DA CONTA</h3>
                                 <b><p>ID:</b> 0324328489239483829</p>
@@ -64,39 +65,129 @@
                             </div>   
                         </div>
                         <br>
+                        <!-- Começo dos dados pessoais -->
                         <div style="margin-right: 15px;">
                             <h3>Dados Pessoais</h3>
-                            <p>Gerencie seu nome e informações de contato. Essas informações pessoais são privadas e não serão exibidos para outros usuários. Veja a nossa <a href="" id="polit"> Política de Privacidade </a> <ion-icon name="lock-closed-outline"></ion-icon> </p>
+                            <p>Gerencie seu nome e informações de contato. Essas informações pessoais são privadas e não serão exibidos para outros usuários. Veja a nossa <a href="../politica_pivaci.php" id="polit"> Política de Privacidade </a> <ion-icon name="lock-closed-outline"></ion-icon> </p>
                             <br>
-                            <div >
+                            <div class="d-flex">
                                 <div class="group">
                                     <input required="" type="text" class="input">
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
-                                    <label>Name</label>
+                                    <label>CPF</label>
                                 </div>
-                                <br>
                                 <div class="group">
                                     <input required="" type="text" class="input">
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
-                                    <label>Name</label>
+                                    <label>Data de Nascimento</label>
                                 </div>
-                                <br>
                                 <div class="group">
                                     <input required="" type="text" class="input">
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
-                                    <label>Name</label>
+                                    <label>Coren</label>
                                 </div>
-                                <br>
                                 <div class="group">
                                     <input required="" type="text" class="input">
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
-                                    <label>Name</label>
+                                    <label>RG</label>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="d-flex">
+                                <div class="group">
+                                    <input required="" type="text" class="input">
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label>Data de Entrada</label>
+                                </div>
+                                <div class="group">
+                                    <input required="" type="text" class="input">
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label>Data de Saída</label>
+                                </div>
+                                <div class="group">
+                                    <input required="" type="text" class="input">
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label>CRM</label>
+                                </div>
+                                <div class="group">
+                                    <input required="" type="text" class="input">
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label>Função na Empresa</label>
+                                </div>
+                            </div>
+                            <br>
+                            <!-- Começo do Endereço  -->
+                            <div>
+                                <h4>ENDEREÇO</h4>
+                                <div class="d-flex">
+                                    <div class="group">
+                                        <input required="" type="text" class="input">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Logradouro</label>
+                                    </div>
+                                    <div class="group">
+                                        <input required="" type="text" class="input">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Numero</label>
+                                    </div>
+                                    <div class="group">
+                                        <input required="" type="text" class="input">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Cidade</label>
+                                    </div>
+                                    <div class="group">
+                                        <input required="" type="text" class="input">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>UF</label>
+                                    </div>
                                 </div>
                                 <br>
+                                <div class="d-flex">
+                                    
+                                    <div class="group">
+                                        <input required="" type="text" class="input">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>CEP</label>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                            <!-- Começo do Telefone e Email  -->
+                            <div>
+                                <h4>CONTATO</h4>
+                                <div class="d-flex">
+                                    <div class="group">
+                                        <input required="" type="text" class="input">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Telefone</label>
+                                    </div>
+                                    <div class="group">
+                                        <input required="" type="text" class="input">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Email</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <div class="text-center">
+                                    <p> <img src="../images/logo_areas.png" width="20vw" alt="Logo do Tratferi"> TRATFERI - TODOS OS DIREITOS RESERVADOS.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
