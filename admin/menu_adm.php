@@ -88,8 +88,6 @@
                 <button class="dropdown-toggle bg-dark border-0" style="color: white;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 </button>
                 <div class="dropdown-menu user" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Novo Projeto</a>
-                    <a class="dropdown-item" href="#">Configurações</a>
                     <a class="dropdown-item" href="../admin/perfil_adm_index.php">Perfil</a>
                     <a class="dropdown-item" href="../admin/logout_Fun.php">Sair</a>
                 </div>

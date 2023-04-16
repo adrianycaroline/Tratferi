@@ -41,8 +41,15 @@
                     </a>
                 </li>
             </nav>
+            <hr>
+            <div style="color: white;">
+                <a href="javascript:window.history.go(-1)" class="text-light" style="text-decoration: none; border: 1px solid white; border-radius: 20px; padding: 5px;"><ion-icon name="arrow-undo-outline"></ion-icon>Voltar</a>
+            </div>
         </div>
     </div>
     <?php include '../admin/perfil_adm_conteudo.php';?>
 </body>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="../js/dropdown.js"></script>
 </html>
