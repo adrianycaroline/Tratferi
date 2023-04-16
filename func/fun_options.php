@@ -31,6 +31,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/estilo.css">
+    <link rel="stylesheet" href="../CSS/dropdown.css">
     <title>Área do Funcionário</title>
 </head>
 <body>
@@ -99,14 +100,11 @@
             </ul>
             <hr>
             <div class="dropdown">
-                <a class="bg-azul border-0 dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li><a class="dropdown-item" href="#">Novo Projeto</a></li>
-                    <li><a class="dropdown-item" href="#">Configurações</a></li>
-                    <li><a class="dropdown-item" href="#">Perfil</a></li>
-                </ul>
+                <img  id="dropdownMenuFuncRespon" type="button"  data-toggle="dropdown" aria-haspopup="true" src="https://github.com/mdo.png" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="32" height="32" style="border-radius: 20px;">
+                <div class="dropdown-menu funcRespon" aria-labelledby="dropdownMenuButton" >
+                    <a class="dropdown-item" href="../admin/perfil_adm_index.php"><ion-icon name="person-outline"></ion-icon></a>
+                    <a class="dropdown-item" href="../admin/logout_Fun.php"><ion-icon name="exit-outline"></ion-icon></a>
+                </div>
             </div>
         </div>
         </div>
@@ -202,6 +200,21 @@ imgBloqueado.addEventListener('click', function() {
                 window.location.reload();
             }
         });
+    }
+});
+</script>
+<script>
+const dropdownMenuFuncRespon = document.getElementById('dropdownMenuFuncRespon');
+const dropdownMenufuncionarioRes = document.querySelector('.funcRespon');
+
+dropdownMenuFuncRespon.addEventListener('click', () => {
+  dropdownMenufuncionarioRes.classList.toggle('show');
+});
+
+//caso o usuario clique fora ele fecha o dropdown
+document.addEventListener('click', (event) => {
+    if (!dropdownMenuFuncRespon.contains(event.target)) {
+      dropdownMenufuncionarioRes.classList.remove('show');
     }
 });
 </script>

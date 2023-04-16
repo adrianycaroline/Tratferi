@@ -82,8 +82,8 @@
                 <button class="dropdown-toggle bg-azul border-0" style="color: white;" type="button" id="dropdownMenuFunc" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 </button>
                 <div class="dropdown-menu func" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="../admin/perfil_adm_index.php">Perfil</a>
-                    <a class="dropdown-item" href="../admin/logout_Fun.php">Sair</a>
+                    <a class="dropdown-item" href="../admin/perfil_adm_index.php"><ion-icon name="person-outline"></ion-icon>Perfil</a>
+                    <a class="dropdown-item" href="../admin/logout_Fun.php"><ion-icon name="exit-outline"></ion-icon>Sair</a>
                 </div>
             </div>
         </div>
