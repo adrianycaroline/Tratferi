@@ -58,10 +58,17 @@
                                 </div>
                             </div> 
                             <div style="margin-left: 100px;">
-                                <h2>Imagem de Perfil</h2>
-                                <figure>
-                                    <img src="https://github.com/mdo.png" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" class="rounded-circle me-2" id="foto_perfil">
-                                </figure>
+                                <h3>FOTO DE PERFIL</h3>
+                                <img src="https://github.com/mdo.png" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" class="rounded-circle me-2" id="foto_perfil" data-bs-toggle="dropdown" aria-expanded="false">
+                                <div class="dropdown">
+                                    <button class="dropdown-toggle" id="editarFotoAdm" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span>Editar</span>
+                                    </button>
+                                    <div class="dropdown-menu editarFotoAdm" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Carregar foto...</a>
+                                        <a class="dropdown-item" href="#">Remover foto</a>
+                                    </div>
+                                </div>
                             </div>   
                         </div>
                         <br>
@@ -268,12 +275,130 @@
                         </ul>
                     </ul>
                 </div>
+                <br>
+                <br>
+                <div class="text-center">
+                    <p> <img src="../images/logo_areas.png" width="20vw" alt="Logo do Tratferi"> TRATFERI - TODOS OS DIREITOS RESERVADOS.</p>
+                </div>
             </div>
         </div>
-
+        
+        <!-- começo do senha e segurança  -->
         <div ng-switch-when="SenhaSegu">
-            <h1>Passaros</h1>
-            <p>Bem-vindo a um mundo de passaros.</p>
+            <div class="container">
+                <div style="margin-top: 10px;">
+                    <h2>Alterar Senha</h2>
+                    <p>Para sua segurança, recomendamos enfaticamente que escolha uma senha única, que não seja usada para nenhuma outra conta on-line. <ion-icon name="lock-closed-outline"></ion-icon> </p>
+                </div>
+                <br>
+                <div class="d-flex">
+                    <div>
+                        <h5>SENHA ATUAL</h5>
+                        <small>OBRIGATÓRIO</small>
+                        <br>
+                        <div class="group">
+                            <input required="" name="senhaAtual" id="senhaAtual" type="text" class="input2">
+                        </div>
+                        <br>
+                        <h5>NOVA SENHA</h5>
+                        <small>OBRIGATÓRIO</small>
+                        <br>
+                        <div class="group">
+                            <input required="" name="senhaNova" id="senhaNova" type="text" class="input2">
+                        </div>
+                        <br>
+                        <h5>DIGITE A NOVA SENHA NOVAMENTE</h5>
+                        <small>OBRIGATÓRIO</small>
+                        <br>
+                        <div class="group">
+                            <input required="" name="senhaNovaDenovo" id="senhaNovaDenovo" type="text" class="input2">
+                        </div>
+                    </div>
+                    <div style="margin-left: 200px; border-left: 1px solid black; padding-left: 20px;">
+                        <h5>SUA SENHA</h5>
+                        <br>
+                        <br>
+                        <div style="font-size: 11pt;">
+                            <p>Sua senha precisa ser diferente das últimas 5 senhas usadas</p>
+                            <p>Sua senha precisa ter mais de 7 caracteres</p>
+                            <p>Sua senha precisa ter pelo menos 1 número</p>
+                            <p>Sua senha não pode conter espaços</p>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div>
+                    <button type="button" class="btn btn-secondary">Descartar Alterações</button>
+                    <button type="button" class="btn btn-primary">Manter Alterações</button>
+                </div>
+                <br>
+                <br>
+                <hr width="">
+                <br>
+                <div>
+                    <h3>FINALIZAR SESSÃO EM TODOS OS LUGARES</h3>
+                    <div class="d-flex">
+                        <div>
+                            <p>Finalize sessões em qualquer outro local em que a sua conta da <br>
+                                TRATFERI esteja sendo usada, incluindo todos os outros <br>
+                                navegadores, telefones, consoles ou qualquer outro dispositivo.
+                            </p>
+                        </div> 
+                        <div>
+                            <button type="button" class="btn btn-primary" style="padding: 15px; margin-left: 50px;">FINALIZAR OUTRAS SESSÕES</button>
+                        </div> 
+                    </div>
+                </div>
+                <br>
+                <hr width="">
+                <div>
+                    <h3>AUTENTICAÇÃO DE DOIS FATORES</h3>
+                    <p>A Autenticação de Dois Fatores (ADF) pode ser usada para proteger sua conta de acesso não autorizado ao exigir que você insira um código de segurança ao iniciar sessão. Caso tenha algum problema ou dúvidas entre em contato conosco clicando <a href="../contato.php">aqui</a></p>
+                    <small>Métodos de Autenticação disponíveis:</small>
+                    <br>
+                    <br>
+                    <div>
+                        <h5>APLICATIVO AUTENTICADOR DE TERCEIROS</h5>
+                        <div style="display: flex;">
+                            <div>
+                                <p>Use um aplicativo autenticador como sua Autenticação de Dois Fatores (ADF). Ao fazer o login, você precisará usar o código de segurança fornecido pelo seu aplicativo autenticador.</p>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Desativadas</label>
+                            </div>
+                        </div>
+                        <br>
+                        <h5>AUTENTICAÇÃO POR SMS</h5>
+                        <div style="display: flex;">
+                            <div>
+                                <p>Use seu celular como Autenticação de Dois Fatores (ADF). Ao acessar, você precisará usar o código de segurança recebido por SMS.</p>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Desativadas</label>
+                            </div>
+                        </div>
+                        <br>
+                        <h5>AUTENTICAÇÃO POR E-MAIL</h5>
+                        <div style="display: flex;">
+                            <div>
+                                <p>Use um código de segurança enviado para o seu endereço de e-mail como sua Autenticação de Dois Fatores (ADF). O código de segurança será enviado ao endereço associado à sua conta.</p>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Desativadas</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="text-center">
+                    <p> <img src="../images/logo_areas.png" width="20vw" alt="Logo do Tratferi"> TRATFERI - TODOS OS DIREITOS RESERVADOS.</p>
+                </div>
+            </div>
         </div>
 
         <div ng-switch-when="Telefone">

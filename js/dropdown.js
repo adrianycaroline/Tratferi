@@ -28,3 +28,18 @@ document.addEventListener('click', (event) => {
     }
   });
 
+  //Dropdown da foto de perfil do adm
+const editarFotoAdm = document.getElementById('editarFotoAdm');
+const EditarFotoAdm = document.querySelector('.editarFotoAdm');
+
+editarFotoAdm.addEventListener('click', () => {
+  EditarFotoAdm.classList.toggle('show');
+});
+
+//caso o usuario clique fora ele fecha o dropdown
+document.addEventListener('click', (event) => {
+    if (!editarFotoAdm.contains(event.target)) {
+      EditarFotoAdm.classList.remove('show');
+    }
+  });
+

@@ -27,3 +27,18 @@
     margin-left: .5rem;
     border: 1.8px solid black;
 }
+
+.editarFotoAdm {
+  position: absolute;
+  top: 32px;
+  left: 15%;
+  margin-left: .5rem;
+  border: 1.8px solid black;
+}
+
+#editarFotoAdm{
+  border-radius: 10px; 
+  background: none; 
+  margin-top: 10px;
+  width: 300px;
+}
