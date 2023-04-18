@@ -5,7 +5,12 @@
       if($_POST){
         $cpf = $_POST['cpf'];
         $senha = $_POST['senha'];
-        $loginRes = $conn->query("SELECT funcionario.crm as crm, funcionario.data_entrada as data_inicio, funcionario.data_saida as data_saida, funcionario.rg as rg, funcionario.periodo as periodo, funcionario.funcao as funcao, funcionario.cargo as cargo, funcionario.coren as coren, funcionario.data_nasc as datanasc, funcionario.nome as nome, funcionario.cpf as cpf, funcionario.adm as adm, Login_func.senha as senha FROM Login_func
+        $loginRes = $conn->query("SELECT funcionario.imagem as imagem, funcionario.hash as hashcode, 
+        funcionario.crm as crm, funcionario.data_entrada as data_inicio, funcionario.data_saida as data_saida, 
+        funcionario.rg as rg, funcionario.periodo as periodo, funcionario.funcao as funcao, 
+        funcionario.cargo as cargo, funcionario.coren as coren, funcionario.data_nasc as datanasc, 
+        funcionario.nome as nome, funcionario.cpf as cpf, funcionario.adm as adm, Login_func.senha as senha 
+        FROM Login_func
         inner join funcionario ON (Login_func.id_func = funcionario.id) where cpf = '$cpf' AND senha = '$senha'");
         $rowLogin = $loginRes->fetch_assoc();
         $numRow = mysqli_num_rows($loginRes);
@@ -24,6 +29,8 @@
             $_SESSION['data_inicio'] = $rowLogin['data_inicio'];
             $_SESSION['data_saida'] = $rowLogin['data_saida'];
             $_SESSION['Crm'] = $rowLogin['crm'];
+            $_SESSION['Imagem'] = $rowLogin['imagem'];
+            $_SESSION['Hashcode'] = $rowLogin['hashcode'];
             if($rowLogin['adm'] =='adm'){
                 $_SESSION['login'] = "tratferiAdm";
                 echo "<script>window.open('../admin/index.php','_self')</script>";

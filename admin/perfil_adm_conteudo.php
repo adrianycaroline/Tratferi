@@ -23,7 +23,7 @@
                         <div class="d-flex">
                             <div>
                                 <h3 >INFORMAÇÕES DA CONTA</h3>
-                                <b><p>ID:</b> 0324328489239483829</p>
+                                <b><p>ID:</b> <?php echo $_SESSION['Hashcode']; ?></p>
                                 <div class="input-group">
                                     <input required="" type="text" name="text" placeholder="<?php echo $_SESSION['nome']; ?>" autocomplete="off" class="input" disabled>
                                     <label class="user-label">Nome</label>
@@ -59,7 +59,7 @@
                             </div> 
                             <div style="margin-left: 100px;">
                                 <h3>FOTO DE PERFIL</h3>
-                                <img src="https://github.com/mdo.png" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" class="rounded-circle me-2" id="foto_perfil" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="../fotos_usuarios/<?php echo $_SESSION['Imagem']; ?>" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" class="rounded-circle me-2" id="foto_perfil" data-bs-toggle="dropdown" aria-expanded="false">
                                 <div class="dropdown">
                                     <button class="dropdown-toggle" id="editarFotoAdm" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span>Editar</span>
