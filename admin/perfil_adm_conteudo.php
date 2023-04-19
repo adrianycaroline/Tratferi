@@ -177,7 +177,7 @@
                                 <br>
                                 <div class="d-flex">
                                     <div class="group">
-                                        <input required="" name="telefone" id="telefone" type="text" class="input">
+                                        <input required="" name="telefone" id="telefone" type="tel" class="input">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
                                         <label>Telefone</label>
