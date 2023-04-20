@@ -3,47 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
     <link rel="shortcut icon" href="images/logo_minimizada.png" type="image/x-icon">
+    <link rel="stylesheet" href="CSS/estilo.css">
     <title>TRATFERI - Download</title>
 </head>
 <body>
     <?php include 'header_publico.php'?>
-    <main>
+    <main >
         <br><br>
-        <div class="d-flex flex-row bd-highlight mb-2">
-            <div class="p-2 bd-highlight container text-center">
-                <h1>Download</h1>
-                <div class="border-bottom border-2 border-dark mx-auto" style="width: 20%; "></div>
-                <br>
+        <div style="display: flex; justify-content: space-between;">
+            <div  class="text-center center">
+                <h1 style="color: #38B6FF;">Faça o Download do app</h1>
                 <p>
-                    Disponível em Aplicativos Mobile Android e IOS o <br>
-                    TRATFERI mobile é a melhor opção para quem não <br>
-                    possui um dispositivo Desktop e quer acompanhar <br>
-                    o progresso de seu atendimento.
+                   O aplicativo do Tratferi está disponível para <br>
+                    os sistemas operacionais Android e IOS 
                 </p>
-                <div class="d-flex flex-row bd-highlight mb-2">
-                    <div class="p-2 bd-highlight container text-center">    
+                <div class="d-flex ">
+                    <div class="" >
+                        <div>    
                         <button class="text-light item mx-3" style="background-color: black; border-radius: 8px;">
-                            <div class="d-flex flex-column" style="align-items: center; font-size: 18pt;">
-                                <img src="images/logo_android.svg" alt="Logo da Android" width="50px"> 
-                                Baixar
+                            <div>
+                                <img src="images/dow.jpg" alt="Logo da Android" width="300px">
                             </div>
                         </button>
-                        <button class="text-light item" style="background-color: black; border-radius: 8px;">
-                            <div class="d-flex flex-column " style="align-items: center; font-size: 18pt;">
-                                <img src="images/simbolo_apple.svg" alt="Logo da Apple" width="50px">
-                                Baixar
+                        </div>
+                        <div>
+                        <button class="text-light item mx-3" style="background-color: black; border-radius: 12px;">
+                            <div>
+                                <img src="images/dowIOS.jpg" alt="Logo da Android" width="300px">
                             </div>
                         </button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="images/Tratferi_qrcode (1).svg" width="180px" alt="">
                     </div>
                 </div>
             </div>
-            <div class="p-2 bd-highlight">
-                <img src="images/celulares.png" alt="Celulares Download">
-            </div>
+            
+        <img class="celular" src="images/celulares1.jpg" alt="">
         </div>
-        <br><br><br><br><br><br><br><br> 
+        
+        <br>
     </main>
+    
    
 </body>
 <?php include 'footer.php'?>
