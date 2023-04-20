@@ -14,11 +14,11 @@
         $periodo = $_POST['periodo'];
         $salario = $_POST['salario'];
         $adm = $_POST['adm'];
-        $hashcode = "TRAT-";
+        $hashcode = "TRAT-".uniqid()."-".mb_strimwidth($cpf,0,3);
 
         $insereFunc = "INSERT INTO funcionario 
-        (nome, data_nasc, cpf, coren, crm, rg, cargo, funcao, periodo, salario, adm, imagem, hash)
-        VALUES ('$nome','$data','$cpf','$coren','$crm','$rg','$cargo','$funcao','$periodo','$salario','$adm','user_sem_foto.png','$hashcode')";
+        (nome, data_nasc, cpf, coren, crm, rg, cargo, funcao, periodo, salario, adm, imagem, hash, ativo)
+        VALUES ('$nome','$data','$cpf','$coren','$crm','$rg','$cargo','$funcao','$periodo','$salario','$adm','user_sem_foto.png','$hashcode','1')";
 
         $resultado = $conn->query($insereFunc);
         if(mysqli_insert_id($conn)){

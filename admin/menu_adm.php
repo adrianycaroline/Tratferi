@@ -21,22 +21,16 @@
             </div>
             <ul class="nav nav-pills flex-column mb-auto">
                 <li>
-                    <a href="#" class="nav-link" aria-current="page">
+                    <a href="../admin/index.php" class="nav-link" aria-current="page">
                         <img src="../images/dashboard.svg" alt="" width="20vw">
                         Dashboard
                     </a>
                 </li>
                 <li>
-                    <div class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" role="button" id="dropdownMenuCadastro" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="../images/usuarios.svg" alt="" width="20vw">
-                            Cadastrar
-                        </a>
-                        <div class="dropdown-menu cadas" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="../admin/cadastrar_paciente.php">Novo Paciente</a>
-                            <a class="dropdown-item" href="../admin/cadastrar_funcionario.php">Novo Funcionário</a>
-                        </div>
-                    </div>
+                    <a href="../admin/cadastrar_funcionario.php" class="nav-link">
+                        <img src="../images/usuarios.svg" alt="" width="20vw">
+                        Cadastrar
+                    </a>
                 </li>
                 <li>
                     <a href="#" class="nav-link">
