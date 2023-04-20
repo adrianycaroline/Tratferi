@@ -33,11 +33,23 @@
                     <th>Cargo</th>
                     <th>Salario</th>
                     <th>Periodo</th>
-                    <th>
+                    <th class="d-flex">
                         <a href="../admin/cadastrar_funcionario.php" target="_self" class="btn btn-block btn-primary btn-xs" role="button">
                             <ion-icon name="add-circle-outline"></ion-icon>
                             <span class="hidden-xs">ADICIONAR</span>
                         </a>
+                        <!-- formulário de busca  -->
+                        <form action="produtos_busca.php" method="get" name="form-busca" id="form-busca" class="navbar-form navbar-left" role="search">
+                            <div class="input-group">
+                                <input type="search" name="buscar" id="buscar" size="9" class="form-control" aria-label="search" placeholder="Buscar" required>
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- fim do formulário de busca  -->
                     </th>
                 </thead>
                 <tbody>
@@ -51,7 +63,7 @@
                             <td><?php echo $row['salario'];?></td>
                             <td><?php echo $row['periodo'];?></td>
                             <td>
-                                <a href="usuarios_atualiza.php?id_usuario=<?php echo $row['id']; ?>" role="button" class="btn btn-success btn-block btn-xs"> 
+                                <a href="atualizar_funcionario.php?id=<?php echo $row['id']; ?>" role="button" class="btn btn-success btn-block btn-xs"> 
                                     <ion-icon name="refresh-outline"></ion-icon>
                                     <span class="hidden-xs">ALTERAR</span>
                                 </a>
@@ -79,7 +91,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    Deseja mesmo excluir o item?
+                    Deseja mesmo excluir o Funcionario?
                     <h4><span class="nome text-danger"></span></h4>
                 </div>
                 <div class="modal-footer">

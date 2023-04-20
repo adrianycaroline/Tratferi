@@ -70,15 +70,15 @@
                             <hr style="color: #fff;">
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link text-white" href="index.php#conscientizacao">Conscientização</a>
+                            <a class="nav-link text-white" href="conscientização.php#">Conscientização</a>
                             <hr style="color: #fff;">
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="index.php#dowloads">Downloads</a>
+                            <a class="nav-link text-white" href="download.php#">Downloads</a>
                             <hr style="color: #fff;">
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#index.php#sobre">Sobre</a>
+                            <a class="nav-link text-white" href="sobre.php#">Sobre</a>
                             <hr style="color: #fff;">
                         </li>
                         <li class="nav-item">
