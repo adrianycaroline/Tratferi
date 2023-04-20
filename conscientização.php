@@ -160,10 +160,10 @@ body {
 	</div>
 </div>  
 </div>
-              </div>
-            </div>
-          </div>
-        </div>
+  </div>
+  </div>
+  </div>
+  </div>
     </div>
  <!-- fim Card 3  -->
 </main>

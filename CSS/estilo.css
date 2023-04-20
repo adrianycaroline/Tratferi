@@ -8,6 +8,20 @@
     max-width: 100%;
 }
 
+#polit{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+#polit:hover{
+    color: #aeb6c0;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
 .flex{
     display: flex;
 }
@@ -719,6 +733,7 @@ background-color: white;
     border-radius: 2rem;
 }
 
+
 /* //////////////////// Card de joinha /////////////////////// */
 .like-dislike-container {
     --dark-grey: #353535;
@@ -951,9 +966,15 @@ background-color: white;
 
 
 
-
-
-
-
-
 /* //////////////////// Fim Card de joinha /////////////////////// */
+
+/* ///////////////////////// MENU PERFIL ADM //////////////////////////// */
+#texto-navs{
+    color: white;
+    font-size: 11pt;
+}
+
+#texto-navs:hover{
+    color: #879bd3;
+}
+

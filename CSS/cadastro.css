@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+}
+
+.fundo_areas{
+    background: url(../images/fundo.png) no-repeat fixed;
+    background-size: cover;
+}

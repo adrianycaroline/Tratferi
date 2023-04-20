@@ -13,18 +13,32 @@
   
   .user {
     position: absolute;
-    top: -80px;
-    left: 37%;
+    top: -120px;
+    left: 45%;
     margin-left: .5rem;
     border: 1.8px solid black;
   }
 
 /* Menu dropdown Cadastrar */
-  .cadas {
+.cadas {
     position: absolute;
     top: 32px;
     left: 15%;
     margin-left: .5rem;
     border: 1.8px solid black;
-  }
-  
+}
+
+.func {
+  position: absolute;
+  top: -80px;
+  left: 35%;
+  margin-left: .5rem;
+  border: 1.8px solid black;
+}
+
+.funcRespon {
+  position: absolute;
+  top: -80px;
+  left: 20%;
+  border: 1.8px solid black;
+}

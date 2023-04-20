@@ -21,22 +21,16 @@
             </div>
             <ul class="nav nav-pills flex-column mb-auto">
                 <li>
-                    <a href="#" class="nav-link" aria-current="page">
+                    <a href="../admin/index.php" class="nav-link" aria-current="page">
                         <img src="../images/dashboard.svg" alt="" width="20vw">
                         Dashboard
                     </a>
                 </li>
                 <li>
-                    <div class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" role="button" id="dropdownMenuCadastro" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="../images/usuarios.svg" alt="" width="20vw">
-                            Cadastrar
-                        </a>
-                        <div class="dropdown-menu cadas" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="../admin/cadastrar_funcionario.php">Paciente</a>
-                            <a class="dropdown-item" href="../admin/cadastrar_paciente.php">Funcionário</a>
-                        </div>
-                    </div>
+                    <a href="../admin/cadastrar_funcionario.php" class="nav-link">
+                        <img src="../images/usuarios.svg" alt="" width="20vw">
+                        Cadastrar
+                    </a>
                 </li>
                 <li>
                     <a href="#" class="nav-link">
@@ -83,19 +77,18 @@
             </ul>
             <hr>
             <div class="dropdown">
-                <img src="https://github.com/mdo.png" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="32" height="32" class="rounded-circle me-2">
-                <strong><a style="text-decoration: none; color: white;" href="../admin/logout_Fun.php">Sair</a></strong>
-                <button class="dropdown-toggle bg-dark border-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="../fotos_usuarios/<?php echo $_SESSION['Imagem']; ?>" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="32" height="32" class="rounded-circle me-2">
+                <strong><a style="text-decoration: none; color: white;"><?php echo $_SESSION['nome'];?></a></strong>
+                <button class="dropdown-toggle bg-dark border-0" style="color: white;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 </button>
                 <div class="dropdown-menu user" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Novo Projeto</a>
-                    <a class="dropdown-item" href="#">Configurações</a>
-                    <a class="dropdown-item" href="#">Perfil</a>
+                    <a class="dropdown-item" href="../admin/perfil_adm_index.php"><ion-icon name="person-outline"></ion-icon>Perfil</a>
+                    <a class="dropdown-item" href="../admin/logout_Fun.php"><ion-icon name="exit-outline"></ion-icon>Sair</a>
                 </div>
             </div>
         </div>
     </div>
-    <?php include '../admin/adm_options.php';?>
+    
 </body>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

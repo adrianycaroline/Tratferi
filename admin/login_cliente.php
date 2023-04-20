@@ -4,7 +4,7 @@
        if($_POST){
          $cpf = $_POST['cpf'];
          $senha = $_POST['password'];
-         $loginRes = $conn->query("SELECT paciente.cpf as cpf, paciente.nome  as nome, Login_paci.senha as senha FROM Login_paci
+         $loginRes = $conn->query("SELECT paciente.id as id, paciente.cpf as cpf, paciente.nome  as nome, Login_paci.senha as senha FROM Login_paci
          inner join paciente ON(Login_paci.id_paci = paciente.id) where cpf = '$cpf' and senha = '$senha'");
         $rowLogin = $loginRes->fetch_assoc();
         $numRow = mysqli_num_rows($loginRes);
@@ -13,8 +13,9 @@
             session_start();
             $_SESSION['login'] = "tratferi";
             $_SESSION['nome'] = $rowLogin['nome'];
+            $_SESSION['id'] = $rowLogin['id'];
             if($rowLogin['cpf'] == $cpf){
-                echo "<script>window.open('../client/index.php','_self')</script>";
+                // echo "<script>window.open('../client/index.php','_self')</script>";
             } 
         }else {
             echo "<script>window.open('../admin/login_cliente.php?acesso=n','_self')</script>"; 
@@ -26,6 +27,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="30;URL= ../index.php">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
     <link rel="stylesheet" href='../CSS/estilo.css'>
     <link rel="shortcut icon" href="../images/logo_minimizada.png" type="image/x-icon">
 
@@ -62,10 +65,32 @@
                     </div>
                     <button id="loginBtn">Entrar</button>
                     <div class="register">
-                        <p>Não tem uma conta?<a href="cadastro.php">Cadastre-se!</a></p>
+                        <!-- Button trigger modal -->
+                        <p role="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_cadastro">
+                            Não tem uma conta?
+                        </p>
                     </div>
                 </form>
             </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="modal_cadastro" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_centro" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="modal_cadastro_titulo">CADASTRO</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                 </button>
+                                </div>
+                    <div class="modal-body">
+                    Para ter acesso aos recursos destinados aos nossos pacientes é necessario um cadastro prévio feito por um profissional de saúde no ambiente hospitalar.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                    </div>
+                    </div>
+                    </div>
         </div>
         <?php include '../termos_texto.php';?>
     </section>
