@@ -1,6 +1,6 @@
 // Dropdown do menu usuario
-const dropdownMenuButton = document.getElementById('dropdownMenuButton');
-const dropdownMenu = document.querySelector('.user');
+const dropdownMenuButton = document.getElementById('dropdownMenuButton');// id do botão
+const dropdownMenu = document.querySelector('.user'); //classe do dropdown escondido
 
 dropdownMenuButton.addEventListener('click', () => {
   dropdownMenu.classList.toggle('show');
