@@ -30,7 +30,7 @@ body {
           <div class="row no-gutters">
             <div class="col-md-4">  
             <div class ="card text-white d-flex">
-              <img src="images/celular.jpg" alt="Descrição da imagem" style="max-width: 60rem; height: 100%">
+              <img src="images/celular.jpg" alt="Descrição da imagem" style="max-width: 60rem; height: 100%" class="img-responsive">
               <div class="card-body"style="max-width: 100%; padding: 0%; height: 0%;">
                   <i class="fas fa-file-code"></i>
                 </div>
