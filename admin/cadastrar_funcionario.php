@@ -22,7 +22,7 @@
 
         $resultado = $conn->query($insereFunc);
         if(mysqli_insert_id($conn)){
-            header('location: ../admin/listar_funcionario.php');
+            header('location: ../admin/listar_funcionarios.php');
         } 
     }
 ?>
