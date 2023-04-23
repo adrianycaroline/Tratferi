@@ -14,7 +14,10 @@
         $periodo = $_POST['periodo'];
         $salario = $_POST['salario'];
         $adm = $_POST['adm'];
-        $hashcode = "TRAT-".uniqid()."-".mb_strimwidth($cpf,0,3);
+        //GERADOR DE HASHCODE
+        $cpf_prefix = substr($cpf, 0, 3); // extrai os três primeiros dígitos do CPF
+        $id_unic = uniqid(); // gera um ID único
+        $hashcode = "TRAT-" . $cpf_prefix . "-" . $id_unic; // concatena tudo
 
         $insereFunc = "INSERT INTO funcionario 
         (nome, data_nasc, cpf, coren, crm, rg, cargo, funcao, periodo, salario, adm, imagem, hash, ativo)

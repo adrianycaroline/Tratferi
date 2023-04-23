@@ -33,9 +33,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link">
-                        <img src="../images/prontuario.svg" alt="" width="20vw">
-                        Prontuário
+                    <a href="funcionarios_arquivados.php" class="nav-link">
+                        <img src="../images/usuarios.svg" alt="" width="20vw">
+                        Usuarios Arquivados
                     </a>
                 </li>
                 <li>

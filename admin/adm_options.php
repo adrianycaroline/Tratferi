@@ -1,3 +1,7 @@
+<?php
+    include '../admin/acesso_com_fun.php';
+    include '../connection/connect.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -47,7 +51,7 @@
                         <p class="text-light" style="font-size: 28pt; margin-right: 15px;">3</p>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-light"><a href="../admin/adm_lista_users.php" id="AdmOpcoesbtn">Solicitações de Cadastro</a></h5>
+                        <h5 class="card-title text-light"><a href="../admin/funcionarios_arquivados.php" id="AdmOpcoesbtn">Usuarios Arquivados</a></h5>
                     </div>
                 </div>
                 <div class="card bg-dark" style="width: 18rem; height: 12rem;">

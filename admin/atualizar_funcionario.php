@@ -152,10 +152,7 @@
                         <div class="form-group ">
                             <label>Ativo?</label><br>
                             <label for="ativo">
-                                <input value="ativo" type="radio" name="ativo" id="ativo" value="1" <?php echo ($row['ativo'] == '1') ? 'checked' : ''; ?>> Sim
-                            </label>
-                            <label for="desativo">
-                                <input value="desativo" type="radio" name="desativo" id="desativo" value="0" <?php echo ($row['ativo'] == '0') ? 'checked' : ''; ?>> Não
+                                <input type="checkbox" name="ativo" id="ativo" value="1" <?php echo ($row['ativo'] == '1') ? 'checked' : ''; ?>> Sim
                             </label>
                         </div>
                     </div>
