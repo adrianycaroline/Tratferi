@@ -84,7 +84,7 @@
                                  </button>
                                 </div>
                     <div class="modal-body">
-                    Para ter acesso aos recursos destinados aos nossos pacientes é necessario um cadastro prévio feito por um profissional de saúde no ambiente hospitalar.
+                    Para ter acesso aos recursos destinados aos nossos pacientes é necessario um cadastro prévio feito por um agente de nossa equipe.
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>

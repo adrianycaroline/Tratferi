@@ -60,7 +60,31 @@
         </div>
     </main>
     <!-- Lista de pacientes -->
-    <div style="margin-left: 280px;">
+    <div style="margin-left: 285px;">
+        <?php if(isset($_GET['cadastro']) && ($_GET['cadastro'] == 's')){?>
+            <br><h2 class="text-success">Paciente Cadastrado Com Sucesso!</h2>
+        <?php }?>
+
+        <?php if(isset($_GET['pac'])){
+
+            try{
+            $id = $_GET['pac'];   
+            $excluir = $conn->query("delete from paciente where id = $id");;?>
+            <br><h2 class="text-success">Paciente Excluido Com Sucesso!</h2>
+            <?php // realizando a consulta navamente 
+             $lista = $conn->query("select id, nome, data_nasc, cpf, card_SUS, hash from paciente;");
+             $row = $lista->fetch_assoc();
+             $numRow = mysqli_num_rows($lista);?> 
+
+        <?php }catch(Exception){?>
+            <br><h2 class="text-danger">O Paciente Não Poderá Ser Excluido Contendo Dados Pessoais Associados A Ele!</h2>
+            <?php // realizando a consulta navamente 
+             $lista = $conn->query("select id, nome, data_nasc, cpf, card_SUS, hash from paciente;");
+             $row = $lista->fetch_assoc();
+             $numRow = mysqli_num_rows($lista);?> 
+            <?php }?>
+        <?php }?>
+
         <figure style="display: flex; margin: 10px;">
             <img src="../images/logo_areas.png" alt="Logo Tratferi" width="45vw" height="45vw">
             <h1 style="color: #0CA6FF;">Área do Funcionário - <?php echo($_SESSION['nome']); ?></h1>
@@ -104,16 +128,12 @@
                             <?php echo $row['hash'];?>
                         </td>
                         <td>
-                            <a href="reservas_confir.php?id_usuario_reserva=<?php echo $row['id']?>" class="btn btn-sm btn-success btn-block" aria-label="enviar" role="button">
-                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                                <span class="hidden-xs">CONFIRMAR</span>
+                            <!-- botão de exclusão  -->
+                            <a href="../func/pacientes_lista.php?pac=<?php echo $row['id'];?>" class="btn btn-sm btn-block btn-danger">
+                                <ion-icon name="trash"></ion-icon>EXCLUIR
                             </a>
-                            <a href="reservas_canc.php?id_usuario_reserva=<?php echo $row['id']?>"  class="btn btn-sm btn-block btn-danger">
-                                <span class="glyphicon glyphicon-trash">
-                                    </span> <span class="hidden-xs">CANCELAR</span>
-                                </a>
-                            </td>
-                        </tr>
+                        </td>
+                    </tr>
                         <?php }while($row = $lista->fetch_assoc()); ?>
                         <?php }else{ ?>
                             <tr>Não há pacientes cadastrados</tr>
