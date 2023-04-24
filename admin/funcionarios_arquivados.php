@@ -1,7 +1,7 @@
 <?php 
     include '../admin/acesso_com_fun.php';
     include '../connection/connect.php';
-    $lista = $conn->query("SELECT * FROM funcionario where ativo = 1");
+    $lista = $conn->query("SELECT * FROM funcionario where ativo = 0");
     $row = $lista->fetch_assoc();
     $rows = $lista->num_rows;
 ?>
@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/bootstrap.min.css">
     <link rel="stylesheet" href="../CSS/estilo.css">
-    <title>Lista de Funcionarios Ativos</title>
+    <title>Lista de Funcionarios Arquivados</title>
 </head>
 <body class="fundo_areas">
     <?php include '../admin/menu_adm.php';?>
@@ -23,10 +23,12 @@
         </div>
         <main class="container">
             <br>
-            <h2 class="text-center">Lista de Funcionarios Ativos</h2>
-            <table class="table table-hover table-condensed tb-opacidade">
-                <thead>
-                    <th hidden>ID</th>
+            <h2 class="text-center">Lista de Funcionarios Arquivados</h2>
+            <div class="border-bottom border-2 border-dark" style="width: 97%; margin-left: 15px; margin-bottom: 10px;"></div>
+            <?php if ($rows > 0) { ?>
+                <table class="table table-hover table-condensed tb-opacidade">
+                    <thead>
+                        <th hidden>ID</th>
                     <th>Nome</th>
                     <th>Nivel</th>
                     <th>CPF</th>
@@ -34,12 +36,6 @@
                     <th>Salario</th>
                     <th>Periodo</th>
                     <th>Hashcode</th>
-                    <th class="d-flex">
-                        <a href="../admin/cadastrar_funcionario.php" target="_self" class="btn btn-block btn-primary btn-xs" role="button">
-                            <ion-icon name="add-circle-outline"></ion-icon>
-                            <span class="hidden-xs">ADICIONAR</span>
-                        </a>
-                    </th>
                 </thead>
                 <tbody>
                     <?php do {?>
@@ -53,16 +49,51 @@
                             <td><?php echo $row['periodo'];?></td>
                             <td><?php echo $row['hash'];?></td>
                             <td>
-                                <a href="atualizar_funcionario.php?id=<?php echo $row['id']; ?>" role="button" class="btn btn-success btn-block btn-xs"> 
+                                <a href="funcionarios_restaurar.php?id=<?php echo $row['id']; ?>" role="button" class="btn btn-success btn-block btn-xs"> 
                                     <ion-icon name="refresh-outline"></ion-icon>
-                                    <span class="hidden-xs">ALTERAR</span>
+                                    <span class="hidden-xs">RESTAURAR</span>
                                 </a>
+                                <button data-nome="<?php echo $row['nome']; ?>" 
+                                data-id="<?php echo $row['id']; ?>"
+                                class="delete btn btn-xs btn-block btn-danger">
+                                <ion-icon name="trash-outline"></ion-icon>
+                                <span class="hidden-xs">EXCLUIR</span>
+                            </button>
                             </td>
                         </tr>
                     <?php }while($row = $lista->fetch_assoc())?>
                 </tbody>
             </table>
+            <?php }else {?>
+                <div class="text-center">
+                    <h3>NÃO EXISTEM FUNCIONARIOS ARQUIVADOS.</h3>
+                </div>
+            <?php }?>
         </main>
+    </div>
+     <!-- inicio do modal para excluir... -->
+     <div class="modal fade" id="modalEdit" role="dialog">
+         <div class="modal-dialog">
+             <div class="modal-content">
+                 <div class="modal-header">
+                    <button class="close" data-dismiss="modal" type="button">
+                        &times;
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Deseja mesmo excluir o Funcionario?
+                    <h4><span class="nome text-danger"></span></h4>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" type="button" class="btn btn-success delete-yes">
+                        Confirmar
+                    </a>
+                    <button class="btn btn-danger" data-dismiss="modal">
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

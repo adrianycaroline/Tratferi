@@ -1,5 +1,6 @@
 <?php
     include '../admin/acesso_com_fun.php';
+    include '../connection/connect.php';
 ?>
 
 <!DOCTYPE html>

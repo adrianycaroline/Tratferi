@@ -1,3 +1,7 @@
+<?php
+    include '../admin/acesso_com_fun.php';
+    include '../connection/connect.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -33,9 +37,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link">
-                        <img src="../images/prontuario.svg" alt="" width="20vw">
-                        Prontuário
+                    <a href="funcionarios_arquivados.php" class="nav-link">
+                        <img src="../images/usuarios.svg" alt="" width="20vw">
+                        Usuarios Arquivados
                     </a>
                 </li>
                 <li>
@@ -82,7 +86,7 @@
                 <button class="dropdown-toggle bg-dark border-0" style="color: white;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 </button>
                 <div class="dropdown-menu user" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="../admin/perfil_adm_index.php"><ion-icon name="person-outline"></ion-icon>Perfil</a>
+                    <a class="dropdown-item" href="../admin/perfil/config_perfil.php"><ion-icon name="person-outline"></ion-icon>Perfil</a>
                     <a class="dropdown-item" href="../admin/logout_Fun.php"><ion-icon name="exit-outline"></ion-icon>Sair</a>
                 </div>
             </div>
