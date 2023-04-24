@@ -46,10 +46,11 @@
       </p>
     </div>
     <div class="flip-card-back">
+      <br> 
     <p class="card-text text-muted">
     Quais os nossos ideias como empresa ?</p>
     <img src="images/linha.svg" alt="">
-    <br><br>
+    <br>
             é pensar na acessibilidade <br>entre
             Paciente e cliente dessa <br>forma colocando você e sua saúde em
             Primeiro <br> lugar sempre esse é nosso objetivo como uma marca.      
@@ -69,11 +70,12 @@
       </p>
     </div>
     <div class="flip-card-back">
+      <br>
     <p class="card-text text-muted">
     Como Entregamos nosso atendimento ?
 </p>
     <img src="images/linha.svg" alt="">
-    <br><br>
+    <br>
     dentro da sua casa.
    Nossos profissionais acompanharão o seu tratamento
    Pensando na melhor forma pra você sentir-se bem.   
@@ -94,10 +96,11 @@
     </div>
     <div class="flip-card-back">
     <p class="card-text text-muted">
+      <br>
     Porque confiar no tratferi ?
 </p>
     <img src="images/linha.svg" alt="">
-    <br><br>
+    <br>
     Precisamos de informações basicas sobre o paciente<br>
     Para atender da melhor forma possivel apenas isso,<br>
     Nosso plano é a sua saúde. 
@@ -123,9 +126,10 @@
     </div>
     <div class="flip-card-back">
     <p class="card-text text-muted">
+    <br>
     Tudo no serviço é gratuito ? </p>
     <img src="images/linha.svg" alt="">
-    <br><br>
+    <br>
     Todos Os Nossos Recursos São Totalmente Gratuitos <br>
     e já agradecemos Pela Preferencia ao Tratferi <br>
     fizemos o possivel pra trazer a comunicação de paciente <br>
@@ -146,11 +150,12 @@
         </p>
     </div>
     <div class="flip-card-back">
+      <br>
     <p class="card-text text-muted">
     Nosso objetivo com o site ?
 </p>
     <img src="images/linha.svg" alt="">
-    <br><br>
+    <br>
     É compartilhar o tratferi com o maximo de pessoas possiveis <br>
     pra ter a possibilidade de experimentar nossos serviços de atendimento <br>
      e explicar como funciona o nosso serviço da melhor forma possivel.
@@ -171,11 +176,12 @@
         </p>
     </div>
     <div class="flip-card-back">
+      <br>
     <p class="card-text text-muted">
     Temos Patricionadores ? 
 </p>
     <img src="images/linha.svg" alt="">
-    <br><br>
+    <br>
     Temos uma parceria que idealizou esse projeto e trouxe a oportunidade <br> 
     de colocar em pratica,Senac em especial o Senac itaquera que esteve conosco <br>
     por todo esse caminho com seus profissionais da rede Senac.
