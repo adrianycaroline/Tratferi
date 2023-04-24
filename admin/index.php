@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../CSS/estilo.css">
     <title>Área Administrativa - <?php echo($_SESSION['nome']); ?></title>
 </head>
-<body class="fundo_areas">
+<body class="fundo_adm">
     <?php include 'menu_adm.php'; ?>
     <?php include '../admin/adm_options.php';?>
 </body>

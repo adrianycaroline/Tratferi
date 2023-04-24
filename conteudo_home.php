@@ -38,7 +38,7 @@
     <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="images/atendimento.jpg" alt="">
+      <img src="images/atendimento.jpg" class="img_card1" alt="">
       <br> 
       <p class="card-text"> Quais os nossos ideias como empresa ?</p>
       <p class="card-text" style="color: #38B6FF;">Saiba mais...</p>
@@ -61,7 +61,7 @@
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="images/anota.jpg" alt="">
+      <img src="images/anota.jpg" class="img_card2" alt="">
       <br> 
       <p class="card-text">Como Entregamos nosso atendimento ?</p>
       <p class="card-text" style="color: #38B6FF;">Saiba mais...</p>
@@ -85,7 +85,7 @@
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="images/pc.jpg" alt="">
+      <img src="images/pc.jpg" class="img_card3" alt="">
       <br> 
       <p class="card-text">Porque confiar no tratferi ?</p>
       <p class="card-text" style="color: #38B6FF;">Saiba mais...</p>
@@ -114,7 +114,7 @@
     <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="images/din.jpg" alt="">
+      <img src="images/din.jpg" class="img_card4" alt="">
       <br> 
       <p class="card-text">Tudo no serviço é gratuito ? </p>
       <p class="card-text" style="color: #38B6FF;">Saiba mais...</p>
@@ -138,7 +138,7 @@
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="images/objetivo.jpg" alt="">
+      <img src="images/objetivo.jpg" class="img_card5" alt="">
       <br> 
       <p class="card-text"> Nosso objetivo com o site ?</p>
       <p class="card-text" style="color: #38B6FF;">Saiba mais...</p>
@@ -162,7 +162,7 @@
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="images/comprimento.jpg" alt="">
+      <img src="images/comprimento.jpg" class="img_card6" alt="">
       <br> 
       <p class="card-text">Temos Patricionadores ? 
 </p>
