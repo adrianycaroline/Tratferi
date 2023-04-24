@@ -48,7 +48,7 @@
                         <label for="">Nome</label>
                     </div>
                     <div class="inputbox">
-                        <ion-icon name="person-outline"></ion-icon>
+                        <ion-icon name="calendar"></ion-icon>
                         <input type="date" name="data_nasc" required>
                         <label for="">Data de Nascimento</label>
                     </div>
@@ -58,16 +58,16 @@
                         <label for="">CPF</label>
                     </div>
                     <div class="inputbox">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <ion-icon name="wallet-outline"></ion-icon>
                         <input type="text" name="rg" onkeypress="$(this).mask('00.000.000-0');" required>
                         <label for="">RG</label>
                     </div>
                     <div class="inputbox">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <ion-icon name="wallet-outline"></ion-icon>
                         <input type="text" name="card_sus">
                         <label for="">Cartão SUS</label>
                     </div>
-                    <button type="submit">Prosseguir</button>
+                    <button type="submit" id="loginBtn">Prosseguir</button>
                     <div class="register">
                     </div>
                 </form>
