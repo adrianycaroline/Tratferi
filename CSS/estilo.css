@@ -49,6 +49,37 @@
     background: url(../images/fundo.png) no-repeat fixed;
     background-size: cover;
 }
+/* img dos cards do home */
+.img_card1{
+    background: url(../images/objetivo.jpg) no-repeat;
+    border-radius: 10px;
+}
+.img_card2{
+    background: url(../images/comprimento.jpg) no-repeat;
+    border-radius: 10px;
+}
+.img_card3{
+    background: url(../images/anota.jpg) no-repeat;
+    border-radius: 10px;
+}
+.img_card4{
+    background: url(../images/din.jpg) no-repeat;
+    border-radius: 10px;
+}
+.img_card5{
+    background: url(../images/atendimento.jpg) no-repeat;
+    border-radius: 10px;
+}
+.img_card6{
+    background: url(../images/pc.jpg) no-repeat;
+    border-radius: 10px;
+}
+/* fim img dos cards do home */
+
+.fundo_adm{
+    background: url(../images/fundo_adm.png) no-repeat fixed;
+    background-size: cover;
+}
 
 .buttonBoxMenu{
     color: white;
