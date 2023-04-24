@@ -29,7 +29,7 @@
                         <p class="text-light" style="font-size: 28pt; margin-right: 15px;">1</p>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-light"><a href="../admin/adm_cadastrar_user.php" id="AdmOpcoesbtn">Funcionários Ativos</a></h5>
+                        <h5 class="card-title text-light"><a href="../admin/listar_funcionarios.php" id="AdmOpcoesbtn">Funcionários Ativos</a></h5>
                     </div>
                 </div>
                 <div class="card bg-dark" style="width: 18rem; height: 12rem;">

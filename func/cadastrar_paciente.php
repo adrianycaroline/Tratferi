@@ -2,13 +2,21 @@
  include '../connection/connect.php';
  if($_POST){
         // iniciar o cadastro
-        $nomePac = $_POST['nome'];
-        $emailPac = $_POST['email'];
-        $cpfPac = $_POST['cpf'];
-        $loginRes = $conn->query("insert into pacientes (nome, cpf) values('$nomePac', '$cpfPac')");
-       $rowLogin = $loginRes->fetch_assoc();
-       $numRow = mysqli_num_rows($loginRes);
-       
+        $nome = $_POST['nome'];
+        $data = $_POST['data_nasc'];
+        // $now_format = $data->format('Y-m-d');
+        $cpf = $_POST['cpf'];
+        $rg = $_POST['rg'];
+        $sus = $_POST['card_sus'];
+        $hashcode = "TRAT-".uniqid()."-".mb_strimwidth($cpf,0,3);
+        if($sus == ""){
+        $loginRes = $conn->query("insert into paciente (nome, data_nasc, cpf, rg, card_SUS, imagem, hash) values('$nome', '$data', '$cpf', '$rg', 'null', 'null', '$hashcode')");
+        echo "<script>window.open('pacientes_lista.php?cadastro=s','_self')</script>"; 
+        }
+        elseif($sus != ""){
+        $loginRes = $conn->query("insert into paciente (nome, data_nasc, cpf, rg, card_SUS, imagem, hash) values('$nome', '$data', '$cpf', '$rg', '$sus', 'null', '$hashcode')");
+        echo "<script>window.open('pacientes_lista.php?cadastro=s','_self')</script>";
+    }
 }      
 ?>
 <!DOCTYPE html>
@@ -16,7 +24,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="50;URL= ../index.php">
+    <meta http-equiv="refresh" content="200;URL= ../index.php">
     <link rel="stylesheet" href='../CSS/estilo.css'>
     <link rel="shortcut icon" href="../images/logo_minimizada.png" type="image/x-icon">
     <link rel="stylesheet" href="CSS/bootstrap.min.css">
@@ -32,7 +40,7 @@
         <?php include '../logo_superior.php'?>
         <div id="formbox-cadastro" class="sombra">
             <div class="form-value">
-                <form action="prosseguir.php">
+                <form action="cadastrar_paciente.php" method="post">
                     <h2>Cadastro</h2>
                     <div class="inputbox">
                         <ion-icon name="person-outline"></ion-icon>
@@ -40,16 +48,26 @@
                         <label for="">Nome</label>
                     </div>
                     <div class="inputbox">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="email" name="email" required>
-                        <label for="">E-mail</label>
+                        <ion-icon name="person-outline"></ion-icon>
+                        <input type="date" name="data_nasc" required>
+                        <label for="">Data de Nascimento</label>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="wallet-outline"></ion-icon>
                         <input type="text" name="cpf" onkeypress="$(this).mask('000.000.000-00');" required>
                         <label for="">CPF</label>
                     </div>
-                    <button action="">Prosseguir</button>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="text" name="rg" onkeypress="$(this).mask('00.000.000-0');" required>
+                        <label for="">RG</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="text" name="card_sus">
+                        <label for="">Cartão SUS</label>
+                    </div>
+                    <button type="submit">Prosseguir</button>
                     <div class="register">
                     </div>
                 </form>

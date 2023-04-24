@@ -14,6 +14,7 @@
 </head>
 <body class="fundo_areas">
     <?php include 'menu_adm.php'; ?>
+    <?php include '../admin/adm_options.php';?>
 </body>
 <!-- link para bootstrap -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

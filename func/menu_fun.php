@@ -21,13 +21,19 @@
             </div>
             <ul class="nav nav-pills flex-column mb-auto">
                 <li>
-                    <a href="#" class="nav-link" aria-current="page">
+                    <a href="../func/index.php" class="nav-link" aria-current="page">
                         <img src="../images/dashboard.svg" alt="" width="20vw">
                         Dashboard
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link">
+                    <a href="../func/cadastrar_paciente.php" class="nav-link">
+                        <img src="../images/usuarios.svg" alt="" width="20vw">
+                        Cadastrar
+                    </a>
+                </li>
+                <li>
+                    <a href="pacientes_lista.php" class="nav-link">
                         <img src="../images/usuarios.svg" alt="" width="20vw">
                         Pacientes
                     </a>
@@ -88,7 +94,7 @@
             </div>
         </div>
     </div>
-    <?php include '../func/fun_options.php';?>
+   
 </body>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

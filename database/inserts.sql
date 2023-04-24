@@ -108,34 +108,34 @@ VALUES('7','rua alexandre','443','sao paulo','sp','22050-120','7');
 
 
 insert into paciente
-VALUES('1','Joao','2003/10/01','182.178.168-42','17.170.191-2','898.0034.0054.0716');
+VALUES('1','Joao','2003/10/01','182.178.168-42','17.170.191-2','898.0034.0054.0716','null','645317');
 
 insert into paciente
-VALUES('2','Joana','1987/08/05','982.268.938-97','17.170.191-2','867.1134.9954.0912');
+VALUES('2','Joana','1987/08/05','982.268.938-97','17.170.191-2','867.1134.9954.0912','null','245317');
 
 insert into paciente
-VALUES('3','Laura','1999/03/06','382.563.319-89','90.976.171-5','999.9824.0088.0512');
+VALUES('3','Laura','1999/03/06','382.563.319-89','90.976.171-5','999.9824.0088.0512','null','345317');
 
 insert into paciente
-VALUES('4','Paulo','1981/06/09','971.782.658-99','90.976.171-5','258.8765.9948.0512');
+VALUES('4','Paulo','1981/06/09','971.782.658-99','90.976.171-5','258.8765.9948.0512','null','445317');
 
 insert into paciente
-VALUES('5','Ribamar','1995/03/10','871.653.765-86','73.886.190-7','299.8865.9766.4303');
+VALUES('5','Ribamar','1995/03/10','871.653.765-86','73.886.190-7','299.8865.9766.4303','null','545317');
 
 insert into paciente
-VALUES('6','Fred','1987/07/11','997.113.187-77','64.143.901-9','199.6665.1543.6863');
+VALUES('6','Fred','1987/07/11','997.113.187-77','64.143.901-9','199.6665.1543.6863','null','615317');
 
 insert into paciente
-VALUES('7','Viviane','1997/10/12','765.965.738-12','97.116.186-0','399.7665.1126.8649');
+VALUES('7','Viviane','1997/10/12','765.965.738-12','97.116.186-0','399.7665.1126.8649','null','835317');
 
 insert into paciente
-VALUES('8','Vagner','1981/26/02','508.951.268-00','57.570.171-7','999.8765.5043.1813');
+VALUES('8','Vagner','1981/26/02','508.951.268-00','57.570.171-7','999.8765.5043.1813','null','945317');
 
 insert into paciente
-VALUES('9','Eurico','1978/08/10','907.453.178-99','15.243.190-9','297.7735.7376.1981');
+VALUES('9','Eurico','1978/08/10','907.453.178-99','15.243.190-9','297.7735.7376.1981','null','105317');
 
 insert into paciente
-VALUES('10','Rodrygo','1980/05/08','899.845.145-55','17.130.187-5','127.8873.634.3522'); 
+VALUES('10','Rodrygo','1980/05/08','899.845.145-55','17.130.187-5','127.8873.634.3522','null','115317'); 
 
 
 
@@ -237,28 +237,28 @@ VALUES('10','rodrygo22@gmail.com','10');
 
 
 insert into consulta 
-VALUES('1','2023/01/12','20:00','ferida grande com mau odor','7','7');
+VALUES('1','2023/01/12','20:00','ferida grande com mau odor','125431','7','7');
 
 insert into consulta 
-VALUES('2','2022/01/12','19:30','coloracao estranha na ferida','7','1');
+VALUES('2','2022/01/12','19:30','coloracao estranha na ferida','225431','7','1');
 
 insert into consulta 
-VALUES('3','2022/01/12','19:00','inflamacao no local da ferida','7','2');
+VALUES('3','2022/01/12','19:00','inflamacao no local da ferida','325431','7','2');
 
 insert into consulta 
-VALUES('4','2022/02/07','07:30','execo de pus na ferida','5','6');
+VALUES('4','2022/02/07','07:30','execo de pus na ferida','425431','5','6');
 
 insert into consulta 
-VALUES('5','2022/02/02','15:30','reacao a o medicamento','6','3');
+VALUES('5','2022/02/02','15:30','reacao a o medicamento','525431','6','3');
 
 insert into consulta 
-VALUES('6','2022/12/20','13:00','acompanhamento do tratamento','6','1');
+VALUES('6','2022/12/20','13:00','acompanhamento do tratamento','625431','6','1');
 
 insert into consulta 
-VALUES('7','2022/12/27','17:00','retirada de ponto da ferida','6','6');
+VALUES('7','2022/12/27','17:00','retirada de ponto da ferida','725431','6','6');
 
 insert into consulta 
-VALUES('8','2023/01/05','08:00','acompanhamento do tratamento','5','7');
+VALUES('8','2023/01/05','08:00','acompanhamento do tratamento','825431','5','7');
 
 
 insert into ferida

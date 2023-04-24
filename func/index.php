@@ -15,6 +15,7 @@
 <body class="fundo_areas" onload="atualizarHoras()">
     <?php 
         include '../func/menu_fun.php';
+        include '../func/fun_options.php';
     ?>
 </body>
 <script src="../js/script.js"></script>
