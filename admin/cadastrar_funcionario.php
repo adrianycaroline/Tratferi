@@ -43,10 +43,10 @@
 <body class="fundo_areas">
     <div class="container mt-4 d-flex justify-content-center">
         <div class="card" style="width: 50%;">
-            <h1 class="card-header text-center">Cadastro de Funcionário</h1>
+            <h1 class="card-header text-center" style="color: #38B6FF;">Cadastro de Funcionário</h1>
             <div class="card-body">
                 <!-- Formulário de Cadastro de Funcionário -->
-                <form class="container" style="display: flex; justify-content: center; flex-direction: column;" action="cadastrar_funcionario.php" method="post" name="form_funcionario_cadastro" enctype="multipart/form-data" onsubmit="return validaForm() && validaFormPeriodo()">
+                <form class="container" style="display: flex; justify-content: flex-start; flex-direction: column;" action="cadastrar_funcionario.php" method="post" name="form_funcionario_cadastro" enctype="multipart/form-data" onsubmit="return validaForm() && validaFormPeriodo()">
                     <div class="form-row" style="display: flex; justify-content: center; flex-direction: column;">
                         <div class="form-group">
                             <label for="nome">Nome Completo</label>
@@ -131,11 +131,12 @@
                         </div>
                     </div>
                     <br>
-                    <button class="btn btn-primary" type="submit">Cadastrar</button>
+                    <button class="btn" type="submit" style="background-color: #38B6FF;">Cadastrar</button>
                 </form>
             </div>
         </div>
     </div>
+    <br>
 </body>
 <!-- link para bootstrap -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
