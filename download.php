@@ -51,7 +51,7 @@
         <img class="celular" src="images/celulares1.jpg" alt="">
         </div>
         
-        <br><br>
+    
     </main>
     
    
