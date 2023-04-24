@@ -20,25 +20,30 @@
                    O aplicativo do Tratferi está disponível para <br>
                     os sistemas operacionais Android e IOS 
                 </p>
+                <br>
                 <div class="d-flex ">
                     <div class="" >
                         <div>    
-                        <button class="text-light item mx-3" style="background-color: black; border-radius: 8px;">
-                            <div>
-                                <img src="images/dow.jpg" alt="Logo da Android" width="300px">
-                            </div>
-                        </button>
+                            <a href="https://play.google.com/store/games?hl=pt_BR&gl=US">
+                                <button class="text-light item mx-3" style="border-radius: 10px;">
+                                    <div>
+                                        <img src="images/dow.jpg" alt="Logo da Android" width="300px">
+                                    </div>
+                                </button>
+                            </a>
                         </div>
                         <div>
-                        <button class="text-light item mx-3" style="background-color: black; border-radius: 12px;">
-                            <div>
-                                <img src="images/dowIOS.jpg" alt="Logo da Android" width="300px">
-                            </div>
-                        </button>
+                            <a href="https://www.apple.com/br/app-store/">
+                                <button class="item mx-3" style="border-radius: 10px;">
+                                    <div>
+                                        <img src="images/dowIOS.jpg" alt="Logo da Android" width="300px" >
+                                    </div>
+                                </button>
+                            </a>
                         </div>
                     </div>
                     <div>
-                        <img src="images/Tratferi_qrcode (1).svg" width="180px" alt="">
+                        <img src="images/tratferi_qrcode (1).svg" width="180px" alt="">
                     </div>
                 </div>
             </div>
@@ -46,7 +51,7 @@
         <img class="celular" src="images/celulares1.jpg" alt="">
         </div>
         
-        <br>
+        <br><br>
     </main>
     
    
