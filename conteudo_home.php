@@ -173,7 +173,6 @@
     <div class="flip-card-back">
     <p class="card-text text-muted">
     Temos Patricionadores ? 
-
 </p>
     <img src="images/linha.svg" alt="">
     <br><br>
