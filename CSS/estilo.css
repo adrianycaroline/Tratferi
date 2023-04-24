@@ -75,9 +75,14 @@
     border-radius: 10px;
 }
 /* fim img dos cards do home */
+/* barra azul */
+.barra{
+    margin-left: 280px;
+}
+/* fim barra azul */
 
 .fundo_adm{
-    background: url(../images/fundo_adm.png) no-repeat fixed;
+    background: url(../images/fundo_adm1.png) no-repeat fixed;
     background-size: cover;
 }
 
