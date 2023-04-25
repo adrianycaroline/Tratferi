@@ -79,6 +79,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background: url(../images/pc.jpg) no-repeat;
     border-radius: 10px;
 }
+.rod{
+    max-width: 100%;
+}
 /* fim img dos cards do home */
 /* barra azul */
 .barra{

@@ -11,7 +11,7 @@
    <?php 
         include 'header_publico.php';
         include 'conteudo_home.php';
-        include 'footer.php';
+        
     ?>
 <!-- link para bootstrap -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -30,3 +30,6 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick/slick.min.js"></script>
 </body>
 </html>
+<?php 
+include 'footer2.php';
+?>
