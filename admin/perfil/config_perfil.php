@@ -34,6 +34,7 @@
                             <div>
                                 <h3 >INFORMAÇÕES DA CONTA</h3>
                                 <b><p>ID:</b> <?php echo $row['hash']; ?></p>
+                                <!-- Input do Nome -->
                                 <div class="input-group">
                                     <input required="" type="text" name="text" placeholder="<?php echo $row['nome']; ?>" autocomplete="off" class="input" disabled>
                                     <label class="user-label">Nome</label>
@@ -48,8 +49,8 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="modal_nome_titulo"><img src="../../images/logo_areas.png" width="50vw" alt=""></h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
+                                                <button style="background-color: white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true"><ion-icon style="color: black; font-size: 1.4vw;" name="close-outline"></ion-icon></span>
                                                 </button>
                                             </div>
                                             <div class="modal-body" style="background-color: #EFE9F1;">
@@ -80,6 +81,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- Input do Periodo -->
                                 <div class="input-group">
                                     <input required="" type="text" name="text" placeholder="<?php echo $row['periodo']; ?>" autocomplete="off" class="input" disabled>
                                     <label class="user-label">Período</label>
@@ -94,8 +96,8 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="modal_periodo_titulo"><img src="../../images/logo_areas.png" width="50vw" alt=""></h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
+                                                <button style="background-color: white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true"><ion-icon style="color: black; font-size: 1.4vw;" name="close-outline"></ion-icon></span>
                                                 </button>
                                             </div>
                                             <div class="modal-body" style="background-color: #EFE9F1;">
@@ -104,6 +106,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- Input do Cargo -->
                                 <div class="input-group">
                                     <input required="" type="text" name="text" placeholder="<?php echo $row['cargo']; ?>" autocomplete="off" class="input" disabled>
                                     <label class="user-label">Cargo</label>
@@ -118,8 +121,8 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="modal_cargo_titulo"><img src="../../images/logo_areas.png" width="50vw" alt=""></h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
+                                                <button style="background-color: white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true"><ion-icon style="color: black; font-size: 1.4vw;" name="close-outline"></ion-icon></span>
                                                 </button>
                                             </div>
                                             <div class="modal-body" style="background-color: #EFE9F1;">
@@ -128,6 +131,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- Input da Função -->
                                 <div class="input-group">
                                     <input required="" type="text" name="text" placeholder="<?php echo $row['funcao']; ?>" autocomplete="off" class="input" disabled>
                                     <label class="user-label">Função</label>
@@ -141,8 +145,8 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="modal_funcao_titulo"><img src="../../images/logo_areas.png" width="50vw" alt=""></h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
+                                                <button style="background-color: white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true"><ion-icon style="color: black; font-size: 1.4vw;" name="close-outline"></ion-icon></span>
                                                 </button>
                                             </div>
                                             <div class="modal-body" style="background-color: #EFE9F1;">
@@ -152,6 +156,7 @@
                                     </div>
                                 </div>
                             </div> 
+                            <!-- Dropdown da foto de perfil -->
                             <div style="margin-left: 100px;">
                                 <h3>FOTO DE PERFIL</h3>
                                 <img src="../../fotos_usuarios/<?php echo $row['imagem']; ?>" alt="Foto de Perfil - <?php echo $row['nome'];?>" class="rounded-circle me-2" id="foto_perfil" data-bs-toggle="dropdown" aria-expanded="false">
@@ -160,13 +165,31 @@
                                         <span>Editar</span>
                                     </button>
                                     <div class="dropdown-menu editarFotoAdm" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Carregar foto...</a>
-                                        <a class="dropdown-item" href="#">Remover foto</a>
+                                        <a class="dropdown-item" data-toggle="modal" data-target="#modal_foto">Carregar foto...</a>
+                                        <a class="dropdown-item" >Remover foto</a>
                                     </div>
                                 </div>
                             </div>   
                         </div>
                         <br>
+                        <!-- Modal da foto de perfil -->
+                        <div class="modal fade" id="modal_foto" tabindex="-1" role="dialog" aria-labelledby="modal_foto_centro" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <h5 class="modal-title" id="modal_foto_titulo"><img src="../../images/logo_areas.png" width="50vw" alt=""></h5>
+                                            <button style="background-color: white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true"><ion-icon style="color: black; font-size: 1.4vw;" name="close-outline"></ion-icon></span>
+                                            </button>
+                                            <div class="modal-body">
+                                                <p><b>ATENÇÃO:</b> Sua foto de perfil só pode ser alterada duas vezes a cada cinco dias.</p>
+                                                <p><b>ALTERAÇÕES RESTANTES:</b> 2</p>
+                                                <div class="text-center">
+                                                    <button class="btn btn-primary">Alterar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                         <form action="config_perfil.php" method="post" style="margin-right: 15px;">
                             <!-- Começo do Dados Pessoais -->
                             <h3>Dados Pessoais</h3>
