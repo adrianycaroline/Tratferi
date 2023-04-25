@@ -85,9 +85,13 @@
                 <strong><a style="text-decoration: none; color: white;"><?php echo $_SESSION['nome'];?></a></strong>
                 <button class="dropdown-toggle bg-dark border-0" style="color: white;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 </button>
-                <div class="dropdown-menu user" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="../admin/perfil/config_perfil.php"><ion-icon name="person-outline"></ion-icon>Perfil</a>
-                    <a class="dropdown-item" href="../admin/logout_Fun.php"><ion-icon name="exit-outline"></ion-icon>Sair</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="../admin/perfil/config_perfil.php">
+                        <ion-icon name="person-outline"></ion-icon>Perfil
+                    </a>
+                    <a class="dropdown-item" href="../admin/logout_Fun.php">
+                        <ion-icon name="exit-outline"></ion-icon>Sair
+                    </a>
                 </div>
             </div>
         </div>
@@ -97,5 +101,4 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="../js/script.js"></script>
-    <script src="../js/dropdown.js"></script>
 </html>
