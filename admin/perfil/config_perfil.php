@@ -176,7 +176,9 @@
                         <div class="modal fade" id="modal_foto" tabindex="-1" role="dialog" aria-labelledby="modal_foto_centro" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
-                                            <h5 class="modal-title" id="modal_foto_titulo"><img src="../../images/logo_areas.png" width="50vw" alt=""></h5>
+                                            <div class="modal-title" id="modal_foto_titulo" style="display: flex; justify-content: center; align-items: center;">
+                                                <img src="../../images/logo_areas.png" width="100vw" alt="">
+                                            </div>
                                             <button style="background-color: white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true"><ion-icon style="color: black; font-size: 1.4vw;" name="close-outline"></ion-icon></span>
                                             </button>
