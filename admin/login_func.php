@@ -13,12 +13,14 @@
         $numRow = mysqli_num_rows($loginRes);
         // se a sessão existir ou não
         if ($numRow>0){
+            // Criação das variáveis globais
             $_SESSION['cpf'] = $login;
             session_start();
             $_SESSION['Id'] = $rowLogin['id'];
             $_SESSION['nome'] = $rowLogin['nome'];
             $_SESSION['Cpf'] = $rowLogin['cpf'];
             $_SESSION['Imagem'] = $rowLogin['imagem'];
+            // Verifica se o funcionario é Administrador ou não
             if($rowLogin['adm'] =='adm'){
                 $_SESSION['login'] = "tratferiAdm";
                 echo "<script>window.open('../admin/index.php','_self')</script>";
@@ -27,6 +29,7 @@
                 $_SESSION['login'] = "tratferiFun";
                 echo "<script>window.open('../func/index.php?funcionario=".$login."','_self')</script>";
             }
+            //Caso não retorne informação do banco
         }else{
             echo "<script>alert('Senha ou CPF incorretos!');</script>";
         }
@@ -68,8 +71,11 @@
         </div>
         <?php include '../termos_texto.php';?>
     </section>
+</body>
+    <!-- Links para a Biblioteca de icones do Ionic Icons -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- links para bootstrap e o onkeypress funcionar -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -85,5 +91,4 @@
             }
         }
     </script>
-</body>
 </html>
