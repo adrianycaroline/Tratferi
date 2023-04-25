@@ -50,11 +50,7 @@
             
         <img class="celular" src="images/celulares1.jpg" alt="">
         </div>
-        
-    
-    </main>
-    
-   
+    </main>   
 </body>
 <?php include 'footer.php'?>
 </html>
