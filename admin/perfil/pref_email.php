@@ -19,7 +19,7 @@
 </head>
 <body>
     <?php include '../../admin/perfil/perfil_menu.php';?>
-        <div style="margin-left: 30px;">
+        <div style="margin-left: 280px;">
             <div class="container">
                 <div style="margin-top: 10px;">
                     <h2>PREFERÊNCIAS DE E-MAIL</h2>
