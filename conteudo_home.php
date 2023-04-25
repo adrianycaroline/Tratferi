@@ -109,9 +109,6 @@
   </div>
 </div>
     </div>
-    <!-- Fim Card 3,Começo Card 4  -->
-    <br>
-    <br>
     <!-- começo dos cards  -->
     <div class="d-flex gap-5 justify-content-around">
     <div class="flip-card">
@@ -191,9 +188,5 @@
   </div>
 </div>
     </div>
-    <br>
-    <br>
-    <br>
-  </div>
 </body>
 </html>
