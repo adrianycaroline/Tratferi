@@ -773,8 +773,12 @@ background-color: white;
     border: 2px solid;
     border-radius: 2rem;
 }
-
-
+@media only screen and (min-width: 768px) {
+    .flip-card {
+      width: 270px;
+      height: 350px;
+    }
+}
 /* //////////////////// Card de joinha /////////////////////// */
 .like-dislike-container {
     --dark-grey: #353535;
