@@ -6,35 +6,33 @@
     <link rel="shortcut icon" href="images/logo_minimizada.png" type="image/x-icon">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/estilo.css">
     <title>Conteudo Home</title>
-    
 </head>
 <body>
-  <!-- banner -->
-  <div class="position-relative">
-    <img src="images/bann.jpg" class="img-responsive" width="100%">
+   <!-- começo do banner  -->
+   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/bann.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="images/bann5.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="images/bann3.png" class="d-block w-100" alt="...">
+    </div>
+  </div>
+</div>
+    <!-- fim do banner  -->
     <!-- barra de pesquisa -->
     <nav class="navbar bg-body-tertiary position-absolute top-50 start-50 translate-middle navbar-expand-lg">
       <div class="container-fluid">
-        <form class="d-flex" role="search">
           <div class="embaixo">
             <img src="images/logoPesq.png" class="img-responsive" width="250">
-            <div class="flex">
-              <input class="pesquisar" type="search" placeholder="O que você procura?" aria-label="Search" width="100%">
-              <button class="border" type="submit" style="background-color: #38B6FF;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="35" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16" style="color: #fff;">
-                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                </svg>
-              </button>
-            </div>
           </div>
-        </form>
       </div>
     </nav>
-  </div> <!-- fim barra de pesquisa -->
-  <!-- fim do banner -->
   <div style="background-color: #ccfafb;">
     <br>
     <br>

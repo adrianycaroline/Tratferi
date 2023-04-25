@@ -27,7 +27,7 @@
         <div>
             <br>
             <div style="display: flex; flex-wrap: wrap; margin-left: 20px;">
-                <div class="card bg-dark" style="width: 18rem; height: 12rem;">
+                <div class="card card2 bg-dark" style="width: 18rem; height: 12rem;">
                     <div class="d-flex" style="justify-content: space-between;">
                         <img src="../images/users.png" alt="Usuários" style="margin: 10px;" width="50vw">
                         <p class="text-light" style="font-size: 28pt; margin-right: 15px;">1</p>
@@ -36,7 +36,7 @@
                         <h5 class="card-title text-light"><a href="../admin/listar_funcionarios.php" id="AdmOpcoesbtn">Funcionários Ativos</a></h5>
                     </div>
                 </div>
-                <div class="card bg-dark" style="width: 18rem; height: 12rem;">
+                <div class="card card2 bg-dark" style="width: 18rem; height: 12rem;">
                     <div class="d-flex" style="justify-content: space-between;">
                         <img src="../images/users.png" alt="Usuários" style="margin: 10px;" width="50vw">
                         <p class="text-light" style="font-size: 28pt; margin-right: 15px;">2</p>
@@ -45,7 +45,7 @@
                         <h5 class="card-title text-light"><a href="../admin/adm_solicitacoes_user.php" id="AdmOpcoesbtn">Pacientes Ativos</a></h5>
                     </div>
                 </div>
-                <div class="card bg-dark" style="width: 18rem; height: 12rem;">
+                <div class="card card2 bg-dark" style="width: 18rem; height: 12rem;">
                     <div class="d-flex" style="justify-content: space-between;">
                         <img src="../images/users.png" alt="Usuários" style="margin: 10px;" width="50vw">
                         <p class="text-light" style="font-size: 28pt; margin-right: 15px;">3</p>
@@ -54,7 +54,7 @@
                         <h5 class="card-title text-light"><a href="../admin/funcionarios_arquivados.php" id="AdmOpcoesbtn">Usuarios Arquivados</a></h5>
                     </div>
                 </div>
-                <div class="card bg-dark" style="width: 18rem; height: 12rem;">
+                <div class="card card2 bg-dark" style="width: 18rem; height: 12rem;">
                     <div class="d-flex" style="justify-content: space-between;">
                         <img src="../images/users.png" alt="Usuários" style="margin: 10px;" width="50vw">
                         <p class="text-light" style="font-size: 28pt; margin-right: 15px;">4</p>
@@ -63,7 +63,7 @@
                         <h5 class="card-title text-light">Enfermeiros Ativos</h5>
                     </div>
                 </div>
-                <div class="card bg-dark" style="width: 18rem; height: 12rem;">
+                <div class="card card2 bg-dark" style="width: 18rem; height: 12rem;">
                     <div class="d-flex" style="justify-content: space-between;">
                         <img src="../images/users.png" alt="Usuários" style="margin: 10px;" width="50vw">
                         <p class="text-light" style="font-size: 28pt; margin-right: 15px;">5</p>
@@ -72,7 +72,7 @@
                         <h5 class="card-title text-light">Farmacêuticos</h5>
                     </div>
                 </div>
-                <div class="card bg-dark" style="width: 18rem; height: 12rem;">
+                <div class="card card2 bg-dark" style="width: 18rem; height: 12rem;">
                     <div class="d-flex" style="justify-content: space-between;">
                         <img src="../images/users.png" alt="Usuários" style="margin: 10px;" width="50vw">
                         <p class="text-light" style="font-size: 28pt; margin-right: 15px;">6</p>
