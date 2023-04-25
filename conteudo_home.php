@@ -6,14 +6,25 @@
     <link rel="shortcut icon" href="images/logo_minimizada.png" type="image/x-icon">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/estilo.css">
     <title>Conteudo Home</title>
 </head>
 <body>
-  <!-- banner -->
-  <div class="position-relative">
-    <img src="images/bann.jpg" class="img-responsive" width="100%">
+   <!-- começo do banner  -->
+   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/bann.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="images/bann5.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="images/bann3.png" class="d-block w-100" alt="...">
+    </div>
+  </div>
+</div>
+    <!-- fim do banner  -->
     <!-- barra de pesquisa -->
     <nav class="navbar bg-body-tertiary position-absolute top-50 start-50 translate-middle navbar-expand-lg">
       <div class="container-fluid">
@@ -22,8 +33,6 @@
           </div>
       </div>
     </nav>
-  </div> <!-- fim barra de pesquisa -->
-  <!-- fim do banner -->
   <div style="background-color: #ccfafb;">
     <br>
     <br>

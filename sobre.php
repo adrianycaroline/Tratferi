@@ -31,7 +31,7 @@
         </div>
     </main>
     <br>
-    <?php include 'footer.php';?>
+    <?php include 'footer2.php';?>
 </body>
 <!-- link para bootstrap -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
