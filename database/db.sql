@@ -178,10 +178,7 @@ primary key (id),
 foreign key(id_est)references estoque_med(id),
 foreign key(id_func)references funcionario(id));
 
-create table adm(
-id int not null auto_increment primary key,
-funcao text not null
-);
+
 
 create table Login_paci(
 id int not null auto_increment,
