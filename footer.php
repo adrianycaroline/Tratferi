@@ -59,7 +59,7 @@
                               <a class="nav-link " href="contato.php" id="polit">Fale conosco</a>
                             </tr>
                             <tr>
-                              <a href="politica_pivaci.php" id="polit"> Política de Privacidade </a>
+                              <a href="politica_pivaci.php" id="polit2"> Política de Privacidade </a>
                             </tr>
                           </table>
                         </div>

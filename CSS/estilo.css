@@ -8,18 +8,9 @@
     max-width: 100%;
 }
 
-#polit{
+#polit2{
     text-decoration: none;
     color: rgb(255, 255, 255);
-}
-
-#polit:hover{
-    color: #aeb6c0;
-    cursor: pointer;
-    -webkit-transition: all 0.3s ease;
-	-moz-transition: all 0.3s ease;
-	-o-transition: all 0.3s ease;
-	transition: all 0.3s ease;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {

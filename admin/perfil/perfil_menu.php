@@ -26,7 +26,7 @@
                     </a>
                 </li>
                 <li class="container-navs-menu">
-                    <a class="nav-link" id="texto-navs" href="">
+                    <a class="nav-link" id="texto-navs" href="../../admin/perfil/pref_email.php">
                         PREFERÊNCIAS DE E-MAIL
                     </a>
                 </li>
@@ -48,7 +48,7 @@
             </nav>
             <hr>
             <div style="color: white;">
-                <a href="javascript:window.history.go(-1)" class="text-light" style="text-decoration: none; border: 1px solid white; border-radius: 20px; padding: 5px;"><ion-icon name="arrow-undo-outline"></ion-icon>Voltar</a>
+                <a href="../../admin/index.php" class="text-light" style="text-decoration: none; border: 1px solid white; border-radius: 20px; padding: 5px;"><ion-icon name="arrow-undo-outline"></ion-icon>Voltar</a>
             </div>
         </div>
     </div>
