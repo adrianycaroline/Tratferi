@@ -1,7 +1,7 @@
 <?php 
     include '../admin/acesso_com_fun.php';
     include '../connection/connect.php';
-    $lista = $conn->query("SELECT * FROM funcionario where ativo = 1");
+    $lista = $conn->query("SELECT * FROM funcionario where ativo = 1"); //Seleciona todos os funcionarios que estejam ativos.
     $row = $lista->fetch_assoc();
     $rows = $lista->num_rows;
 ?>
@@ -42,6 +42,7 @@
                     </th>
                 </thead>
                 <tbody>
+                    <!-- Estrutura de Repetição -->
                     <?php do {?>
                         <tr>
                             <td hidden><?php echo $row['id'];?></td>
@@ -53,18 +54,43 @@
                             <td><?php echo $row['periodo'];?></td>
                             <td><?php echo $row['hash'];?></td>
                             <td>
+                                <!-- Condição que verifica se o usuário logado é o mesmo que o que for clicado para alterar -->
+                                <?php if ($_SESSION['Id'] != $row['id']){ ?>
                                 <a href="atualizar_funcionario.php?id=<?php echo $row['id']; ?>" role="button" class="btn btn-success btn-block btn-xs"> 
                                     <ion-icon name="refresh-outline"></ion-icon>
                                     <span class="hidden-xs">ALTERAR</span>
                                 </a>
+                                <?php }else{ ?>  
+                                <a data-toggle="modal" data-target="#modal_user_igual" role="button" class="btn btn-success btn-block btn-xs"> 
+                                    <ion-icon name="refresh-outline"></ion-icon>
+                                    <span class="hidden-xs">ALTERAR</span>
+                                </a>  
+                                <?php } ?>
                             </td>
                         </tr>
-                    <?php }while($row = $lista->fetch_assoc())?>
+                    <?php }while($row = $lista->fetch_assoc())?> <!-- Fim da Estrutura de repetição -->
                 </tbody>
             </table>
+            <!-- Modal do user_igual  -->
+            <div class="modal fade" id="modal_user_igual" tabindex="-1" role="dialog" aria-labelledby="modal_user_igual_centro" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modal_user_igual_titulo"><img src="../../images/logo_areas.png" width="50vw" alt=""></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" style="background-color: #EFE9F1;">
+                            <p><b>ATENÇÃO:</b> Não é possível modificar seu próprio usuário.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 </body>
+<!-- Links para a Biblioteca de icones do Ionic Icons -->
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <!-- link para bootstrap -->

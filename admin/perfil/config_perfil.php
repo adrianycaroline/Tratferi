@@ -2,7 +2,7 @@
     include '../../admin/acesso_com_fun.php';
     include '../../connection/connect.php';
 
-    $lista = $conn->query("SELECT * FROM perfil where id = 1;");
+    $lista = $conn->query("SELECT * FROM perfil where id = ".$_SESSION['Id'].";");
     $row = $lista->fetch_assoc();
     $rows = $lista->num_rows;
 ?>
@@ -206,12 +206,6 @@
                                     <label>Data de Entrada</label>
                                 </div>
                                 <div class="group">
-                                    <input required="" name="data_saida" id="data_saida" type="text" class="input" value="<?php echo date('d/m/Y', strtotime($row['data_saida']));?>">
-                                    <span class="highlight"></span>
-                                    <span class="bar"></span>
-                                    <label>Data de Saída</label>
-                                </div>
-                                <div class="group">
                                     <input required="" name="crm" id="crm" type="text" class="input" value="<?php echo $row['CRM'];?>">
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
@@ -266,13 +260,13 @@
                                 <br>
                                 <div class="d-flex">
                                     <div class="group">
-                                        <input required="" name="telefone" id="telefone" type="tel" class="input">
+                                        <input required="" name="telefone" id="telefone" type="tel" class="input" value="<?php echo $row['telefone'];?>" onkeypress="$(this).mask('(00)00000-0000');">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
                                         <label>Telefone</label>
                                     </div>
                                     <div class="group">
-                                        <input required="" name="email" id="email" type="email" class="input">
+                                        <input required="" name="email" id="email" type="email" class="input" value="<?php echo $row['email'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
                                         <label>Email</label>
@@ -324,4 +318,11 @@
         $('#modalEdit').modal('show'); // chamar o modal
     });
 </script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 </html>
