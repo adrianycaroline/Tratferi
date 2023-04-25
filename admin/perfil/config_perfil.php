@@ -167,29 +167,34 @@
                             </div>   
                         </div>
                         <br>
-                        <form action="perfil_adm_conteudo.php" method="post" style="margin-right: 15px;">
+                        <form action="config_perfil.php" method="post" style="margin-right: 15px;">
+                            <!-- Começo do Dados Pessoais -->
                             <h3>Dados Pessoais</h3>
                             <p>Gerencie seu nome e informações de contato. Essas informações pessoais são privadas e não serão exibidos para outros usuários. Veja a nossa <a href="../../politica_pivaci.php" id="polit" target="_blank"> Política de Privacidade </a> <ion-icon name="lock-closed-outline"></ion-icon> </p>
                             <br>
                             <div class="d-flex">
+                                <!-- Input do CPF -->
                                 <div class="group">
                                     <input required="" name="cpf" id="cpf" type="text" class="input" value="<?php echo $row['cpf']; ?>" onkeypress="$(this).mask('000.000.000-00');">
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
                                     <label>CPF</label>
                                 </div>
+                                <!-- Input da Data de Nascimento  -->
                                 <div class="group">
                                     <input required="" name="datanasc" id="datanasc" type="text" class="input" value="<?php echo date('d/m/Y', strtotime($row['data_nasc'])); ?>">
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
                                     <label>Data de Nascimento</label>
                                 </div>
+                                <!-- Input do Coren -->
                                 <div class="group">
                                     <input required="" name="coren" id="coren" type="text" class="input" value="<?php echo $row['coren'];?>" >
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
                                     <label>Coren</label>
                                 </div>
+                                <!-- Input do RG  -->
                                 <div class="group">
                                     <input required="" name="rg" id="rg" type="text" class="input" value="<?php echo $row['rg'];?>" onkeypress="$(this).mask('00.000.000-0');">
                                     <span class="highlight"></span>
@@ -199,12 +204,14 @@
                             </div>
                             <br>
                             <div class="d-flex">
+                                <!-- Input da Data de Entrada -->
                                 <div class="group">
                                     <input required="" name="data_inicio" id="data_inicio" type="text" class="input" value="<?php echo date('d/m/Y', strtotime($row['data_entrada']));?>">
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
                                     <label>Data de Entrada</label>
                                 </div>
+                                <!-- Input do CRM  -->
                                 <div class="group">
                                     <input required="" name="crm" id="crm" type="text" class="input" value="<?php echo $row['CRM'];?>">
                                     <span class="highlight"></span>
@@ -213,29 +220,33 @@
                                 </div>
                             </div>
                             <br>
-                            <!-- Começo do Endereço  -->
+                            <!-- Começo da área de Endereço  -->
                             <div>
                                 <h4>ENDEREÇO</h4>
                                 <br>
                                 <div class="d-flex">
+                                    <!-- Input do telefone  -->
                                     <div class="group">
                                         <input required="" name="logradouro" id="logradouro" type="text" class="input" value="<?php echo $row['logradouro'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
                                         <label>Logradouro</label>
                                     </div>
+                                    <!-- Input do numero da casa -->
                                     <div class="group">
                                         <input required="" name="numero" id="numero" type="text" class="input"value="<?php echo $row['numero'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
                                         <label>Numero</label>
                                     </div>
+                                    <!-- Input da Cidade  -->
                                     <div class="group">
                                         <input required="" name="cidade" id="cidade" type="text" class="input"value="<?php echo $row['cidade'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
                                         <label>Cidade</label>
                                     </div>
+                                    <!-- Input do UF  -->
                                     <div class="group">
                                         <input required="" name="uf" id="uf" type="text" class="input"value="<?php echo $row['uf'];?>">
                                         <span class="highlight"></span>
@@ -245,6 +256,7 @@
                                 </div>
                                 <br>
                                 <div class="d-flex">
+                                    <!-- Input do cep  -->
                                     <div class="group">
                                         <input required="" name="cep" id="cep" type="text" class="input"value="<?php echo $row['cep'];?>">
                                         <span class="highlight"></span>
@@ -254,17 +266,19 @@
                                 </div>
                                 <br>
                             </div>
-                            <!-- Começo do Telefone e Email  -->
+                            <!-- Começo da área de Telefone e Email  -->
                             <div>
                                 <h4>CONTATO</h4>
                                 <br>
                                 <div class="d-flex">
+                                    <!-- Input do telefone  -->
                                     <div class="group">
                                         <input required="" name="telefone" id="telefone" type="tel" class="input" value="<?php echo $row['telefone'];?>" onkeypress="$(this).mask('(00)00000-0000');">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
                                         <label>Telefone</label>
                                     </div>
+                                    <!-- Input do Email  -->
                                     <div class="group">
                                         <input required="" name="email" id="email" type="email" class="input" value="<?php echo $row['email'];?>">
                                         <span class="highlight"></span>
@@ -273,12 +287,14 @@
                                     </div>
                                 </div>
                                 <br>
+                                <!-- Botões de Descartar e Manter Alterações -->
                                 <div>
                                     <button type="button" class="btn btn-secondary">Descartar Alterações</button>
                                     <button type="button" class="btn btn-primary">Manter Alterações</button>
                                 </div>
                                 <br>
                                 <br>
+                                <!-- Texto dos direitos reservados -->
                                 <div class="text-center">
                                     <p> <img src="../../images/logo_areas.png" width="20vw" alt="Logo do Tratferi"> TRATFERI - TODOS OS DIREITOS RESERVADOS.</p>
                                 </div>
