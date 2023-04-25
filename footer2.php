@@ -65,7 +65,7 @@
                     <a class="nav-link " href="contato.php" style="color: #fff; font-size: 20px;">Fale conosco</a>
                 </tr>
                 <tr>
-                    <a class="nav-link" href="politica_pivaci.php" id="polit" style="color: #fff; font-size: 20px;"> Política de Privacidade </a>
+                    <a class="nav-link" href="Politica_Privacidade.php" id="polit" style="color: #fff; font-size: 20px;"> Política de Privacidade </a>
                 </tr>
             </table>
         </div>
