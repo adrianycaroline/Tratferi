@@ -2,7 +2,7 @@
     include '../../admin/acesso_com_fun.php';
     include '../../connection/connect.php';
 
-    $lista = $conn->query("SELECT * FROM funcionario where id = ".$_SESSION['Id'].";");
+    $lista = $conn->query("SELECT * FROM perfil where id = 1;");
     $row = $lista->fetch_assoc();
     $rows = $lista->num_rows;
 ?>
@@ -225,25 +225,25 @@
                                 <br>
                                 <div class="d-flex">
                                     <div class="group">
-                                        <input required="" name="logradouro" id="logradouro" type="text" class="input">
+                                        <input required="" name="logradouro" id="logradouro" type="text" class="input" value="<?php echo $row['logradouro'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
                                         <label>Logradouro</label>
                                     </div>
                                     <div class="group">
-                                        <input required="" name="numero" id="numero" type="text" class="input">
+                                        <input required="" name="numero" id="numero" type="text" class="input"value="<?php echo $row['numero'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
                                         <label>Numero</label>
                                     </div>
                                     <div class="group">
-                                        <input required="" name="cidade" id="cidade" type="text" class="input">
+                                        <input required="" name="cidade" id="cidade" type="text" class="input"value="<?php echo $row['cidade'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
                                         <label>Cidade</label>
                                     </div>
                                     <div class="group">
-                                        <input required="" name="uf" id="uf" type="text" class="input">
+                                        <input required="" name="uf" id="uf" type="text" class="input"value="<?php echo $row['uf'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
                                         <label>UF</label>
@@ -252,7 +252,7 @@
                                 <br>
                                 <div class="d-flex">
                                     <div class="group">
-                                        <input required="" name="cep" id="cep" type="text" class="input">
+                                        <input required="" name="cep" id="cep" type="text" class="input"value="<?php echo $row['cep'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
                                         <label>CEP</label>

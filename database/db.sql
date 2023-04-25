@@ -6,8 +6,8 @@ id int not null auto_increment,
 nome varchar(50) not null,
 data_nasc date not null,
 cpf varchar(14) not null,
-coren varchar(14) not null,
-CRM varchar(9) not null,
+coren varchar(14) null,
+CRM varchar(9) null,
 rg varchar(12) not null,
 cargo varchar(15) not null,
 funcao text not null,
@@ -207,7 +207,41 @@ foreign key (id_func) references funcionario(id));
 
 
 
-
+CREATE 
+    ALGORITHM = UNDEFINED 
+    DEFINER = `root`@`localhost` 
+    SQL SECURITY DEFINER
+VIEW `perfil` AS
+    SELECT 
+        `f`.`id` AS `id`,
+        `f`.`nome` AS `nome`,
+        `f`.`data_nasc` AS `data_nasc`,
+        `f`.`cpf` AS `cpf`,
+        `f`.`coren` AS `coren`,
+        `f`.`CRM` AS `CRM`,
+        `f`.`rg` AS `rg`,
+        `f`.`cargo` AS `cargo`,
+        `f`.`funcao` AS `funcao`,
+        `f`.`periodo` AS `periodo`,
+        `f`.`salario` AS `salario`,
+        `f`.`data_entrada` AS `data_entrada`,
+        `f`.`data_saida` AS `data_saida`,
+        `f`.`adm` AS `adm`,
+        `f`.`imagem` AS `imagem`,
+        `f`.`hash` AS `hash`,
+        `f`.`ativo` AS `ativo`,
+        `t`.`telefone` AS `telefone`,
+        `e`.`email` AS `email`,
+        `end`.`logradouro` AS `logradouro`,
+        `end`.`numero` AS `numero`,
+        `end`.`cidade` AS `cidade`,
+        `end`.`uf` AS `uf`,
+        `end`.`cep` AS `cep`
+    FROM
+        (((`funcionario` `f`
+        JOIN `tel_func` `t` ON (`f`.`id` = `t`.`id`))
+        JOIN `email_func` `e` ON (`f`.`id` = `e`.`id`))
+        JOIN `end_func` `end` ON (`f`.`id` = `end`.`id`))
 
 
 
