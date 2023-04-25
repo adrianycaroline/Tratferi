@@ -293,7 +293,7 @@
                             </div>
                             <!-- Começo da área de Telefone e Email  -->
                             <div>
-                                <h4>CONTATO</h4>
+                                <h4 id="contato">CONTATO</h4>
                                 <br>
                                 <div class="d-flex">
                                     <!-- Input do telefone  -->
