@@ -42,7 +42,7 @@
        <!-- final area de localização -->
        <div class="col-sm-6 col-md-4">
            <div class="panel-footer" style="display: flex; justify-content: center;">
-           <img src="images/logoPesq.png" class="img-responsive" width="170">
+           <img src="images/logoPesq.png" class="img-responsive hide-on-mobile" width="170">
            </div>
        </div>
        <!-- area de contato  -->
@@ -65,7 +65,7 @@
                     <a class="nav-link " href="contato.php" style="color: #fff; font-size: 20px;">Fale conosco</a>
                 </tr>
                 <tr>
-                    <a class="nav-link" href="politica_pivaci.php" id="polit" style="color: #fff; font-size: 20px;"> Política de Privacidade </a>
+                    <a class="nav-link" href="Politica_Privacidade.php" id="polit" style="color: #fff; font-size: 20px;"> Política de Privacidade </a>
                 </tr>
             </table>
         </div>
@@ -74,7 +74,14 @@
     <div class="text-bg-info p-3" style="background: -webkit-gradient(linear, left top, right top, from(#38B6FF), to(#38B6FF)) no-repeat;">
         <h6 class="text-center" style="color: white">©2023 Tratferi-Todos os direitos reservados</h6></div>
     </div>
+<style>
+   @media (max-width: 767px) {
+  .hide-on-mobile {
+    display: none;
+  }
+}
 
+</style>
    <!-- fim do rodape -->
 </body>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
