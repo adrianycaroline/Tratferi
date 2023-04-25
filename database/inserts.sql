@@ -1,14 +1,14 @@
 insert into funcionario
-VALUES('1','daniel','2004/10/07','145.326.268-23','102.658','596.987','90.156.984-8','enfermeiro','realizar triagens, preencher prontuários, oferecer os primeiros atendimentos, coletar exames, administrar medicamentos e monitorar o estado de saúde dos pacientes.','noite','3300,00','2020/02/01','null','func','null','13564','1');
+VALUES('1','daniel','2004/10/07','145.326.268-23','102.658','596.987','90.156.984-8','enfermeiro','realizar triagens, preencher prontuários, oferecer os primeiros atendimentos, coletar exames, administrar medicamentos e monitorar o estado de saúde dos pacientes.','noite','3300,00','2020/02/01','null','adm','user_sem_foto.png','13564','1');
 
 insert into funcionario
-VALUES('2','andrey','2000/03/10','359.742.031-98','032.987','158.387','88.032.603-7','auxiliar enfermagem','realiza a coleta de sangue para exames, faz curativos simples, administra remédios, ajuda na higiene dos pacientes, entre outras funções.','manha','2429,00','2020/02/01','null','func','null','2664','1');
+VALUES('2','andrey','2000/03/10','359.742.031-98','032.987','158.387','88.032.603-7','auxiliar enfermagem','realiza a coleta de sangue para exames, faz curativos simples, administra remédios, ajuda na higiene dos pacientes, entre outras funções.','manha','2429,00','2020/02/01','null','adm','user_sem_foto.png','2664','1');
 
 insert into funcionario
-VALUES('3','felipe','2001/11/03','031.084.871-32','951.311','014.741','03.156.741-9','enfermeiro','realizar triagens, preencher prontuários, oferecer os primeiros atendimentos, coletar exames, administrar medicamentos e monitorar o estado de saúde dos pacientes.','manha','3136,00','2020/01/09','null','func','null','3664','1');
+VALUES('3','felipe','2001/11/03','031.084.871-32','951.311','014.741','03.156.741-9','enfermeiro','realizar triagens, preencher prontuários, oferecer os primeiros atendimentos, coletar exames, administrar medicamentos e monitorar o estado de saúde dos pacientes.','manha','3136,00','2020/01/09','null','func','user_sem_foto.png','3664','1');
 
 insert into funcionario
-VALUES('4','joao','1999/11/25','953.148.348-71','731.871','348.321','78.136.468-1','Cirurgião geral','especialista treinado para o manejo cirúrgico das afecções mais diversas do organismo como um todo, resolvendo todas as questões de atendimento primário e secundário, com ênfase no trauma, urgência e emergência além da captação de órgãos..','tarde','8461,00','2010/01/09','2019/11/11','func','null','4664','0');
+VALUES('4','joao','1999/11/25','953.148.348-71','731.871','348.321','78.136.468-1','Cirurgião geral','especialista treinado para o manejo cirúrgico das afecções mais diversas do organismo como um todo, resolvendo todas as questões de atendimento primário e secundário, com ênfase no trauma, urgência e emergência além da captação de órgãos..','tarde','8461,00','2010/01/09','2019/11/11','func','user_sem_foto.png','4664','0');
 
 insert into funcionario
 VALUES('5','mario','1998/06/05','841.168.031-94','324.014','494.684','34.887.341-5','clínico gera','responsável por diagnosticar doenças, desde as mais simples até as mais complexas.','manha','8461,00','2017/01/09','null','func','null','5664','1');
