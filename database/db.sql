@@ -238,7 +238,7 @@ VIEW `perfil` AS
         (((`funcionario` `f`
         JOIN `tel_func` `t` ON (`f`.`id` = `t`.`id`))
         JOIN `email_func` `e` ON (`f`.`id` = `e`.`id`))
-        JOIN `end_func` `end` ON (`f`.`id` = `end`.`id`))
+        JOIN `end_func` `end` ON (`f`.`id` = `end`.`id`));
 
 
 

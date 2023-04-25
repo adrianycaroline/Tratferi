@@ -355,7 +355,7 @@ insert into login_func
 VALUES ('','1234','1');
 
 insert into login_func
-VALUES ('','1234','8');
+VALUES ('','1234','2');
 
 insert into login_func
 VALUES ('','1234','10');
