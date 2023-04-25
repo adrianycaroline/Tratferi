@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="../../CSS/bootstrap.min.css">
     <title>Configurações do Perfil - <?php echo $_SESSION['nome'];?></title>
 </head>
-<body>
+<body class="fundo_adm">
     <?php include 'perfil_menu.php';?>
     <!-- Inicio Configurações de perfil  -->
     <div style="margin-left: 280px; display: flex; justify-content: left;">
@@ -37,8 +37,8 @@
                                 <!-- Input do Nome -->
                                 <div class="input-group">
                                     <input required="" type="text" name="text" placeholder="<?php echo $row['nome']; ?>" autocomplete="off" class="input" disabled>
-                                    <label class="user-label">Nome</label>
-                                    <a role="button" id="editar" data-toggle="modal" data-target="#modal_nome">
+                                    <label class="user-label" style="color: #38B6FF;">Nome</label>
+                                    <a role="button" id="editar" data-toggle="modal" data-target="#modal_nome" style="background-color: #38B6FF;">
                                         <ion-icon name="pencil-outline"></ion-icon>
                                     </a>
                                 </div>
@@ -84,8 +84,8 @@
                                 <!-- Input do Periodo -->
                                 <div class="input-group">
                                     <input required="" type="text" name="text" placeholder="<?php echo $row['periodo']; ?>" autocomplete="off" class="input" disabled>
-                                    <label class="user-label">Período</label>
-                                    <a role="button" id="editar" data-toggle="modal" data-target="#modal_periodo">
+                                    <label class="user-label" style="color: #38B6FF;">Período</label>
+                                    <a role="button" id="editar" data-toggle="modal" data-target="#modal_periodo" style="background-color: #38B6FF;">
                                         <ion-icon name="pencil-outline"></ion-icon>
                                     </a>
                                 </div>
@@ -109,8 +109,8 @@
                                 <!-- Input do Cargo -->
                                 <div class="input-group">
                                     <input required="" type="text" name="text" placeholder="<?php echo $row['cargo']; ?>" autocomplete="off" class="input" disabled>
-                                    <label class="user-label">Cargo</label>
-                                    <a role="button" id="editar" data-toggle="modal" data-target="#modal_cargo">
+                                    <label class="user-label" style="color: #38B6FF;">Cargo</label>
+                                    <a role="button" id="editar" data-toggle="modal" data-target="#modal_cargo" style="background-color: #38B6FF;">
                                         <ion-icon name="pencil-outline"></ion-icon>
                                     </a>
                                 </div>
@@ -134,8 +134,8 @@
                                 <!-- Input da Função -->
                                 <div class="input-group">
                                     <input required="" type="text" name="text" placeholder="<?php echo $row['funcao']; ?>" autocomplete="off" class="input" disabled>
-                                    <label class="user-label">Função</label>
-                                    <a role="button" id="editar" data-toggle="modal" data-target="#modal_funcao">
+                                    <label class="user-label" style="color: #38B6FF;">Função</label>
+                                    <a role="button" id="editar" data-toggle="modal" data-target="#modal_funcao" style="background-color: #38B6FF;">
                                         <ion-icon name="pencil-outline"></ion-icon>
                                     </a>
                                 </div>
@@ -161,9 +161,9 @@
                                 <h3>FOTO DE PERFIL</h3>
                                 <img src="../../fotos_usuarios/<?php echo $row['imagem']; ?>" alt="Foto de Perfil - <?php echo $row['nome'];?>" class="rounded-circle me-2" id="foto_perfil" data-bs-toggle="dropdown" aria-expanded="false">
                                 <div class="dropdown">
-                                    <button class="dropdown-toggle" id="editarFotoAdm" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span>Editar</span>
-                                    </button>
+                                <button class="btn dropdown-toggle" style="background-color: #38B6FF;" id="editarFotoAdm" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span>Editar</span>
+                                </button>
                                     <div class="dropdown-menu editarFotoAdm" aria-labelledby="dropdownMenuButton">
                                         <a class="dropdown-item" data-toggle="modal" data-target="#modal_foto">Carregar foto...</a>
                                         <a class="dropdown-item" >Remover foto</a>
@@ -203,28 +203,28 @@
                                     <input required="" name="cpf" id="cpf" type="text" class="input" value="<?php echo $row['cpf']; ?>" onkeypress="$(this).mask('000.000.000-00');">
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
-                                    <label>CPF</label>
+                                    <label style="color: #38B6FF;">CPF</label>
                                 </div>
                                 <!-- Input da Data de Nascimento  -->
                                 <div class="group">
                                     <input required="" name="datanasc" id="datanasc" type="text" class="input" value="<?php echo date('d/m/Y', strtotime($row['data_nasc'])); ?>">
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
-                                    <label>Data de Nascimento</label>
+                                    <label style="color: #38B6FF;">Data de Nascimento</label>
                                 </div>
                                 <!-- Input do Coren -->
                                 <div class="group">
                                     <input required="" name="coren" id="coren" type="text" class="input" value="<?php echo $row['coren'];?>" >
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
-                                    <label>Coren</label>
+                                    <label style="color: #38B6FF;">Coren</label>
                                 </div>
                                 <!-- Input do RG  -->
                                 <div class="group">
                                     <input required="" name="rg" id="rg" type="text" class="input" value="<?php echo $row['rg'];?>" onkeypress="$(this).mask('00.000.000-0');">
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
-                                    <label>RG</label>
+                                    <label style="color: #38B6FF;">RG</label>
                                 </div>
                             </div>
                             <br>
@@ -234,14 +234,14 @@
                                     <input required="" name="data_inicio" id="data_inicio" type="text" class="input" value="<?php echo date('d/m/Y', strtotime($row['data_entrada']));?>">
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
-                                    <label>Data de Entrada</label>
+                                    <label style="color: #38B6FF;">Data de Entrada</label>
                                 </div>
                                 <!-- Input do CRM  -->
                                 <div class="group">
                                     <input required="" name="crm" id="crm" type="text" class="input" value="<?php echo $row['CRM'];?>">
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
-                                    <label>CRM</label>
+                                    <label style="color: #38B6FF;">CRM</label>
                                 </div>
                             </div>
                             <br>
@@ -255,28 +255,28 @@
                                         <input required="" name="logradouro" id="logradouro" type="text" class="input" value="<?php echo $row['logradouro'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label>Logradouro</label>
+                                        <label style="color: #38B6FF;">Logradouro</label>
                                     </div>
                                     <!-- Input do numero da casa -->
                                     <div class="group">
                                         <input required="" name="numero" id="numero" type="text" class="input"value="<?php echo $row['numero'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label>Numero</label>
+                                        <label style="color: #38B6FF;">Numero</label>
                                     </div>
                                     <!-- Input da Cidade  -->
                                     <div class="group">
                                         <input required="" name="cidade" id="cidade" type="text" class="input"value="<?php echo $row['cidade'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label>Cidade</label>
+                                        <label style="color: #38B6FF;">Cidade</label>
                                     </div>
                                     <!-- Input do UF  -->
                                     <div class="group">
                                         <input required="" name="uf" id="uf" type="text" class="input"value="<?php echo $row['uf'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label>UF</label>
+                                        <label style="color: #38B6FF;">UF</label>
                                     </div>
                                 </div>
                                 <br>
@@ -286,7 +286,7 @@
                                         <input required="" name="cep" id="cep" type="text" class="input"value="<?php echo $row['cep'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label>CEP</label>
+                                        <label style="color: #38B6FF;">CEP</label>
                                     </div>
                                 </div>
                                 <br>
@@ -301,21 +301,21 @@
                                         <input required="" name="telefone" id="telefone" type="tel" class="input" value="<?php echo $row['telefone'];?>" onkeypress="$(this).mask('(00)00000-0000');">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label>Telefone</label>
+                                        <label style="color: #38B6FF;">Telefone</label>
                                     </div>
                                     <!-- Input do Email  -->
                                     <div class="group">
                                         <input required="" name="email" id="email" type="email" class="input" value="<?php echo $row['email'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label>Email</label>
+                                        <label style="color: #38B6FF;">Email</label>
                                     </div>
                                 </div>
                                 <br>
                                 <!-- Botões de Descartar e Manter Alterações -->
                                 <div>
                                     <button type="button" class="btn btn-secondary">Descartar Alterações</button>
-                                    <button type="button" class="btn btn-primary">Manter Alterações</button>
+                                    <button type="button" class="btn" style="background-color: #38B6FF;">Manter Alterações</button>
                                 </div>
                                 <br>
                                 <br>
