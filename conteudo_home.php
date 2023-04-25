@@ -11,28 +11,26 @@
 </head>
 <body>
    <!-- começo do banner  -->
-   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
+<div id="carouselExampleSlidesOnly" class="carousel slide position-relative" data-bs-ride="carousel">
+  <div class="carousel-inner" data-bs-interval="1000">
+    <div class="carousel-item active" data-bs-interval="3000">
       <img src="images/bann.jpg" class="d-block w-100" alt="...">
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item" data-bs-interval="3000">
       <img src="images/bann5.png" class="d-block w-100" alt="...">
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item" data-bs-interval="3000">
       <img src="images/bann3.png" class="d-block w-100" alt="...">
     </div>
   </div>
+  <!-- barra de pesquisa -->
+  <div class="position-absolute top-50 start-50 translate-middle d-none d-md-block">
+    <img src="images/logoPesq.png" class="img-fluid" width="250" alt="Logo Pesq" style="max-width: 100%; height: auto;">
+  </div>
 </div>
-    <!-- fim do banner  -->
-    <!-- barra de pesquisa -->
-    <nav class="navbar bg-body-tertiary position-absolute top-50 start-50 translate-middle navbar-expand-lg">
-      <div class="container-fluid">
-          <div class="embaixo">
-            <img src="images/logoPesq.png" class="img-responsive" width="250">
-          </div>
-      </div>
-    </nav>
+<!-- fim do banner  -->
+
+
   <div style="background-color: #ccfafb;">
     <br>
     <br>
@@ -54,7 +52,9 @@
             <p class="card-text text-muted">
               Quais os nossos ideias como empresa ?
             </p>
-            <img src="images/linha.svg" alt="">
+            <div style="margin-left: 15px; margin-right: 15px;">
+              <img src="images/linha.svg" alt="">
+            </div>
             <br>
             <p>
               é pensar na acessibilidade entre
@@ -81,7 +81,9 @@
             <p class="card-text text-muted">
               Como Entregamos nosso atendimento ?
             </p>
-            <img src="images/linha.svg" alt="">
+            <div style="margin-left: 15px; margin-right: 15px;">
+              <img src="images/linha.svg" alt="">
+            </div>
             <br>
             <p>
               dentro da sua casa.
@@ -108,7 +110,9 @@
               <br>
               Porque confiar no tratferi ?
             </p>
-            <img src="images/linha.svg" alt="">
+            <div style="margin-left: 15px; margin-right: 15px;">
+              <img src="images/linha.svg" alt="">
+            </div>
             <br>
             <p>
               Precisamos de informações basicas sobre o paciente
@@ -138,7 +142,9 @@
               <p class="card-text text-muted">
               Tudo no serviço é gratuito ? 
               </p>
+            <div style="margin-left: 15px; margin-right: 15px;">
               <img src="images/linha.svg" alt="">
+            </div>
               <br>
               <p>
               Todos Os Nossos Recursos São Totalmente Gratuitos <br>
@@ -166,7 +172,9 @@
             <br>
             Nosso objetivo com o site ?
           </p>
-          <img src="images/linha.svg" alt="">
+            <div style="margin-left: 15px; margin-right: 15px;">
+              <img src="images/linha.svg" alt="">
+            </div>
           <br>
           <p>
           É compartilhar o tratferi com o maximo de pessoas possiveis <br>
@@ -193,7 +201,9 @@
               <p class="card-text text-muted">
               Temos Patricionadores ? 
               </p>
+            <div style="margin-left: 15px; margin-right: 15px;">
               <img src="images/linha.svg" alt="">
+            </div>
               <br>
               <p>
               Temos uma parceria que idealizou esse projeto e trouxe a oportunidade <br> 
