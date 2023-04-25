@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../CSS/estilo.css">
     <title>Lista de Funcionarios Ativos</title>
 </head>
-<body class="fundo_areas">
+<body class="fundo_adm">
     <?php include '../admin/menu_adm.php';?>
     <div style="margin-left: 280px; bottom: 0;">
         <div class="bg-dark">
