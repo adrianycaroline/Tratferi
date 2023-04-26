@@ -21,48 +21,49 @@
                         Tratferi
                     </a> 
                 </figure>
+                <!-- Começo do conteúdo  -->
             </div>
             <ul class="nav nav-pills flex-column mb-auto">
                 <li>
                     <a href="#" class="nav-link" aria-current="page">
                         <img src="../images/dashboard.svg" alt="" width="20vw">
-                        Dashboard
+                        Home
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="#" class="nav-link">
                         <img src="../images/usuarios.svg" alt="" width="20vw">
                         Pacientes
+                    </a>
+                </li> -->
+                <li>
+                    <a href="#" class="nav-link">
+                        <img src="../images/prontuario.svg" alt="" width="20vw">
+                        Consultas
                     </a>
                 </li>
                 <li>
                     <a href="#" class="nav-link">
                         <img src="../images/prontuario.svg" alt="" width="20vw">
-                        Prontuário
+                        Agendamento
                     </a>
                 </li>
-                <li>
-                    <a href="#" class="nav-link">
-                        <img src="../images/cama.svg" alt="" width="20vw">
-                        Leitos
-                    </a>
-                </li>
-                <li>
+                <!-- <li>
                     <a href="#" class="nav-link">
                         <img src="../images/predio.svg" alt="" width="20vw">    
                         Departamentos
                     </a>
-                </li>
-                <li>
+                </li> -->
+                <!-- <li>
                     <a href="#" class="nav-link">
                         <img src="../images/predio.svg" alt="" width="20vw">    
                         Designação
                     </a>
-                </li>
+                </li> -->
                 <li>
                     <a href="#" class="nav-link">
                         <img src="../images/predio.svg" alt="" width="20vw">    
-                        RH
+                        Departamentos
                     </a>
                 </li>
                 <li>
@@ -85,7 +86,7 @@
                 <button class="dropdown-toggle bg-azul border-0" style="color: white;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="../admin/perfil/config_perfil.php">
+                    <a class="dropdown-item" href="config_perfil.php">
                         <ion-icon name="person-outline"></ion-icon>Perfil
                     </a>
                     <a class="dropdown-item" href="../admin/logout_pac.php">

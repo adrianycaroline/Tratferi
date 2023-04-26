@@ -13,7 +13,7 @@
             session_start();
             $_SESSION['login'] = "tratferi";
             $_SESSION['nome'] = $rowLogin['nome'];
-            $_SESSION['id'] = $rowLogin['id'];
+            $_SESSION['Id'] = $rowLogin['id'];
             $_SESSION['Imagem'] = $rowLogin['imagem'];
             if($rowLogin['cpf'] == $cpf){
                  echo "<script>window.open('../client/index.php','_self')</script>";
