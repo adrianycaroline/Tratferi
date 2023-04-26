@@ -14,7 +14,7 @@
 </head>
 <body>
     <div id="escondido">
-        <div class="d-flex flex-column flex-shrink-0 p-3 bg-azul"  style="position: fixed; top: 0; left: 0; bottom: 0; width: 280px;">
+        <div class="d-flex flex-column flex-shrink-0 p-3"  style="position: fixed; top: 0; left: 0; bottom: 0; width: 280px; background-color: #38B6FF;">
             <div>
                 <figure style="display: flex;">
                     <img src="../images/logoPesq.png" alt="Logo Tratferi" width="75vw"> 
@@ -53,7 +53,7 @@
             <div class="dropdown">
                 <img src="https://github.com/mdo.png" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="32" height="32" class="rounded-circle me-2">
                 <strong><a style="text-decoration: none; color: white;"><?php echo $_SESSION['nome'];?></a></strong>
-                <button class="dropdown-toggle bg-azul border-0" style="color: white;" type="button" id="dropdownMenuFunc" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="dropdown-toggle bg-azul border-0" style="background-color: #38B6FF; color: white;"  type="button" id="dropdownMenuFunc" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 </button>
                 <div class="dropdown-menu func" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="../admin/perfil_adm_index.php"><ion-icon name="person-outline"></ion-icon>Perfil</a>

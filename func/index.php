@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../CSS/estilo.css">
     <title>Área do Funcionário - <?php echo($_SESSION['nome']); ?></title>
 </head>
-<body class="fundo_areas" onload="atualizarHoras()">
+<body class="fundo_adm" onload="atualizarHoras()">
     <?php 
         include '../func/menu_fun.php';
         include '../func/fun_options.php';

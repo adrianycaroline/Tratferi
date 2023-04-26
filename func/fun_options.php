@@ -24,6 +24,12 @@
             $diaDaSemana = 'Domingo';
             break;
     }
+    $listaP = $conn->query("SELECT COUNT(*) FROM paciente"); //Conta a quantidade de usuarios ativos.
+   
+    $rowP = $listaP->fetch_row(); 
+    $quantidadeP = $rowP[0]; 
+
+    
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -123,10 +129,10 @@
                 <div class="card bg-azul2" style="width: 18rem; height: 12rem;">
                     <div class="d-flex" style="justify-content: space-between;">
                         <img src="../images/users.png" alt="Usuários" style="margin: 10px;" width="50vw">
-                        <p class="text-light" style="font-size: 28pt; margin-right: 15px;">1</p>
+                        <p class="text-light" style="font-size: 28pt; margin-right: 15px;"><?php echo $quantidadeP ?></p>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-light">Médicos Ativos</h5>
+                        <h5 class="card-title text-light"><a href="pacientes_lista.php" class="text-white">Pacientes Ativos</a></h5>
                     
                     </div>
                 </div>
@@ -136,7 +142,7 @@
                         <p class="text-light" style="font-size: 28pt; margin-right: 15px;">2</p>
                     </div>    
                     <div class="card-body">
-                        <h5 class="card-title text-light">Pacientes Ativos</h5>
+                        <h5 class="card-title text-light"><a href="consultas.php" class="text-white">Consultas</a></h5>
                     </div>
                 </div>
                 <div class="card bg-azul2" style="width: 18rem; height: 12rem;">
@@ -145,34 +151,7 @@
                         <p class="text-light" style="font-size: 28pt; margin-right: 15px;">3</p>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-light">Representantes</h5>
-                    </div>
-                </div>
-                <div class="card bg-azul2" style="width: 18rem; height: 12rem;">
-                    <div class="d-flex" style="justify-content: space-between;">
-                        <img src="../images/users.png" alt="Usuários" style="margin: 10px;" width="50vw">
-                        <p class="text-light" style="font-size: 28pt; margin-right: 15px;">4</p>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-light">Enfermeiros Ativos</h5>
-                    </div>
-                </div>
-                <div class="card bg-azul2" style="width: 18rem; height: 12rem;">
-                    <div class="d-flex" style="justify-content: space-between;">
-                        <img src="../images/users.png" alt="Usuários" style="margin: 10px;" width="50vw">
-                        <p class="text-light" style="font-size: 28pt; margin-right: 15px;">5</p>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-light">Farmacêuticos</h5>
-                    </div>
-                </div>
-                <div class="card bg-azul2" style="width: 18rem; height: 12rem;">
-                    <div class="d-flex" style="justify-content: space-between;">
-                        <img src="../images/users.png" alt="Usuários" style="margin: 10px;" width="50vw">
-                        <p class="text-light" style="font-size: 28pt; margin-right: 15px;">6</p>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-light">Recepcionistas</h5>
+                        <h5 class="card-title text-light"><a href="medicamentos.php" class="text-white">Medicamentos</a></h5>
                     </div>
                 </div>
             </div>

@@ -4,7 +4,7 @@
        if($_POST){
          $cpf = $_POST['cpf'];
          $senha = $_POST['password'];
-         $loginRes = $conn->query("SELECT paciente.id as id, paciente.cpf as cpf, paciente.nome  as nome, Login_paci.senha as senha FROM Login_paci
+         $loginRes = $conn->query("SELECT paciente.id as id, paciente.cpf as cpf, paciente.nome  as nome, paciente.imagem as imagem, Login_paci.senha as senha   FROM Login_paci
          inner join paciente ON(Login_paci.id_paci = paciente.id) where cpf = '$cpf' and senha = '$senha'");
         $rowLogin = $loginRes->fetch_assoc();
         $numRow = mysqli_num_rows($loginRes);
@@ -13,9 +13,10 @@
             session_start();
             $_SESSION['login'] = "tratferi";
             $_SESSION['nome'] = $rowLogin['nome'];
-            $_SESSION['id'] = $rowLogin['id'];
+            $_SESSION['Id'] = $rowLogin['id'];
+            $_SESSION['Imagem'] = $rowLogin['imagem'];
             if($rowLogin['cpf'] == $cpf){
-                // echo "<script>window.open('../client/index.php','_self')</script>";
+                 echo "<script>window.open('../client/index.php','_self')</script>";
             } 
         }else {
             echo "<script>window.open('../admin/login_cliente.php?acesso=n','_self')</script>"; 
