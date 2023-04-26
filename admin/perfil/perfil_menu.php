@@ -31,7 +31,7 @@
                     </a>
                 </li>
                 <li class="container-navs-menu">
-                    <a class="nav-link" id="texto-navs" href="">
+                    <a class="nav-link" id="texto-navs" href="../../admin/perfil/senha_segu.php">
                         SENHA E SEGURANÇA
                     </a>
                 </li>

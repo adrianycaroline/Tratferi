@@ -39,13 +39,13 @@
                 <li>
                     <a href="funcionarios_arquivados.php" class="nav-link">
                         <img src="../images/usuarios.svg" alt="" width="20vw">
-                        Usuarios Arquivados
+                        Arquivados
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link">
-                        <img src="../images/cama.svg" alt="" width="20vw">
-                        Leitos
+                    <a href="../admin/listar_funcionarios.php" class="nav-link">
+                        <img src="../images/usuarios.svg" alt="" width="20vw">
+                        Ativos
                     </a>
                 </li>
                 <li>
