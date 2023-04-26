@@ -41,7 +41,7 @@
         <div id="formbox-cadastro" class="sombra">
             <div class="form-value">
                 <form action="cadastrar_paciente.php" method="post">
-                    <h2>Cadastro</h2>
+                    <h2>Cadastrar Paciente</h2>
                     <div class="inputbox">
                         <ion-icon name="person-outline"></ion-icon>
                         <input type="text" name="nome" required>
