@@ -13,14 +13,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conscientização</title>
+<!-- Fundo Conscientização -->
 <style>
 body {
         background: url('images/FUNDO_VERIFICA.png') no-repeat;  
         background-size: cover;
     }
 </style>
+<!-- final fundo conscientização -->
 </head>
-<body>
+<body class="">
 <?php include 'header_publico.php'?>
 <main class="d-flex justify-content-center img-fluid"> 
 <!-- card 1  -->
@@ -167,37 +169,19 @@ body {
     </div>
  <!-- fim Card 3  -->
 </main>
-<?php include 'footer.php'?>
+<?php include 'footer2.php'?>
+<!-- Responsivo -->
 <script>
-// selecione os elementos dos ícones "like" e "dislike"
-const likeIcon = document.getElementById('icon-like');
-const dislikeIcon = document.getElementById('icon-dislike');
-
-// função para redimensionar os ícones com base na largura da janela
-function resizeIcons() {
-  const windowWidth = window.innerWidth;
-
-  // ajuste a largura da visualização com base no tamanho do ícone
-  if (windowWidth < 500) {
-    likeIcon.setAttribute('width', '30');
-    likeIcon.setAttribute('height', '30');
-    dislikeIcon.setAttribute('width', '30');
-    dislikeIcon.setAttribute('height', '30');
-  } else {
-    likeIcon.setAttribute('width', '40');
-    likeIcon.setAttribute('height', '40');
-    dislikeIcon.setAttribute('width', '40');
-    dislikeIcon.setAttribute('height', '40');
-  }
+if (window.innerWidth < 768) {
+  const elements = document.querySelectorAll('.my-element');
+  elements.forEach(element => {
+    element.classList.add('col-md-6');
+  });
 }
 
-// redimensione os ícones quando a janela for redimensionada
-window.onresize = resizeIcons;
-
-// chame a função de redimensionamento pela primeira vez para definir os tamanhos iniciais dos ícones
-resizeIcons();
 
  
 </script>
+<!-- Fim responsivo -->
 </body>
 </html>
