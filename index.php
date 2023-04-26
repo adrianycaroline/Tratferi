@@ -10,6 +10,7 @@
 <body>
    <?php 
         include 'header_publico.php';
+       
         include 'conteudo_home.php';
         
     ?>

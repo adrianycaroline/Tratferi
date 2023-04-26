@@ -56,12 +56,18 @@
     <link rel="shortcut icon" href="../images/logo_minimizada.png" type="image/x-icon">
     <link rel="stylesheet" href="../CSS/bootstrap.min.css">
     <link rel="stylesheet" href="../CSS/cadastro.css">
+    <link rel="stylesheet" href="../CSS/estilo.css">
     <title>Editar Funcionário</title>
 </head>
 <body class="fundo_areas">
+<div class="fixed-top" style="background-color: #38B6FF;">
+        <br> <br>
+    </div>
+    <br>
+    <br>
     <div class="container mt-4 d-flex justify-content-center">
         <div class="card" style="width: 50%;">
-            <h1 class="card-header text-center">Editar Funcionário - <?php echo $row['nome']?></h1>
+            <h1 class="card-header text-center" style="color: #38B6FF;">Editar Funcionário - <?php echo $row['nome']?></h1>
             <div class="card-body">
                 <!-- Formulário de Cadastro de Funcionário -->
                 <form class="container" style="display: flex; justify-content: center; flex-direction: column;" action="atualizar_funcionario.php" method="post" name="form_funcionario_atualiza" enctype="multipart/form-data" onsubmit="return validaForm() && validaFormPeriodo()">
@@ -157,15 +163,98 @@
                         </div>
                     </div>
                     <br>
-                    <button class="btn btn-primary" type="submit">Atualizar</button>
+                    <button class="btn" style="background-color: #38B6FF;" type="submit">Atualizar</button>
                 </form>
             </div>
         </div>
     </div>
+    <!-- Menu lateral -->
+    <div>
+        <div class="d-flex flex-column flex-shrink-0 p-3 " style="position: fixed; top: 0; left: 0; bottom: 0; width: 280px; background-color: #38B6FF; z-index: 9999;">
+            <div>
+                <figure style="display: flex;">
+                    <img src="../images/logoPesq.png" alt="Logo Tratferi" width="75vw"> 
+                    <a href="../index.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none" style="font-size: 32pt;">
+                        Tratferi
+                    </a> 
+                </figure>
+            </div>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li>
+                    <a href="../admin/index.php" class="nav-link" aria-current="page" style="color: #fff;">
+                        <img src="../images/dashboard.svg" alt="" width="20vw">
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="../admin/cadastrar_funcionario.php" class="nav-link" style="color: #fff;">
+                        <img src="../images/usuarios.svg" alt="" width="20vw">
+                        Cadastrar
+                    </a>
+                </li>
+                <li>
+                    <a href="funcionarios_arquivados.php" class="nav-link" style="color: #fff;">
+                        <img src="../images/usuarios.svg" alt="" width="20vw">
+                        Usuarios Arquivados
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link" style="color: #fff;">
+                        <img src="../images/cama.svg" alt="" width="20vw">
+                        Leitos
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link" style="color: #fff;">
+                        <img src="../images/predio.svg" alt="" width="20vw">    
+                        Departamentos
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link" style="color: #fff;">
+                        <img src="../images/predio.svg" alt="" width="20vw">    
+                        Designação
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link" style="color: #fff;">
+                        <img src="../images/predio.svg" alt="" width="20vw">    
+                        RH
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link" style="color: #fff;">
+                        <img src="../images/coracao.svg" alt="" width="20vw">    
+                        Ajuda
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link" style="color: #fff;">
+                        <img src="../images/anuncio.svg" alt="" width="20vw">
+                        Anuncios
+                    </a>
+                </li>
+            </ul>
+            <hr>
+            <div class="dropdown">
+                <img src="../fotos_usuarios/<?php echo $_SESSION['Imagem']; ?>" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="32" height="32" class="rounded-circle me-2">
+                <strong><a style="text-decoration: none; color: white;"><?php echo $_SESSION['nome'];?></a></strong>
+                <button class="dropdown-toggle border-0" style="background-color: #38B6FF; color: white;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                </button>
+                <div class="dropdown-menu user" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="../admin/perfil/config_perfil.php"><ion-icon name="person-outline"></ion-icon>Perfil</a>
+                    <a class="dropdown-item" href="../admin/logout_Fun.php"><ion-icon name="exit-outline"></ion-icon>Sair</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+<!-- Links para a Biblioteca de icones do Ionic Icons -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <!-- link para bootstrap -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-2.2.0.min-js" type="text/javascript"></script>
 <script type="text/javascript">
     $(document).on('ready',function(){
@@ -178,11 +267,22 @@
     });
 </script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick/slick.min.js"></script>
+<script type="text/javascript">
+    $('.delete').on('click',function(){
+        var nome = $(this).data('nome'); //busca o nome com a descrição (data-nome)
+        var id = $(this).data('id'); // busca o id (data-id)
+        //console.log(id + ' - ' + nome); //exibe no console
+        $('span.nome').text(nome); // insere o nome do item na confirmação
+        $('a.delete-yes').attr('href','usuario_excluir.php?id='+id); //chama o arquivo php para excluir o produto
+        $('#modalEdit').modal('show'); // chamar o modal
+    });
+</script>
+<!-- Links para jquery -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <script>
         //ativa o campo caso seja enfermeiro ou medico
         const cargoSelect = document.getElementById('cargo');
@@ -195,15 +295,20 @@
             if (selectedOption === 'Enfermeiro' || selectedOption === 'Auxiliar') {
                 corenInput.disabled = false;
                 crmInput.disabled = true;
+                crmInput.value = ''; // limpa o campo crm
             } else if (selectedOption === 'Medico') {
                 corenInput.disabled = true;
                 crmInput.disabled = false;
+                corenInput.value = ''; // limpa o campo coren
             } else {
                 corenInput.disabled = true;
                 crmInput.disabled = true;
+                corenInput.value = ''; // limpa o campo coren
+                crmInput.value = ''; // limpa o campo crm
             }
         });
     </script>
+    <!-- Caixa de alerta que verifica se o cargo não está em "-- selecionar --" -->
     <script>
         function validaForm() {
             var selectOpcao = document.getElementById("cargo");
@@ -214,6 +319,7 @@
                 return true;
         }
     </script>
+    <!-- Caixa de alerta que verifica se o periodo não está em "-- selecionar --" -->
     <script>
         function validaFormPeriodo() {
             var selectOpcao2 = document.getElementById("periodo");

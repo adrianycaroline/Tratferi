@@ -48,13 +48,54 @@
                 </div>
             </div>
             
-        <img class="celular" src="images/celulares1.jpg" alt="">
+        <img class="celular img-responsive" src="images/celulares1.jpg" alt="">
         </div>
-        
-    
-    </main>
-    
-   
+    </main>   
+    <script>
+        function makeResponsive() {
+  const mainElement = document.querySelector('main');
+  if (window.innerWidth < 768) {
+    mainElement.classList.add('responsive');
+  } else {
+    mainElement.classList.remove('responsive');
+  }
+}
+
+window.addEventListener('resize', makeResponsive);
+makeResponsive();
+const celularImg = document.querySelector('.celular');
+
+function checkScreenSize() {
+  if (window.innerWidth < 768) {
+    celularImg.classList.add('hide');
+  } else {
+    celularImg.classList.remove('hide');
+  }
+}
+
+// Verifique o tamanho da tela quando a página carrega
+checkScreenSize();
+
+// Verifique o tamanho da tela quando a janela for redimensionada
+window.addEventListener('resize', checkScreenSize);
+
+
+
+
+
+    </script>
+    <style>
+        main.responsive {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .hide {
+    display: none;
+  }
+}
+    </style>
 </body>
-<?php include 'footer.php'?>
+<?php include 'footer2.php'?>
 </html>

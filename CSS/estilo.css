@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
+
+@media (max-width: 768px) {
+  .icon-container {
+    margin-left: 20px;
+  }
+}
+
+
 .linha {
     background-color: #5CE1E6;
 }
@@ -492,24 +500,24 @@ input:focus ~ :valid{
 }
 /* ////////////////////// EFEITO HOVER DO MENU PUBLICO ///////////////////// */
 
-#nav-item-flutuante {
+#nav-item2-flutuante {
     transition: transform 0.3s ease-in-out;
 }
-#nav-item-flutuante:hover {
+#nav-item2-flutuante:hover {
     transform: scale(1.1);
 }
-#nav-item-flutuante:not(:hover) {
+#nav-item2-flutuante:not(:hover) {
     transform: scale(0.9);
 }
 
-.item{
+.item2{
     transition: transform 0.3s ease-in-out;
 }
 
-.item:hover {
+.item2:hover {
     transform: scale(1.1);
 }
-.item:not(:hover) {
+.item2:not(:hover) {
     transform: scale(0.9);
 }
 /* //////////////////// Cards Conscientização /////////////////////// */
@@ -653,14 +661,14 @@ input:focus ~ :valid{
 }
 
 
-.card{
+.card2{
     transition: transform 0.3s ease-in-out;
 }
 
-.card:hover {
+.card2:hover {
     transform: scale(1.1);
 }
-.card:not(:hover) {
+.card2:not(:hover) {
     transform: scale(1.0);
 }
 
@@ -771,6 +779,7 @@ background-color: white;
     .flip-card {
       width: 270px;
       height: 350px;
+      margin-left: 30px;
     }
 }
 /* //////////////////// Card de joinha /////////////////////// */

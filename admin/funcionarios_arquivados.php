@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../CSS/estilo.css">
     <title>Lista de Funcionarios Arquivados</title>
 </head>
-<body class="fundo_areas">
+<body class="fundo_adm">
     <?php include '../admin/menu_adm.php';?>
     <div style="margin-left: 280px; bottom: 0;">
         <div class="bg-dark">
@@ -23,18 +23,19 @@
         </div>
         <main class="container">
             <br>
-            <h2 class="text-center">Lista de Funcionarios Arquivados</h2>
+            <h2 class="text-center" style="color: #38B6FF;">Lista de Funcionarios Arquivados</h2>
+            <br>
             <div class="border-bottom border-2 border-dark" style="width: 97%; margin-left: 15px; margin-bottom: 10px;"></div>
             <?php if ($rows > 0) { ?>
                 <table class="table table-hover table-condensed tb-opacidade">
                     <thead>
                         <th hidden>ID</th>
-                    <th>Nome</th>
-                    <th>Nivel</th>
-                    <th>CPF</th>
-                    <th>Cargo</th>
-                    <th>Salario</th>
-                    <th>Periodo</th>
+                        <th style="color: #1d5f96;">Nome</th>
+                    <th style="color: #1d5f96;">Nivel</th>
+                    <th style="color: #1d5f96;">CPF</th>
+                    <th style="color: #1d5f96;">Cargo</th>
+                    <th style="color: #1d5f96;">Salario</th>
+                    <th style="color: #1d5f96;">Periodo</th>
                     <th>Hashcode</th>
                 </thead>
                 <tbody>
@@ -49,7 +50,7 @@
                             <td><?php echo $row['periodo'];?></td>
                             <td><?php echo $row['hash'];?></td>
                             <td>
-                                <a href="funcionarios_restaurar.php?id=<?php echo $row['id']; ?>" role="button" class="btn btn-success btn-block btn-xs"> 
+                                <a href="funcionarios_restaurar.php?id=<?php echo $row['id']; ?>" role="button" class="btn btn-block btn-xs" style="background-color: #66CDAA;"> 
                                     <ion-icon name="refresh-outline"></ion-icon>
                                     <span class="hidden-xs">RESTAURAR</span>
                                 </a>

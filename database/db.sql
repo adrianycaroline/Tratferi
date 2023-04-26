@@ -181,10 +181,7 @@ primary key (id),
 foreign key(id_est)references estoque_med(id),
 foreign key(id_func)references funcionario(id));
 
-create table adm(
-id int not null auto_increment primary key,
-funcao text not null
-);
+
 
 create table Login_paci(
 id int not null auto_increment,
@@ -244,7 +241,7 @@ VIEW `perfil` AS
         (((`funcionario` `f`
         JOIN `tel_func` `t` ON (`f`.`id` = `t`.`id`))
         JOIN `email_func` `e` ON (`f`.`id` = `e`.`id`))
-        JOIN `end_func` `end` ON (`f`.`id` = `end`.`id`))
+        JOIN `end_func` `end` ON (`f`.`id` = `end`.`id`));
 
 
 CREATE 

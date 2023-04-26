@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="CSS/estilo.css">
     <title>Document</title>
 </head>
@@ -15,7 +16,7 @@
        <!-- area de localização -->
        <div class="col-sm-6 col-md-4">
         <br>
-          <div class="panel-footer" style="background: none; margin-left: 50px;">
+          <div class="panel-footer" style="background: none; margin-left: 80px;">
                 <!-- <img src="images/Adriany__1_-removebg-preview.png" width="40%"> -->
                <H4>Atendimento <i class="bi bi-headset" style="color: white;"></i></H4>
                <div>
@@ -41,12 +42,12 @@
        <!-- final area de localização -->
        <div class="col-sm-6 col-md-4">
            <div class="panel-footer" style="display: flex; justify-content: center;">
-           <img src="images/logoPesq.png" class="img-responsive" width="170">
+           <img src="images/logoPesq.png" class="img-responsive hide-on-mobile" width="170">
            </div>
        </div>
        <!-- area de contato  -->
        <div class="col-sm-6 col-md-4" >
-           <div class="panel-footer" style="background: none; margin-left: 100px;">
+           <div class="panel-footer" style="background: none; margin-left: 200px;">
            <table class="">
                 <tr class="nav-item">
                     <a class="nav-link" href="index.php#" style="color: #fff; font-size: 20px;">Home</a>
@@ -64,7 +65,7 @@
                     <a class="nav-link " href="contato.php" style="color: #fff; font-size: 20px;">Fale conosco</a>
                 </tr>
                 <tr>
-                    <a class="nav-link" href="politica_pivaci.php" id="polit" style="color: #fff; font-size: 20px;"> Política de Privacidade </a>
+                    <a class="nav-link" href="Politica_Privacidade.php" id="polit" style="color: #fff; font-size: 20px;"> Política de Privacidade </a>
                 </tr>
             </table>
         </div>
@@ -73,7 +74,16 @@
     <div class="text-bg-info p-3" style="background: -webkit-gradient(linear, left top, right top, from(#38B6FF), to(#38B6FF)) no-repeat;">
         <h6 class="text-center" style="color: white">©2023 Tratferi-Todos os direitos reservados</h6></div>
     </div>
+<style>
+   @media (max-width: 767px) {
+  .hide-on-mobile {
+    display: none;
+  }
+}
 
+</style>
    <!-- fim do rodape -->
 </body>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </html>

@@ -18,7 +18,7 @@
             <img src="../../images/logoPesq.png" alt="" width="60vw">
             TRATFERI
         </figure>
-        <div >
+        <div>
             <nav class="nav">
                 <li class="container-navs-menu">
                     <a class="nav-link" id="texto-navs" href="../../admin/perfil/config_perfil.php">
@@ -31,12 +31,12 @@
                     </a>
                 </li>
                 <li class="container-navs-menu">
-                    <a class="nav-link" id="texto-navs" href="">
+                    <a class="nav-link" id="texto-navs" href="../../admin/perfil/senha_segu.php">
                         SENHA E SEGURANÇA
                     </a>
                 </li>
                 <li class="container-navs-menu">
-                    <a class="nav-link" id="texto-navs" href="">
+                    <a class="nav-link" id="texto-navs" href="config_perfil.php#contato">
                         TELEFONE
                     </a>
                 </li>
@@ -47,13 +47,16 @@
                 </li>
             </nav>
             <hr>
+            <!-- Botão de Voltar -->
             <div style="color: white;">
-                <a href="../../admin/index.php" class="text-light" style="text-decoration: none; border: 1px solid white; border-radius: 20px; padding: 5px;"><ion-icon name="arrow-undo-outline"></ion-icon>Voltar</a>
+                <a href="../../admin/index.php" class="text-light" style="text-decoration: none; border: 1px solid white; border-radius: 20px; padding: 5px;">
+                    <ion-icon name="arrow-undo-outline"></ion-icon>Voltar
+                </a>
             </div>
         </div>
     </div>
 </body>
+<!-- Links para a Biblioteca de Icones do Ionic Icons -->
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-<script src="../js/dropdown.js"></script>
 </html>
