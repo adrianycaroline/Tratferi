@@ -50,8 +50,8 @@
                                             <div class="modal-title" id="modal_nome_titulo" style="display: flex; justify-content: center; align-items: center;">
                                                 <img src="../../images/logo_areas.png" width="100vw" alt="">
                                             </div>
-                                            <button style="background-color: white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true"><ion-icon style="color: black; font-size: 1.4vw;" name="close-outline"></ion-icon></span>
+                                            <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
                                             </button>
                                             <div class="modal-body">
                                                 <h5 style="color: #1d5f96;">Confirmar mudança de nome de exibição</h5>
@@ -97,8 +97,8 @@
                                             <div class="modal-title" id="modal_periodo_titulo" style="display: flex; justify-content: center; align-items: center;">
                                                 <img src="../../images/logo_areas.png" width="100vw" alt="">
                                             </div>
-                                            <button style="background-color: white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true"><ion-icon style="color: black; font-size: 1.4vw;" name="close-outline"></ion-icon></span>
+                                            <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
                                             </button>
                                             <div class="modal-body" >
                                                 <p><b>ATENÇÃO:</b> O seu período de trabalho não é algo que você pode mudar diretamente em seu perfil, apenas outro profissional autorizado pode realizar a mudança de seu horario de expediente.</p>
@@ -122,8 +122,8 @@
                                             <div class="modal-title" id="modal_cargo_titulo" style="display: flex; justify-content: center; align-items: center;">
                                                 <img src="../../images/logo_areas.png" width="100vw" alt="">
                                             </div>
-                                            <button style="background-color: white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true"><ion-icon style="color: black; font-size: 1.4vw;" name="close-outline"></ion-icon></span>
+                                            <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
                                             </button>
                                             <div class="modal-body" >
                                                 <p><b>ATENÇÃO:</b> O seu cargo na empresa não é algo que você pode mudar diretamente em seu perfil, apenas outro profissional autorizado pode realizar a mudança de seu cargo.</p>
@@ -146,8 +146,8 @@
                                             <div class="modal-title" id="modal_funcao_titulo" style="display: flex; justify-content: center; align-items: center;">
                                                 <img src="../../images/logo_areas.png" width="100vw" alt="">
                                             </div>
-                                            <button style="background-color: white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true"><ion-icon style="color: black; font-size: 1.4vw;" name="close-outline"></ion-icon></span>
+                                            <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
                                             </button>
                                             <div class="modal-body" >
                                                 <p><b>ATENÇÃO:</b> A sua função na empresa não é algo que você pode mudar diretamente em seu perfil, apenas outro profissional autorizado pode realizar a mudança de sua função.</p>
@@ -179,8 +179,8 @@
                                     <div class="modal-title" id="modal_foto_titulo" style="display: flex; justify-content: center; align-items: center;">
                                         <img src="../../images/logo_areas.png" width="100vw" alt="">
                                     </div>
-                                    <button style="background-color: white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true"><ion-icon style="color: black; font-size: 1.4vw;" name="close-outline"></ion-icon></span>
+                                    <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
                                     </button>
                                     <div class="modal-body">
                                         <p><b>ATENÇÃO:</b> Sua foto de perfil só pode ser alterada duas vezes a cada 2 semanas.</p>
