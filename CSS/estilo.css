@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 @media (max-width: 768px) {
-    .icon-container {
-      margin-left: 20px;
-    }
+  .icon-container {
+    margin-left: 20px;
   }
+}
 
 .linha {
     background-color: #5CE1E6;
