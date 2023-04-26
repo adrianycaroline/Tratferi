@@ -1,8 +1,8 @@
 <?php
-    include '../../admin/acesso_com_fun.php';
-    include '../../connection/connect.php';
+    include '../admin/acesso_com_pac.php';
+    include '../connection/connect.php';
 
-    $lista = $conn->query("SELECT * FROM perfil where id = ".$_SESSION['Id'].";");
+    $lista = $conn->query("SELECT * FROM perfil_paci where id = ".$_SESSION['Id'].";");
     $row = $lista->fetch_assoc();
     $rows = $lista->num_rows;
 ?>
@@ -11,10 +11,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../../images/logo_minimizada.png" type="image/x-icon">
-    <link rel="stylesheet" href="../../CSS/estilo.css">
-    <link rel="stylesheet" href="../../CSS/estilo_perfil.css">
-    <link rel="stylesheet" href="../../CSS/bootstrap.min.css">
+    <link rel="shortcut icon" href="../images/logo_minimizada.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/estilo.css">
+    <link rel="stylesheet" href="../CSS/estilo_perfil.css">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
     <title>Configurações do Perfil - <?php echo $_SESSION['nome'];?></title>
 </head>
 <body class="fundo_adm">
@@ -42,13 +42,14 @@
                                         <ion-icon name="pencil-outline"></ion-icon>
                                     </a>
                                 </div>
+                                
                                 <br>
                                 <!-- Modal alterar nome  -->
                                 <div class="modal fade" id="modal_nome" tabindex="-1" role="dialog" aria-labelledby="modal_nome_centro" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-title" id="modal_nome_titulo" style="display: flex; justify-content: center; align-items: center;">
-                                                <img src="../../images/logo_areas.png" width="100vw" alt="">
+                                                <img src="../images/logo_areas.png" width="100vw" alt="">
                                             </div>
                                             <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
@@ -81,85 +82,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Input do Periodo -->
-                                <div class="input-group">
-                                    <input required="" type="text" name="text" placeholder="<?php echo $row['periodo']; ?>" autocomplete="off" class="input" disabled>
-                                    <label class="user-label" style="color: #38B6FF;">Período</label>
-                                    <a role="button" id="editar" data-toggle="modal" data-target="#modal_periodo" style="background-color: #38B6FF;">
-                                        <ion-icon name="pencil-outline"></ion-icon>
-                                    </a>
-                                </div>
-                                <br>
-                                <!-- Modal do periodo  -->
-                                <div class="modal fade" id="modal_periodo" tabindex="-1" role="dialog" aria-labelledby="modal_periodo_centro" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-title" id="modal_periodo_titulo" style="display: flex; justify-content: center; align-items: center;">
-                                                <img src="../../images/logo_areas.png" width="100vw" alt="">
-                                            </div>
-                                            <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
-                                            </button>
-                                            <div class="modal-body" >
-                                                <p><b>ATENÇÃO:</b> O seu período de trabalho não é algo que você pode mudar diretamente em seu perfil, apenas outro profissional autorizado pode realizar a mudança de seu horario de expediente.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Input do Cargo -->
-                                <div class="input-group">
-                                    <input required="" type="text" name="text" placeholder="<?php echo $row['cargo']; ?>" autocomplete="off" class="input" disabled>
-                                    <label class="user-label" style="color: #38B6FF;">Cargo</label>
-                                    <a role="button" id="editar" data-toggle="modal" data-target="#modal_cargo" style="background-color: #38B6FF;">
-                                        <ion-icon name="pencil-outline"></ion-icon>
-                                    </a>
-                                </div>
-                                <br>
-                                <!-- Modal do cargo  -->
-                                <div class="modal fade" id="modal_cargo" tabindex="-1" role="dialog" aria-labelledby="modal_cargo_centro" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-title" id="modal_cargo_titulo" style="display: flex; justify-content: center; align-items: center;">
-                                                <img src="../../images/logo_areas.png" width="100vw" alt="">
-                                            </div>
-                                            <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
-                                            </button>
-                                            <div class="modal-body" >
-                                                <p><b>ATENÇÃO:</b> O seu cargo na empresa não é algo que você pode mudar diretamente em seu perfil, apenas outro profissional autorizado pode realizar a mudança de seu cargo.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Input da Função -->
-                                <div class="input-group">
-                                    <input required="" type="text" name="text" placeholder="<?php echo $row['funcao']; ?>" autocomplete="off" class="input" disabled>
-                                    <label class="user-label" style="color: #38B6FF;">Função</label>
-                                    <a role="button" id="editar" data-toggle="modal" data-target="#modal_funcao" style="background-color: #38B6FF;">
-                                        <ion-icon name="pencil-outline"></ion-icon>
-                                    </a>
-                                </div>
-                                <!-- Modal do funcao  -->
-                                <div class="modal fade" id="modal_funcao" tabindex="-1" role="dialog" aria-labelledby="modal_funcao_centro" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-title" id="modal_funcao_titulo" style="display: flex; justify-content: center; align-items: center;">
-                                                <img src="../../images/logo_areas.png" width="100vw" alt="">
-                                            </div>
-                                            <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
-                                            </button>
-                                            <div class="modal-body" >
-                                                <p><b>ATENÇÃO:</b> A sua função na empresa não é algo que você pode mudar diretamente em seu perfil, apenas outro profissional autorizado pode realizar a mudança de sua função.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> 
+                               
                             <!-- Dropdown da foto de perfil -->
                             <div style="margin-left: 100px;">
                                 <h3 style="color: #1d5f96;">FOTO DE PERFIL</h3>
-                                <img src="../../fotos_usuarios/<?php echo $row['imagem']; ?>" alt="Foto de Perfil - <?php echo $row['nome'];?>" class="rounded-circle me-2" id="foto_perfil" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="../fotos_usuarios/<?php echo $row['imagem']; ?>" alt="Foto de Perfil - <?php echo $row['nome'];?>" class="rounded-circle me-2" id="foto_perfil" data-bs-toggle="dropdown" aria-expanded="false">
                                 <div class="dropdown">
                                 <button class="btn dropdown-toggle" style="background-color: #38B6FF;" id="editarFotoAdm" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span>Editar</span>
@@ -177,7 +104,7 @@
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-title" id="modal_foto_titulo" style="display: flex; justify-content: center; align-items: center;">
-                                        <img src="../../images/logo_areas.png" width="100vw" alt="">
+                                        <img src="../images/logo_areas.png" width="100vw" alt="">
                                     </div>
                                     <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
@@ -195,7 +122,7 @@
                         <form action="config_perfil.php" method="post" style="margin-right: 15px;">
                             <!-- Começo do Dados Pessoais -->
                             <h3 style="color: #1d5f96;">Dados Pessoais</h3>
-                            <p>Gerencie seu nome e informações de contato. Essas informações pessoais são privadas e não serão exibidos para outros usuários. Veja a nossa <a href="../../politica_pivaci.php" id="polit" target="_blank"> Política de Privacidade </a> <ion-icon name="lock-closed-outline"></ion-icon> </p>
+                            <p>Gerencie seu nome e informações de contato. Essas informações pessoais são privadas e não serão exibidos para outros usuários. Veja a nossa <a href="../politica_pivaci.php" id="polit" target="_blank"> Política de Privacidade </a> <ion-icon name="lock-closed-outline"></ion-icon> </p>
                             <br>
                             <div class="d-flex">
                                 <!-- Input do CPF -->
@@ -212,13 +139,7 @@
                                     <span class="bar"></span>
                                     <label style="color: #38B6FF;">Data de Nascimento</label>
                                 </div>
-                                <!-- Input do Coren -->
-                                <div class="group">
-                                    <input required="" name="coren" id="coren" type="text" class="input" value="<?php echo $row['coren'];?>" >
-                                    <span class="highlight"></span>
-                                    <span class="bar"></span>
-                                    <label style="color: #38B6FF;">Coren</label>
-                                </div>
+                               
                                 <!-- Input do RG  -->
                                 <div class="group">
                                     <input required="" name="rg" id="rg" type="text" class="input" value="<?php echo $row['rg'];?>" onkeypress="$(this).mask('00.000.000-0');">
@@ -229,22 +150,7 @@
                             </div>
                             <br>
                             <div class="d-flex">
-                                <!-- Input da Data de Entrada -->
-                                <div class="group">
-                                    <input required="" name="data_inicio" id="data_inicio" type="text" class="input" value="<?php echo date('d/m/Y', strtotime($row['data_entrada']));?>">
-                                    <span class="highlight"></span>
-                                    <span class="bar"></span>
-                                    <label style="color: #38B6FF;">Data de Entrada</label>
-                                </div>
-                                <!-- Input do CRM  -->
-                                <div class="group">
-                                    <input required="" name="crm" id="crm" type="text" class="input" value="<?php echo $row['CRM'];?>">
-                                    <span class="highlight"></span>
-                                    <span class="bar"></span>
-                                    <label style="color: #38B6FF;">CRM</label>
-                                </div>
-                            </div>
-                            <br>
+                               
                             <!-- Começo da área de Endereço  -->
                             <div>
                                 <h4 style="color: #1d5f96;">ENDEREÇO</h4>
@@ -321,7 +227,7 @@
                                 <br>
                                 <!-- Texto dos direitos reservados -->
                                 <div class="text-center">
-                                    <p> <img src="../../images/logo_areas.png" width="20vw" alt="Logo do Tratferi"> TRATFERI - TODOS OS DIREITOS RESERVADOS.</p>
+                                    <p> <img src="../images/logo_areas.png" width="20vw" alt="Logo do Tratferi"> TRATFERI - TODOS OS DIREITOS RESERVADOS.</p>
                                 </div>
                             </div>
                         </form>
@@ -332,12 +238,13 @@
         <!-- fim configurações de perfil  -->
     </div>
 </body>
+
 <!-- Links para a Biblioteca de icones do Ionic Icons -->
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <!-- link para bootstrap -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="../../js/bootstrap.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-2.2.0.min-js" type="text/javascript"></script>
 <script type="text/javascript">
     $(document).on('ready',function(){
