@@ -32,7 +32,7 @@
                         <!-- Começo das informações da conta  -->
                         <div class="d-flex">
                             <div>
-                                <h3 >INFORMAÇÕES DA CONTA</h3>
+                                <h3 style="color: #1d5f96;">INFORMAÇÕES DA CONTA</h3>
                                 <b><p>ID:</b> <?php echo $row['hash']; ?></p>
                                 <!-- Input do Nome -->
                                 <div class="input-group">
@@ -54,23 +54,23 @@
                                                 <span aria-hidden="true"><ion-icon style="color: black; font-size: 1.4vw;" name="close-outline"></ion-icon></span>
                                             </button>
                                             <div class="modal-body">
-                                                <h5>Confirmar mudança de nome de exibição</h5>
+                                                <h5 style="color: #1d5f96;">Confirmar mudança de nome de exibição</h5>
                                                 <p><b>Observe: </b> Se você alterou o nome de exibição da TRATFERI, não poderá alterá-lo novamente por 2 semanas após confirmar essa alteração.</p>
-                                                <p><b> Nome de exibição atual: </b><?php echo $row['nome'];?></p>
+                                                <p><b> Nome de exibição atual: </b><?php echo $row['nome'];?></p> <br>
                                                     <div class="group">
                                                         <input required="" name="novo_nome" id="novo_nome" type="text" class="input2">
                                                         <span class="highlight"></span>
                                                         <span class="bar"></span>
                                                         <label>NOVO NOME DE EXIBIÇÃO</label>
                                                     </div>
-                                                    <br>
+                                                    <br><br>
                                                     <div class="group">
                                                         <input required="" name="confirma_novo_nome" id="confirma_novo_nome" type="text" class="input2">
                                                         <span class="highlight"></span>
                                                         <span class="bar"></span>
                                                         <label>CONFIRME NOME DE EXIBIÇÃO</label>
                                                     </div>
-                                                    <br>
+                                                    <br><br>
                                                         <input type="checkbox" class="form-check-input"> Entendo que após esta alteração, não poderei alterar meu nome de exibição novamente por duas semanas.
                                                     <br> <br>
                                                 <div style="margin-left: 10px;">
@@ -158,7 +158,7 @@
                             </div> 
                             <!-- Dropdown da foto de perfil -->
                             <div style="margin-left: 100px;">
-                                <h3>FOTO DE PERFIL</h3>
+                                <h3 style="color: #1d5f96;">FOTO DE PERFIL</h3>
                                 <img src="../../fotos_usuarios/<?php echo $row['imagem']; ?>" alt="Foto de Perfil - <?php echo $row['nome'];?>" class="rounded-circle me-2" id="foto_perfil" data-bs-toggle="dropdown" aria-expanded="false">
                                 <div class="dropdown">
                                 <button class="btn dropdown-toggle" style="background-color: #38B6FF;" id="editarFotoAdm" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -194,7 +194,7 @@
                         </div>
                         <form action="config_perfil.php" method="post" style="margin-right: 15px;">
                             <!-- Começo do Dados Pessoais -->
-                            <h3>Dados Pessoais</h3>
+                            <h3 style="color: #1d5f96;">Dados Pessoais</h3>
                             <p>Gerencie seu nome e informações de contato. Essas informações pessoais são privadas e não serão exibidos para outros usuários. Veja a nossa <a href="../../politica_pivaci.php" id="polit" target="_blank"> Política de Privacidade </a> <ion-icon name="lock-closed-outline"></ion-icon> </p>
                             <br>
                             <div class="d-flex">
@@ -247,7 +247,7 @@
                             <br>
                             <!-- Começo da área de Endereço  -->
                             <div>
-                                <h4>ENDEREÇO</h4>
+                                <h4 style="color: #1d5f96;">ENDEREÇO</h4>
                                 <br>
                                 <div class="d-flex">
                                     <!-- Input do telefone  -->
@@ -293,7 +293,7 @@
                             </div>
                             <!-- Começo da área de Telefone e Email  -->
                             <div>
-                                <h4 id="contato">CONTATO</h4>
+                                <h4 id="contato" style="color: #1d5f96;">CONTATO</h4>
                                 <br>
                                 <div class="d-flex">
                                     <!-- Input do telefone  -->
