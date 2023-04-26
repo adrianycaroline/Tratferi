@@ -5,6 +5,26 @@
     $lista = $conn->query("SELECT * FROM perfil where id = ".$_SESSION['Id'].";");
     $row = $lista->fetch_assoc();
     $rows = $lista->num_rows;
+
+    if(isset($_POST['alterar'])){
+        print_r($_FILES);
+        if($_FILES['imagem_perfil']['name']) {
+            $nome_img = $_FILES['imagem_perfil']['name'];
+            $tmp_img = $_FILES['imagem_perfil']['tmp_name'];
+            $dir_img = "../../fotos_usuarios/$nome_img";
+            move_uploaded_file($tmp_img, $dir_img);
+        } else {
+            $nome_img = $_POST['imagem_perfil_atual'];
+        }
+        $imagem_perfil = $nome_img;
+
+        $updateSql = "UPDATE funcionario set imagem = '$nome_img' where id = ".$_SESSION['Id'].";";
+
+        $resultado = $conn->query($updateSql);
+        if($resultado){
+            header('location: config_perfil.php');
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -18,7 +38,7 @@
     <title>Configurações do Perfil - <?php echo $_SESSION['nome'];?></title>
 </head>
 <body class="fundo_adm">
-    <?php include 'perfil_menu.php';?>
+    <?php include 'perfil_menu.php'; ?>
     <!-- Inicio Configurações de perfil  -->
     <div style="margin-left: 280px; display: flex; justify-content: left;">
         <div class="container">
@@ -183,11 +203,23 @@
                                         <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
                                     </button>
                                     <div class="modal-body">
-                                        <p><b>ATENÇÃO:</b> Sua foto de perfil só pode ser alterada duas vezes a cada 2 semanas.</p>
-                                        <p><b>ALTERAÇÕES RESTANTES:</b> 2</p>
-                                        <div class="text-center">
-                                            <button class="btn btn-primary">Alterar</button>
-                                        </div>
+                                        <!-- Formulário para trocar a foto de perfil -->
+                                        <form action="config_perfil.php" method="post" enctype="multipart/form-data">
+                                            <p><b>ATENÇÃO:</b> Sua foto de perfil só pode ser alterada duas vezes a cada 2 semanas.</p>
+                                            <p><b>ALTERAÇÕES RESTANTES:</b> 2</p>
+                                            <!-- Imagem Atual -->
+                                            <label for="imagem_perfil_atual">Imagem Atual:</label>
+                                            <img src="../../fotos_usuarios/<?php echo $row['imagem']; ?>" class="img-responsive" alt="" srcset="">
+                                            <input type="hidden" name="imagem_perfil_atual" id="imagem_perfil_atual" value="<?php echo $row['imagem'];?>">
+                                            <br>
+                                            <!-- Imagem Nova -->
+                                            <label for="imagem_perfil">Imagem Nova:</label>
+                                            <input type="file" name="imagem_perfil" id="imagem_perfil" class="form-control" accept="image/*"><!-- Input que escolhe a foto de perfil -->
+                                            <br>
+                                            <div class="text-center">
+                                                <button class="btn btn-primary" name="alterar" type="submit">Alterar</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
