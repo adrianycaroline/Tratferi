@@ -29,55 +29,19 @@
                 <li>
                     <a href="../func/cadastrar_paciente.php" class="nav-link">
                         <img src="../images/usuarios.svg" alt="" width="20vw">
-                        Cadastrar
+                        Cadastrar Pacientes
                     </a>
                 </li>
                 <li>
                     <a href="pacientes_lista.php" class="nav-link">
                         <img src="../images/usuarios.svg" alt="" width="20vw">
-                        Pacientes
+                        Pacientes Ativos
                     </a>
                 </li>
                 <li>
                     <a href="#" class="nav-link">
-                        <img src="../images/prontuario.svg" alt="" width="20vw">
-                        Prontuário
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link">
-                        <img src="../images/cama.svg" alt="" width="20vw">
-                        Leitos
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link">
-                        <img src="../images/predio.svg" alt="" width="20vw">    
-                        Departamentos
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link">
-                        <img src="../images/predio.svg" alt="" width="20vw">    
-                        Designação
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link">
-                        <img src="../images/predio.svg" alt="" width="20vw">    
-                        RH
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link">
-                        <img src="../images/coracao.svg" alt="" width="20vw">    
-                        Ajuda
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link">
-                        <img src="../images/anuncio.svg" alt="" width="20vw">
-                        Anuncios
+                        <img src="../images/usuarios.svg" alt="" width="20vw">
+                        Pacientes Arquivados
                     </a>
                 </li>
             </ul>

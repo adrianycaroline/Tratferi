@@ -96,7 +96,7 @@
         </div>
     </div>
     <br>
-    <h1 class="card-header text-center" style="color: #1d5f96;">Cadastro de Funcionário</h1>
+    <h1 class="card-header text-center" style="color: #1d5f96;">Lista de Pacientes ativos</h1>
     <div style="display: flex; justify-content: end;">
             <div class="border-bottom border-2 " style="width: 26%; margin-right: 705px;"></div>
         </div>
@@ -108,8 +108,14 @@
                         <th style="color: #1d5f96;">Data de Nascimento</th>
                         <th style="color: #1d5f96;">CPF</th>
                         <th style="color: #1d5f96;">Cartão do SUS</th>
-                <th class="hidden">HashCode</th>
-            </thead>
+                        <th class="hidden">HashCode</th>
+                        <th class="d-flex">
+                            <a href="../func/cadastrar_paciente.php" target="_self" class="btn btn-block btn-xs" style="background-color: #38B6FF;" role="button">
+                                <ion-icon name="add-circle-outline"></ion-icon>
+                                <span class="hidden-xs">ADICIONAR</span>
+                            </a>
+                        </th>
+                    </thead>
             
             <tbody> <!-- início corpo da tabela -->
             <!-- início estrutura repetição -->
@@ -135,9 +141,10 @@
                             <?php echo $row['hash'];?>
                         </td>
                         <td>
-                            <!-- botão de exclusão  -->
-                            <a href="../func/pacientes_lista.php?pac=<?php echo $row['id'];?>" class="btn btn-sm btn-block btn-danger">
-                                <ion-icon name="trash"></ion-icon>EXCLUIR
+                            <!-- botão alterar -->
+                            <a href="atualizar_paciente.php?id=<?php echo $row['id']; ?>" role="button" class="btn btn-block btn-xs" style="background-color: #66CDAA;"> 
+                                <ion-icon name="refresh-outline"></ion-icon>
+                                <span class="hidden-xs">ALTERAR</span>
                             </a>
                         </td>
                     </tr>
