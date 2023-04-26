@@ -17,13 +17,13 @@
     <link rel="stylesheet" href="../../CSS/bootstrap.min.css">
     <title>Configurações do Perfil - <?php echo $_SESSION['nome'];?></title>
 </head>
-<body>
+<body class="fundo_adm">
     <?php include 'perfil_menu.php';?>
     <!-- Inicio Configurações de perfil  -->
     <div style="margin-left: 280px; display: flex; justify-content: left;">
         <div class="container">
             <div class="text-center" style="margin-top: 10px;">
-                <h2>Configurações de Perfil</h2>
+                <h2 style="color: #38B6FF;">Configurações de Perfil</h2>
                     <p>Gerencie os detalhes de sua conta.</p>
                 </div>
                     <div class="border-bottom border-2 border-dark" style="width: 97%; margin-left: 15px; margin-bottom: 10px;"></div>
@@ -32,13 +32,13 @@
                         <!-- Começo das informações da conta  -->
                         <div class="d-flex">
                             <div>
-                                <h3 >INFORMAÇÕES DA CONTA</h3>
+                                <h3 style="color: #1d5f96;">INFORMAÇÕES DA CONTA</h3>
                                 <b><p>ID:</b> <?php echo $row['hash']; ?></p>
                                 <!-- Input do Nome -->
                                 <div class="input-group">
                                     <input required="" type="text" name="text" placeholder="<?php echo $row['nome']; ?>" autocomplete="off" class="input" disabled>
-                                    <label class="user-label">Nome</label>
-                                    <a role="button" id="editar" data-toggle="modal" data-target="#modal_nome">
+                                    <label class="user-label" style="color: #38B6FF;">Nome</label>
+                                    <a role="button" id="editar" data-toggle="modal" data-target="#modal_nome" style="background-color: #38B6FF;">
                                         <ion-icon name="pencil-outline"></ion-icon>
                                     </a>
                                 </div>
@@ -54,28 +54,28 @@
                                                 <span aria-hidden="true"><ion-icon style="color: black; font-size: 1.4vw;" name="close-outline"></ion-icon></span>
                                             </button>
                                             <div class="modal-body">
-                                                <h5>Confirmar mudança de nome de exibição</h5>
+                                                <h5 style="color: #1d5f96;">Confirmar mudança de nome de exibição</h5>
                                                 <p><b>Observe: </b> Se você alterou o nome de exibição da TRATFERI, não poderá alterá-lo novamente por 2 semanas após confirmar essa alteração.</p>
-                                                <p><b> Nome de exibição atual: </b><?php echo $row['nome'];?></p>
+                                                <p><b> Nome de exibição atual: </b><?php echo $row['nome'];?></p> <br>
                                                     <div class="group">
                                                         <input required="" name="novo_nome" id="novo_nome" type="text" class="input2">
                                                         <span class="highlight"></span>
                                                         <span class="bar"></span>
                                                         <label>NOVO NOME DE EXIBIÇÃO</label>
                                                     </div>
-                                                    <br>
+                                                    <br><br>
                                                     <div class="group">
                                                         <input required="" name="confirma_novo_nome" id="confirma_novo_nome" type="text" class="input2">
                                                         <span class="highlight"></span>
                                                         <span class="bar"></span>
                                                         <label>CONFIRME NOME DE EXIBIÇÃO</label>
                                                     </div>
-                                                    <br>
+                                                    <br><br>
                                                         <input type="checkbox" class="form-check-input"> Entendo que após esta alteração, não poderei alterar meu nome de exibição novamente por duas semanas.
                                                     <br> <br>
                                                 <div style="margin-left: 10px;">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Descartar Alterações</button>
-                                                    <button type="button" class="btn btn-primary">Manter Alterações</button>
+                                                    <button type="button" class="btn" style="background-color: #38B6FF;">Manter Alterações</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -84,8 +84,8 @@
                                 <!-- Input do Periodo -->
                                 <div class="input-group">
                                     <input required="" type="text" name="text" placeholder="<?php echo $row['periodo']; ?>" autocomplete="off" class="input" disabled>
-                                    <label class="user-label">Período</label>
-                                    <a role="button" id="editar" data-toggle="modal" data-target="#modal_periodo">
+                                    <label class="user-label" style="color: #38B6FF;">Período</label>
+                                    <a role="button" id="editar" data-toggle="modal" data-target="#modal_periodo" style="background-color: #38B6FF;">
                                         <ion-icon name="pencil-outline"></ion-icon>
                                     </a>
                                 </div>
@@ -109,8 +109,8 @@
                                 <!-- Input do Cargo -->
                                 <div class="input-group">
                                     <input required="" type="text" name="text" placeholder="<?php echo $row['cargo']; ?>" autocomplete="off" class="input" disabled>
-                                    <label class="user-label">Cargo</label>
-                                    <a role="button" id="editar" data-toggle="modal" data-target="#modal_cargo">
+                                    <label class="user-label" style="color: #38B6FF;">Cargo</label>
+                                    <a role="button" id="editar" data-toggle="modal" data-target="#modal_cargo" style="background-color: #38B6FF;">
                                         <ion-icon name="pencil-outline"></ion-icon>
                                     </a>
                                 </div>
@@ -134,8 +134,8 @@
                                 <!-- Input da Função -->
                                 <div class="input-group">
                                     <input required="" type="text" name="text" placeholder="<?php echo $row['funcao']; ?>" autocomplete="off" class="input" disabled>
-                                    <label class="user-label">Função</label>
-                                    <a role="button" id="editar" data-toggle="modal" data-target="#modal_funcao">
+                                    <label class="user-label" style="color: #38B6FF;">Função</label>
+                                    <a role="button" id="editar" data-toggle="modal" data-target="#modal_funcao" style="background-color: #38B6FF;">
                                         <ion-icon name="pencil-outline"></ion-icon>
                                     </a>
                                 </div>
@@ -158,18 +158,15 @@
                             </div> 
                             <!-- Dropdown da foto de perfil -->
                             <div style="margin-left: 100px;">
-                                <h3>FOTO DE PERFIL</h3>
-                                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                                    <img src="../../fotos_usuarios/<?php echo $row['imagem']; ?>" alt="Foto de Perfil - <?php echo $row['nome'];?>" class="rounded-circle me-2" id="foto_perfil" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <br>
-                                    <div class="dropdown">
-                                        <button class="btn btn-primary dropdown-toggle" id="editarFotoAdm" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span>Editar</span>
-                                        </button>
-                                        <div class="dropdown-menu editarFotoAdm" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" data-toggle="modal" data-target="#modal_foto">Carregar foto...</a>
-                                            <a class="dropdown-item">Remover foto</a>
-                                        </div>
+                                <h3 style="color: #1d5f96;">FOTO DE PERFIL</h3>
+                                <img src="../../fotos_usuarios/<?php echo $row['imagem']; ?>" alt="Foto de Perfil - <?php echo $row['nome'];?>" class="rounded-circle me-2" id="foto_perfil" data-bs-toggle="dropdown" aria-expanded="false">
+                                <div class="dropdown">
+                                <button class="btn dropdown-toggle" style="background-color: #38B6FF;" id="editarFotoAdm" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span>Editar</span>
+                                </button>
+                                    <div class="dropdown-menu editarFotoAdm" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" data-toggle="modal" data-target="#modal_foto">Carregar foto...</a>
+                                        <a class="dropdown-item" >Remover foto</a>
                                     </div>
                                 </div>
                             </div>   
@@ -197,7 +194,7 @@
                         </div>
                         <form action="config_perfil.php" method="post" style="margin-right: 15px;">
                             <!-- Começo do Dados Pessoais -->
-                            <h3>Dados Pessoais</h3>
+                            <h3 style="color: #1d5f96;">Dados Pessoais</h3>
                             <p>Gerencie seu nome e informações de contato. Essas informações pessoais são privadas e não serão exibidos para outros usuários. Veja a nossa <a href="../../politica_pivaci.php" id="polit" target="_blank"> Política de Privacidade </a> <ion-icon name="lock-closed-outline"></ion-icon> </p>
                             <br>
                             <div class="d-flex">
@@ -206,28 +203,28 @@
                                     <input required="" name="cpf" id="cpf" type="text" class="input" value="<?php echo $row['cpf']; ?>" onkeypress="$(this).mask('000.000.000-00');">
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
-                                    <label>CPF</label>
+                                    <label style="color: #38B6FF;">CPF</label>
                                 </div>
                                 <!-- Input da Data de Nascimento  -->
                                 <div class="group">
                                     <input required="" name="datanasc" id="datanasc" type="text" class="input" value="<?php echo date('d/m/Y', strtotime($row['data_nasc'])); ?>">
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
-                                    <label>Data de Nascimento</label>
+                                    <label style="color: #38B6FF;">Data de Nascimento</label>
                                 </div>
                                 <!-- Input do Coren -->
                                 <div class="group">
                                     <input required="" name="coren" id="coren" type="text" class="input" value="<?php echo $row['coren'];?>" >
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
-                                    <label>Coren</label>
+                                    <label style="color: #38B6FF;">Coren</label>
                                 </div>
                                 <!-- Input do RG  -->
                                 <div class="group">
                                     <input required="" name="rg" id="rg" type="text" class="input" value="<?php echo $row['rg'];?>" onkeypress="$(this).mask('00.000.000-0');">
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
-                                    <label>RG</label>
+                                    <label style="color: #38B6FF;">RG</label>
                                 </div>
                             </div>
                             <br>
@@ -237,20 +234,20 @@
                                     <input required="" name="data_inicio" id="data_inicio" type="text" class="input" value="<?php echo date('d/m/Y', strtotime($row['data_entrada']));?>">
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
-                                    <label>Data de Entrada</label>
+                                    <label style="color: #38B6FF;">Data de Entrada</label>
                                 </div>
                                 <!-- Input do CRM  -->
                                 <div class="group">
                                     <input required="" name="crm" id="crm" type="text" class="input" value="<?php echo $row['CRM'];?>">
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
-                                    <label>CRM</label>
+                                    <label style="color: #38B6FF;">CRM</label>
                                 </div>
                             </div>
                             <br>
                             <!-- Começo da área de Endereço  -->
                             <div>
-                                <h4>ENDEREÇO</h4>
+                                <h4 style="color: #1d5f96;">ENDEREÇO</h4>
                                 <br>
                                 <div class="d-flex">
                                     <!-- Input do telefone  -->
@@ -258,28 +255,28 @@
                                         <input required="" name="logradouro" id="logradouro" type="text" class="input" value="<?php echo $row['logradouro'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label>Logradouro</label>
+                                        <label style="color: #38B6FF;">Logradouro</label>
                                     </div>
                                     <!-- Input do numero da casa -->
                                     <div class="group">
                                         <input required="" name="numero" id="numero" type="text" class="input"value="<?php echo $row['numero'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label>Numero</label>
+                                        <label style="color: #38B6FF;">Numero</label>
                                     </div>
                                     <!-- Input da Cidade  -->
                                     <div class="group">
                                         <input required="" name="cidade" id="cidade" type="text" class="input"value="<?php echo $row['cidade'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label>Cidade</label>
+                                        <label style="color: #38B6FF;">Cidade</label>
                                     </div>
                                     <!-- Input do UF  -->
                                     <div class="group">
                                         <input required="" name="uf" id="uf" type="text" class="input"value="<?php echo $row['uf'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label>UF</label>
+                                        <label style="color: #38B6FF;">UF</label>
                                     </div>
                                 </div>
                                 <br>
@@ -289,14 +286,14 @@
                                         <input required="" name="cep" id="cep" type="text" class="input"value="<?php echo $row['cep'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label>CEP</label>
+                                        <label style="color: #38B6FF;">CEP</label>
                                     </div>
                                 </div>
                                 <br>
                             </div>
                             <!-- Começo da área de Telefone e Email  -->
                             <div>
-                                <h4>CONTATO</h4>
+                                <h4 id="contato" style="color: #1d5f96;">CONTATO</h4>
                                 <br>
                                 <div class="d-flex">
                                     <!-- Input do telefone  -->
@@ -304,21 +301,21 @@
                                         <input required="" name="telefone" id="telefone" type="tel" class="input" value="<?php echo $row['telefone'];?>" onkeypress="$(this).mask('(00)00000-0000');">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label>Telefone</label>
+                                        <label style="color: #38B6FF;">Telefone</label>
                                     </div>
                                     <!-- Input do Email  -->
                                     <div class="group">
                                         <input required="" name="email" id="email" type="email" class="input" value="<?php echo $row['email'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label>Email</label>
+                                        <label style="color: #38B6FF;">Email</label>
                                     </div>
                                 </div>
                                 <br>
                                 <!-- Botões de Descartar e Manter Alterações -->
                                 <div>
                                     <button type="button" class="btn btn-secondary">Descartar Alterações</button>
-                                    <button type="button" class="btn btn-primary">Manter Alterações</button>
+                                    <button type="button" class="btn" style="background-color: #38B6FF;">Manter Alterações</button>
                                 </div>
                                 <br>
                                 <br>

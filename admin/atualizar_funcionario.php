@@ -60,9 +60,11 @@
     <title>Editar Funcionário</title>
 </head>
 <body class="fundo_areas">
-<div class="barra" style="background-color: #38B6FF;">
+<div class="fixed-top" style="background-color: #38B6FF;">
         <br> <br>
     </div>
+    <br>
+    <br>
     <div class="container mt-4 d-flex justify-content-center">
         <div class="card" style="width: 50%;">
             <h1 class="card-header text-center" style="color: #38B6FF;">Editar Funcionário - <?php echo $row['nome']?></h1>
@@ -168,7 +170,7 @@
     </div>
     <!-- Menu lateral -->
     <div>
-        <div class="d-flex flex-column flex-shrink-0 p-3 " style="position: fixed; top: 0; left: 0; bottom: 0; width: 280px; background-color: #38B6FF;">
+        <div class="d-flex flex-column flex-shrink-0 p-3 " style="position: fixed; top: 0; left: 0; bottom: 0; width: 280px; background-color: #38B6FF; z-index: 9999;">
             <div>
                 <figure style="display: flex;">
                     <img src="../images/logoPesq.png" alt="Logo Tratferi" width="75vw"> 

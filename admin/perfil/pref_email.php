@@ -17,20 +17,20 @@
     <link rel="stylesheet" href="../../CSS/bootstrap.min.css">
     <title>Preferências de Email - <?php echo $_SESSION['nome'];?></title>
 </head>
-<body>
+<body class="fundo_adm">
     <?php include '../../admin/perfil/perfil_menu.php';?>
         <div style="margin-left: 280px;">
             <div class="container">
                 <div style="margin-top: 10px;">
-                    <h2>PREFERÊNCIAS DE E-MAIL</h2>
-                    <p>Gerencie suas preferências de e-mail da TRATFERI.</p>
-                    <p>Só entraremos em contato se você solicitar, para fins como verificação de e-mail, redefinição de senha e atualizações de Autenticação de Dois Fatores.</p>
+                    <h2 class="text-center" style="color: #38B6FF;">PREFERÊNCIAS DE E-MAIL</h2>
+                    <p class="text-center">Gerencie suas preferências de e-mail da TRATFERI.</p>
+                    <p class="text-center">Só entraremos em contato se você solicitar, para fins como verificação de e-mail, redefinição de senha e atualizações de Autenticação de Dois Fatores.</p>
+                    <div class="border-bottom border-2 border-dark" style="width: 97%; margin-left: 15px; margin-bottom: 10px;"></div>
                 </div>
                 
-                <form action="pref_email.php" method="post"> <!-- Começo do Formulário -->
-                    <h4>Gerenciar preferências de e-mail</h4>
+                <form action="pref_email.php" method="post" > <!-- Começo do Formulário -->
+                    <h4 style="color: #1d5f96;">Gerenciar preferências de e-mail</h4>
                     <br>
-                    <div>
                         <!-- Input do Email -->
                         <div class="group">
                             <input required="" type="email" class="input2" value="<?php echo $row['email']?>">
@@ -38,22 +38,21 @@
                             <span class="bar"></span>
                             <label>Email</label>
                         </div>
-                    </div>
                     <br>
                     <ul style="list-style: none;">
                         <li>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="checkTodos" onclick="marcarTodos()">
+                                <input class="form-check-input" style="background-color: #38B6FF;" type="checkbox" value="" id="checkTodos" onclick="marcarTodos()">
                                 <label class="form-check-label" for="checkTodos">
-                                    Selecionar Todos
+                                   <strong>Selecionar Todos</strong>
                                 </label>
                             </div>
                         </li>
                         <ul style="list-style: none;">
                             <li>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="check1">
-                                    <label class="form-check-label" for="check1">
+                                    <input class="form-check-input" style="background-color: #38B6FF;" type="checkbox" value="" id="check1">
+                                    <label class="form-check-label" for="check1" style="color: #1d5f96;">
                                         Enviar-me emails
                                     </label>
                                     <p style="font-size: 10pt;">Receba emails diretos sobre a TRATFERI.</p>
@@ -61,8 +60,8 @@
                             </li>
                             <li>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="check2">
-                                    <label class="form-check-label" for="check2">
+                                    <input class="form-check-input" style="background-color: #38B6FF;" type="checkbox" value="" id="check2">
+                                    <label class="form-check-label" for="check2" style="color: #1d5f96;">
                                         Pesquisa
                                     </label>
                                     <p style="font-size: 10pt;">Participe de pesquisas e compartilhe sua opinião com a TRATFERI.</p>
@@ -70,8 +69,8 @@
                             </li>
                             <li>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="check3">
-                                    <label class="form-check-label" for="check3">
+                                    <input class="form-check-input" style="background-color: #38B6FF;" type="checkbox" value="" id="check3">
+                                    <label class="form-check-label" for="check3" style="color: #1d5f96;">
                                         Atualizações
                                     </label>
                                     <p style="font-size: 10pt;">Fique sempre informado sobre as novidades e atualizações da TRATFERI.</p>
@@ -79,8 +78,8 @@
                             </li>
                             <li>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="check4">
-                                    <label class="form-check-label" for="check4">
+                                    <input class="form-check-input" style="background-color: #38B6FF;" type="checkbox" value="" id="check4">
+                                    <label class="form-check-label" for="check4" style="color: #1d5f96;">
                                         Cancelamentos
                                     </label>
                                     <p style="font-size: 10pt;">Receba diretamente em seu e-mail avisos sobre cancelamentos de consultas, atendimentos ou serviços.</p>

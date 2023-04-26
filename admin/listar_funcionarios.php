@@ -23,19 +23,21 @@
         </div>
         <main class="container">
             <br>
-            <h2 class="text-center">Lista de Funcionarios Ativos</h2>
+            <h2 class="text-center" style="color: #38B6FF;">Lista de Funcionarios Ativos</h2>
+            <br>
+            <div class="border-bottom border-2 border-dark" style="width: 97%; margin-left: 15px; margin-bottom: 10px;"></div>
             <table class="table table-hover table-condensed tb-opacidade">
                 <thead>
                     <th hidden>ID</th>
-                    <th>Nome</th>
-                    <th>Nivel</th>
-                    <th>CPF</th>
-                    <th>Cargo</th>
-                    <th>Salario</th>
-                    <th>Periodo</th>
+                    <th style="color: #1d5f96;">Nome</th>
+                    <th style="color: #1d5f96;">Nivel</th>
+                    <th style="color: #1d5f96;">CPF</th>
+                    <th style="color: #1d5f96;">Cargo</th>
+                    <th style="color: #1d5f96;">Salario</th>
+                    <th style="color: #1d5f96;">Periodo</th>
                     <th>Hashcode</th>
                     <th class="d-flex">
-                        <a href="../admin/cadastrar_funcionario.php" target="_self" class="btn btn-block btn-primary btn-xs" role="button">
+                        <a href="../admin/cadastrar_funcionario.php" target="_self" class="btn btn-block btn-xs" style="background-color: #38B6FF;" role="button">
                             <ion-icon name="add-circle-outline"></ion-icon>
                             <span class="hidden-xs">ADICIONAR</span>
                         </a>
@@ -56,12 +58,12 @@
                             <td>
                                 <!-- Condição que verifica se o usuário logado é o mesmo que o que for clicado para alterar -->
                                 <?php if ($_SESSION['Id'] != $row['id']){ ?>
-                                <a href="atualizar_funcionario.php?id=<?php echo $row['id']; ?>" role="button" class="btn btn-success btn-block btn-xs"> 
+                                <a href="atualizar_funcionario.php?id=<?php echo $row['id']; ?>" role="button" class="btn btn-block btn-xs" style="background-color: #66CDAA;"> 
                                     <ion-icon name="refresh-outline"></ion-icon>
                                     <span class="hidden-xs">ALTERAR</span>
                                 </a>
                                 <?php }else{ ?>  
-                                <a data-toggle="modal" data-target="#modal_user_igual" role="button" class="btn btn-success btn-block btn-xs"> 
+                                <a data-toggle="modal" data-target="#modal_user_igual" role="button" class="btn btn-block btn-xs" style="background-color: #66CDAA;"> 
                                     <ion-icon name="refresh-outline"></ion-icon>
                                     <span class="hidden-xs">ALTERAR</span>
                                 </a>  
