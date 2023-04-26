@@ -129,7 +129,7 @@
                         <p class="text-light" style="font-size: 28pt; margin-right: 15px;">3</p>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-light">Médicos Ativos</h5>
+                        <h5 class="card-title text-light">Consultas</h5>
                     
                     </div>
                 </div>

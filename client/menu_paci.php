@@ -85,7 +85,7 @@
                 <button class="dropdown-toggle bg-azul border-0" style="color: white;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="../admin/perfil/config_perfil.php">
+                    <a class="dropdown-item" href="perfil/config_perfil.php">
                         <ion-icon name="person-outline"></ion-icon>Perfil
                     </a>
                     <a class="dropdown-item" href="../admin/logout_pac.php">
