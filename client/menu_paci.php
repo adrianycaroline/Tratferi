@@ -21,6 +21,7 @@
                         Tratferi
                     </a> 
                 </figure>
+                <!-- Começo do conteúdo  -->
             </div>
             <ul class="nav nav-pills flex-column mb-auto">
                 <li>
@@ -52,17 +53,17 @@
                         <img src="../images/predio.svg" alt="" width="20vw">    
                         Departamentos
                     </a>
-                </li>
+                </li> -->
                 <li>
                     <a href="#" class="nav-link">
                         <img src="../images/predio.svg" alt="" width="20vw">    
                         Designação
                     </a>
                 </li>
-                <li> -->
+                <li>
                     <a href="#" class="nav-link">
                         <img src="../images/predio.svg" alt="" width="20vw">    
-                        RH
+                        Departamentos
                     </a>
                 </li>
                 <li>
