@@ -42,7 +42,6 @@
                                         <ion-icon name="pencil-outline"></ion-icon>
                                     </a>
                                 </div>
-                                
                                 <br>
                                 <!-- Modal alterar nome  -->
                                 <div class="modal fade" id="modal_nome" tabindex="-1" role="dialog" aria-labelledby="modal_nome_centro" aria-hidden="true">
@@ -82,7 +81,8 @@
                                         </div>
                                     </div>
                                 </div>
-                               
+                                
+                            </div> 
                             <!-- Dropdown da foto de perfil -->
                             <div style="margin-left: 100px;">
                                 <h3 style="color: #1d5f96;">FOTO DE PERFIL</h3>
@@ -139,7 +139,6 @@
                                     <span class="bar"></span>
                                     <label style="color: #38B6FF;">Data de Nascimento</label>
                                 </div>
-                               
                                 <!-- Input do RG  -->
                                 <div class="group">
                                     <input required="" name="rg" id="rg" type="text" class="input" value="<?php echo $row['rg'];?>" onkeypress="$(this).mask('00.000.000-0');">
@@ -149,8 +148,9 @@
                                 </div>
                             </div>
                             <br>
-                            <div class="d-flex">
-                               
+                            <div class="d-flex">                              
+                            </div>
+                            <br>
                             <!-- Começo da área de Endereço  -->
                             <div>
                                 <h4 style="color: #1d5f96;">ENDEREÇO</h4>
