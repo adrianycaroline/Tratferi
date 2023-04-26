@@ -41,12 +41,12 @@
                         Consultas
                     </a>
                 </li>
-                <!-- <li>
+                <li>
                     <a href="#" class="nav-link">
-                        <img src="../images/cama.svg" alt="" width="20vw">
-                        
+                        <img src="../images/prontuario.svg" alt="" width="20vw">
+                        Agendamento
                     </a>
-                </li> -->
+                </li>
                 <!-- <li>
                     <a href="#" class="nav-link">
                         <img src="../images/predio.svg" alt="" width="20vw">    
