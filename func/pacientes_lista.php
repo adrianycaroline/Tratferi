@@ -42,12 +42,12 @@
     <link rel="stylesheet" href="../CSS/estilo.css">
     <title>Área do Funcionário</title>
 </head>
-<body onload="atualizarHoras()" class="fundo_areas">
+<body onload="atualizarHoras()" class="fundo_adm">
     <?php 
         include '../func/menu_fun.php';
     ?>
    <main style="bottom: 0;">
-        <div class="bg-azul"> 
+        <div class=""> 
             <figure id="img-bloqueado" style="position:absolute; cursor: pointer;">
                 <img src="../images/menu-svgrepo-com.svg" style="margin-left: 5px;" width="40vw" alt="" srcset="">
             </figure>
@@ -84,23 +84,30 @@
              $numRow = mysqli_num_rows($lista);?> 
             <?php }?>
         <?php }?>
-
+        <div class="barra fixed-top bg-azul">
+            <br> <br>
+        </div>
         <figure style="display: flex; margin: 10px;">
             <img src="../images/logo_areas.png" alt="Logo Tratferi" width="45vw" height="45vw">
-            <h1 style="color: #0CA6FF;">Área do Funcionário - <?php echo($_SESSION['nome']); ?></h1>
+            <h1 style="color: #38B6FF;">Área do Funcionário - <?php echo($_SESSION['nome']); ?></h1>
         </figure>
         <div style="display: flex; justify-content: end;">
             <div class="border-bottom border-2 border-dark" style="width: 96%; margin-right: 30px;"></div>
         </div>
     </div>
+    <br>
+    <h1 class="card-header text-center" style="color: #1d5f96;">Cadastro de Funcionário</h1>
+    <div style="display: flex; justify-content: end;">
+            <div class="border-bottom border-2 " style="width: 26%; margin-right: 705px;"></div>
+        </div>
             <section class="container">
-                <table class="table table-hover table-condensed tb-opacidade"> 
+                <table class="table table-hover table-condensed tb-opacidade" style="margin-bottom: 320px;"> 
                     <thead>
                         <th class="hidden">ID</th>
-                        <th>Nome</th>
-                        <th>Data de Nascimento</th>
-                        <th>CPF</th>
-                <th>Cartão do SUS</th>
+                        <th style="color: #1d5f96;">Nome</th>
+                        <th style="color: #1d5f96;">Data de Nascimento</th>
+                        <th style="color: #1d5f96;">CPF</th>
+                        <th style="color: #1d5f96;">Cartão do SUS</th>
                 <th class="hidden">HashCode</th>
             </thead>
             

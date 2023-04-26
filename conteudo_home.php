@@ -12,7 +12,7 @@
 <body>
    <!-- começo do banner  -->
 <div id="carouselExampleSlidesOnly" class="carousel slide position-relative" data-bs-ride="carousel">
-  <div class="carousel-inner" data-bs-interval="1000">
+  <div class="carousel-inner" data-bs-interval="500">
     <div class="carousel-item active" data-bs-interval="3000">
       <img src="images/bann.jpg" class="d-block w-100" alt="...">
     </div>

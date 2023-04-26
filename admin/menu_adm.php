@@ -48,36 +48,6 @@
                         Ativos
                     </a>
                 </li>
-                <li>
-                    <a href="#" class="nav-link">
-                        <img src="../images/predio.svg" alt="" width="20vw">    
-                        Departamentos
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link">
-                        <img src="../images/predio.svg" alt="" width="20vw">    
-                        Designação
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link">
-                        <img src="../images/predio.svg" alt="" width="20vw">    
-                        RH
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link">
-                        <img src="../images/coracao.svg" alt="" width="20vw">    
-                        Ajuda
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link">
-                        <img src="../images/anuncio.svg" alt="" width="20vw">
-                        Anuncios
-                    </a>
-                </li>
             </ul>
             <hr>
             <div class="dropdown">
