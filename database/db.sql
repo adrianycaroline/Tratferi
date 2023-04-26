@@ -67,6 +67,14 @@ id_paci int not null,
 primary key(id),
 foreign key(id_paci) references paciente (id));
 
+create table email_paciente(
+id int not null auto_increment,
+email varchar(100) not null,
+id_paci int not null,
+primary key(id),
+foreign key(id_paci) references paciente (id));
+
+
 create table end_paciente(
 id int not null auto_increment,
 logradouro varchar(70) not null,
@@ -78,12 +86,7 @@ id_paci int not null,
 primary key(id),
 foreign key(id_paci) references paciente (id));
 
-create table email_paciente(
-id int not null auto_increment,
-email varchar(100) not null,
-id_paci int not null,
-primary key(id),
-foreign key(id_paci) references paciente (id));
+
 
 
 
@@ -243,6 +246,33 @@ VIEW `perfil` AS
         JOIN `email_func` `e` ON (`f`.`id` = `e`.`id`))
         JOIN `end_func` `end` ON (`f`.`id` = `end`.`id`))
 
+
+CREATE 
+    ALGORITHM = UNDEFINED 
+    DEFINER = `root`@`localhost` 
+    SQL SECURITY DEFINER
+VIEW `perfil_paci` AS
+    SELECT 
+        `p`.`id` AS `id`,
+        `p`.`nome` AS `nome`,
+        `p`.`data_nasc` AS `data_nasc`,
+        `p`.`cpf` AS `cpf`,
+        `p`.`rg` AS `rg`,
+        `p`.`card_SUS` AS `card_SUS`,
+        `p`.`imagem` AS `imagem`,
+        `p`.`hash` AS `hash`,
+        `t`.`telefone` AS `telefone`,
+        `e`.`email` AS `email`,
+        `end`.`logradouro` AS `logradouro`,
+        `end`.`numero` AS `numero`,
+        `end`.`cidade` AS `cidade`,
+        `end`.`uf` AS `uf`,
+        `end`.`cep` AS `cep`
+    FROM
+        (((`paciente` `p`
+        JOIN `tel_paciente` `t` ON (`p`.`id` = `t`.`id`))
+        JOIN `email_paciente` `e` ON (`p`.`id` = `e`.`id`))
+        JOIN `end_paciente` `end` ON (`p`.`id` = `end`.`id`))
 
 
 desc funcionario;
