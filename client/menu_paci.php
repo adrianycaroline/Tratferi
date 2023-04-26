@@ -1,3 +1,7 @@
+<?php
+    include '../admin/acesso_com_pac.php';
+    include '../connection/connect.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -76,21 +80,32 @@
             </ul>
             <hr>
             <div class="dropdown">
+                <img src="../fotos_usuarios/<?php echo $_SESSION['Imagem']; ?>" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="32" height="32" class="rounded-circle me-2">
+                <strong><a style="text-decoration: none; color: white;"><?php echo $_SESSION['nome'];?></a></strong>
+                <button class="dropdown-toggle bg-azul border-0" style="color: white;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="../admin/perfil/config_perfil.php">
+                        <ion-icon name="person-outline"></ion-icon>Perfil
+                    </a>
+                    <a class="dropdown-item" href="../admin/logout_pac.php">
+                        <ion-icon name="exit-outline"></ion-icon>Sair
+                    </a>
+                </div>
+            <!-- <img src="../fotos_usuarios/" alt="Foto de Perfil - " width="32" height="32" class="rounded-circle me-2">
                 <a class="dropdown bg-azul border-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img src="https://github.com/mdo.png" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="32" height="32" class="rounded-circle me-2">
+                    <img src="https://github.com/mdo.png" alt="Foto de Perfil - " width="32" height="32" class="rounded-circle me-2">
                     <strong><a style="text-decoration: none; color: white;" href="../admin/logout_pac.php">Sair</a></strong>
                 </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="#">Novo Projeto</a>
                     <a class="dropdown-item" href="#">Configurações</a>
                     <a class="dropdown-item" href="#">Perfil</a>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
     <?php include 'paci_options.php';?>
 </body>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="../js/script.js"></script>
 </html>
