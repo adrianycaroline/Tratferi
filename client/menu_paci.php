@@ -54,12 +54,12 @@
                         Departamentos
                     </a>
                 </li> -->
-                <li>
+                <!-- <li>
                     <a href="#" class="nav-link">
                         <img src="../images/predio.svg" alt="" width="20vw">    
                         Designação
                     </a>
-                </li>
+                </li> -->
                 <li>
                     <a href="#" class="nav-link">
                         <img src="../images/predio.svg" alt="" width="20vw">    
