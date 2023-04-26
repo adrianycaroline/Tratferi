@@ -26,28 +26,28 @@
                 <li>
                     <a href="#" class="nav-link" aria-current="page">
                         <img src="../images/dashboard.svg" alt="" width="20vw">
-                        Dashboard
+                        Home
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="#" class="nav-link">
                         <img src="../images/usuarios.svg" alt="" width="20vw">
                         Pacientes
                     </a>
-                </li>
+                </li> -->
                 <li>
                     <a href="#" class="nav-link">
                         <img src="../images/prontuario.svg" alt="" width="20vw">
-                        Prontuário
+                        Consultas
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="#" class="nav-link">
                         <img src="../images/cama.svg" alt="" width="20vw">
-                        Leitos
+                        
                     </a>
-                </li>
-                <li>
+                </li> -->
+                <!-- <li>
                     <a href="#" class="nav-link">
                         <img src="../images/predio.svg" alt="" width="20vw">    
                         Departamentos
@@ -59,7 +59,7 @@
                         Designação
                     </a>
                 </li>
-                <li>
+                <li> -->
                     <a href="#" class="nav-link">
                         <img src="../images/predio.svg" alt="" width="20vw">    
                         RH
