@@ -21,38 +21,39 @@
                         Tratferi
                     </a> 
                 </figure>
+                <!-- Começo do conteúdo  -->
             </div>
             <ul class="nav nav-pills flex-column mb-auto">
                 <li>
                     <a href="#" class="nav-link" aria-current="page">
                         <img src="../images/dashboard.svg" alt="" width="20vw">
-                        Dashboard
+                        Home
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="#" class="nav-link">
                         <img src="../images/usuarios.svg" alt="" width="20vw">
                         Pacientes
+                    </a>
+                </li> -->
+                <li>
+                    <a href="#" class="nav-link">
+                        <img src="../images/prontuario.svg" alt="" width="20vw">
+                        Consultas
                     </a>
                 </li>
                 <li>
                     <a href="#" class="nav-link">
                         <img src="../images/prontuario.svg" alt="" width="20vw">
-                        Prontuário
+                        Agendamento
                     </a>
                 </li>
-                <li>
-                    <a href="#" class="nav-link">
-                        <img src="../images/cama.svg" alt="" width="20vw">
-                        Leitos
-                    </a>
-                </li>
-                <li>
+                <!-- <li>
                     <a href="#" class="nav-link">
                         <img src="../images/predio.svg" alt="" width="20vw">    
                         Departamentos
                     </a>
-                </li>
+                </li> -->
                 <li>
                     <a href="#" class="nav-link">
                         <img src="../images/predio.svg" alt="" width="20vw">    
@@ -62,7 +63,7 @@
                 <li>
                     <a href="#" class="nav-link">
                         <img src="../images/predio.svg" alt="" width="20vw">    
-                        RH
+                        Departamentos
                     </a>
                 </li>
                 <li>
