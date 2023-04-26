@@ -19,7 +19,7 @@
             <!-- area de contatos  -->
         <div>
             <div class="panel-footer" style="background: none;">
-                    <h4>Contato</h4>
+                    <h4 style="color: #38B6FF;">Contato</h4>
                     <form action="contato_envia.php" name="form_contato" id="form_contato" method="post">
                         <p>
                             <span class="input-group">
@@ -46,7 +46,7 @@
                             </span>
                         </p>
                         <p>
-                            <button class="btn btn-primary btn-block botao" aria-label="enviar" role="button">
+                            <button class="btn btn-block botao" aria-label="enviar" role="button" style="background-color: #38B6FF;">
                                 Enviar
                                 <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
                 
@@ -63,7 +63,7 @@
 </main>
 <!-- inclusão do footer  -->
 <?php 
-     include 'footer.php';
+     include 'footer2.php';
 ?>
 </body>
 </html>

@@ -78,11 +78,6 @@ checkScreenSize();
 
 // Verifique o tamanho da tela quando a janela for redimensionada
 window.addEventListener('resize', checkScreenSize);
-
-
-
-
-
     </script>
     <style>
         main.responsive {
@@ -90,7 +85,7 @@ window.addEventListener('resize', checkScreenSize);
   flex-direction: column;
   align-items: center;
 }
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   .hide {
     display: none;
   }
