@@ -14,6 +14,8 @@
 </head>
 <body class="fundo_areas">
     <?php include 'menu_paci.php'; ?>
+    <?php include 'paci_options.php';?>
+
 </body>
 <!-- Links para a Biblioteca de icones do Ionic Icons -->
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
