@@ -32,29 +32,39 @@
                         </li>
                     </ul>
                     <div class="navbar-nav px-2">
-                        <div class="nav-item redondobtn" style="background-color: #E88F07;">
+                        <div class="nav-item redondobtn">
+                        <!-- Código para trocar o "entrar" pelo nome do usuário logado -->
                             <?php 
                                 session_start();
                             ?>
-                            <?php if((isset($_SESSION['login'])) && ($_SESSION['login'] != "tratferi")) {?>
-                                <?php if($_SESSION['login'] == "tratferiFun") {?>
+                            <!-- Login do Funcionário e Administrador -->
+                            <?php if((isset($_SESSION['login'])) && ($_SESSION['login'] != "tratferi")) {?> 
+                                <?php if($_SESSION['login'] == "tratferiFun") {?> <!-- Verifica se é Func -->
                                     <a href="func/index.php" class="nav-link" style="color: #fff; font-size: 20px;">
-                                    <?php echo $_SESSION['nome'];?>
-                                <?php }elseif($_SESSION['login'] == "tratferiAdm") {?>
+                                        <?php echo $_SESSION['nome'];?>
+                                        <img src="fotos_usuarios/<?php echo $_SESSION['Imagem']; ?>" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="40" height="40" class="rounded-circle">
+                                    </a>
+                                <?php }elseif($_SESSION['login'] == "tratferiAdm") {?> <!-- Verifica se é ADM -->
                                     <a href="admin/index.php" class="nav-link" style="color: #fff; font-size: 20px;">
-                                    <?php echo $_SESSION['nome'];?>
+                                        <?php echo $_SESSION['nome'];?>
+                                        <img src="fotos_usuarios/<?php echo $_SESSION['Imagem']; ?>" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="40" height="40" class="rounded-circle">
+                                    </a>
                                 <?php }?>
+                                <!-- Login do Paciente -->
                             <?php }elseif((isset($_SESSION['login'])) && ($_SESSION['login'] == "tratferi")){?>
                                 <a href="client/index.php" class="nav-link" style="color: #fff; font-size: 20px;">
                                     <?php echo $_SESSION['nome'];?>
+                                    <img src="fotos_usuarios/<?php echo $_SESSION['Imagem']; ?>" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="40" height="40" class="rounded-circle ">
+                                </a>    
+                                    <!-- Botão padrão Entrar -->
                             <?php }else{?>   
                                 <a href="admin/verifica.php" class="nav-link" style="color: #fff; font-size: 20px;"> Entrar
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                                    </svg>
+                                </a>
                             <?php }?>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                            </svg>
-                            </a>
                         </div>
                     </div>
                 </div>

@@ -5,6 +5,29 @@
     $lista = $conn->query("SELECT * FROM perfil where id = ".$_SESSION['Id'].";");
     $row = $lista->fetch_assoc();
     $rows = $lista->num_rows;
+
+    //Código para a foto funcionar
+    if(isset($_POST['alterar'])){ //Seleciona o formulário da foto
+        if($_FILES['imagem_perfil']['name']) {
+            $nome_img = $_FILES['imagem_perfil']['name']; //Pega o nome do arquivo selecionado
+            $tmp_img = $_FILES['imagem_perfil']['tmp_name'];
+            $dir_img = "../../fotos_usuarios/$nome_img"; //Local onde a imagem vai ser armazenada
+            move_uploaded_file($tmp_img, $dir_img); //Adciona o arquivo na pasta
+            $imagem_perfil = $nome_img;
+            $updateSql = "UPDATE funcionario set imagem = '$nome_img' where id = ".$_SESSION['Id'].";"; //Adiciona a imagem no banco
+        } else {
+            $imagem_perfil = "user_sem_foto.png";
+            $updateSql = "UPDATE funcionario set imagem = '$imagem_perfil' where id = ".$_SESSION['Id'].";";
+        }
+
+        $resultado = $conn->query($updateSql);
+        if($resultado){
+            header('location: config_perfil.php');
+        }
+    }
+    if(isset($_POST)){
+
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -18,7 +41,7 @@
     <title>Configurações do Perfil - <?php echo $_SESSION['nome'];?></title>
 </head>
 <body class="fundo_adm">
-    <?php include 'perfil_menu.php';?>
+    <?php include 'perfil_menu.php'; ?>
     <!-- Inicio Configurações de perfil  -->
     <div style="margin-left: 280px; display: flex; justify-content: left;">
         <div class="container">
@@ -183,11 +206,23 @@
                                         <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
                                     </button>
                                     <div class="modal-body">
-                                        <p><b>ATENÇÃO:</b> Sua foto de perfil só pode ser alterada duas vezes a cada 2 semanas.</p>
-                                        <p><b>ALTERAÇÕES RESTANTES:</b> 2</p>
-                                        <div class="text-center">
-                                            <button class="btn btn-primary">Alterar</button>
-                                        </div>
+                                        <!-- Formulário para trocar a foto de perfil -->
+                                        <form action="config_perfil.php" method="post" enctype="multipart/form-data">
+                                            <p><b>ATENÇÃO:</b> Sua foto de perfil só pode ser alterada duas vezes a cada 2 semanas.</p>
+                                            <p><b>ALTERAÇÕES RESTANTES:</b> 2</p>
+                                            <!-- Imagem Atual -->
+                                            <label for="imagem_perfil_atual">Foto de Perfil Atual:</label><br>
+                                            <img src="../../fotos_usuarios/<?php echo $row['imagem']; ?>" width="30%" class="img-responsive" alt="" srcset="">
+                                            <input type="hidden" name="imagem_perfil_atual" id="imagem_perfil_atual" value="<?php echo $row['imagem'];?>">
+                                            <br> <br>
+                                            <!-- Imagem Nova -->
+                                            <label for="imagem_perfil">Nova Foto de Perfil:</label>
+                                            <input type="file" name="imagem_perfil" id="imagem_perfil" class="form-control" accept="image/*"><!-- Input que escolhe a foto de perfil -->
+                                            <br>
+                                            <div class="text-center">
+                                                <button class="btn btn-primary" name="alterar" type="submit">Alterar</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -195,7 +230,7 @@
                         <form action="config_perfil.php" method="post" style="margin-right: 15px;">
                             <!-- Começo do Dados Pessoais -->
                             <h3 style="color: #1d5f96;">Dados Pessoais</h3>
-                            <p>Gerencie seu nome e informações de contato. Essas informações pessoais são privadas e não serão exibidos para outros usuários. Veja a nossa <a href="../../politica_pivaci.php" id="polit" target="_blank"> Política de Privacidade </a> <ion-icon name="lock-closed-outline"></ion-icon> </p>
+                            <p>Gerencie seu nome e informações de contato. Essas informações pessoais são privadas e não serão exibidos para outros usuários. Veja a nossa <a href="../../Politica_Privacidade.php" id="polit" target="_blank"> Política de Privacidade </a> <ion-icon name="lock-closed-outline"></ion-icon> </p>
                             <br>
                             <div class="d-flex">
                                 <!-- Input do CPF -->

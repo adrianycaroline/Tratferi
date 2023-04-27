@@ -1,3 +1,7 @@
+<?php 
+    include '../acesso_com_fun.php';
+    include '../../connection/connect.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>

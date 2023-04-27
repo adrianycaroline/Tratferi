@@ -46,6 +46,7 @@
            </div>
        </div>
        <!-- area de contato  -->
+       <br>
        <div class="col-sm-6 col-md-4" >
            <div class="panel-footer" style="background: none; margin-left: 200px;">
            <table class="">
