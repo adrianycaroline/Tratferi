@@ -6,19 +6,20 @@
     $row = $lista->fetch_assoc();
     $rows = $lista->num_rows;
 
-    if(isset($_POST['alterar'])){
+    //Código para a foto funcionar
+    if(isset($_POST['alterar'])){ //Seleciona o formulário da foto
         print_r($_FILES);
         if($_FILES['imagem_perfil']['name']) {
-            $nome_img = $_FILES['imagem_perfil']['name'];
+            $nome_img = $_FILES['imagem_perfil']['name']; //Pega o nome do arquivo selecionado
             $tmp_img = $_FILES['imagem_perfil']['tmp_name'];
-            $dir_img = "../../fotos_usuarios/$nome_img";
-            move_uploaded_file($tmp_img, $dir_img);
+            $dir_img = "../../fotos_usuarios/$nome_img"; //Local onde a imagem vai ser armazenada
+            move_uploaded_file($tmp_img, $dir_img); //Adciona o arquivo na pasta
         } else {
             $nome_img = $_POST['imagem_perfil_atual'];
         }
         $imagem_perfil = $nome_img;
 
-        $updateSql = "UPDATE funcionario set imagem = '$nome_img' where id = ".$_SESSION['Id'].";";
+        $updateSql = "UPDATE funcionario set imagem = '$nome_img' where id = ".$_SESSION['Id'].";"; //Adiciona a imagem no banco
 
         $resultado = $conn->query($updateSql);
         if($resultado){
@@ -208,12 +209,12 @@
                                             <p><b>ATENÇÃO:</b> Sua foto de perfil só pode ser alterada duas vezes a cada 2 semanas.</p>
                                             <p><b>ALTERAÇÕES RESTANTES:</b> 2</p>
                                             <!-- Imagem Atual -->
-                                            <label for="imagem_perfil_atual">Imagem Atual:</label>
-                                            <img src="../../fotos_usuarios/<?php echo $row['imagem']; ?>" class="img-responsive" alt="" srcset="">
+                                            <label for="imagem_perfil_atual">Foto de Perfil Atual:</label><br>
+                                            <img src="../../fotos_usuarios/<?php echo $row['imagem']; ?>" width="30%" class="img-responsive" alt="" srcset="">
                                             <input type="hidden" name="imagem_perfil_atual" id="imagem_perfil_atual" value="<?php echo $row['imagem'];?>">
-                                            <br>
+                                            <br> <br>
                                             <!-- Imagem Nova -->
-                                            <label for="imagem_perfil">Imagem Nova:</label>
+                                            <label for="imagem_perfil">Nova Foto de Perfil:</label>
                                             <input type="file" name="imagem_perfil" id="imagem_perfil" class="form-control" accept="image/*"><!-- Input que escolhe a foto de perfil -->
                                             <br>
                                             <div class="text-center">
