@@ -17,7 +17,7 @@
 <!-- Fundo Conscientização -->
 <style>
 body {
-        background: url('images/fundo.png') no-repeat;  
+        background: url('images/fundo_ajuda.png') no-repeat;  
         background-size: cover;
     }
 </style>
