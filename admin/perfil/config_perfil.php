@@ -25,8 +25,16 @@
             header('location: config_perfil.php');
         }
     }
-    if(isset($_POST)){
-
+    if(isset($_POST['alterar_nome'])){
+        $novo_nome = $_POST['novo_nome'];
+        $confirma_nome = $_POST['confirma_novo_nome'];
+        if($novo_nome = $confirma_nome){
+            $Novo_NomeRes = $conn->query("update funcionario set nome = $novo_nome where id = ".$_SESSION['Id'].";");
+            $rowNovo_Nome = $Novo_NomeRes->fetch_assoc();
+            $numRow = mysqli_num_rows($Novo_NomeRes);
+        }else{
+            echo "<script>alert('Senha !');</script>";
+        }
     }
 ?>
 <!DOCTYPE html>
@@ -80,6 +88,7 @@
                                                 <h5 style="color: #1d5f96;">Confirmar mudança de nome de exibição</h5>
                                                 <p><b>Observe: </b> Se você alterou o nome de exibição da TRATFERI, não poderá alterá-lo novamente por 2 semanas após confirmar essa alteração.</p>
                                                 <p><b> Nome de exibição atual: </b><?php echo $row['nome'];?></p> <br>
+                                                <form action="config_perfil.php" method="post" enctype="multipart/form-data">
                                                     <div class="group">
                                                         <input required="" name="novo_nome" id="novo_nome" type="text" class="input2">
                                                         <span class="highlight"></span>
@@ -94,12 +103,13 @@
                                                         <label>CONFIRME NOME DE EXIBIÇÃO</label>
                                                     </div>
                                                     <br><br>
-                                                        <input type="checkbox" class="form-check-input"> Entendo que após esta alteração, não poderei alterar meu nome de exibição novamente por duas semanas.
+                                                    <input type="checkbox" class="form-check-input"> Entendo que após esta alteração, não poderei alterar meu nome de exibição novamente por duas semanas.
                                                     <br> <br>
-                                                <div style="margin-left: 10px;">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Descartar Alterações</button>
-                                                    <button type="button" class="btn" style="background-color: #38B6FF;">Manter Alterações</button>
-                                                </div>
+                                                    <div style="margin-left: 10px;">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Descartar Alterações</button>
+                                                        <button type="submit" name="alterar_nome" class="btn" style="background-color: #38B6FF;">Manter Alterações</button>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
