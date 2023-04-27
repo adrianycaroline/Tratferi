@@ -36,7 +36,7 @@
                 header('location: config_perfil.php');
             }
         }else{
-            echo "<script>alert('Nomes diferentes!');</script>";
+            header('location: config_perfil.php?upd=n');
         }
     }
 ?>
@@ -49,6 +49,12 @@
     <link rel="stylesheet" href="../../CSS/estilo.css">
     <link rel="stylesheet" href="../../CSS/estilo_perfil.css">
     <link rel="stylesheet" href="../../CSS/bootstrap.min.css">
+    <!-- Jquery para o modal -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <title>Configurações do Perfil - <?php echo $_SESSION['nome'];?></title>
 </head>
 <body class="fundo_adm">
@@ -306,16 +312,16 @@
         <!-- Modal não atualiza nome-->
         <div class="modal fade" id="modal_atualiza_erro" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_centro" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-title" id="modal_cadastro_titulo" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                                    <img c src="../images/logo_areas.png" width="100vw" alt="">
-                                    <h5>Atualização de Paciente</h5>
-                                <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
-                                </button>
-                                </div>
+                <div class="modal-content">
+                    <div class="modal-title" id="modal_cadastro_titulo" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                        <img c src="../../images/logo_areas.png" width="100vw" alt="">
+                        <h5>Atualização do Nome</h5>
+                        <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
+                        </button>
+                    </div>
                     <div class="modal-body">
-                            <p class="text-center">Erro ao atualizar o paciente!</p>        
+                        <p class="text-center">Erro ao atualizar o nome de perfil!</p>        
                         <div style="display: flex; justify-content: end;">
                             <button  type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
                         </div>
@@ -323,6 +329,15 @@
                 </div>
             </div>
         </div>
+        <!-- código para o modal não atualiza nome -->
+        <?php if(isset($_GET) && ($_GET['upd'] == "n")){?>
+            <script>
+                $(document).ready(function() {
+                    $('#modal_atualiza_erro').modal('show');
+                });
+            </script>
+        <?php }?>  
+        <!-- Fim do modal não atualiza nome -->
 
          <!-- Modal do periodo  -->
          <div class="modal fade" id="modal_periodo" tabindex="-1" role="dialog" aria-labelledby="modal_periodo_centro" aria-hidden="true">
