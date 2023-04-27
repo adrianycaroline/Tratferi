@@ -11,7 +11,7 @@
 <body>
 <style>
 body {
-        background: url('images/fundo_ajuda.png') no-repeat;  
+        background: url('images/fundo_ajuda.png') no-repeat fixed;  
         background-size: cover;
     }
 </style>
@@ -44,7 +44,7 @@ body {
 
   <br>
   
-  <!-- fim primeiro Dropdown,Começo 2  -->
+  <!-- fim 2 Dropdown,Começo 2  -->
   <div class="accordion" id="accordionExample1">
   <div class="accordion-item" style="border: 0;">
     <h2 class="accordion-header">
@@ -63,6 +63,7 @@ body {
     </div>
   </div>
   
+  <!-- fim  -->
 </body>
 </html>
 <!-- Java sript -->
