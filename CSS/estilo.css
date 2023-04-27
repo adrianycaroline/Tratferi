@@ -148,8 +148,8 @@ section{
 
 .formbox{
     position:relative;
-    width: 450px;
-    height: 560px;
+    width: 340px;
+    height: 450px;
     justify-content: center;
     display: flex;
     align-items: center;

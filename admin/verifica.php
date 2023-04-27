@@ -21,7 +21,7 @@
         background-size: cover;
     }
     .card {
-      width: 400px;
+      width: 350px;
     }
 
     .borda{

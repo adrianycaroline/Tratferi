@@ -49,7 +49,7 @@
          <?php }?>
         <div class="formbox">
             <div class="form-value">
-                <form action="login_cliente.php" method="post">
+                <form action="login_cliente.php" method="post"><br>
                     <h2>Login Paciente</h2>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
