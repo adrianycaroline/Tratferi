@@ -101,12 +101,12 @@
         </div>
     </div>
     <br>
-    <h1 class="card-header text-center" style="color: #1d5f96;">Lista de Pacientes ativos</h1>
+    <h1 class="card-header text-center" style="color: #1d5f96; margin-left: 230px;">Lista de Pacientes ativos</h1>
     <div style="display: flex; justify-content: end;">
-            <div class="border-bottom border-2 " style="width: 26%; margin-right: 705px;"></div>
+            <div class="border-bottom border-2 " style="width: 34%; margin-right: 370px;"></div>
         </div>
             <section class="container">
-                <table class="table table-hover table-condensed tb-opacidade" style="margin-bottom: 320px;"> 
+                <table class="table table-hover table-condensed tb-opacidade" style="margin-bottom: 320px; margin-left: 300px;"> 
                     <thead>
                         <th class="hidden">ID</th>
                         <th style="color: #1d5f96;">Nome</th>
@@ -160,6 +160,13 @@
                         </tbody><!-- final corpo da tabela -->
                     </table>
                 </section>
+                <style>
+                    .logo-container {
+    display: flex;
+    margin: 10px;
+}
+
+                </style>
                  <!-- Modal atualiza paciente -->
         <div class="modal fade" id="modal_atualiza" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_centro" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">

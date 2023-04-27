@@ -59,48 +59,18 @@
             <div class="d-flex flex-column flex-shrink-0 p-3 bg-azul"  style="position: fixed; top: 0; left: 0; bottom: 0; width: 80px; overflow-y: auto;">
             <ul class="nav nav-pills flex-column mb-auto">
                 <li>
-                    <a href="#" class="nav-link" aria-current="page">
+                    <a href="index.php" class="nav-link" aria-current="page">
                         <img src="../images/dashboard.svg" alt="" width="20vw">
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link">
+                    <a href="cadastrar_paciente.php" class="nav-link">
                         <img src="../images/usuarios.svg" alt="" width="20vw">
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link">
-                        <img src="../images/prontuario.svg" alt="" width="20vw">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link">
-                        <img src="../images/cama.svg" alt="" width="20vw">
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link">
-                        <img src="../images/predio.svg" alt="" width="20vw">    
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link">
-                        <img src="../images/predio.svg" alt="" width="20vw">    
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link">
-                        <img src="../images/predio.svg" alt="" width="20vw">    
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link">
-                        <img src="../images/coracao.svg" alt="" width="20vw">    
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link">
-                        <img src="../images/anuncio.svg" alt="" width="20vw">
+                    <a href="pacientes_lista.php" class="nav-link">
+                        <img src="../images/usuarios.svg" alt="" width="20vw">
                     </a>
                 </li>
             </ul>
