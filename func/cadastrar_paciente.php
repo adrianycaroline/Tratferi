@@ -11,11 +11,11 @@
         $hashcode = "TRAT-".uniqid()."-".mb_strimwidth($cpf,0,3);
         if($sus == ""){
         $loginRes = $conn->query("insert into paciente (nome, data_nasc, cpf, rg, card_SUS, imagem, hash) values('$nome', '$data', '$cpf', '$rg', 'null', 'null', '$hashcode')");
-        echo "<script>window.open('pacientes_lista.php?cadastro=s','_self')</script>"; 
+        echo "<script>window.open('pacientes_lista.php?cad=s','_self')</script>"; 
         }
         elseif($sus != ""){
         $loginRes = $conn->query("insert into paciente (nome, data_nasc, cpf, rg, card_SUS, imagem, hash) values('$nome', '$data', '$cpf', '$rg', '$sus', 'null', '$hashcode')");
-        echo "<script>window.open('pacientes_lista.php?cadastro=s','_self')</script>";
+        echo "<script>window.open('pacientes_lista.php?cad=s','_self')</script>";
     }
 }      
 ?>
@@ -45,7 +45,7 @@
             <h1 class="card-header text-center" style="color: #38B6FF;">Cadastro de Paciente</h1>
             <div class="card-body">
                 <!-- Formulário de Cadastro de Funcionário -->
-                <form class="container" style="display: flex; justify-content: flex-start; flex-direction: column;" action="cadastrar_funcionario.php" method="post" name="form_funcionario_cadastro" enctype="multipart/form-data" onsubmit="return validaForm() && validaFormPeriodo()">
+                <form class="container" style="display: flex; justify-content: flex-start; flex-direction: column;" action="../func/cadastrar_paciente.php" method="post" name="form_funcionario_cadastro" enctype="multipart/form-data" onsubmit="return validaForm() && validaFormPeriodo()">
                     <div class="form-row" style="display: flex; justify-content: center; flex-direction: column;">
                         <div class="form-group">
                             <label for="nome">Nome Completo</label>

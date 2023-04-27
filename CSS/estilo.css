@@ -21,11 +21,6 @@
     color: rgb(255, 255, 255);
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none;
-    -webkit-appearance: none;
-  }
-
 .flex{
     display: flex;
 }

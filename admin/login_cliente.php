@@ -17,7 +17,7 @@
             $_SESSION['Imagem'] = $rowLogin['imagem'];
             if($rowLogin['cpf'] == $cpf){
                  echo "<script>window.open('../client/index.php','_self')</script>";
-            } 
+            }
         }else {
             echo "<script>window.open('../admin/login_cliente.php?acesso=n','_self')</script>"; 
         }
