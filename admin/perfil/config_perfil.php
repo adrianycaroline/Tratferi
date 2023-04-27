@@ -28,12 +28,15 @@
     if(isset($_POST['alterar_nome'])){
         $novo_nome = $_POST['novo_nome'];
         $confirma_nome = $_POST['confirma_novo_nome'];
-        if($novo_nome = $confirma_nome){
-            $Novo_NomeRes = $conn->query("update funcionario set nome = $novo_nome where id = ".$_SESSION['Id'].";");
-            $rowNovo_Nome = $Novo_NomeRes->fetch_assoc();
-            $numRow = mysqli_num_rows($Novo_NomeRes);
+        if($novo_nome == $confirma_nome){
+            $updateSqlNome = "UPDATE funcionario SET nome = '$novo_nome' WHERE id = ".$_SESSION['Id'].";";
+
+            $resultadoNome = $conn->query($updateSqlNome);
+            if($resultadoNome){
+                header('location: config_perfil.php');
+            }
         }else{
-            echo "<script>alert('Senha !');</script>";
+            echo "<script>alert('Nomes diferentes!');</script>";
         }
     }
 ?>
@@ -103,7 +106,7 @@
                                                         <label>CONFIRME NOME DE EXIBIÇÃO</label>
                                                     </div>
                                                     <br><br>
-                                                    <input type="checkbox" class="form-check-input"> Entendo que após esta alteração, não poderei alterar meu nome de exibição novamente por duas semanas.
+                                                    <input type="checkbox" class="form-check-input" required> Entendo que após esta alteração, não poderei alterar meu nome de exibição novamente por duas semanas.
                                                     <br> <br>
                                                     <div style="margin-left: 10px;">
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Descartar Alterações</button>
@@ -198,8 +201,8 @@
                                     <span>Editar</span>
                                 </button>
                                     <div class="dropdown-menu editarFotoAdm" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" data-toggle="modal" data-target="#modal_foto">Carregar foto...</a>
-                                        <a class="dropdown-item" >Remover foto</a>
+                                        <a type="button" class="dropdown-item" data-toggle="modal" data-target="#modal_foto">Carregar foto...</a>
+                                        <a type="button" class="dropdown-item" >Remover foto</a>
                                     </div>
                                 </div>
                             </div>   
