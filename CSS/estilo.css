@@ -113,6 +113,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .redondobtn{
     border-radius: 50px;
+    background-color: #fdab2f;
 }
 
 .redondobtn:hover{
