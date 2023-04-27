@@ -21,13 +21,13 @@
                         Tratferi
                     </a> 
                 </figure>
-                <!-- Começo do conteúdo  -->
+                <!-- Começo da barra letarl  -->
             </div>
             <ul class="nav nav-pills flex-column mb-auto">
                 <li>
                     <a href="#" class="nav-link" aria-current="page">
                         <img src="../images/dashboard.svg" alt="" width="20vw">
-                        Home
+                        Carteirnha
                     </a>
                 </li>
                 <li>
@@ -61,6 +61,7 @@
                     </a>
                 </li>
             </ul>
+            <!-- Fim da barra lateral -->
             <hr>
             <div class="dropdown">
                 <img src="../fotos_usuarios/<?php echo $_SESSION['Imagem']; ?>" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="32" height="32" class="rounded-circle me-2">
