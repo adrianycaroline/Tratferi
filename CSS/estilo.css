@@ -1042,10 +1042,10 @@ background-color: white;
 
 #accordionExample{
 border-radius: 15px;
-display: flex;
-justify-content: center;
-margin-left: -1%;
-width: 100%;
+justify-content: center !important; 
+width: 40%;
+display: block;
+margin-left: 30%;
 
 
 

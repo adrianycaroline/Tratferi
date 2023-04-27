@@ -20,7 +20,9 @@
                 where id = $id";
             $resultado = $conn->query($updateSql);
             if($resultado){
-                header('location: ../func/pacientes_lista.php');
+                header('location: ../func/pacientes_lista.php?upd=s');
+            }else{
+                header('location: ../func/pacientes_lista.php?upd=n');
             }
         }
         if($_GET){
