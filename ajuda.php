@@ -44,7 +44,7 @@ body {
 
   <br>
   
-  <!-- fim 2 Dropdown,Começo 2  -->
+  <!--Começo 2  -->
   <div class="accordion" id="accordionExample1">
   <div class="accordion-item" style="border: 0;">
     <h2 class="accordion-header">
@@ -62,9 +62,90 @@ body {
       </div>
     </div>
   </div>
+  <br>
+  <!--começo 3  -->
+
+  <div class="accordion" id="accordionExample2">
+  <div class="accordion-item" style="border: 0;">
+    <h2 class="accordion-header">
+    <button class="accordion-button btn-orange" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" >
+      Como funciona as consultas presencias ? 
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse show" data-bs-parent="#accordionExample" style="color:white">
+      <div class="accordion-body" style="color:white; background-color:#01a1ff;">
+        <strong>O objetivo do site é acompanhar o paciente <br>
+         a distancia  até a consulta presencial <br>
+         propriamente dita levando isso em <br>
+         conta ce necessario faremos uma <br>
+         consulta presencial para o paciente.</strong>    
+      </div>
+    </div>
+  </div>
+<br>
+  <!-- começo 4  -->
+
+  <div class="accordion" id="accordionExample3">
+  <div class="accordion-item" style="border: 0;">
+    <h2 class="accordion-header">
+    <button class="accordion-button btn-orange" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour" >
+      Como funciona as consultas presencias ? 
+      </button>
+    </h2>
+    <div id="collapseFour" class="accordion-collapse collapse show" data-bs-parent="#accordionExample" style="color:white">
+      <div class="accordion-body" style="color:white; background-color:#01a1ff;">
+        <strong>O objetivo do site é acompanhar o paciente <br>
+         a distancia  até a consulta presencial <br>
+         propriamente dita levando isso em <br>
+         conta ce necessario faremos uma <br>
+         consulta presencial para o paciente.</strong>    
+      </div>
+    </div>
+  </div>
+ <br>
   
-  <!-- fim  -->
+<!-- Começo 5  -->
+
+<div class="accordion" id="accordionExample4">
+  <div class="accordion-item" style="border: 0;">
+    <h2 class="accordion-header">
+    <button class="accordion-button btn-orange" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive" >
+      Como funciona as consultas presencias ? 
+      </button>
+    </h2>
+    <div id="collapseFive" class="accordion-collapse collapse show" data-bs-parent="#accordionExample" style="color:white">
+      <div class="accordion-body" style="color:white; background-color:#01a1ff;">
+        <strong>O objetivo do site é acompanhar o paciente <br>
+         a distancia  até a consulta presencial <br>
+         propriamente dita levando isso em <br>
+         conta ce necessario faremos uma <br>
+         consulta presencial para o paciente.</strong>    
+      </div>
+    </div>
+  </div>
+<br>
+  <!-- Começo 6  -->
+
+  <div class="accordion" id="accordionExample5">
+  <div class="accordion-item" style="border: 0;">
+    <h2 class="accordion-header">
+    <button class="accordion-button btn-orange" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix" >
+      Como funciona as consultas presencias ? 
+      </button>
+    </h2>
+    <div id="collapseSix" class="accordion-collapse collapse show" data-bs-parent="#accordionExample" style="color:white">
+      <div class="accordion-body" style="color:white; background-color:#01a1ff;">
+        <strong>O objetivo do site é acompanhar o paciente <br>
+         a distancia  até a consulta presencial <br>
+         propriamente dita levando isso em <br>
+         conta ce necessario faremos uma <br>
+         consulta presencial para o paciente.</strong>    
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
+
 <!-- Java sript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
