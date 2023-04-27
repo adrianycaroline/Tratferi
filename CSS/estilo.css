@@ -1040,21 +1040,26 @@ background-color: white;
 
 /* ///////////////////////// Drop down //////////////////////////// */
 
-.caret {
-    display: inline-block;
-    width: 0;
-    height: 0;
-    vertical-align: middle;
-    content: "";
-    border-top: 4px solid;
-    border-right: 4px solid transparent;
-    border-left: 4px solid transparent;
-  }
+#accordionExample{
+border-radius: 15px;
+display: flex;
+justify-content: center;
+margin-left: -1%;
+width: 100%;
 
-  .caret-up {
-    transform: rotate(180deg);
+
+
+}
+.btn-orange {
+    background-color: blue;
+    color: #fff;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
   }
   
-  
+  .btn-orange:hover {
+    background-color: #fff;
+    color: blue;
+    border-color: blue;
+  }
   
 
