@@ -1,6 +1,8 @@
+-- Criando o banco de dados
 create database tratferi;
-use tratferi;
 
+use tratferi;
+-- Começo da criação das tabelas
 create table funcionario(
 id int not null auto_increment,
 nome varchar(50) not null,
@@ -204,9 +206,9 @@ id_func int not null,
 id_login int not null,
 foreign key (id_login) references Login_func(id),
 foreign key (id_func) references funcionario(id));
+-- Fim das criações das tabelas
 
-
-
+-- Começo Views do banco
 CREATE 
     ALGORITHM = UNDEFINED 
     DEFINER = `root`@`localhost` 
@@ -271,10 +273,10 @@ VIEW `perfil_paci` AS
         LEFT JOIN `tel_paciente` `t` ON (`p`.`id` = `t`.`id`)
         LEFT JOIN `email_paciente` `e` ON (`p`.`id` = `e`.`id`)
         LEFT JOIN `end_paciente` `end` ON (`p`.`id` = `end`.`id`);
+-- Final das views do banco
 
 
-
-
+-- Descrições da tabela
 desc funcionario;
 
 desc tel_func;

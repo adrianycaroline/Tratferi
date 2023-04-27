@@ -24,7 +24,7 @@
                 <div class="d-flex ">
                     <div class="" >
                         <div>    
-                            <a href="https://play.google.com/store/games?hl=pt_BR&gl=US">
+                            <a href="https://play.google.com/store/games?hl=pt_BR&gl=US" target="_blank">
                                 <button class="text-light item mx-3" style="border-radius: 10px;">
                                     <div>
                                         <img src="images/dow.jpg" alt="Logo da Android" width="300px">
@@ -33,7 +33,7 @@
                             </a>
                         </div>
                         <div>
-                            <a href="https://www.apple.com/br/app-store/">
+                            <a href="https://www.apple.com/br/app-store/" target="_blank">
                                 <button class="item mx-3" style="border-radius: 10px;">
                                     <div>
                                         <img src="images/dowIOS.jpg" alt="Logo da Android" width="300px" >
