@@ -287,7 +287,11 @@
                                 <!-- Botões de Descartar e Manter Alterações -->
                                 <div>
                                     <button type="button" class="btn btn-secondary">Descartar Alterações</button>
+<<<<<<< HEAD
                                     <button name="manter_dados" type="submit" class="btn" style="background-color: #38B6FF;">Manter Alterações</button>
+=======
+                                    <button type="button" type="submit" class="btn" style="background-color: #38B6FF;">Manter Alterações</button>
+>>>>>>> 9ea58dac6a8cb182f1d0780bfdab7f40d0cb1c99
                                 </div>
                                 <br>
                                 <br>

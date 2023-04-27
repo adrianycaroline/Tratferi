@@ -40,6 +40,11 @@
     <link rel="shortcut icon" href="../images/logo_minimizada.png" type="image/x-icon">
     <link rel="stylesheet" href="../CSS/bootstrap.css">
     <link rel="stylesheet" href="../CSS/estilo.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <title>Área do Funcionário</title>
 </head>
 <body onload="atualizarHoras()" class="fundo_adm">
@@ -155,5 +160,87 @@
                         </tbody><!-- final corpo da tabela -->
                     </table>
                 </section>
+                 <!-- Modal atualiza paciente -->
+        <div class="modal fade" id="modal_atualiza" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_centro" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-title" id="modal_cadastro_titulo" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                                    <img c src="../images/logo_areas.png" width="100vw" alt="">
+                                    <h5>Atualização de Paciente</h5>
+                                <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
+                                </button>
+                                </div>
+                    <div class="modal-body">
+                            <p class="text-center">O paciente foi atualizado com sucesso!</p>        
+                        <div style="display: flex; justify-content: end;">
+                            <button  type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal não atualiza paciente-->
+        <div class="modal fade" id="modal_atualiza_erro" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_centro" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-title" id="modal_cadastro_titulo" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                                    <img c src="../images/logo_areas.png" width="100vw" alt="">
+                                    <h5>Atualização de Paciente</h5>
+                                <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
+                                </button>
+                                </div>
+                    <div class="modal-body">
+                            <p class="text-center">Erro ao atualizar o paciente!</p>        
+                        <div style="display: flex; justify-content: end;">
+                            <button  type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal de Cadastro-->
+        <div class="modal fade" id="modal_cadastro" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_centro" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-title" id="modal_cadastro_titulo" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                                    <img c src="../images/logo_areas.png" width="100vw" alt="">
+                                    <h5>Cadastrar Paciente</h5>
+                                <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
+                                </button>
+                                </div>
+                    <div class="modal-body">
+                            <p class="text-center">Paciente cadastrado com sucesso!</p>        
+                        <div style="display: flex; justify-content: end;">
+                            <button  type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Código que busca o modal caso venha algo por GET  -->
+                <?php if(isset($_GET) && ($_GET['upd'] == "s")){?>
+                    <script>
+                        $(document).ready(function() {
+                            $('#modal_atualiza').modal('show');
+                        });
+                    </script>
+                <?php }?>
+                <?php if(isset($_GET) && ($_GET['upd'] == "n")){?>
+                    <script>
+                        $(document).ready(function() {
+                            $('#modal_atualiza_erro').modal('show');
+                        });
+                    </script>
+                <?php }?>  
+                <?php if(isset($_GET) && ($_GET['cad'] == "s")){?>
+                    <script>
+                        $(document).ready(function() {
+                            $('#modal_cadastro').modal('show');
+                        });
+                    </script>
+                <?php }?>  
             </body>
             </html>

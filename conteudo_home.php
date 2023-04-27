@@ -215,5 +215,13 @@
         </div>
       </div>
 </div>
+<style>
+   @media (max-width: 1023px) {
+    .img-fluid {
+      display: none;
+    }
+  }
+
+</style>
 </body>
 </html>

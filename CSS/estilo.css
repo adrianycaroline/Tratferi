@@ -21,11 +21,6 @@
     color: rgb(255, 255, 255);
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none;
-    -webkit-appearance: none;
-  }
-
 .flex{
     display: flex;
 }
@@ -82,12 +77,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     max-width: 100%;
 }
 /* fim img dos cards do home */
-/* barra azul */
-.barra{
-    margin-left: 280px;
-}
-/* fim barra azul */
-
 .fundo_adm{
     background: url(../images/fundo_adm1.png) no-repeat fixed;
     background-size: cover;
@@ -726,6 +715,7 @@ input:focus ~ :valid{
     height: 350px;
     perspective: 1000px;
     font-family: sans-serif;
+    margin-left: 55px;
 }
   
 .title {
@@ -776,13 +766,7 @@ background-color: white;
     border: 2px solid;
     border-radius: 2rem;
 }
-@media only screen and (min-width: 768px) {
-    .flip-card {
-      width: 270px;
-      height: 350px;
-      margin-left: 30px;
-    }
-}
+
 /* //////////////////// Card de joinha /////////////////////// */
 .like-dislike-container {
     --dark-grey: #353535;
@@ -1042,10 +1026,10 @@ background-color: white;
 
 #accordionExample{
 border-radius: 15px;
-display: flex;
-justify-content: center;
-margin-left: -1%;
-width: 100%;
+justify-content: center !important; 
+width: 40%;
+display: block;
+margin-left: 30%;
 
 
 

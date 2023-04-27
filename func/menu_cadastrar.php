@@ -14,7 +14,7 @@
 </head>
 <body>
     <div id="escondido">
-        <div class="d-flex flex-column flex-shrink-0 p-3"  style="position: fixed; top: 0; left: 0; bottom: 0; width: 280px; background-color: #38B6FF;">
+        <div class="d-flex flex-column flex-shrink-0 p-3"  style="position: fixed; top: 0; left: 0; bottom: 0; width: 280px; background-color: #38B6FF; z-index: 9999;">
             <div>
                 <figure style="display: flex;">
                     <img src="../images/logoPesq.png" alt="Logo Tratferi" width="75vw"> 
@@ -40,12 +40,6 @@
                     <a href="pacientes_lista.php" class="nav-link">
                         <img src="../images/usuarios.svg" alt="" width="20vw">
                         Pacientes Ativos
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link">
-                        <img src="../images/usuarios.svg" alt="" width="20vw">
-                        Pacientes Arquivados
                     </a>
                 </li>
             </ul>
