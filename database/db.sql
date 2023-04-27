@@ -239,9 +239,10 @@ VIEW `perfil` AS
         `end`.`cep` AS `cep`
     FROM
         (((`funcionario` `f`
-        JOIN `tel_func` `t` ON (`f`.`id` = `t`.`id`))
-        JOIN `email_func` `e` ON (`f`.`id` = `e`.`id`))
-        JOIN `end_func` `end` ON (`f`.`id` = `end`.`id`));
+        LEFT JOIN `tel_func` `t` ON (`f`.`id` = `t`.`id`))
+        LEFT JOIN `email_func` `e` ON (`f`.`id` = `e`.`id`))
+        LEFT JOIN `end_func` `end` ON (`f`.`id` = `end`.`id`));
+
 
 
 CREATE 
@@ -266,10 +267,12 @@ VIEW `perfil_paci` AS
         `end`.`uf` AS `uf`,
         `end`.`cep` AS `cep`
     FROM
-        (((`paciente` `p`
-        JOIN `tel_paciente` `t` ON (`p`.`id` = `t`.`id`))
-        JOIN `email_paciente` `e` ON (`p`.`id` = `e`.`id`))
-        JOIN `end_paciente` `end` ON (`p`.`id` = `end`.`id`))
+        `paciente` `p`
+        LEFT JOIN `tel_paciente` `t` ON (`p`.`id` = `t`.`id`)
+        LEFT JOIN `email_paciente` `e` ON (`p`.`id` = `e`.`id`)
+        LEFT JOIN `end_paciente` `end` ON (`p`.`id` = `end`.`id`);
+
+
 
 
 desc funcionario;
