@@ -42,12 +42,6 @@
                         Pacientes Ativos
                     </a>
                 </li>
-                <li>
-                    <a href="#" class="nav-link">
-                        <img src="../images/usuarios.svg" alt="" width="20vw">
-                        Pacientes Arquivados
-                    </a>
-                </li>
             </ul>
             <hr>
             <div class="dropdown">
