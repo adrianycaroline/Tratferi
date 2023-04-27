@@ -33,15 +33,11 @@ body {
     </h2>
     <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample" style="color:white">
       <div class="accordion-body" style="color:white; background-color:#01a1ff;">
-        <strong>O objetivo do site é acompanhar o paciente <br>
-         a distancia  até a consulta presencial <br>
-         propriamente dita levando isso em <br>
-         conta ce necessario faremos uma <br>
-         consulta presencial para o paciente.</strong>    
+        <p>O objetivo do site é acompanhar o paciente  a distancia  até a consulta presencial <br>
+          propriamente dita levando isso em conta ce necessario faremos uma consulta presencial para o paciente.</p> <br>
       </div>
     </div>
   </div>
-
   <br>
   
   <!--Começo 2  -->
@@ -49,16 +45,14 @@ body {
   <div class="accordion-item" style="border: 0;">
     <h2 class="accordion-header">
     <button class="accordion-button btn-orange" type="button" data-bs-toggle="collapse" data-bs-target="#collapse" aria-expanded="true" aria-controls="collapse" >
-      Como funciona as consultas presencias ? 
+      Duvidas sobre os primeiros passos ? 
       </button>
     </h2>
     <div id="collapse" class="accordion-collapse collapse show" data-bs-parent="#accordionExample1" style="color:white">
       <div class="accordion-body" style="color:white; background-color:#01a1ff;">
-        <strong>O objetivo do site é acompanhar o paciente <br>
-         a distancia  até a consulta presencial <br>
-         propriamente dita levando isso em <br>
-         conta ce necessario faremos uma <br>
-         consulta presencial para o paciente.</strong>    
+        <p>
+         
+      </p>    
       </div>
     </div>
   </div>
@@ -69,16 +63,12 @@ body {
   <div class="accordion-item" style="border: 0;">
     <h2 class="accordion-header">
     <button class="accordion-button btn-orange" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" >
-      Como funciona as consultas presencias ? 
+     Como fazer minha primeira conta ?
       </button>
     </h2>
     <div id="collapseThree" class="accordion-collapse collapse show" data-bs-parent="#accordionExample" style="color:white">
       <div class="accordion-body" style="color:white; background-color:#01a1ff;">
-        <strong>O objetivo do site é acompanhar o paciente <br>
-         a distancia  até a consulta presencial <br>
-         propriamente dita levando isso em <br>
-         conta ce necessario faremos uma <br>
-         consulta presencial para o paciente.</strong>    
+        <p></p>    
       </div>
     </div>
   </div>
@@ -89,16 +79,12 @@ body {
   <div class="accordion-item" style="border: 0;">
     <h2 class="accordion-header">
     <button class="accordion-button btn-orange" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour" >
-      Como funciona as consultas presencias ? 
+     Problemas com criação de conta ? 
       </button>
     </h2>
     <div id="collapseFour" class="accordion-collapse collapse show" data-bs-parent="#accordionExample" style="color:white">
       <div class="accordion-body" style="color:white; background-color:#01a1ff;">
-        <strong>O objetivo do site é acompanhar o paciente <br>
-         a distancia  até a consulta presencial <br>
-         propriamente dita levando isso em <br>
-         conta ce necessario faremos uma <br>
-         consulta presencial para o paciente.</strong>    
+        <p></p>    
       </div>
     </div>
   </div>
@@ -115,11 +101,7 @@ body {
     </h2>
     <div id="collapseFive" class="accordion-collapse collapse show" data-bs-parent="#accordionExample" style="color:white">
       <div class="accordion-body" style="color:white; background-color:#01a1ff;">
-        <strong>O objetivo do site é acompanhar o paciente <br>
-         a distancia  até a consulta presencial <br>
-         propriamente dita levando isso em <br>
-         conta ce necessario faremos uma <br>
-         consulta presencial para o paciente.</strong>    
+        <p>.</p>    
       </div>
     </div>
   </div>
@@ -130,16 +112,15 @@ body {
   <div class="accordion-item" style="border: 0;">
     <h2 class="accordion-header">
     <button class="accordion-button btn-orange" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix" >
-      Como funciona as consultas presencias ? 
+     Ainda com Duvida ? 
       </button>
     </h2>
     <div id="collapseSix" class="accordion-collapse collapse show" data-bs-parent="#accordionExample" style="color:white">
       <div class="accordion-body" style="color:white; background-color:#01a1ff;">
-        <strong>O objetivo do site é acompanhar o paciente <br>
-         a distancia  até a consulta presencial <br>
-         propriamente dita levando isso em <br>
-         conta ce necessario faremos uma <br>
-         consulta presencial para o paciente.</strong>    
+        <p>Nos ajude a melhorar nossos serviços,sua duvida pode ser a do proximo <br>
+        especifique sua duvida mande um email para <a href="mailto:tratferi_site@outlook.com?subject=Contato do Site" style="color:white">tratferi@gmail.com. <br></p></a>
+         
+             
       </div>
     </div>
   </div>
