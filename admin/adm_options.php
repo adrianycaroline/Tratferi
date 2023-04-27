@@ -2,8 +2,8 @@
     include '../admin/acesso_com_fun.php';
     include '../connection/connect.php';
     $listaF = $conn->query("SELECT COUNT(*) FROM funcionario where ativo = 1"); //Conta a quantidade de usuarios ativos.
-    $listaP = $conn->query("SELECT COUNT(*) FROM paciente"); //Conta a quantidade de usuarios ativos.
-    $listaA = $conn->query("SELECT COUNT(*) FROM funcionario where ativo = 0"); //Conta a quantidade de usuarios ativos.
+    $listaP = $conn->query("SELECT COUNT(*) FROM paciente"); //Conta a quantidade de pacientes ativos.
+    $listaA = $conn->query("SELECT COUNT(*) FROM funcionario where ativo = 0"); //Conta a quantidade de usuarios arquivados.
 
     $rowF = $listaF->fetch_row(); // Obtém o resultado da consulta
     $quantidadeF = $rowF[0]; // Atribui o resultado a uma variável
