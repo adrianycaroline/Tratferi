@@ -1,7 +1,73 @@
 <?php
     include '../admin/acesso_com_pac.php';
     include '../connection/connect.php';
+    
+    if(isset($_POST['manter_dados'])){
+        $telefone = $_POST['telefone'];
+        $email = $_POST['email'];
+        $logradouro = $_POST['logradouro'];
+        $numero = $_POST['numero'];
+        $cidade = $_POST['cidade'];
+        $uf = $_POST['uf'];
+        $cep = $_POST['cep'];
+        
+        $insereTel = "UPDATE tel_paciente
+        set telefone = '$telefone',
+        id_paci = '".$_SESSION['Id']."'
+        where id = ".$_SESSION['Id'].";";
 
+        $insereEmail = "UPDATE email_paciente 
+        (email, id_paci)
+        VALUES ('$email','".$_SESSION['Id']."')";
+
+        $insereEnd = "UPDATE end_paciente 
+        set logradouro, 
+        numero, 
+        cidade, 
+        uf, 
+        id_paci = '".$_SESSION['Id']."'
+        where id = ".$_SESSION['Id'].";";
+            $resultado = $conn->query($insereTel);
+            if($resultado){
+                header('location: config_perfil.php');
+            }
+        }   
+            
+            
+            
+        //     $id = $_POST['id_paci']; 
+        //     $updateSql = "insert  tefone
+        //     set id = '$id_usuario',
+        //     telefone = '$telefone',
+        //     id_paci = '$id_paci'
+        //     where id = $id";
+
+        //     $updateSql = "update funcionario
+        //         set id = '$id_usuario',
+        //         imagem = '$imagem',
+
+        //         data_nasc = '$data',
+        //         cpf = '$cpf',
+        //         coren = '$coren',
+        //         crm = '$crm',
+        //         rg = '$rg',
+        //         cargo = '$cargo',
+        //         funcao = '$funcao',
+        //         periodo = '$periodo',
+        //         salario = '$salario',
+        //         adm = '$adm',
+        //         ativo = '$ativo'
+        //         where id = $id";
+        //     $resultado = $conn->query($updateSql);
+        //     if($resultado){
+        //         header('location: config_perfil.php');
+        //     }
+        // }
+        // if($_GET){
+        //     $id_form = $_GET['Id'];
+        // } else {
+        //     $id_form = 0;
+        // }
     $lista = $conn->query("SELECT * FROM perfil_paci where id = ".$_SESSION['Id'].";");
     $row = $lista->fetch_assoc();
     $rows = $lista->num_rows;
@@ -119,35 +185,35 @@
                                 </div>
                             </div>
                         </div>
-                        <form action="config_perfil.php" method="post" style="margin-right: 15px;">
-                            <!-- Começo do Dados Pessoais -->
-                            <h3 style="color: #1d5f96;">Dados Pessoais</h3>
-                            <p>Gerencie seu nome e informações de contato. Essas informações pessoais são privadas e não serão exibidos para outros usuários. Veja a nossa <a href="../politica_pivaci.php" id="polit" target="_blank"> Política de Privacidade </a> <ion-icon name="lock-closed-outline"></ion-icon> </p>
-                            <br>
-                            <div class="d-flex">
-                                <!-- Input do CPF -->
-                                <div class="group">
-                                    <input required="" name="cpf" id="cpf" type="text" class="input" value="<?php echo $row['cpf']; ?>" onkeypress="$(this).mask('000.000.000-00');">
-                                    <span class="highlight"></span>
-                                    <span class="bar"></span>
-                                    <label style="color: #38B6FF;">CPF</label>
-                                </div>
-                                <!-- Input da Data de Nascimento  -->
-                                <div class="group">
-                                    <input required="" name="datanasc" id="datanasc" type="text" class="input" value="<?php echo date('d/m/Y', strtotime($row['data_nasc'])); ?>">
-                                    <span class="highlight"></span>
-                                    <span class="bar"></span>
-                                    <label style="color: #38B6FF;">Data de Nascimento</label>
-                                </div>
-                                <!-- Input do RG  -->
-                                <div class="group">
-                                    <input required="" name="rg" id="rg" type="text" class="input" value="<?php echo $row['rg'];?>" onkeypress="$(this).mask('00.000.000-0');">
-                                    <span class="highlight"></span>
-                                    <span class="bar"></span>
-                                    <label style="color: #38B6FF;">RG</label>
-                                </div>
+                        <!-- Começo do Dados Pessoais -->
+                        <h3 style="color: #1d5f96;">Dados Pessoais</h3>
+                        <p>Gerencie seu nome e informações de contato. Essas informações pessoais são privadas e não serão exibidos para outros usuários. Veja a nossa <a href="../politica_pivaci.php" id="polit" target="_blank"> Política de Privacidade </a> <ion-icon name="lock-closed-outline"></ion-icon> </p>
+                        <br>
+                        <div class="d-flex">
+                            <!-- Input do CPF -->
+                            <div class="group">
+                                <input required="" name="cpf" id="cpf" type="text" class="input" value="<?php echo $row['cpf']; ?>" onkeypress="$(this).mask('000.000.000-00');">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label style="color: #38B6FF;">CPF</label>
                             </div>
-                            <br>
+                            <!-- Input da Data de Nascimento  -->
+                            <div class="group">
+                                <input required="" name="datanasc" id="datanasc" type="text" class="input" value="<?php echo date('d/m/Y', strtotime($row['data_nasc'])); ?>">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label style="color: #38B6FF;">Data de Nascimento</label>
+                            </div>
+                            <!-- Input do RG  -->
+                            <div class="group">
+                                <input required="" name="rg" id="rg" type="text" class="input" value="<?php echo $row['rg'];?>" onkeypress="$(this).mask('00.000.000-0');">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label style="color: #38B6FF;">RG</label>
+                            </div>
+                        </div>
+                        <br>
+                        <form action="../client/config_perfil.php" method="post" style="margin-right: 15px;" enctype="multipart/form-data">
                             <div class="d-flex">                              
                             </div>
                             <br>
@@ -161,28 +227,28 @@
                                         <input required="" name="logradouro" id="logradouro" type="text" class="input" value="<?php echo $row['logradouro'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label style="color: #38B6FF;">Logradouro</label>
+                                        <label for="logradouro" style="color: #38B6FF;">Logradouro</label>
                                     </div>
                                     <!-- Input do numero da casa -->
                                     <div class="group">
                                         <input required="" name="numero" id="numero" type="text" class="input"value="<?php echo $row['numero'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label style="color: #38B6FF;">Numero</label>
+                                        <label for="numero" style="color: #38B6FF;">Numero</label>
                                     </div>
                                     <!-- Input da Cidade  -->
                                     <div class="group">
                                         <input required="" name="cidade" id="cidade" type="text" class="input"value="<?php echo $row['cidade'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label style="color: #38B6FF;">Cidade</label>
+                                        <label for="cidade" style="color: #38B6FF;">Cidade</label>
                                     </div>
                                     <!-- Input do UF  -->
                                     <div class="group">
                                         <input required="" name="uf" id="uf" type="text" class="input"value="<?php echo $row['uf'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label style="color: #38B6FF;">UF</label>
+                                        <label for="uf" style="color: #38B6FF;">UF</label>
                                     </div>
                                 </div>
                                 <br>
@@ -192,7 +258,7 @@
                                         <input required="" name="cep" id="cep" type="text" class="input"value="<?php echo $row['cep'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label style="color: #38B6FF;">CEP</label>
+                                        <label for="cep" style="color: #38B6FF;">CEP</label>
                                     </div>
                                 </div>
                                 <br>
@@ -207,21 +273,25 @@
                                         <input required="" name="telefone" id="telefone" type="tel" class="input" value="<?php echo $row['telefone'];?>" onkeypress="$(this).mask('(00)00000-0000');">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label style="color: #38B6FF;">Telefone</label>
+                                        <label for="telefone" style="color: #38B6FF;">Telefone</label>
                                     </div>
                                     <!-- Input do Email  -->
                                     <div class="group">
                                         <input required="" name="email" id="email" type="email" class="input" value="<?php echo $row['email'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label style="color: #38B6FF;">Email</label>
+                                        <label for="email" style="color: #38B6FF;">Email</label>
                                     </div>
                                 </div>
                                 <br>
                                 <!-- Botões de Descartar e Manter Alterações -->
                                 <div>
                                     <button type="button" class="btn btn-secondary">Descartar Alterações</button>
+<<<<<<< HEAD
+                                    <button name="manter_dados" type="submit" class="btn" style="background-color: #38B6FF;">Manter Alterações</button>
+=======
                                     <button type="button" type="submit" class="btn" style="background-color: #38B6FF;">Manter Alterações</button>
+>>>>>>> 9ea58dac6a8cb182f1d0780bfdab7f40d0cb1c99
                                 </div>
                                 <br>
                                 <br>
