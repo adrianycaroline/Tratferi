@@ -76,7 +76,7 @@
         <h6 class="text-center" style="color: white">©2023 Tratferi-Todos os direitos reservados</h6></div>
     </div>
 <style>
-   @media (max-width: 767px) {
+   @media (max-width: 1023px) {
   .hide-on-mobile {
     display: none;
   }
