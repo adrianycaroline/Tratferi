@@ -8,7 +8,6 @@
 
     //Código para a foto funcionar
     if(isset($_POST['alterar'])){ //Seleciona o formulário da foto
-        print_r($_FILES);
         if($_FILES['imagem_perfil']['name']) {
             $nome_img = $_FILES['imagem_perfil']['name']; //Pega o nome do arquivo selecionado
             $tmp_img = $_FILES['imagem_perfil']['tmp_name'];
@@ -25,6 +24,9 @@
         if($resultado){
             header('location: config_perfil.php');
         }
+    }
+    if(isset($_POST)){
+
     }
 ?>
 <!DOCTYPE html>
