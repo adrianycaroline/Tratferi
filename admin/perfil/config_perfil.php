@@ -14,12 +14,12 @@
             $tmp_img = $_FILES['imagem_perfil']['tmp_name'];
             $dir_img = "../../fotos_usuarios/$nome_img"; //Local onde a imagem vai ser armazenada
             move_uploaded_file($tmp_img, $dir_img); //Adciona o arquivo na pasta
+            $imagem_perfil = $nome_img;
+            $updateSql = "UPDATE funcionario set imagem = '$nome_img' where id = ".$_SESSION['Id'].";"; //Adiciona a imagem no banco
         } else {
-            $nome_img = $_POST['imagem_perfil_atual'];
+            $imagem_perfil = "user_sem_foto.png";
+            $updateSql = "UPDATE funcionario set imagem = '$imagem_perfil' where id = ".$_SESSION['Id'].";";
         }
-        $imagem_perfil = $nome_img;
-
-        $updateSql = "UPDATE funcionario set imagem = '$nome_img' where id = ".$_SESSION['Id'].";"; //Adiciona a imagem no banco
 
         $resultado = $conn->query($updateSql);
         if($resultado){
@@ -228,7 +228,7 @@
                         <form action="config_perfil.php" method="post" style="margin-right: 15px;">
                             <!-- Começo do Dados Pessoais -->
                             <h3 style="color: #1d5f96;">Dados Pessoais</h3>
-                            <p>Gerencie seu nome e informações de contato. Essas informações pessoais são privadas e não serão exibidos para outros usuários. Veja a nossa <a href="../../politica_pivaci.php" id="polit" target="_blank"> Política de Privacidade </a> <ion-icon name="lock-closed-outline"></ion-icon> </p>
+                            <p>Gerencie seu nome e informações de contato. Essas informações pessoais são privadas e não serão exibidos para outros usuários. Veja a nossa <a href="../../Politica_Privacidade.php" id="polit" target="_blank"> Política de Privacidade </a> <ion-icon name="lock-closed-outline"></ion-icon> </p>
                             <br>
                             <div class="d-flex">
                                 <!-- Input do CPF -->
