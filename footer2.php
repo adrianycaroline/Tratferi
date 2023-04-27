@@ -27,7 +27,7 @@
                         </div>
                       <div>
                         
-                        <a href="https://api.whatsapp.com/send?phone=5511946990301&text=Ol%C3%A1" target="_blank" style="color: #fff;" ><i class="bi bi-telephone"></i>
+                        <a href="https://api.whatsapp.com/send?phone=5511946990301&text=Ol%C3%A1" target="_blank" style="color: #fff;" ><i class="bi bi-whatsapp"></i>
                         &nbsp;(11) 94699-0301
                         </a>
                       </div>
