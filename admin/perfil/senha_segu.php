@@ -28,21 +28,21 @@
             <br>
             <div class="d-flex">
                 <div>
-                    <h5>SENHA ATUAL</h5>
+                    <h5 style="color: #1d5f96;">SENHA ATUAL</h5>
                     <small>OBRIGATÓRIO</small>
                     <br>
                     <div class="group">
                         <input required="" name="senhaAtual" id="senhaAtual" type="text" class="input2">
                     </div>
                     <br>
-                    <h5>NOVA SENHA</h5>
+                    <h5 style="color: #1d5f96;">NOVA SENHA</h5>
                     <small>OBRIGATÓRIO</small>
                     <br>
                     <div class="group">
                         <input required="" name="senhaNova" id="senhaNova" type="text" class="input2">
                     </div>
                     <br>
-                    <h5>DIGITE A NOVA SENHA NOVAMENTE</h5>
+                    <h5 style="color: #1d5f96;">DIGITE A NOVA SENHA NOVAMENTE</h5>
                     <small>OBRIGATÓRIO</small>
                     <br>
                     <div class="group">
@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <div style="margin-left: 100px; border-left: 1px solid black; padding-left: 20px;">
-                    <h5>SUA SENHA</h5>
+                    <h5 style="color: #1d5f96;">SUA SENHA</h5>
                     <br><br>
                     <div style="font-size: 11pt;">
                         <p>Sua senha precisa ser diferente das últimas 5 senhas usadas</p>
@@ -64,14 +64,14 @@
             <br>
             <div>
                 <button type="button" class="btn btn-secondary">Descartar Alterações</button>
-                <button type="button" class="btn btn-primary">Manter Alterações</button>
+                <button type="button" class="btn" style="background-color: #38B6FF;">Manter Alterações</button>
             </div>
             <br>
             <br>
             <hr width="">
             <br>
             <div>
-                <h3>FINALIZAR SESSÃO EM TODOS OS LUGARES</h3>
+                <h3 style="color: #1d5f96;">FINALIZAR SESSÃO EM TODOS OS LUGARES</h3>
                 <div class="d-flex">
                     <div>
                         <p>Finalize sessões em qualquer outro local em que a sua conta da <br>
@@ -80,20 +80,20 @@
                         </p>
                     </div> 
                     <div>
-                        <button type="button" class="btn btn-primary" style="padding: 15px; margin-left: 50px;">FINALIZAR OUTRAS SESSÕES</button>
+                        <button type="button" class="btn" style="padding: 15px; margin-left: 50px; background-color: #38B6FF;">FINALIZAR OUTRAS SESSÕES</button>
                     </div> 
                 </div>
                 </div>
                 <br>
                 <hr width="">
                 <div>
-                    <h3>AUTENTICAÇÃO DE DOIS FATORES</h3>
+                    <h3 style="color: #1d5f96;">AUTENTICAÇÃO DE DOIS FATORES</h3>
                     <p>A Autenticação de Dois Fatores (ADF) pode ser usada para proteger sua conta de acesso não autorizado ao exigir que você insira um código de segurança ao iniciar sessão. Caso tenha algum problema ou dúvidas entre em contato conosco clicando <a href="../contato.php">aqui</a></p>
                     <small>Métodos de Autenticação disponíveis:</small>
                     <br>
                     <br>
                     <div>
-                    <h5>APLICATIVO AUTENTICADOR DE TERCEIROS</h5>
+                    <h5 style="color: #1d5f96;">APLICATIVO AUTENTICADOR DE TERCEIROS</h5>
                     <div style="display: flex;">
                         <div>
                             <p>Use um aplicativo autenticador como sua Autenticação de Dois Fatores (ADF). Ao fazer o login, você precisará usar o código de segurança fornecido pelo seu aplicativo autenticador.</p>
@@ -104,7 +104,7 @@
                         </div>
                     </div>
                     <br>
-                    <h5>AUTENTICAÇÃO POR SMS</h5>
+                    <h5 style="color: #1d5f96;">AUTENTICAÇÃO POR SMS</h5>
                     <div style="display: flex;">
                         <div>
                             <p>Use seu celular como Autenticação de Dois Fatores (ADF). Ao acessar, você precisará usar o código de segurança recebido por SMS.</p>
@@ -115,7 +115,7 @@
                         </div>
                     </div>
                     <br>
-                    <h5>AUTENTICAÇÃO POR E-MAIL</h5>
+                    <h5 style="color: #1d5f96;">AUTENTICAÇÃO POR E-MAIL</h5>
                     <div style="display: flex;">
                         <div>
                             <p>Use um código de segurança enviado para o seu endereço de e-mail como sua Autenticação de Dois Fatores (ADF). O código de segurança será enviado ao endereço associado à sua conta.</p>

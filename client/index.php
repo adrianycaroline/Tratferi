@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../CSS/estilo.css">
     <title>Área do Paciente - <?php echo($_SESSION['nome']); ?></title>
 </head>
-<body class="fundo_areas">
+<body class="fundo_adm">
     <?php include 'menu_paci.php'; ?>
 </body>
 <!-- Links para a Biblioteca de icones do Ionic Icons -->

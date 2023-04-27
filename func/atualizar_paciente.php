@@ -1,18 +1,17 @@
 <?php 
     include '../admin/acesso_com_fun.php';
     include '../connection/connect.php';
-
-    if($_POST){
-        $id = $_POST['id']; 
+    if(isset($_POST['atualizar'])){
+        $id_paciente = $_POST['id_paciente']; 
         $nome = $_POST['nome'];
         $data_nasc = $_POST['data_nasc'];
         $cpf = $_POST['cpf'];
         $rg = $_POST['rg'];
         $card_SUS = $_POST['card_SUS'];
     
-            $id = $_POST['id']; 
+            $id = $_POST['id_paciente']; 
             $updateSql = "update paciente
-                set id = '$id',
+                set id = '$id_paciente',
                 nome = '$nome',
                 data_nasc = '$data_nasc',
                 cpf = '$cpf',
@@ -55,16 +54,17 @@
         <div class="card" style="width: 50%;">
             <h1 class="card-header text-center" style="color: #38B6FF;">Editar Paciente - <?php echo $row['nome']?></h1>
             <div class="card-body">
-            <form class="container" style="display: flex; justify-content: flex-start; flex-direction: column;" action="cadastrar_funcionario.php" method="post" name="form_funcionario_cadastro" enctype="multipart/form-data" onsubmit="return validaForm() && validaFormPeriodo()">
+            <form class="container" style="display: flex; justify-content: flex-start; flex-direction: column;" action="atualizar_paciente.php?id=<?php echo $id_form;?>" method="post" name="form_paciente_atualizar" enctype="multipart/form-data">
+            <input type="hidden" name="id_paciente" id="id_paciente" value="<?php echo $row['id'] ?>">
                     <div class="form-row" style="display: flex; justify-content: center; flex-direction: column;">
                         <div class="form-group">
                             <label for="nome">Nome Completo</label>
-                            <input type="text" name="nome" maxlength="50" class="form-control" id="nome" value="<?php echo $row['nome']?>" placeholder="Digite o nome do paciente completo " required>
+                            <input type="text" name="nome" maxlength="50" class="form-control" id="nome" value="<?php echo $row['nome']?>" required>
                         </div>
                         <br>
                         <div class="form-group ">
                             <label for="data_nasc">Data de Nascimento</label>
-                            <input type="date" name="data" class="form-control" id="data_nasc" value="<?php echo $row['data_nasc'] ?>" min="1940-01-01" max="<?php echo date('Y-m-d', strtotime('-18 years')); ?>" required>
+                            <input type="date" name="data_nasc" class="form-control" id="data_nasc" value="<?php echo $row['data_nasc'] ?>" required>
                         </div>
                     </div>
                     <br>
@@ -78,21 +78,21 @@
                     <div class="form-row">
                         <div class="form-group ">
                             <label for="rg">RG</label>
-                            <input type="text" name="rg" class="form-control" id="cpf" placeholder="Digite o RG do paciente" value="<?php echo $row['rg'] ?>" onkeypress="$(this).mask('00.000.000-0');" required>
+                            <input type="text" name="rg" class="form-control" id="rg" placeholder="Digite o RG do paciente" value="<?php echo $row['rg'] ?>" onkeypress="$(this).mask('00.000.000-0');" required>
                         </div>
                         <br>
                     </div>
                     <div class="form-row">
                         <div class="form-group ">
-                            <label for="card_sus">Cartão do SUS</label>
-                            <input type="text" name="cart_sus" class="form-control" id="cpf" placeholder="Digite o cartão do SUS do paciente" <?php echo $row['card_SUS']?> onkeypress="$(this).mask('00.000.000-0');" required>
+                            <label for="card_SUS">Cartão do SUS</label>
+                            <input type="text" name="card_SUS" class="form-control" id="card_SUS" value="<?php echo $row['card_SUS']?>" onkeypress="$(this).mask('000.0000.0000-00');" required>
                         </div>
                         <br>
                     </div>
                     <br>
-                    <a href="pacientes_lista.php">
-                    <button class="btn" style="background-color: #38B6FF;" type="submit">Atualizar</button>
-                    </a>
+                    
+                    <button class="btn" style="background-color: #38B6FF;" name="atualizar" type="submit">Atualizar</button>
+                    
                 </form>
             </div>
         </div>
