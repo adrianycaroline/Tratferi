@@ -38,7 +38,7 @@
                 <p>Tomamos medidas de segurança adequadas para proteger suas informações pessoais contra acesso não autorizado ou uso indevido,Como rede de saude nossas redes são seguras temos profissionais conectados sempre.</p>
                 <br>
                 <h3>5 - Sobre Como Tratamos as Duvidas</h3>
-                <p>Se você tiver alguma dúvida ou questionamento sobre os nossos serviços,vá a nosso sistema de <a href="ajuda.php">ajuda</a> ou contate-nos pelo Email: <a href="mailto:tratferi_site@outlook.com?subject=Contato do Site">tratferi@gmail.com.</p></a>    
+                <p>Se você tiver alguma dúvida ou questionamento sobre os nossos serviços,vá a nosso sistema de <a href="ajuda.php">Ajuda</a> ou contate-nos pelo Email: <a href="mailto:tratferi_site@outlook.com?subject=Contato do Site">tratferi@outlook.com</p></a>    
             </div>
             <br>
             <div class="text-center">

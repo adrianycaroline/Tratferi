@@ -16,7 +16,7 @@ body {
     }
 </style>
 <!-- Botão voltar -->
-<a href="index.php#">
+<a href="Politica_Privacidade.php#">
   <img src="images/botão_volta.svg" style="width: 50px; margin-left: 4%; margin-top: 2%;">
 </a>
 <!-- fim Botão voltar -->
@@ -44,15 +44,14 @@ body {
   <div class="accordion" id="accordionExample1">
   <div class="accordion-item" style="border: 0;">
     <h2 class="accordion-header">
-    <button class="accordion-button btn-orange" type="button" data-bs-toggle="collapse" data-bs-target="#collapse" aria-expanded="true" aria-controls="collapse" >
+    <button class="accordion-button btn-orange" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" >
       Duvidas sobre os primeiros passos ? 
       </button>
     </h2>
-    <div id="collapse" class="accordion-collapse collapse show" data-bs-parent="#accordionExample1" style="color:white">
+    <div id="collapseTwo" class="accordion-collapse collapse show" data-bs-parent="#accordionExample1" style="color:white">
       <div class="accordion-body" style="color:white; background-color:#01a1ff;">
         <p>
-         
-      </p>    
+        Quando entrar na nossa rede de serviços o primeiro passo é fazer login pelo seu cpf e a senha que vc escolheu algum problema nesses passos ? nos informe entre em <a href="contato.php#" style="color:#1d5f96">Contate-nos</p></a> 
       </div>
     </div>
   </div>
@@ -68,7 +67,8 @@ body {
     </h2>
     <div id="collapseThree" class="accordion-collapse collapse show" data-bs-parent="#accordionExample" style="color:white">
       <div class="accordion-body" style="color:white; background-color:#01a1ff;">
-        <p></p>    
+      <p>A conta não é exatamente o paciente que a cria,nosso site funciona para facilitar a comunicação e paciente e funcionario, 
+      tente comunicar com algum dos nossos funcionario no posto mais proximo ou mande um email:<a href="mailto:tratferi_site@outlook.com?subject=Contato do Site" style="color:#1d5f96;"> tratferi@outlook.com</p></a>    
       </div>
     </div>
   </div>
@@ -79,12 +79,12 @@ body {
   <div class="accordion-item" style="border: 0;">
     <h2 class="accordion-header">
     <button class="accordion-button btn-orange" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour" >
-     Problemas com criação de conta ? 
+     Problemas ao entrar na conta ?  
       </button>
     </h2>
     <div id="collapseFour" class="accordion-collapse collapse show" data-bs-parent="#accordionExample" style="color:white">
       <div class="accordion-body" style="color:white; background-color:#01a1ff;">
-        <p></p>    
+      <p>Talvez sua conta não esteja registrada ou ela não existe ce for exatamente esse problema tente ce comunicar pessoalmente ou mande um email para a gente no :<a href="mailto:tratferi_site@outlook.com?subject=Contato do Site" style="color:#1d5f96;"> tratferi@outlook.com</a> Ce não for exatamente isso nos contate aqui: <a href="contato.php#" style="color:#1d5f96;">Contate-nos</p></a>   
       </div>
     </div>
   </div>
@@ -101,7 +101,7 @@ body {
     </h2>
     <div id="collapseFive" class="accordion-collapse collapse show" data-bs-parent="#accordionExample" style="color:white">
       <div class="accordion-body" style="color:white; background-color:#01a1ff;">
-        <p>.</p>    
+        <p>As consultas presencias iram ser marcadas ao ce comunicar com os nossos funcionarios ce necessario,Ce não for necessario nossos funcionarios irão te atender em casa mesmo da melhor forma possivel conte conosco !</p>    
       </div>
     </div>
   </div>
@@ -118,9 +118,8 @@ body {
     <div id="collapseSix" class="accordion-collapse collapse show" data-bs-parent="#accordionExample" style="color:white">
       <div class="accordion-body" style="color:white; background-color:#01a1ff;">
         <p>Nos ajude a melhorar nossos serviços,sua duvida pode ser a do proximo <br>
-        especifique sua duvida mande um email para <a href="mailto:tratferi_site@outlook.com?subject=Contato do Site" style="color:white">tratferi@gmail.com. <br></p></a>
-         
-             
+        especifique sua duvida <a href="contato.php#" style="color:#1d5f96">Contate-nos<br></p></a>
+               
       </div>
     </div>
   </div>
@@ -128,5 +127,16 @@ body {
 </body>
 </html>
 
-<!-- Java sript -->
+<!--  links Java sript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+
+<!-- faz os cards ficarem desativados ao entrar no site -->
+<script>document.addEventListener("DOMContentLoaded", function() {
+  var collapseIds = ["collapseOne", "collapseTwo", "collapseThree", "collapseFour", "collapseFive", "collapseSix"];
+  
+  for (var i = 0; i < collapseIds.length; i++) {
+    var collapse = document.getElementById(collapseIds[i]);
+    collapse.classList.remove("show");
+  }
+});</script>
