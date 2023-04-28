@@ -276,9 +276,6 @@
                     <div class="modal-title" id="modal_nome_titulo" style="display: flex; justify-content: center; align-items: center;">
                         <img src="../../images/logo_areas.png" width="100vw" alt="">
                     </div>
-                    <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
-                    </button>
                     <div class="modal-body">
                         <h5 style="color: #1d5f96;">Confirmar mudança de nome de exibição</h5>
                         <p><b>Observe: </b> Se você alterou o nome de exibição da TRATFERI, não poderá alterá-lo novamente por 2 semanas após confirmar essa alteração.</p>
