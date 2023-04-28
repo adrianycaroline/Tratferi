@@ -31,7 +31,7 @@
             <ul class="nav nav-pills flex-column mb-auto">
                 <li>
                     <a href="#" class="nav-link" aria-current="page">
-                        <img src="../images/dashboard.svg" alt="" width="20vw">
+                        <img src="../images/Tratferi_qrcode.svg" alt="" width="20vw">
                         Carteirnha
                     </a>
                 </li>
