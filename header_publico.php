@@ -40,20 +40,24 @@
                             <!-- Login do Funcionário e Administrador -->
                             <?php if((isset($_SESSION['login'])) && ($_SESSION['login'] != "tratferi")) {?> 
                                 <?php if($_SESSION['login'] == "tratferiFun") {?> <!-- Verifica se é Func -->
+
                                     <a href="func/index.php" class="nav-link" style="color:#fff; font-size: 20px;">
                                         <?php echo $_SESSION['nome'];?>
+                                    <a href="func/index.php" class="nav-link" style="color: #fff; font-size: 20px;">
+                                        <?php echo strstr($_SESSION['nome'], ' ', true);?>
+
                                         <img src="fotos_usuarios/<?php echo $_SESSION['Imagem']; ?>" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="40" height="40" class="rounded-circle">
                                     </a>
                                 <?php }elseif($_SESSION['login'] == "tratferiAdm") {?> <!-- Verifica se é ADM -->
                                     <a href="admin/index.php" class="nav-link" style="color: #fff; font-size: 20px;">
-                                        <?php echo $_SESSION['nome'];?>
+                                        <?php echo strstr($_SESSION['nome'], ' ', true);?>
                                         <img src="fotos_usuarios/<?php echo $_SESSION['Imagem']; ?>" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="40" height="40" class="rounded-circle">
                                     </a>
                                 <?php }?>
                                 <!-- Login do Paciente -->
                             <?php }elseif((isset($_SESSION['login'])) && ($_SESSION['login'] == "tratferi")){?>
                                 <a href="client/index.php" class="nav-link" style="color: #fff; font-size: 20px;">
-                                    <?php echo $_SESSION['nome'];?>
+                                    <?php echo strstr($_SESSION['nome'], ' ', true);?>
                                     <img src="fotos_usuarios/<?php echo $_SESSION['Imagem']; ?>" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="40" height="40" class="rounded-circle ">
                                 </a>    
                                     <!-- Botão padrão Entrar -->
@@ -95,16 +99,16 @@
                             <?php if((isset($_SESSION['login'])) && ($_SESSION['login'] != "tratferi")) {?>
                                 <?php if($_SESSION['login'] == "tratferiFun") {?>
                                     <a href="func/index.php" class="nav-link" style="color: #fff;">
-                                    <?php echo $_SESSION['nome'];?>
+                                    <?php echo strstr($_SESSION['nome'], ' ', true);?>
                                     <img src="fotos_usuarios/<?php echo $_SESSION['Imagem']; ?>" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="40" height="40" class="rounded-circle">
                                 <?php }elseif($_SESSION['login'] == "tratferiAdm") {?>
                                     <a href="admin/index.php" class="nav-link" style="color: #fff;">
-                                    <?php echo $_SESSION['nome'];?>
+                                    <?php echo strstr($_SESSION['nome'], ' ', true);?>
                                     <img src="fotos_usuarios/<?php echo $_SESSION['Imagem']; ?>" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="40" height="40" class="rounded-circle">
                                 <?php }?>
                             <?php }elseif((isset($_SESSION['login'])) && ($_SESSION['login'] == "tratferi")){?>
                                 <a href="client/index.php" class="nav-link" style="color: #fff;">
-                                    <?php echo $_SESSION['nome'];?>
+                                    <?php echo strstr($_SESSION['nome'], ' ', true);?>
                                     <img src="fotos_usuarios/<?php echo $_SESSION['Imagem']; ?>" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="40" height="40" class="rounded-circle">
                             <?php }else{?>   
                                 <a href="admin/verifica.php" class="nav-link" style="color: #fff;"> Entrar

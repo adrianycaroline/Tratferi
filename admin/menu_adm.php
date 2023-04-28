@@ -54,7 +54,7 @@
                 <a href="../perfil_adm/config_perfil.php?upd" style="text-decoration: none; color: white;">
                     <img src="../fotos_usuarios/<?php echo $_SESSION['Imagem']; ?>" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="32" height="32" class="rounded-circle me-2">
                 </a>
-                <strong><a style="text-decoration: none; color: white;"><?php echo substr($_SESSION['nome'], 0, 16);?></a></strong>
+                <strong><a style="text-decoration: none; color: white;"><?php echo strstr($_SESSION['nome'], ' ', true);?></a></strong>
                 <button class="dropdown-toggle bg-dark border-0" style="color: white;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">

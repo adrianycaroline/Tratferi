@@ -22,17 +22,19 @@
 
         $resultado = $conn->query($updateSql);
         if($resultado){
-            header('location: restart_fun.php');
+            $_SESSION['Imagem'] = $nome_img; // Atualiza o valor da imagem na sessão
+            header('location: config_perfil.php');
         }
     }
     if(isset($_POST['alterar_nome'])){
         $novo_nome = $_POST['novo_nome'];
         $confirma_nome = $_POST['confirma_novo_nome'];
         if($novo_nome == $confirma_nome){
-            $updateSqlNome = "UPDATE funcionario SET nome = '$novo_nome' WHERE id = ".$_SESSION['Id'].";";
+            $updateSqlNome = "UPDATE funcionario SET nome = '".$novo_nome.' '."' WHERE id = ".$_SESSION['Id'].";";
 
             $resultadoNome = $conn->query($updateSqlNome);
             if($resultadoNome){
+                $_SESSION['nome'] = $novo_nome.' '; // Atualiza o valor do nome na sessão
                 header('location: config_perfil.php');
             }
         }else{
@@ -126,10 +128,10 @@
                             </div>   
                         </div>
                         <br>
-                        <form action="config_perfil.php" method="post" style="margin-right: 15px;">
+                        <form action="config_perfil.php" method="post" style="margin-right: 15px;" enctype="multipart/form-data">
                             <!-- Começo do Dados Pessoais -->
                             <h3 style="color: #1d5f96;">Dados Pessoais</h3>
-                            <p>Gerencie seu nome e informações de contato. Essas informações pessoais são privadas e não serão exibidos para outros usuários. Veja a nossa <a href="../../Politica_Privacidade.php" id="polit" target="_blank"> Política de Privacidade </a> <ion-icon name="lock-closed-outline"></ion-icon> </p>
+                            <p>Gerencie seu nome e informações de contato. Essas informações pessoais são privadas e não serão exibidos para outros usuários. Veja a nossa <a href="../Politica_Privacidade.php" id="polit" target="_blank"> Política de Privacidade </a> <ion-icon name="lock-closed-outline"></ion-icon> </p>
                             <br>
                             <div class="d-flex">
                                 <!-- Input do CPF -->
@@ -314,7 +316,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-title" id="modal_cadastro_titulo" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                        <img c src="../../images/logo_areas.png" width="100vw" alt="">
+                        <img c src="../images/logo_areas.png" width="100vw" alt="">
                         <h5>Atualização do Nome</h5>
                         <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>

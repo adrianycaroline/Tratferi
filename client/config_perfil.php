@@ -2,6 +2,7 @@
     include '../admin/acesso_com_pac.php';
     include '../connection/connect.php';
     
+   
     if(isset($_POST['manter_dados'])){
         $telefone = $_POST['telefone'];
         $email = $_POST['email'];
@@ -13,13 +14,16 @@
         
         $insereTel = "UPDATE tel_paciente
         set telefone = '$telefone',
-        id_paci = '".$_SESSION['Id']."'
-        where id = ".$_SESSION['Id'].";";
+        where id_paci = ".$_SESSION['Id'].";";
+        $conn->query($insereTel);
+
 
         $insereEmail = "UPDATE email_paciente 
-        set email = '$email',
-        id_paci = '".$_SESSION['Id']."'
-        where id = ".$_SESSION['Id'].";";
+        set email = '$email'
+        where id_paci = ".$_SESSION['Id'].";";
+        $conn->query($insereEmail);
+            
+        var_dump($insereEmail);
 
         $insereEnd = "UPDATE end_paciente 
         set logradouro = '$logradouro',
@@ -27,49 +31,36 @@
         cidade = '$cidade',
         uf = '$uf',
         cep = '$cep',
-        id_paci = '".$_SESSION['Id']."'
-        where id = ".$_SESSION['Id'].";";
-            $resultado = $conn->query($insereTel);
-            if($resultado){
-                header('location: config_perfil.php');
-            }
-        }   
-            
-            
-            
-        //     $id = $_POST['id_paci']; 
-        //     $updateSql = "insert  tefone
-        //     set id = '$id_usuario',
-        //     telefone = '$telefone',
-        //     id_paci = '$id_paci'
-        //     where id = $id";
+        where id_paci = ".$_SESSION['Id'].";";
 
-        //     $updateSql = "update funcionario
-        //         set id = '$id_usuario',
-        //         imagem = '$imagem',
+            $resultado = $conn->query($insereEnd);
+        if($resultado){
+            // header('location: config_perfil.php');
+        }
+    }   
+            //Código para a foto funcionar
+    if(isset($_POST['alterar'])){ //Seleciona o formulário da foto
+        if($_FILES['imagem_perfil']['name']) {
+            $nome_img = $_FILES['imagem_perfil']['name']; //Pega o nome do arquivo selecionado
+            $tmp_img = $_FILES['imagem_perfil']['tmp_name'];
+            $dir_img = "../fotos_usuarios/$nome_img"; //Local onde a imagem vai ser armazenada
+            move_uploaded_file($tmp_img, $dir_img); //Adciona o arquivo na pasta
+            $imagem_perfil = $nome_img;
+            $updateSql = "UPDATE funcionario set imagem = '$nome_img' where id = ".$_SESSION['Id'].";"; //Adiciona a imagem no banco
+        } else {
+            $imagem_perfil = "user_sem_foto.png";
+            $updateSql = "UPDATE funcionario set imagem = '$imagem_perfil' where id = ".$_SESSION['Id'].";";
+        }
 
-        //         data_nasc = '$data',
-        //         cpf = '$cpf',
-        //         coren = '$coren',
-        //         crm = '$crm',
-        //         rg = '$rg',
-        //         cargo = '$cargo',
-        //         funcao = '$funcao',
-        //         periodo = '$periodo',
-        //         salario = '$salario',
-        //         adm = '$adm',
-        //         ativo = '$ativo'
-        //         where id = $id";
-        //     $resultado = $conn->query($updateSql);
-        //     if($resultado){
-        //         header('location: config_perfil.php');
-        //     }
-        // }
-        // if($_GET){
-        //     $id_form = $_GET['Id'];
-        // } else {
-        //     $id_form = 0;
-        // }
+        $resultado = $conn->query($updateSql);
+        if($resultado){
+            $_SESSION['Imagem'] = $nome_img; // Atualiza o valor da imagem na sessão
+            header('location: config_perfil.php');
+        }
+    }
+    
+            
+            
     $lista = $conn->query("SELECT * FROM perfil_paci where id = ".$_SESSION['Id'].";");
     $row = $lista->fetch_assoc();
     $rows = $lista->num_rows;
@@ -167,26 +158,7 @@
                             </div>   
                         </div>
                         <br>
-                        <!-- Modal da foto de perfil -->
-                        <div class="modal fade" id="modal_foto" tabindex="-1" role="dialog" aria-labelledby="modal_foto_centro" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-title" id="modal_foto_titulo" style="display: flex; justify-content: center; align-items: center;">
-                                        <img src="../images/logo_areas.png" width="100vw" alt="">
-                                    </div>
-                                    <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
-                                    </button>
-                                    <div class="modal-body">
-                                        <p><b>ATENÇÃO:</b> Sua foto de perfil só pode ser alterada duas vezes a cada 2 semanas.</p>
-                                        <p><b>ALTERAÇÕES RESTANTES:</b> 2</p>
-                                        <div class="text-center">
-                                            <button class="btn btn-primary">Alterar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                         <!-- Começo do Dados Pessoais -->
                         <h3 style="color: #1d5f96;">Dados Pessoais</h3>
                         <p>Gerencie seu nome e informações de contato. Essas informações pessoais são privadas e não serão exibidos para outros usuários. Veja a nossa <a href="../politica_pivaci.php" id="polit" target="_blank"> Política de Privacidade </a> <ion-icon name="lock-closed-outline"></ion-icon> </p>
@@ -291,8 +263,6 @@
                                     <button type="button" class="btn btn-secondary">Descartar Alterações</button>
 
                                     <button name="manter_dados" type="submit" class="btn" style="background-color: #38B6FF;">Manter Alterações</button>
-
-                                    <!-- <button type="button" type="submit" class="btn" style="background-color: #38B6FF;">Manter Alterações</button> -->
                                 </div>
                                 <br>
                                 <br>
@@ -308,6 +278,37 @@
         </div>
         <!-- fim configurações de perfil  -->
     </div>
+    <div class="modal fade" id="modal_foto" tabindex="-1" role="dialog" aria-labelledby="modal_foto_centro" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-title" id="modal_foto_titulo" style="display: flex; justify-content: center; align-items: center;">
+                        <img src="../images/logo_areas.png" width="100vw" alt="">
+                    </div>
+                    <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
+                    </button>
+                    <div class="modal-body">
+                        <!-- Formulário para trocar a foto de perfil -->
+                        <form action="config_perfil.php" method="post" enctype="multipart/form-data">
+                            <p><b>ATENÇÃO:</b> Sua foto de perfil só pode ser alterada duas vezes a cada 2 semanas.</p>
+                            <p><b>ALTERAÇÕES RESTANTES:</b> 2</p>
+                            <!-- Imagem Atual -->
+                            <label for="imagem_perfil_atual">Foto de Perfil Atual:</label><br>
+                            <img src="../fotos_usuarios/<?php echo $row['imagem']; ?>" width="30%" class="img-responsive" alt="" srcset="">
+                            <input type="hidden" name="imagem_perfil_atual" id="imagem_perfil_atual" value="<?php echo $row['imagem'];?>">
+                            <br> <br>
+                            <!-- Imagem Nova -->
+                            <label for="imagem_perfil">Nova Foto de Perfil:</label>
+                            <input type="file" name="imagem_perfil" id="imagem_perfil" class="form-control" accept="image/*"><!-- Input que escolhe a foto de perfil -->
+                            <br>
+                            <div class="text-center">
+                                <button class="btn btn-primary" name="alterar" type="submit">Alterar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
 
 <!-- Links para a Biblioteca de icones do Ionic Icons -->
