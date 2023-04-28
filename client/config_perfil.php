@@ -18,7 +18,7 @@
         where id = ".$_SESSION['Id'].";";
 
         $insereEmail = "UPDATE email_paciente 
-        set email = '$new_email',
+        set email = '$email',
         id_paci = '".$_SESSION['Id']."'
         where id = ".$_SESSION['Id'].";";
 
