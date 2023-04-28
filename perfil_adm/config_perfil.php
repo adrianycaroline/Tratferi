@@ -30,7 +30,22 @@
         $novo_nome = $_POST['novo_nome'];
         $confirma_nome = $_POST['confirma_novo_nome'];
         if($novo_nome == $confirma_nome){
-            $updateSqlNome = "UPDATE funcionario SET nome = '".$novo_nome.' '."' WHERE id = ".$_SESSION['Id'].";";
+            // Verifica se já passaram duas semanas desde a última alteração do nome
+            $selectSql = "SELECT data_alteracao_nome FROM funcionario WHERE id = ".$_SESSION['Id'].";";//Puxa a ultima data de alteração
+            $resultadoData = $conn->query($selectSql);
+            $row = $resultadoData->fetch_assoc();
+            $data_alteracao_nome = $row['data_alteracao_nome'];
+            $_SESSION['data_alteracao_nome'] = $row['data_alteracao_nome'];
+            $data_atual = date('Y-m-d');//Pega a data atual
+            if ($data_alteracao_nome != NULL) {
+                $diferenca_datas = strtotime($data_atual.' 00:00:00') - strtotime($data_alteracao_nome.' 00:00:00');
+                $dias = floor($diferenca_datas / (60 * 60 * 24));
+                if ($dias < 14) {
+                    header('location: config_perfil.php?nome_limite=1');
+                exit;
+                }
+            }
+            $updateSqlNome = "UPDATE funcionario SET nome = '".$novo_nome." ', data_alteracao_nome = '".$data_atual."' WHERE id = ".$_SESSION['Id'].";";
 
             $resultadoNome = $conn->query($updateSqlNome);
             if($resultadoNome){
@@ -47,6 +62,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="shortcut icon" href="../images/logo_minimizada.png" type="image/x-icon">
     <link rel="stylesheet" href="../CSS/estilo.css">
     <link rel="stylesheet" href="../CSS/estilo_perfil.css">
@@ -329,7 +345,7 @@
             </div>
         </div>
         <!-- código para o modal não atualiza nome -->
-        <?php if(isset($_GET) && ($_GET['upd'] == "n")){?>
+        <?php if(isset($_GET['upd']) && ($_GET['upd'] == "n")){?>
             <script>
                 $(document).ready(function() {
                     $('#modal_atualiza_erro').modal('show');
@@ -424,6 +440,37 @@
                 </div>
             </div>
         </div>
+
+        <!-- Modal não pode atualizar nome por causa do limite -->
+        <div class="modal fade" id="modal_nome_limite" tabindex="-1" role="dialog" aria-labelledby="modal_nome_limite_centro" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-title" id="modal_nome_limite_titulo" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                        <img c src="../images/logo_areas.png" width="100vw" alt="">
+                        <h5>Atualização do Nome</h5>
+                        <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-center">Erro ao atualizar o nome de perfil! Você já alterou seu nome uma vez, aguarde duas semanas para conseguir modifica-lo novamente ou contate um administrador.</p>        
+                        <p><b>Última Alteração: </b><?php echo date('d/m/Y', strtotime($_SESSION['data_alteracao_nome'])); ?></p>
+                        <div style="display: flex; justify-content: end;">
+                            <button  type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- código para o Modal não pode atualizar nome por causa do limite -->
+        <?php if(isset($_GET['nome_limite']) && ($_GET['nome_limite'] == "1")){?>
+            <script>
+                $(document).ready(function() {
+                    $('#modal_nome_limite').modal('show');
+                });
+            </script>
+        <?php }?>  
+        <!-- Modal não pode atualizar nome por causa do limite -->
 
         <!-- /////////////////////////////////////////// FIM DE TODOS OS MODAIS /////////////////////////////////////////////// -->
     </div>

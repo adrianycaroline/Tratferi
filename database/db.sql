@@ -21,6 +21,7 @@ adm enum('func','adm') not null,
 imagem varchar(50) null,
 hash varchar(20) not null,
 ativo BIT NOT NULL,
+data_alteracao_nome DATE null,
 primary key(id));
 
 
@@ -308,8 +309,6 @@ desc convenio;
 desc tratamento;
 
 desc medicamento;
-
-desc adm;
 
 desc Login_func;
 
