@@ -173,51 +173,6 @@ body {
 <?php include 'footer2.php'?>
 <!-- Responsivo -->
 <script>
-// seleciona os elementos
-const container = document.querySelector('.like-dislike-container');
-const iconsBox = document.querySelector('.icons-box');
-const iconLike = document.querySelector('#icon-like');
-const iconDislike = document.querySelector('#icon-dislike');
-
-// adiciona um listener para verificar a largura da tela
-window.addEventListener('resize', function() {
-  // pega a largura da tela
-  const screenWidth = window.innerWidth;
-  
-  // verifica se a largura é menor que 768px (md breakpoint)
-  if (screenWidth < 768) {
-    // ajusta a largura do container e dos ícones
-    container.classList.remove('col-md-12');
-    container.classList.add('col-md-6');
-    iconsBox.classList.add('text-left');
-    
-    // ajusta o tamanho dos ícones
-    iconLike.setAttribute('viewBox', '0 0 400 400');
-    iconDislike.setAttribute('viewBox', '0 0 400 400');
-  } else {
-    // volta para o tamanho original
-    container.classList.remove('col-md-6');
-    container.classList.add('col-md-12');
-    iconsBox.classList.remove('text-left');
-    
-    // volta para o tamanho original dos ícones
-    iconLike.setAttribute('viewBox', '0 0 512 512');
-    iconDislike.setAttribute('viewBox', '0 0 512 512');
-  }
-});
-
-// verifica a largura da tela quando a página carrega
-if (window.innerWidth < 768) {
-  // ajusta a largura do container e dos ícones
-  container.classList.remove('col-md-12');
-  container.classList.add('col-md-6');
-  iconsBox.classList.add('text-left');
-  
-  // ajusta o tamanho dos ícones
-  iconLike.setAttribute('viewBox', '0 0 400 400');
-  iconDislike.setAttribute('viewBox', '0 0 400 400');
-}
- 
 </script>
 <!-- Fim responsivo -->
 </body>
