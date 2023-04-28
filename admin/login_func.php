@@ -71,6 +71,10 @@
         </div>
         <?php include '../termos_texto.php';?>
     </section>
+
+    <!--  /////////////////////////////////// MODAIS ///////////////////////////////////////// -->
+
+    
 </body>
     <!-- Links para a Biblioteca de icones do Ionic Icons -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

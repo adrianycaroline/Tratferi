@@ -96,20 +96,23 @@
                                 <?php if($_SESSION['login'] == "tratferiFun") {?>
                                     <a href="func/index.php" class="nav-link" style="color: #fff;">
                                     <?php echo $_SESSION['nome'];?>
+                                    <img src="fotos_usuarios/<?php echo $_SESSION['Imagem']; ?>" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="40" height="40" class="rounded-circle">
                                 <?php }elseif($_SESSION['login'] == "tratferiAdm") {?>
                                     <a href="admin/index.php" class="nav-link" style="color: #fff;">
                                     <?php echo $_SESSION['nome'];?>
+                                    <img src="fotos_usuarios/<?php echo $_SESSION['Imagem']; ?>" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="40" height="40" class="rounded-circle">
                                 <?php }?>
                             <?php }elseif((isset($_SESSION['login'])) && ($_SESSION['login'] == "tratferi")){?>
                                 <a href="client/index.php" class="nav-link" style="color: #fff;">
                                     <?php echo $_SESSION['nome'];?>
+                                    <img src="fotos_usuarios/<?php echo $_SESSION['Imagem']; ?>" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="40" height="40" class="rounded-circle">
                             <?php }else{?>   
                                 <a href="admin/verifica.php" class="nav-link" style="color: #fff;"> Entrar
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                                    </svg>
                             <?php }?>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                            </svg>
                             </a>
                         </li>
 
