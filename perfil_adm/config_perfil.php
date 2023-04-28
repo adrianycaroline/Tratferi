@@ -131,7 +131,7 @@
                         <form action="config_perfil.php" method="post" style="margin-right: 15px;" enctype="multipart/form-data">
                             <!-- Começo do Dados Pessoais -->
                             <h3 style="color: #1d5f96;">Dados Pessoais</h3>
-                            <p>Gerencie seu nome e informações de contato. Essas informações pessoais são privadas e não serão exibidos para outros usuários. Veja a nossa <a href="../../Politica_Privacidade.php" id="polit" target="_blank"> Política de Privacidade </a> <ion-icon name="lock-closed-outline"></ion-icon> </p>
+                            <p>Gerencie seu nome e informações de contato. Essas informações pessoais são privadas e não serão exibidos para outros usuários. Veja a nossa <a href="../Politica_Privacidade.php" id="polit" target="_blank"> Política de Privacidade </a> <ion-icon name="lock-closed-outline"></ion-icon> </p>
                             <br>
                             <div class="d-flex">
                                 <!-- Input do CPF -->
