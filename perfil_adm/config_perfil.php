@@ -1,6 +1,6 @@
 <?php
-    include '../../admin/acesso_com_fun.php';
-    include '../../connection/connect.php';
+    include '../admin/acesso_com_fun.php';
+    include '../connection/connect.php';
 
     $lista = $conn->query("SELECT * FROM perfil where id = ".$_SESSION['Id'].";");
     $row = $lista->fetch_assoc();
@@ -22,7 +22,7 @@
 
         $resultado = $conn->query($updateSql);
         if($resultado){
-            header('location: config_perfil.php');
+            header('location: restart_fun.php');
         }
     }
     if(isset($_POST['alterar_nome'])){
@@ -45,10 +45,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../../images/logo_minimizada.png" type="image/x-icon">
-    <link rel="stylesheet" href="../../CSS/estilo.css">
-    <link rel="stylesheet" href="../../CSS/estilo_perfil.css">
-    <link rel="stylesheet" href="../../CSS/bootstrap.min.css">
+    <link rel="shortcut icon" href="../images/logo_minimizada.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/estilo.css">
+    <link rel="stylesheet" href="../CSS/estilo_perfil.css">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
     <!-- Jquery para o modal -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
@@ -255,7 +255,7 @@
                                 <br>
                                 <!-- Texto dos direitos reservados -->
                                 <div class="text-center">
-                                    <p> <img src="../../images/logo_areas.png" width="20vw" alt="Logo do Tratferi"> TRATFERI - TODOS OS DIREITOS RESERVADOS.</p>
+                                    <p> <img src="../images/logo_areas.png" width="20vw" alt="Logo do Tratferi"> TRATFERI - TODOS OS DIREITOS RESERVADOS.</p>
                                 </div>
                             </div>
                         </form>
