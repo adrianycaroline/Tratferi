@@ -17,14 +17,16 @@
         where id = ".$_SESSION['Id'].";";
 
         $insereEmail = "UPDATE email_paciente 
-        (email, id_paci)
-        VALUES ('$email','".$_SESSION['Id']."')";
+        set email = '$email',
+        id_paci = '".$_SESSION['Id']."'
+        where id = ".$_SESSION['Id'].";";
 
         $insereEnd = "UPDATE end_paciente 
-        set logradouro, 
-        numero, 
-        cidade, 
-        uf, 
+        set logradouro = '$logradouro',
+        numero = '$numero',
+        cidade = '$cidade',
+        uf = '$uf',
+        cep = '$cep',
         id_paci = '".$_SESSION['Id']."'
         where id = ".$_SESSION['Id'].";";
             $resultado = $conn->query($insereTel);
@@ -287,11 +289,10 @@
                                 <!-- Botões de Descartar e Manter Alterações -->
                                 <div>
                                     <button type="button" class="btn btn-secondary">Descartar Alterações</button>
-<<<<<<< HEAD
+
                                     <button name="manter_dados" type="submit" class="btn" style="background-color: #38B6FF;">Manter Alterações</button>
-=======
-                                    <button type="button" type="submit" class="btn" style="background-color: #38B6FF;">Manter Alterações</button>
->>>>>>> 9ea58dac6a8cb182f1d0780bfdab7f40d0cb1c99
+
+                                    <!-- <button type="button" type="submit" class="btn" style="background-color: #38B6FF;">Manter Alterações</button> -->
                                 </div>
                                 <br>
                                 <br>
