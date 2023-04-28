@@ -41,7 +41,7 @@ body {
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title">Sobre Nossos serviços</h5>
+                <h5 class="card-title" style="color:#1d5f96;">Sobre Nossos serviços</h5>
                 <br>
                 <p class="card-text">
                 Informando Sobre Como Fazemos Nossos Serviços: 
@@ -86,7 +86,7 @@ body {
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title">Alimento Saudavel</h5>
+                <h5 class="card-title" style="color:#1d5f96;" >Alimento Saudavel</h5>
                 <br>
                 <p class="card-text">
                 Temos uma recomendação pra voce indendepente <br>
@@ -133,7 +133,7 @@ body {
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title">Exercicio Fisico</h5>
+                <h5 class="card-title" style="color:#1d5f96;">Exercicio Fisico</h5>
                 <p class="card-text">
                 Temos uma recomendação pra voce indendepente <br> 
                 do nossos serviços é importante a saúde fisica, <br> 
