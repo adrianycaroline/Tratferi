@@ -40,11 +40,6 @@
                         TELEFONE
                     </a>
                 </li>
-                <li>
-                    <a class="nav-link" id="texto-navs" href="">
-                        RECURSOS ADICIONAIS
-                    </a>
-                </li>
             </nav>
             <hr>
             <!-- Botão de Voltar -->

@@ -45,12 +45,12 @@
             </ul>
             <hr>
             <div class="dropdown">
-                <img src="https://github.com/mdo.png" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="32" height="32" class="rounded-circle me-2">
+                <img src="../fotos_usuarios/<?php echo $_SESSION['Imagem']; ?>" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="32" height="32" class="rounded-circle me-2">
                 <strong><a style="text-decoration: none; color: white;"><?php echo $_SESSION['nome'];?></a></strong>
                 <button class="dropdown-toggle bg-azul border-0" style="color: white;" type="button" id="dropdownMenuFunc" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 </button>
                 <div class="dropdown-menu func" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="perfil/config_perfil_func.php"><ion-icon name="person-outline"></ion-icon>Perfil</a>
+                    <a class="dropdown-item" href="perfil/config_perfil_func.php?upd"><ion-icon name="person-outline"></ion-icon>Perfil</a>
                     <a class="dropdown-item" href="../admin/logout_Fun.php"><ion-icon name="exit-outline"></ion-icon>Sair</a>
                 </div>
             </div>

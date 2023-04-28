@@ -103,10 +103,10 @@
     <br>
     <h1 class="card-header text-center" style="color: #1d5f96; margin-left: 230px;">Lista de Pacientes ativos</h1>
     <div style="display: flex; justify-content: end;">
-            <div class="border-bottom border-2 " style="width: 34%; margin-right: 370px;"></div>
+            <div class="border-bottom border-2 " style="width: 30%; margin-right: 550px;"></div>
         </div>
             <section class="container">
-                <table class="table table-hover table-condensed tb-opacidade" style="margin-bottom: 320px; margin-left: 300px;"> 
+                <table class="table table-hover table-condensed tb-opacidade" style="margin-bottom: 320px; margin-left: 220px;"> 
                     <thead>
                         <th class="hidden">ID</th>
                         <th style="color: #1d5f96;">Nome</th>
