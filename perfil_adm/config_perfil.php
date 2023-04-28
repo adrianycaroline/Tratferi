@@ -22,7 +22,8 @@
 
         $resultado = $conn->query($updateSql);
         if($resultado){
-            header('location: restart_fun.php');
+            $_SESSION['Imagem'] = $nome_img; // Atualiza o valor da imagem na sessão
+            header('location: config_perfil.php');
         }
     }
     if(isset($_POST['alterar_nome'])){
@@ -33,6 +34,7 @@
 
             $resultadoNome = $conn->query($updateSqlNome);
             if($resultadoNome){
+                $_SESSION['nome'] = $novo_nome; // Atualiza o valor do nome na sessão
                 header('location: config_perfil.php');
             }
         }else{
