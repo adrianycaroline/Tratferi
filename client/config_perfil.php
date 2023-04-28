@@ -2,7 +2,7 @@
     include '../admin/acesso_com_pac.php';
     include '../connection/connect.php';
     
-    print_r($_POST);
+   
     if(isset($_POST['manter_dados'])){
         $telefone = $_POST['telefone'];
         $email = $_POST['email'];
@@ -16,11 +16,15 @@
         set telefone = '$telefone',
         id_paci = '".$_SESSION['Id']."'
         where id = ".$_SESSION['Id'].";";
+        $conn->query($insereTel);
+
 
         $insereEmail = "UPDATE email_paciente 
-        set email = '$email',
-        id_paci = '".$_SESSION['Id']."'
-        where id = ".$_SESSION['Id'].";";
+        set email = '$email'
+        where id_paci = ".$_SESSION['Id'].";";
+        $conn->query($insereEmail);
+            
+        var_dump($insereEmail);
 
         $insereEnd = "UPDATE end_paciente 
         set logradouro = '$logradouro',
@@ -30,9 +34,10 @@
         cep = '$cep',
         id_paci = '".$_SESSION['Id']."'
         where id = '".$_SESSION['Id']."';";
-            $resultado = $conn->query($insereTel);
+            $resultado = $conn->query($insereEnd);
         if($resultado){
-            header('location: config_perfil.php');
+    
+            // header('location: config_perfil.php');
         }
     }   
             
