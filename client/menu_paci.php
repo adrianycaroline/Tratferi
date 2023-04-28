@@ -13,6 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    
     <title>Barra Lateral</title>
 </head>
 <body>
@@ -67,12 +68,13 @@
             </ul>
             <!-- Fim da barra lateral -->
             <hr>
+            <!-- Botão para voltar pra home do site -->
             <div class="dropdown">
                 <a href="config_perfil.php">
                     <img src="../fotos_usuarios/<?php echo $_SESSION['Imagem']; ?>" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="32" height="32" class="rounded-circle me-2">
                 </a>
                 <strong><a style="text-decoration: none; color: white;"><?php echo $_SESSION['nome'];?></a></strong>
-                <button class="dropdown-toggle bg-azul border-0" style="color: white;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="dropdown-toggle bg-azul border-0" style="color: aqua;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="config_perfil.php">
