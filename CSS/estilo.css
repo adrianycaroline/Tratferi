@@ -768,18 +768,6 @@ background-color: white;
 }
 
 /* //////////////////// Card de joinha /////////////////////// */
-#joinha{
-display: flex;
-right: 60px;
-
-
-}
-
-#desjoinha{
-
-display: flex;
-
-}
 
 
 /* //////////////////// Fim Card de joinha /////////////////////// */
@@ -796,6 +784,7 @@ display: flex;
 
 .celular{
     width: 50%;
+    
     
 }
 .center{

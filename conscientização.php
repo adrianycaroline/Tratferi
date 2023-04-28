@@ -54,12 +54,12 @@ body {
                 </p>	
                 <!-- joinha -->
                 <div ng-controller="meuControlador" id="joinha">
-    <h1 ng-click="contador < 1 ? contador = contador + 1 : null"><img src="images/positivo.svg" ></h1>
+    <h1 ng-click="contador < 1 ? contador = contador + 1 : null"><img src="images/positivo.svg" style="margin-left: 50%;"></h1>
     <p>{{contador}}</p>
   </div>
                  <!-- desjoinha-->
                  <div ng-controller="meuControlador" id="desjoinha" >
-    <h1 ng-click="contador < 1 ? contador = contador + 1 : null"><img src="images/desjoinha.svg" id="desjoinha"></h1>
+    <h1 ng-click="contador < 1 ? contador = contador + 1 : null"><img src="images/desjoinha.svg" ></h1>
     <p>{{contador}}</p>
   </div> 
 
