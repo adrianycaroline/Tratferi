@@ -2,6 +2,7 @@
     include '../admin/acesso_com_pac.php';
     include '../connection/connect.php';
     
+    print_r($_POST);
     if(isset($_POST['manter_dados'])){
         $telefone = $_POST['telefone'];
         $email = $_POST['email'];
@@ -28,48 +29,13 @@
         uf = '$uf',
         cep = '$cep',
         id_paci = '".$_SESSION['Id']."'
-        where id = ".$_SESSION['Id'].";";
+        where id = '".$_SESSION['Id']."';";
             $resultado = $conn->query($insereTel);
-            if($resultado){
-                header('location: config_perfil.php');
-            }
-        }   
+        if($resultado){
+            header('location: config_perfil.php');
+        }
+    }   
             
-            
-            
-        //     $id = $_POST['id_paci']; 
-        //     $updateSql = "insert  tefone
-        //     set id = '$id_usuario',
-        //     telefone = '$telefone',
-        //     id_paci = '$id_paci'
-        //     where id = $id";
-
-        //     $updateSql = "update funcionario
-        //         set id = '$id_usuario',
-        //         imagem = '$imagem',
-
-        //         data_nasc = '$data',
-        //         cpf = '$cpf',
-        //         coren = '$coren',
-        //         crm = '$crm',
-        //         rg = '$rg',
-        //         cargo = '$cargo',
-        //         funcao = '$funcao',
-        //         periodo = '$periodo',
-        //         salario = '$salario',
-        //         adm = '$adm',
-        //         ativo = '$ativo'
-        //         where id = $id";
-        //     $resultado = $conn->query($updateSql);
-        //     if($resultado){
-        //         header('location: config_perfil.php');
-        //     }
-        // }
-        // if($_GET){
-        //     $id_form = $_GET['Id'];
-        // } else {
-        //     $id_form = 0;
-        // }
     $lista = $conn->query("SELECT * FROM perfil_paci where id = ".$_SESSION['Id'].";");
     $row = $lista->fetch_assoc();
     $rows = $lista->num_rows;
@@ -86,7 +52,7 @@
     <title>Configurações do Perfil - <?php echo $_SESSION['nome'];?></title>
 </head>
 <body class="fundo_adm">
-    <?php include 'perfil_menu.php';?>
+    <?php //include 'perfil_menu.php';?>
     <!-- Inicio Configurações de perfil  -->
     <div style="margin-left: 280px; display: flex; justify-content: left;">
         <div class="container">
@@ -291,8 +257,6 @@
                                     <button type="button" class="btn btn-secondary">Descartar Alterações</button>
 
                                     <button name="manter_dados" type="submit" class="btn" style="background-color: #38B6FF;">Manter Alterações</button>
-
-                                    <!-- <button type="button" type="submit" class="btn" style="background-color: #38B6FF;">Manter Alterações</button> -->
                                 </div>
                                 <br>
                                 <br>

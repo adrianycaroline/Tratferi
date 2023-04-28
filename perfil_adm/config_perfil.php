@@ -22,7 +22,8 @@
 
         $resultado = $conn->query($updateSql);
         if($resultado){
-            header('location: restart_fun.php');
+            $_SESSION['Imagem'] = $nome_img; // Atualiza o valor da imagem na sessão
+            header('location: config_perfil.php');
         }
     }
     if(isset($_POST['alterar_nome'])){
@@ -33,6 +34,7 @@
 
             $resultadoNome = $conn->query($updateSqlNome);
             if($resultadoNome){
+                $_SESSION['nome'] = $novo_nome; // Atualiza o valor do nome na sessão
                 header('location: config_perfil.php');
             }
         }else{
@@ -126,7 +128,7 @@
                             </div>   
                         </div>
                         <br>
-                        <form action="config_perfil.php" method="post" style="margin-right: 15px;">
+                        <form action="config_perfil.php" method="post" style="margin-right: 15px;" enctype="multipart/form-data">
                             <!-- Começo do Dados Pessoais -->
                             <h3 style="color: #1d5f96;">Dados Pessoais</h3>
                             <p>Gerencie seu nome e informações de contato. Essas informações pessoais são privadas e não serão exibidos para outros usuários. Veja a nossa <a href="../../Politica_Privacidade.php" id="polit" target="_blank"> Política de Privacidade </a> <ion-icon name="lock-closed-outline"></ion-icon> </p>
