@@ -102,11 +102,12 @@
 
 .redondobtn{
     border-radius: 50px;
-    background-color: #fdab2f;
+    color: #fff;
+    background-color: #38B6FF;
 }
 
 .redondobtn:hover{
-    border: 2px solid #ffffff;
+    border: 3px solid #fff;
     -webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
