@@ -13,7 +13,7 @@
     <div>
         <div class="container">
             <br>
-            <h2 class="text-dark"><b>POLÍTICA DE PRIVACIDADE</b></h2>
+            <h2 style="color:#1d5f96;"><b>POLÍTICA DE PRIVACIDADE</b></h2>
             <br>
             <div style="font-size: 11pt;">
             <small class="text-muted">TRATFERI</small>
@@ -25,19 +25,19 @@
             </div>
             <br>
             <div>
-                <h3>1 - Sobre Informações coletadas</h3>
+                <h3 style="color:#1d5f96;">1 - Sobre Informações coletadas</h3>
                 <p>Nós coletamos informações pessoais que você nos fornece diretamente,exemplo: nome, endereço de e-mail, informações de pagamento, endereço e outras informações visando seu bém estar e sua saude.</p>
                 <br>
-                <h3>2 - Sobre Uso das informações</h3>
+                <h3 style="color:#1d5f96;">2 - Sobre Uso das informações</h3>
                 <p>Usamos suas informação a meio medicianais como saber ce é alergico ou o endereço no qual recide o paciente,porém usaremos suas informações com privacidade como medico e paciente.</p>
                 <br>
-                <h3>3 -  Sobre Compartilhamento de informações</h3>
+                <h3 style="color:#1d5f96;">3 -  Sobre Compartilhamento de informações</h3>
                 <p>Não compartilhamos informações pessoais com terceiros,Somente com profissionais na area de saude do serviços tratferi fora isso suas informações estão somente conosco.</p>
                 <br>
-                <h3>4 -  Sobre Segurança das informações</h3>
+                <h3 style="color:#1d5f96;">4 -  Sobre Segurança das informações</h3>
                 <p>Tomamos medidas de segurança adequadas para proteger suas informações pessoais contra acesso não autorizado ou uso indevido,Como rede de saude nossas redes são seguras temos profissionais conectados sempre.</p>
                 <br>
-                <h3>5 - Sobre Como Tratamos as Duvidas</h3>
+                <h3 style="color:#1d5f96;">5 - Sobre Como Tratamos as Duvidas</h3>
                 <p>Se você tiver alguma dúvida ou questionamento sobre os nossos serviços,vá a nosso sistema de <a href="ajuda.php">Ajuda</a> ou contate-nos pelo Email: <a href="mailto:tratferi_site@outlook.com?subject=Contato do Site">tratferi@outlook.com</p></a>    
             </div>
             <br>
