@@ -33,7 +33,7 @@ foreign key(id_func) references funcionario(id));
 
 create table email_func(
 id int not null auto_increment,
-email varchar(100) not null,
+email varchar(100) not null UNIQUE,
 id_func int not null,
 primary key(id),
 foreign key(id_func) references funcionario(id));
@@ -71,7 +71,7 @@ foreign key(id_paci) references paciente (id));
 
 create table email_paciente(
 id int not null auto_increment,
-email varchar(100) not null,
+email varchar(100) not null UNIQUE,
 id_paci int not null,
 primary key(id),
 foreign key(id_paci) references paciente (id));
@@ -273,6 +273,10 @@ VIEW `perfil_paci` AS
         LEFT JOIN `tel_paciente` `t` ON (`p`.`id` = `t`.`id`)
         LEFT JOIN `email_paciente` `e` ON (`p`.`id` = `e`.`id`)
         LEFT JOIN `end_paciente` `end` ON (`p`.`id` = `end`.`id`);
+
+
+
+
 -- Final das views do banco
 
 
