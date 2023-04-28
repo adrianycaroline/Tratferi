@@ -20,6 +20,7 @@
             $_SESSION['nome'] = $rowLogin['nome'];
             $_SESSION['Cpf'] = $rowLogin['cpf'];
             $_SESSION['Imagem'] = $rowLogin['imagem'];
+            $_SESSION['adm'] = $rowLogin['adm'];
             // Verifica se o funcionario é Administrador ou não
             if($rowLogin['adm'] =='adm'){
                 $_SESSION['login'] = "tratferiAdm";
@@ -74,7 +75,7 @@
 
     <!--  /////////////////////////////////// MODAIS ///////////////////////////////////////// -->
 
-    
+
 </body>
     <!-- Links para a Biblioteca de icones do Ionic Icons -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

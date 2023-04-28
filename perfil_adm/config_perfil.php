@@ -1,6 +1,6 @@
 <?php
-    include '../../admin/acesso_com_fun.php';
-    include '../../connection/connect.php';
+    include '../admin/acesso_com_fun.php';
+    include '../connection/connect.php';
 
     $lista = $conn->query("SELECT * FROM perfil where id = ".$_SESSION['Id'].";");
     $row = $lista->fetch_assoc();
@@ -11,7 +11,7 @@
         if($_FILES['imagem_perfil']['name']) {
             $nome_img = $_FILES['imagem_perfil']['name']; //Pega o nome do arquivo selecionado
             $tmp_img = $_FILES['imagem_perfil']['tmp_name'];
-            $dir_img = "../../fotos_usuarios/$nome_img"; //Local onde a imagem vai ser armazenada
+            $dir_img = "../fotos_usuarios/$nome_img"; //Local onde a imagem vai ser armazenada
             move_uploaded_file($tmp_img, $dir_img); //Adciona o arquivo na pasta
             $imagem_perfil = $nome_img;
             $updateSql = "UPDATE funcionario set imagem = '$nome_img' where id = ".$_SESSION['Id'].";"; //Adiciona a imagem no banco
@@ -22,7 +22,7 @@
 
         $resultado = $conn->query($updateSql);
         if($resultado){
-            header('location: config_perfil.php');
+            header('location: restart_fun.php');
         }
     }
     if(isset($_POST['alterar_nome'])){
@@ -45,10 +45,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../../images/logo_minimizada.png" type="image/x-icon">
-    <link rel="stylesheet" href="../../CSS/estilo.css">
-    <link rel="stylesheet" href="../../CSS/estilo_perfil.css">
-    <link rel="stylesheet" href="../../CSS/bootstrap.min.css">
+    <link rel="shortcut icon" href="../images/logo_minimizada.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/estilo.css">
+    <link rel="stylesheet" href="../CSS/estilo_perfil.css">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
     <!-- Jquery para o modal -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
@@ -113,7 +113,7 @@
                             <!-- Dropdown da foto de perfil -->
                             <div style="margin-left: 100px;">
                                 <h3 style="color: #1d5f96;">FOTO DE PERFIL</h3>
-                                <img src="../../fotos_usuarios/<?php echo $row['imagem']; ?>" alt="Foto de Perfil - <?php echo $row['nome'];?>" class="rounded-circle me-2" id="foto_perfil" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="../fotos_usuarios/<?php echo $row['imagem']; ?>" alt="Foto de Perfil - <?php echo $row['nome'];?>" class="rounded-circle me-2" id="foto_perfil" data-bs-toggle="dropdown" aria-expanded="false">
                                 <div class="dropdown">
                                 <button class="btn dropdown-toggle" style="background-color: #38B6FF;" id="editarFotoAdm" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span>Editar</span>
@@ -255,7 +255,7 @@
                                 <br>
                                 <!-- Texto dos direitos reservados -->
                                 <div class="text-center">
-                                    <p> <img src="../../images/logo_areas.png" width="20vw" alt="Logo do Tratferi"> TRATFERI - TODOS OS DIREITOS RESERVADOS.</p>
+                                    <p> <img src="../images/logo_areas.png" width="20vw" alt="Logo do Tratferi"> TRATFERI - TODOS OS DIREITOS RESERVADOS.</p>
                                 </div>
                             </div>
                         </form>
@@ -344,7 +344,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-title" id="modal_periodo_titulo" style="display: flex; justify-content: center; align-items: center;">
-                        <img src="../../images/logo_areas.png" width="100vw" alt="">
+                        <img src="../images/logo_areas.png" width="100vw" alt="">
                     </div>
                     <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
@@ -362,7 +362,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-title" id="modal_cargo_titulo" style="display: flex; justify-content: center; align-items: center;">
-                        <img src="../../images/logo_areas.png" width="100vw" alt="">
+                        <img src="../images/logo_areas.png" width="100vw" alt="">
                     </div>
                     <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
@@ -380,7 +380,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-title" id="modal_funcao_titulo" style="display: flex; justify-content: center; align-items: center;">
-                        <img src="../../images/logo_areas.png" width="100vw" alt="">
+                        <img src="../images/logo_areas.png" width="100vw" alt="">
                     </div>
                     <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
@@ -398,7 +398,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-title" id="modal_foto_titulo" style="display: flex; justify-content: center; align-items: center;">
-                        <img src="../../images/logo_areas.png" width="100vw" alt="">
+                        <img src="../images/logo_areas.png" width="100vw" alt="">
                     </div>
                     <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
@@ -410,7 +410,7 @@
                             <p><b>ALTERAÇÕES RESTANTES:</b> 2</p>
                             <!-- Imagem Atual -->
                             <label for="imagem_perfil_atual">Foto de Perfil Atual:</label><br>
-                            <img src="../../fotos_usuarios/<?php echo $row['imagem']; ?>" width="30%" class="img-responsive" alt="" srcset="">
+                            <img src="../fotos_usuarios/<?php echo $row['imagem']; ?>" width="30%" class="img-responsive" alt="" srcset="">
                             <input type="hidden" name="imagem_perfil_atual" id="imagem_perfil_atual" value="<?php echo $row['imagem'];?>">
                             <br> <br>
                             <!-- Imagem Nova -->
@@ -434,7 +434,7 @@
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <!-- link para bootstrap -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="../../js/bootstrap.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-2.2.0.min-js" type="text/javascript"></script>
 <script type="text/javascript">
     $(document).on('ready',function(){
