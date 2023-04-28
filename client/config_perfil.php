@@ -14,8 +14,7 @@
         
         $insereTel = "UPDATE tel_paciente
         set telefone = '$telefone',
-        id_paci = '".$_SESSION['Id']."'
-        where id = ".$_SESSION['Id'].";";
+        where id_paci = ".$_SESSION['Id'].";";
         $conn->query($insereTel);
 
 
@@ -32,8 +31,8 @@
         cidade = '$cidade',
         uf = '$uf',
         cep = '$cep',
-        id_paci = '".$_SESSION['Id']."'
-        where id = '".$_SESSION['Id']."';";
+        where id_paci = ".$_SESSION['Id'].";";
+
             $resultado = $conn->query($insereEnd);
         if($resultado){
     
@@ -57,7 +56,7 @@
     <title>Configurações do Perfil - <?php echo $_SESSION['nome'];?></title>
 </head>
 <body class="fundo_adm">
-    <?php //include 'perfil_menu.php';?>
+    <?php include 'perfil_menu.php';?>
     <!-- Inicio Configurações de perfil  -->
     <div style="margin-left: 280px; display: flex; justify-content: left;">
         <div class="container">
