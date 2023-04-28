@@ -22,7 +22,7 @@
 
         $resultado = $conn->query($updateSql);
         if($resultado){
-            header('location: config_perfil.php');
+            header('location: config_perfil_func.php');
         }
     }
     if(isset($_POST['alterar_nome'])){
@@ -33,10 +33,10 @@
 
             $resultadoNome = $conn->query($updateSqlNome);
             if($resultadoNome){
-                header('location: config_perfil.php');
+                header('location: config_perfil_func.php');
             }
         }else{
-            header('location: config_perfil.php?upd=n');
+            header('location: config_perfil_func.php?upd=n');
         }
     }
 ?>
@@ -58,7 +58,7 @@
     <title>Configurações do Perfil - <?php echo $_SESSION['nome'];?></title>
 </head>
 <body class="fundo_adm">
-    <?php include 'perfil_menu.php'; ?>
+    <?php include 'perfil_menu_func.php'; ?>
     <!-- Inicio Configurações de perfil  -->
     <div style="margin-left: 280px; display: flex; justify-content: left;">
         <div class="container">
@@ -66,7 +66,7 @@
                 <h2 style="color: #38B6FF;">Configurações de Perfil</h2>
                     <p>Gerencie os detalhes de sua conta.</p>
                 </div>
-                    <div class="border-bottom border-2 border-dark" style="width: 97%; margin-left: 15px; margin-bottom: 10px;"></div>
+                    <div class="border-bottom border-2" style="width: 97%; margin-left: 15px; margin-bottom: 10px; background-color: #38B6FF;"></div>
                 <div class="container">
                     <div>
                         <!-- Começo das informações da conta  -->

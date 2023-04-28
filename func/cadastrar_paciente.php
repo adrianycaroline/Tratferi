@@ -3,18 +3,18 @@
  if($_POST){
         // iniciar o cadastro
         $nome = $_POST['nome'];
-        $data = $_POST['data_nasc'];
+        $data_nasc = $_POST['data_nasc'];
         // $now_format = $data->format('Y-m-d');
         $cpf = $_POST['cpf'];
         $rg = $_POST['rg'];
-        $sus = $_POST['card_SUS'];
+        $card_SUS = $_POST['card_SUS'];
         $hashcode = "TRAT-".uniqid()."-".mb_strimwidth($cpf,0,3);
         if($sus == ""){
-        $loginRes = $conn->query("insert into paciente (nome, data_nasc, cpf, rg, card_SUS, imagem, hash) values('$nome', '$data', '$cpf', '$rg', 'null', 'null', '$hashcode')");
+        $loginRes = $conn->query("insert into paciente (nome, data_nasc, cpf, rg, card_SUS, imagem, hash) values('$nome', '$data_nasc', '$cpf', '$rg', '$card_SUS', 'null', '$hashcode')");
         echo "<script>window.open('pacientes_lista.php?cad=s','_self')</script>"; 
         }
         elseif($sus != ""){
-        $loginRes = $conn->query("insert into paciente (nome, data_nasc, cpf, rg, card_SUS, imagem, hash) values('$nome', '$data', '$cpf', '$rg', '$sus', 'null', '$hashcode')");
+        $loginRes = $conn->query("insert into paciente (nome, data_nasc, cpf, rg, card_SUS, imagem, hash) values('$nome', '$data_nasc', '$cpf', '$rg', '$card_SUS', 'null', '$hashcode')");
         echo "<script>window.open('pacientes_lista.php?cad=s','_self')</script>";
     }
 }      
@@ -54,7 +54,7 @@
                         <br>
                         <div class="form-group ">
                             <label for="data_nasc">Data de Nascimento</label>
-                            <input type="date" name="data" class="form-control" id="data_nasc" min="1940-01-01" max="<?php echo date('Y-m-d', strtotime('-18 years')); ?>" required>
+                            <input type="date" name="data_nasc" class="form-control" id="data_nasc" min="1940-01-01" max="<?php echo date('Y-m-d', strtotime('-18 years')); ?>" required>
                         </div>
                     </div>
                     <br>
@@ -68,14 +68,14 @@
                     <div class="form-row">
                         <div class="form-group ">
                             <label for="rg">RG</label>
-                            <input type="text" name="rg" class="form-control" id="cpf" placeholder="Digite o RG do paciente" onkeypress="$(this).mask('00.000.000-0');" required>
+                            <input type="text" name="rg" class="form-control" id="rg" placeholder="Digite o RG do paciente" onkeypress="$(this).mask('00.000.000-0');" required>
                         </div>
                         <br>
                     </div>
                     <div class="form-row">
                         <div class="form-group ">
-                            <label for="card_sus">Cartão do SUS</label>
-                            <input type="text" name="cart_sus" class="form-control" id="cpf" placeholder="Digite o cartão do SUS do paciente" onkeypress="$(this).mask('00.000.000-0');" required>
+                            <label for="card_SUS">Cartão do SUS</label>
+                            <input type="text" name="card_SUS" class="form-control" id="card_SUS" placeholder="Digite o cartão do SUS do paciente" onkeypress="$(this).mask('000.0000.0000-00');" required>
                         </div>
                         <br>
                     </div>
