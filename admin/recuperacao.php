@@ -1,3 +1,14 @@
+<?php 
+    include '../connection/connect.php';
+
+    if(isset($_POST['prossegue'])){
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $cpf = $_POST['cpf'];
+
+        
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -17,7 +28,7 @@
         <?php include '../logo_superior.php'?>
         <div id="formbox-cadastro" class="sombra">
             <div class="form-value">
-                <form action="prosseguirRecuperar.php">
+                <form action="prosseguirRecuperar.php" method="post" enctype="multipart/form-data">
                     <h2>Recuperação de Senha</h2>
                     <div class="inputbox">
                         <ion-icon name="person-outline"></ion-icon>
@@ -34,9 +45,8 @@
                         <input type="text" name="cpf" onkeypress="$(this).mask('000.000.000-00');" required>
                         <label for="">CPF</label>
                     </div>
-                    <button action="">Prosseguir</button>
-                    <div class="register">
-                    </div>
+                    <button name="prossegue">Prosseguir</button>
+                    <div class="register"></div>
                 </form>
             </div>
         </div>
