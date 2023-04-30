@@ -636,7 +636,7 @@ input:focus ~ :valid{
 }
 
 .nav-link:hover{
-    color: #FFB800;
+    color: #ffffff;
     -webkit-transition: all 0.5s ease;
 	-moz-transition: all 0.5s ease;
 	-o-transition: all 0.5s ease;
