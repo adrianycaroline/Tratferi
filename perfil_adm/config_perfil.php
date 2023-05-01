@@ -76,15 +76,42 @@
         }
     }
 
-    // Dados pessoais
+    // Alterar Dados pessoais
     if(isset($_POST['manter_dados'])){
-        $cpf = $_POST['cpf'];
-        $datanasc = $_POST['datanasc'];
-        $coren = $_POST['coren'];
-        $crm = $_POST['crm'];
-        $rg = $_POST['rg'];
-        $data_inicio = $_POST['data_inicio'];
+        //Endereço
+        $cep = $_POST['cep_end'];
+        $logradouro = $_POST['logradouro'];
+        $numero = $_POST['numero'];
+        $cidade = $_POST['cidade'];
+        $uf = $_POST['uf'];
+        //contato
+        $telefone = $_POST['telefone'];
+        $email = $_POST['email'];
 
+        $sql_Tel = "UPDATE tel_func
+        set telefone = '$telefone'
+        where id_func = ".$_SESSION['Id'].";";
+
+        $sql_End = "UPDATE end_func
+        set logradouro = '$logradouro',
+        numero = '$numero',
+        cidade = '$cidade',
+        uf = '$uf',
+        cep = '$cep'
+        where id_func = ".$_SESSION['Id'].";";
+
+        $sql_Email = "UPDATE email_func
+        set email = '$email'
+        where id_func = ".$_SESSION['Id'].";";
+
+        $resultadoTel = $conn->query($sql_Tel);
+        $resultadoEnd = $conn->query($sql_End);
+        $resultadoEmail = $conn->query($sql_Email);
+        
+        if($resultadoTel && $resultadoEnd && $resultadoEmail){
+            header('location: config_perfil.php');
+        }
+        
     }
 ?>
 <!DOCTYPE html>
@@ -174,14 +201,14 @@
                             </div>   
                         </div>
                         <br>
-                        <form action="config_perfil.php" method="post" style="margin-right: 15px;" enctype="multipart/form-data">
+                        <div style="margin-right: 15px;">
                             <!-- Começo do Dados Pessoais -->
                             <h3 style="color: #1d5f96;">Dados Pessoais</h3>
                             <p>Gerencie seu nome e informações de contato. Essas informações pessoais são privadas e não serão exibidos para outros usuários. Veja a nossa <a href="../Politica_Privacidade.php" id="polit" target="_blank"> Política de Privacidade </a> <ion-icon name="lock-closed-outline"></ion-icon> </p>
                             <div style="display: flex; flex-wrap: wrap;">
                                 <!-- Input do CPF -->
                                 <div class="group" style="margin-top: 20px;">
-                                    <input required="" name="cpf" id="cpf" type="text" class="input" value="<?php echo $row['cpf']; ?>" onkeypress="$(this).mask('000.000.000-00');">
+                                    <input required="" name="cpf" id="cpf" type="text" class="input" value="<?php echo $row['cpf']; ?>" onkeypress="$(this).mask('000.000.000-00');" >
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
                                     <label style="color: #38B6FF;">CPF</label>
@@ -226,88 +253,95 @@
                                 </div>
                             </div>
                             <br>
+                            <!-- Fomrulário de busca por CEP -->
+                            <div>
+                                <h4 style="color: #1d5f96;" id="titulo_endereco">ENDEREÇO</h4>
+                                <form action="config_perfil.php" method="post" enctype="multipart/form-data">    
+                                    <!-- Input do cep  -->
+                                    <div id="group" style="margin-top: 20px; flex-direction: row;">
+                                        <div>
+                                            <input required="" name="cep" id="cep" type="text" class="input" value="<?php echo $row['cep'];?>">
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label style="color: #38B6FF;">CEP</label>
+                                        </div>    
+                                        <button type="submit" id="cepBTN" onclick="buscarEndereco()">
+                                            <ion-icon name="search-outline"></ion-icon>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            
                             <!-- Começo da área de Endereço  -->
-                            <div>
-                                <h4 style="color: #1d5f96;">ENDEREÇO</h4>
-                                <div style="display: flex; flex-wrap: wrap;">
-                                    <form action="config_perfil.php" method="post" enctype="multipart/form-data">    
-                                        <!-- Input do cep  -->
-                                        <div id="group" style="margin-top: 20px; flex-direction: row;">
-                                            <div>
-                                                <input required="" name="cep" id="cep" type="text" class="input"value="<?php echo $row['cep'];?>">
-                                                <span class="highlight"></span>
-                                                <span class="bar"></span>
-                                                <label style="color: #38B6FF;">CEP</label>
-                                            </div>    
-                                            <button type="submit" id="cepBTN" onclick="buscarEndereco()">
-                                                <ion-icon name="search-outline"></ion-icon>
-                                            </button>
-                                        </div>
-                                    </form>
-                                    <!-- Input do logradouro  -->
-                                    <div class="group" style="margin-top: 20px;">
-                                        <input required="" name="logradouro" id="logradouro" type="text" class="input" value="<?php echo $row['logradouro'];?>">
-                                        <span class="highlight"></span>
-                                        <span class="bar"></span>
-                                        <label style="color: #38B6FF;">Logradouro</label>
-                                    </div>
-                                    <!-- Input do numero da casa -->
-                                    <div class="group" style="margin-top: 20px;">
-                                        <input required="" name="numero" id="numero" type="text" class="input"value="<?php echo $row['numero'];?>">
-                                        <span class="highlight"></span>
-                                        <span class="bar"></span>
-                                        <label style="color: #38B6FF;">Numero</label>
-                                    </div>
-                                    <!-- Input da Cidade  -->
-                                    <div class="group" style="margin-top: 20px;">
-                                        <input required="" name="cidade" id="cidade" type="text" class="input"value="<?php echo $row['cidade'];?>">
-                                        <span class="highlight"></span>
-                                        <span class="bar"></span>
-                                        <label style="color: #38B6FF;">Cidade</label>
-                                    </div>
-                                    <!-- Input do UF  -->
-                                    <div class="group" style="margin-top: 20px;">
-                                        <input required="" name="uf" id="uf" type="text" class="input"value="<?php echo $row['uf'];?>">
-                                        <span class="highlight"></span>
-                                        <span class="bar"></span>
-                                        <label style="color: #38B6FF;">UF</label>
-                                    </div>
-                                </div>
-                                <br>
-                            </div>
-                            <!-- Começo da área de Telefone e Email  -->
-                            <div>
-                                <h4 id="contato" style="color: #1d5f96;">CONTATO</h4>
-                                <div style="display: flex; flex-wrap: wrap;">
-                                    <!-- Input do telefone  -->
-                                    <div class="group" style="margin-top: 20px;">
-                                        <input required="" name="telefone" id="telefone" type="tel" class="input" value="<?php echo $row['telefone'];?>" onkeypress="$(this).mask('(00)00000-0000');">
-                                        <span class="highlight"></span>
-                                        <span class="bar"></span>
-                                        <label style="color: #38B6FF;">Telefone</label>
-                                    </div>
-                                    <!-- Input do Email  -->
-                                    <div class="group" style="margin-top: 20px;">
-                                        <input required="" name="email" id="email" type="email" class="input" value="<?php echo $row['email'];?>">
-                                        <span class="highlight"></span>
-                                        <span class="bar"></span>
-                                        <label style="color: #38B6FF;">Email</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <!-- Botões de Descartar e Manter Alterações -->
+                            <form action="config_perfil.php" method="post"  enctype="multipart/form-data" onsubmit="return validaForm()">
                                 <div>
-                                    <button type="button" class="btn btn-secondary">Descartar Alterações</button>
-                                    <button type="submit" name="manter_dados" class="btn" style="background-color: #38B6FF;">Manter Alterações</button>
+                                    <div style="display: flex; flex-wrap: wrap;">
+                                        <input name="cep_end" id="cep_end" value="<?php if(isset($cep)) { echo $cep; } ?>" type="text" hidden>
+                                        <!-- Input do logradouro  -->
+                                        <div class="group" style="margin-top: 20px;">
+                                            <input required="" name="logradouro" id="logradouro" type="text" class="input" value="<?php echo $row['logradouro'];?>">
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label style="color: #38B6FF;">Logradouro</label>
+                                        </div>
+                                        <!-- Input do numero da casa -->
+                                        <div class="group" style="margin-top: 20px;">
+                                            <input required="" name="numero" id="numero" type="text" class="input"value="<?php echo $row['numero'];?>">
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label style="color: #38B6FF;">Numero</label>
+                                        </div>
+                                        <!-- Input da Cidade  -->
+                                        <div class="group" style="margin-top: 20px;">
+                                            <input required="" name="cidade" id="cidade" type="text" class="input"value="<?php echo $row['cidade'];?>">
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label style="color: #38B6FF;">Cidade</label>
+                                        </div>
+                                        <!-- Input do UF  -->
+                                        <div class="group" style="margin-top: 20px;">
+                                            <input required="" name="uf" id="uf" type="text" class="input"value="<?php echo $row['uf'];?>">
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label style="color: #38B6FF;">UF</label>
+                                        </div>
+                                    </div>
+                                    <br>
                                 </div>
-                                <br>
-                                <br>
-                                <!-- Texto dos direitos reservados -->
-                                <div class="text-center">
-                                    <p> <img src="../images/logo_areas.png" width="20vw" alt="Logo do Tratferi"> TRATFERI - TODOS OS DIREITOS RESERVADOS.</p>
+                                <!-- Começo da área de Telefone e Email  -->
+                                <div>
+                                    <h4 id="contato" style="color: #1d5f96;">CONTATO</h4>
+                                    <div style="display: flex; flex-wrap: wrap;">
+                                        <!-- Input do telefone  -->
+                                        <div class="group" style="margin-top: 20px;">
+                                            <input required="" name="telefone" id="telefone" type="tel" class="input" value="<?php echo $row['telefone'];?>" onkeypress="$(this).mask('(00)00000-0000');">
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label style="color: #38B6FF;">Telefone</label>
+                                        </div>
+                                        <!-- Input do Email  -->
+                                        <div class="group" style="margin-top: 20px;">
+                                            <input required="" name="email" id="email" type="email" class="input" value="<?php echo $row['email'];?>">
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label style="color: #38B6FF;">Email</label>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <!-- Botões de Descartar e Manter Alterações -->
+                                    <div>
+                                        <button type="button" class="btn btn-secondary">Descartar Alterações</button>
+                                        <button type="submit" name="manter_dados" class="btn" style="background-color: #38B6FF;">Manter Alterações</button>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <!-- Texto dos direitos reservados -->
+                                    <div class="text-center">
+                                        <p> <img src="../images/logo_areas.png" width="20vw" alt="Logo do Tratferi"> TRATFERI - TODOS OS DIREITOS RESERVADOS.</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -576,4 +610,14 @@
     document.getElementById('uf').value = '<?php echo $uf; ?>';
     document.getElementById('numero').value = 'Digite o número'
 </script>
+<script>
+    function validaForm() {
+        var numero = document.getElementById("numero");
+        if (numero.value === "Digite o número") {
+            alert("Por favor, digite um número de endereço válido .");
+            return false;
+        }
+        return true;
+    }
+    </script>
 </html>
