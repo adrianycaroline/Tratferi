@@ -57,8 +57,34 @@
         }
     }
 
+    //código busca o cep
+    if(isset($_POST['cep'])){
+        $cep = $_POST['cep'];
+        $url = "https://viacep.com.br/ws/$cep/json/";
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        $data = json_decode($response, true);
+    
+        if(isset($data['erro'])){
+            header('location: config_perfil.php?cep=n');
+        } else {
+            $logradouro = isset($data['logradouro']) ? $data['logradouro'] : '';
+            $cidade = isset($data['localidade']) ? $data['localidade'] : '';
+            $uf = isset($data['uf']) ? $data['uf'] : '';
+        }
+    }
+
+    // Dados pessoais
     if(isset($_POST['manter_dados'])){
-        
+        $cpf = $_POST['cpf'];
+        $datanasc = $_POST['datanasc'];
+        $coren = $_POST['coren'];
+        $crm = $_POST['crm'];
+        $rg = $_POST['rg'];
+        $data_inicio = $_POST['data_inicio'];
+
     }
 ?>
 <!DOCTYPE html>
@@ -204,7 +230,21 @@
                             <div>
                                 <h4 style="color: #1d5f96;">ENDEREÇO</h4>
                                 <div style="display: flex; flex-wrap: wrap;">
-                                    <!-- Input do telefone  -->
+                                    <form action="config_perfil.php" method="post" enctype="multipart/form-data">    
+                                        <!-- Input do cep  -->
+                                        <div id="group" style="margin-top: 20px; flex-direction: row;">
+                                            <div>
+                                                <input required="" name="cep" id="cep" type="text" class="input"value="<?php echo $row['cep'];?>">
+                                                <span class="highlight"></span>
+                                                <span class="bar"></span>
+                                                <label style="color: #38B6FF;">CEP</label>
+                                            </div>    
+                                            <button type="submit" id="cepBTN" onclick="buscarEndereco()">
+                                                <ion-icon name="search-outline"></ion-icon>
+                                            </button>
+                                        </div>
+                                    </form>
+                                    <!-- Input do logradouro  -->
                                     <div class="group" style="margin-top: 20px;">
                                         <input required="" name="logradouro" id="logradouro" type="text" class="input" value="<?php echo $row['logradouro'];?>">
                                         <span class="highlight"></span>
@@ -231,13 +271,6 @@
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
                                         <label style="color: #38B6FF;">UF</label>
-                                    </div>
-                                    <!-- Input do cep  -->
-                                    <div class="group" style="margin-top: 20px;">
-                                        <input required="" name="cep" id="cep" type="text" class="input"value="<?php echo $row['cep'];?>">
-                                        <span class="highlight"></span>
-                                        <span class="bar"></span>
-                                        <label style="color: #38B6FF;">CEP</label>
                                     </div>
                                 </div>
                                 <br>
@@ -470,6 +503,35 @@
         <?php }?>  
         <!-- Modal não pode atualizar nome por causa do limite -->
 
+        <!-- Modal não encontrou cep -->
+        <div class="modal fade" id="modal_cep_n" tabindex="-1" role="dialog" aria-labelledby="modal_cep_n_centro" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-title" id="modal_cep_n_titulo" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                        <img c src="../images/logo_areas.png" width="100vw" alt="">
+                        <h5>Buscar CEP</h5>
+                        <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-center">Erro ao buscar CEP. Verifique se o CEP digitado está correto.</p>        
+                        <div style="display: flex; justify-content: end;">
+                            <button  type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- código para o Modal não encontrou cep -->
+        <?php if(isset($_GET['cep']) && ($_GET['cep'] == "n")){?>
+            <script>
+                $(document).ready(function() {
+                    $('#modal_cep_n').modal('show');
+                });
+            </script>
+        <?php }?>  
+
         <!-- /////////////////////////////////////////// FIM DE TODOS OS MODAIS /////////////////////////////////////////////// -->
     </div>
 </body>
@@ -507,4 +569,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+<!-- codigo que preenche os campos-->
+<script>
+    document.getElementById('logradouro').value = '<?php echo $logradouro; ?>'; 
+    document.getElementById('cidade').value = '<?php echo $cidade; ?>';
+    document.getElementById('uf').value = '<?php echo $uf; ?>';
+    document.getElementById('numero').value = 'Digite o número'
+</script>
 </html>
