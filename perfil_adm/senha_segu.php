@@ -1,6 +1,34 @@
 <?php 
     include '../admin/acesso_com_fun.php';
     include '../connection/connect.php';
+
+    if (isset($_POST['mudar_senha'])){
+        print_r($_POST);
+        $senhaAtual = $_POST['senhaAtual'];
+        $senhaNova = $_POST['senhaNova'];
+        $senhaNovaDenovo = $_POST['senhaNovaDenovo'];
+
+        $senhaDoBanco = "SELECT senha from login_func where id_func = ".$_SESSION['Id'].";"; 
+        
+        if ($senhaAtual == $senhaDoBanco){
+            if ($senhaNova == $senhaNovaDenovo){
+                // Atualiza a senha no banco de dados
+                $sql = "UPDATE funcionario SET senha = '$senhaNova' WHERE id = ".$_SESSION['Id'].";";
+                $resultado = $conn->query($sql);
+                if ($resultado){
+                    header('location: senha_segu.php?AtualizarSenha=s');
+                } else {
+                    header('location: senha_segu.php?AtualizarSenha=n');
+                }
+                
+            } else {
+                header('location: senha_segu.php?senhasIguais=n');
+            }
+    
+        } else {
+            header('location: senha_segu.php?senhaAtual=n');
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -14,7 +42,7 @@
     <title>Senha e Segurança - <?php echo $_SESSION['nome'];?></title>
 </head>
 <body class="fundo_adm">
-    <?php include 'perfil_menu.php';?>
+    <?php //include 'perfil_menu.php';?>
     <div style="margin-left: 280px;">
         <div class="container">
             <div style="margin-top: 10px;">
@@ -26,46 +54,55 @@
                 <div class="border-bottom border-2 border-dark" style="width: 97%; margin-left: 15px; margin-bottom: 10px;"></div>
             </div>
             <br>
-            <div class="d-flex">
+            <!-- Começo do mudar senha -->
+            <form action="senha_segu.php" method="post" enctype="multipart/form-data">
+                <div class="d-flex">
+                    <div>
+                        <h5 style="color: #1d5f96;">SENHA ATUAL</h5>
+                        <small>OBRIGATÓRIO</small>
+                        <br>
+                        <div class="group">
+                            <input required="" name="senhaAtual" id="senhaAtual" type="password" class="input2">
+                        </div>
+                        <br>
+                        <h5 style="color: #1d5f96;">NOVA SENHA</h5>
+                        <small>OBRIGATÓRIO</small>
+                        <br>
+                        <div id="group">
+                            <input required="" name="senhaNova" id="senhaNova" type="password" class="input2">
+                            <button id="ViewBTN">
+                                <ion-icon name="eye-outline" type="button" style="cursor: pointer;" onclick="mostrarSenhaNova()"></ion-icon>
+                            </button>
+                        </div>
+                        <br>
+                        <h5 style="color: #1d5f96;">DIGITE A NOVA SENHA NOVAMENTE</h5>
+                        <small>OBRIGATÓRIO</small>
+                        <br>
+                        <div id="group">
+                            <input required="" name="senhaNovaDenovo" id="senhaNovaDenovo" type="password" class="input2">
+                            <button id="ViewBTN">
+                                <ion-icon name="eye-outline" style="cursor: pointer;" onclick="mostrarSenhaNovaDenovo()"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                    <div style="margin-left: 100px; border-left: 1px solid black; padding-left: 20px;">
+                        <h5 style="color: #1d5f96;">SUA SENHA</h5>
+                        <br><br>
+                        <div style="font-size: 11pt;">
+                            <p>Sua senha precisa ser diferente das últimas 5 senhas usadas</p>
+                            <p>Sua senha precisa ter mais de 7 caracteres</p>
+                            <p>Sua senha precisa ter pelo menos 1 número</p>
+                            <p>Sua senha não pode conter espaços</p>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
                 <div>
-                    <h5 style="color: #1d5f96;">SENHA ATUAL</h5>
-                    <small>OBRIGATÓRIO</small>
-                    <br>
-                    <div class="group">
-                        <input required="" name="senhaAtual" id="senhaAtual" type="text" class="input2">
-                    </div>
-                    <br>
-                    <h5 style="color: #1d5f96;">NOVA SENHA</h5>
-                    <small>OBRIGATÓRIO</small>
-                    <br>
-                    <div class="group">
-                        <input required="" name="senhaNova" id="senhaNova" type="text" class="input2">
-                    </div>
-                    <br>
-                    <h5 style="color: #1d5f96;">DIGITE A NOVA SENHA NOVAMENTE</h5>
-                    <small>OBRIGATÓRIO</small>
-                    <br>
-                    <div class="group">
-                        <input required="" name="senhaNovaDenovo" id="senhaNovaDenovo" type="text" class="input2">
-                    </div>
+                    <button type="button" class="btn btn-secondary">Descartar Alterações</button>
+                    <button type="submit" name="mudar_senha" class="btn" style="background-color: #38B6FF;">Manter Alterações</button>
                 </div>
-                <div style="margin-left: 100px; border-left: 1px solid black; padding-left: 20px;">
-                    <h5 style="color: #1d5f96;">SUA SENHA</h5>
-                    <br><br>
-                    <div style="font-size: 11pt;">
-                        <p>Sua senha precisa ser diferente das últimas 5 senhas usadas</p>
-                        <p>Sua senha precisa ter mais de 7 caracteres</p>
-                        <p>Sua senha precisa ter pelo menos 1 número</p>
-                        <p>Sua senha não pode conter espaços</p>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <br>
-            <div>
-                <button type="button" class="btn btn-secondary">Descartar Alterações</button>
-                <button type="button" class="btn" style="background-color: #38B6FF;">Manter Alterações</button>
-            </div>
+            </form>
             <br>
             <br>
             <hr width="">
@@ -169,4 +206,24 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+<script>
+        function mostrarSenhaNova() {
+            var senha = document.getElementById("senhaNova");
+            if (senha.type === "password") {
+            senha.type = "text";
+            } else {
+            senha.type = "password";
+            }
+        }
+    </script>
+    <script>
+        function mostrarSenhaNovaDenovo() {
+            var senha = document.getElementById("senhaNovaDenovo");
+            if (senha.type === "password") {
+            senha.type = "text";
+            } else {
+            senha.type = "password";
+            }
+        }
+    </script>
 </html>
