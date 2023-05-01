@@ -42,7 +42,7 @@
     <title>Senha e Segurança - <?php echo $_SESSION['nome'];?></title>
 </head>
 <body class="fundo_adm">
-    <?php //include 'perfil_menu.php';?>
+    <?php include 'perfil_menu.php';?>
     <div style="margin-left: 280px;">
         <div class="container">
             <div style="margin-top: 10px;">
