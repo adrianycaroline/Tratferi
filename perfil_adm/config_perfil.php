@@ -56,6 +56,10 @@
             header('location: config_perfil.php?upd=n');
         }
     }
+
+    if(isset($_POST['manter_dados'])){
+        
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -148,93 +152,88 @@
                             <!-- Começo do Dados Pessoais -->
                             <h3 style="color: #1d5f96;">Dados Pessoais</h3>
                             <p>Gerencie seu nome e informações de contato. Essas informações pessoais são privadas e não serão exibidos para outros usuários. Veja a nossa <a href="../Politica_Privacidade.php" id="polit" target="_blank"> Política de Privacidade </a> <ion-icon name="lock-closed-outline"></ion-icon> </p>
-                            <br>
-                            <div class="d-flex">
+                            <div style="display: flex; flex-wrap: wrap;">
                                 <!-- Input do CPF -->
-                                <div class="group">
+                                <div class="group" style="margin-top: 20px;">
                                     <input required="" name="cpf" id="cpf" type="text" class="input" value="<?php echo $row['cpf']; ?>" onkeypress="$(this).mask('000.000.000-00');">
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
                                     <label style="color: #38B6FF;">CPF</label>
                                 </div>
                                 <!-- Input da Data de Nascimento  -->
-                                <div class="group">
+                                <div class="group" style="margin-top: 20px;">
                                     <input required="" name="datanasc" id="datanasc" type="text" class="input" value="<?php echo date('d/m/Y', strtotime($row['data_nasc'])); ?>">
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
                                     <label style="color: #38B6FF;">Data de Nascimento</label>
                                 </div>
+                                <?php if($row['cargo'] == "Enfermeiro" || $row['cargo'] == "Auxiliar") {?> <!-- Verifica se é enfermeiro, auxiliar ou médico -->
                                 <!-- Input do Coren -->
-                                <div class="group">
+                                <div class="group" style="margin-top: 20px;">
                                     <input required="" name="coren" id="coren" type="text" class="input" value="<?php echo $row['coren'];?>" >
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
                                     <label style="color: #38B6FF;">Coren</label>
                                 </div>
+                                <?php }elseif ($row['cargo'] == "Medico") {?>
+                                <!-- Input do CRM  -->
+                                <div class="group" style="margin-top: 20px;">
+                                    <input required="" name="crm" id="crm" type="text" class="input" value="<?php echo $row['CRM'];?>">
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label style="color: #38B6FF;">CRM</label>
+                                </div>
+                                <?php }?>
                                 <!-- Input do RG  -->
-                                <div class="group">
+                                <div class="group" style="margin-top: 20px;">
                                     <input required="" name="rg" id="rg" type="text" class="input" value="<?php echo $row['rg'];?>" onkeypress="$(this).mask('00.000.000-0');">
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
                                     <label style="color: #38B6FF;">RG</label>
                                 </div>
-                            </div>
-                            <br>
-                            <div class="d-flex">
                                 <!-- Input da Data de Entrada -->
-                                <div class="group">
+                                <div class="group" style="margin-top: 20px;">
                                     <input required="" name="data_inicio" id="data_inicio" type="text" class="input" value="<?php echo date('d/m/Y', strtotime($row['data_entrada']));?>">
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
                                     <label style="color: #38B6FF;">Data de Entrada</label>
-                                </div>
-                                <!-- Input do CRM  -->
-                                <div class="group">
-                                    <input required="" name="crm" id="crm" type="text" class="input" value="<?php echo $row['CRM'];?>">
-                                    <span class="highlight"></span>
-                                    <span class="bar"></span>
-                                    <label style="color: #38B6FF;">CRM</label>
                                 </div>
                             </div>
                             <br>
                             <!-- Começo da área de Endereço  -->
                             <div>
                                 <h4 style="color: #1d5f96;">ENDEREÇO</h4>
-                                <br>
-                                <div class="d-flex">
+                                <div style="display: flex; flex-wrap: wrap;">
                                     <!-- Input do telefone  -->
-                                    <div class="group">
+                                    <div class="group" style="margin-top: 20px;">
                                         <input required="" name="logradouro" id="logradouro" type="text" class="input" value="<?php echo $row['logradouro'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
                                         <label style="color: #38B6FF;">Logradouro</label>
                                     </div>
                                     <!-- Input do numero da casa -->
-                                    <div class="group">
+                                    <div class="group" style="margin-top: 20px;">
                                         <input required="" name="numero" id="numero" type="text" class="input"value="<?php echo $row['numero'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
                                         <label style="color: #38B6FF;">Numero</label>
                                     </div>
                                     <!-- Input da Cidade  -->
-                                    <div class="group">
+                                    <div class="group" style="margin-top: 20px;">
                                         <input required="" name="cidade" id="cidade" type="text" class="input"value="<?php echo $row['cidade'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
                                         <label style="color: #38B6FF;">Cidade</label>
                                     </div>
                                     <!-- Input do UF  -->
-                                    <div class="group">
+                                    <div class="group" style="margin-top: 20px;">
                                         <input required="" name="uf" id="uf" type="text" class="input"value="<?php echo $row['uf'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
                                         <label style="color: #38B6FF;">UF</label>
                                     </div>
-                                </div>
-                                <br>
-                                <div class="d-flex">
                                     <!-- Input do cep  -->
-                                    <div class="group">
+                                    <div class="group" style="margin-top: 20px;">
                                         <input required="" name="cep" id="cep" type="text" class="input"value="<?php echo $row['cep'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
@@ -246,17 +245,16 @@
                             <!-- Começo da área de Telefone e Email  -->
                             <div>
                                 <h4 id="contato" style="color: #1d5f96;">CONTATO</h4>
-                                <br>
-                                <div class="d-flex">
+                                <div style="display: flex; flex-wrap: wrap;">
                                     <!-- Input do telefone  -->
-                                    <div class="group">
+                                    <div class="group" style="margin-top: 20px;">
                                         <input required="" name="telefone" id="telefone" type="tel" class="input" value="<?php echo $row['telefone'];?>" onkeypress="$(this).mask('(00)00000-0000');">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
                                         <label style="color: #38B6FF;">Telefone</label>
                                     </div>
                                     <!-- Input do Email  -->
-                                    <div class="group">
+                                    <div class="group" style="margin-top: 20px;">
                                         <input required="" name="email" id="email" type="email" class="input" value="<?php echo $row['email'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
@@ -267,7 +265,7 @@
                                 <!-- Botões de Descartar e Manter Alterações -->
                                 <div>
                                     <button type="button" class="btn btn-secondary">Descartar Alterações</button>
-                                    <button type="button" class="btn" style="background-color: #38B6FF;">Manter Alterações</button>
+                                    <button type="submit" name="manter_dados" class="btn" style="background-color: #38B6FF;">Manter Alterações</button>
                                 </div>
                                 <br>
                                 <br>
