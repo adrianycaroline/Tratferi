@@ -6,8 +6,8 @@
         $nome = $_POST['nome'];
         $data = $_POST['data'];
         $cpf = $_POST['cpf'];
-        $coren = $_POST['coren'];
-        $crm = $_POST['crm'];
+        $coren = isset($_POST['coren']) ? $_POST['coren'] : '';
+        $crm = isset($_POST['crm']) ? $_POST['crm'] : '';
         $rg = $_POST['rg'];
         $cargo = $_POST['cargo'];
         $funcao = $_POST['funcao'];
@@ -19,12 +19,34 @@
         $id_unic = uniqid(); // gera um ID único
         $hashcode = "TRAT-" . $cpf_prefix . "-" . $id_unic; // concatena tudo
 
+        // verifica se já existe um funcionário com o mesmo CPF
+        $verificaCPF = "SELECT cpf FROM funcionario WHERE cpf = '$cpf'";
+        $resultadoCPF = $conn->query($verificaCPF);
+
+        if(mysqli_num_rows($resultadoCPF) > 0) {
+            // exibe mensagem de erro e interrompe o script
+            echo "Já existe um funcionário com esse CPF!";
+            exit;
+        }
+
         $insereFunc = "INSERT INTO funcionario 
         (nome, data_nasc, cpf, coren, crm, rg, cargo, funcao, periodo, salario, adm, imagem, hash, ativo)
         VALUES ('$nome','$data','$cpf','$coren','$crm','$rg','$cargo','$funcao','$periodo','$salario','$adm','user_sem_foto.png','$hashcode','1')";
 
         $resultado = $conn->query($insereFunc);
+
         if(mysqli_insert_id($conn)){
+            $id = mysqli_insert_id($conn);
+            $selectHash = "SELECT id FROM funcionario where cpf = '$cpf'";
+            $resultado2 = $conn->query($selectHash);
+            $row = mysqli_fetch_assoc($resultado2);
+            $funcionario_id = $row['id'];
+
+            $cpf_sem_ponto = str_replace('.', '', $cpf); // remove os pontos do CPF
+            $cpf_tratado = substr($cpf_sem_ponto, 0, 5); // extrai os primeiros cinco dígitos do CPF sem ponto
+            $insereSenha = "INSERT INTO login_func VALUES ('', '$cpf_tratado', '$funcionario_id')";
+            $resultado3 = $conn->query($insereSenha);
+            
             header('location: ../admin/listar_funcionarios.php');
         } 
     }
