@@ -28,3 +28,13 @@ Insert into Login_func
 Values('2','1234','2');
 
 select * from Login_func;
+
+
+-- deletar funcionarios
+DELETE funcionario p, email_funcionario e, end_funcionario end, tel_funcionario tel 
+FROM funcionario 
+JOIN tel_funcionario ON (p.id = t.id_func)
+JOIN e_funcionario ON (p.id = e.id_func)
+JOIN end_funcionario ON (p.id = end.id_func);
+WHERE p.id = $Id;
+
