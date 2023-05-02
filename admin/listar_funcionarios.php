@@ -77,13 +77,14 @@
             <div class="modal fade" id="modal_user_igual" tabindex="-1" role="dialog" aria-labelledby="modal_user_igual_centro" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="modal_user_igual_titulo"><img src="../../images/logo_areas.png" width="50vw" alt=""></h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
+                        <div class="modal-title" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                            <img c src="../images/logo_areas.png" width="100vw" alt="">
+                            <h5>ERROR!!</h5>
+                            <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
                             </button>
                         </div>
-                        <div class="modal-body" style="background-color: #EFE9F1;">
+                        <div class="modal-body">
                             <p><b>ATENÇÃO:</b> Não é possível modificar seu próprio usuário.</p>
                         </div>
                     </div>
