@@ -31,10 +31,10 @@ select * from Login_func;
 
 
 -- deletar funcionarios
-DELETE paciente p, email_paciente e, end_paciente end, tel_paciente tel 
-FROM paciente 
-JOIN tel_paciente ON (p.id = t.id_func)
-JOIN tel_paciente ON (p.id = e.id_func)
-JOIN tel_paciente ON (p.id = end.id_func);
+DELETE funcionario p, email_funcionario e, end_funcionario end, tel_funcionario tel 
+FROM funcionario 
+JOIN tel_funcionario ON (p.id = t.id_func)
+JOIN e_funcionario ON (p.id = e.id_func)
+JOIN end_funcionario ON (p.id = end.id_func);
 WHERE p.id = $Id;
 
