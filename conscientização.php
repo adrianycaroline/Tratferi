@@ -52,20 +52,8 @@ body {
                 <p class="card-text">
                   <small class="text-muted">Conscientização TRATFERI</small>
                 </p>	
-                <!-- joinha -->
-                <div class="d-inline-block mx-7 mt-2">
-  <div ng-controller="meuControlador" id="joinha">
-    <h1 ng-click="contador < 1 ? contador = contador + 1 : null">
-      <img src="images/positivo.svg" ng-class="{ 'icone-azul': iconeAzul }" class="align-self-center">
-    </h1>
-    <p>{{contador}}</p>
-  </div>
-</div>
-<!-- desjoinha -->
-<div class="d-inline-block mx-5">
-  <div ng-controller="meuControlador" id="desjoinha">
-    <h1 ng-click="contador1 < 1 ? contador = contador + 1 : null"><img src="images/desjoinha.svg" ></h1>
-    <p>{{contador}}</p>
+                <div class="d-inline-block mx-7 mt-2 "><div>
+                          
   </div>
 </div>
 </div>
@@ -157,9 +145,10 @@ body {
   var app = angular.module("meuApp", []);
   app.controller("meuControlador", function($scope) {
     $scope.contador = 0;
-    $scope.contador1 = 0;
     $scope.iconeAzul = true;
+    if ($scope.contador > 0) {$scope.contador1 = ngdisable}
   });
+  
 </script>
 
 <!-- Fim responsivo -->

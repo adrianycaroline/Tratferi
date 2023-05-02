@@ -815,5 +815,11 @@ margin-left: 30%;
     color: blue;
     border-color: blue;
   }
-  
+  /* //////////////////// consultas ////////////////////// */
+  .borda_tbody{
+    border-radius: 30px;
+  }
 
+  /* ///////////////imagem sobre ////////////////// */
+  
+  
