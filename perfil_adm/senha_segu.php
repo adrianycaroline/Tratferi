@@ -117,7 +117,9 @@
                         </p>
                     </div> 
                     <div>
-                        <button type="button" class="btn" style="padding: 15px; margin-left: 50px; background-color: #38B6FF;">FINALIZAR OUTRAS SESSÕES</button>
+                        <form method="post">
+                            <button type="submit" class="btn" name="finalizar_sessao" style="padding: 15px; margin-left: 50px; background-color: #38B6FF;">FINALIZAR OUTRAS SESSÕES</button>
+                        </form>
                     </div> 
                 </div>
                 </div>

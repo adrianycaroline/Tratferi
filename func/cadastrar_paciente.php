@@ -9,14 +9,46 @@
         $rg = $_POST['rg'];
         $card_SUS = $_POST['card_SUS'];
         $hashcode = "TRAT-".uniqid()."-".mb_strimwidth($cpf,0,3);
+        $cpf_sem_ponto = str_replace('.', '', $cpf); // remove os pontos do CPF
+        $cpf_tratado = substr($cpf_sem_ponto, 0, 5); // extrai os primeiros cinco dígitos do CPF sem ponto
+
         if($sus == ""){
-        $loginRes = $conn->query("insert into paciente (nome, data_nasc, cpf, rg, card_SUS, imagem, hash) values('$nome', '$data_nasc', '$cpf', '$rg', '$card_SUS', 'null', '$hashcode')");
+        $loginRes = $conn->query("insert into paciente (nome, data_nasc, cpf, rg, card_SUS, imagem, hash) values('$nome', '$data_nasc', '$cpf', '$rg', '$card_SUS', 'user_sem_foto.png', '$hashcode')");
+        //inserir email do paciente
+        $id_pac = mysqli_insert_id($conn);
+        $insereEmail = "INSERT INTO email_paciente (id, email, id_paci) VALUES('', '$email', '$id_pac')";
+        
+        $conexao = $conn;
+        $resultadoEmail = $conexao->query($insereEmail);
+        $_SESSION['primeira_senha'] =  $cpf_tratado;
+        include '../envia_cadastro.php';
         echo "<script>window.open('pacientes_lista.php?cad=s','_self')</script>"; 
         }
         elseif($sus != ""){
         $loginRes = $conn->query("insert into paciente (nome, data_nasc, cpf, rg, card_SUS, imagem, hash) values('$nome', '$data_nasc', '$cpf', '$rg', '$card_SUS', 'null', '$hashcode')");
+        $_SESSION['primeira_senha'] =  $cpf_tratado;
+        include '../envia_cadastro.php';
+        $loginRes = $conn->query("insert into paciente (nome, data_nasc, cpf, rg, card_SUS, imagem, hash) values('$nome', '$data_nasc', '$cpf', '$rg', '$card_SUS', 'user_sem_foto.png', '$hashcode')");
+        echo "<script>window.open('pacientes_lista.php?cad=s','_self')</script>"; 
+        }
+        elseif($sus != ""){
+        $loginRes = $conn->query("insert into paciente (nome, data_nasc, cpf, rg, card_SUS, imagem, hash) values('$nome', '$data_nasc', '$cpf', '$rg', '$card_SUS', 'user_sem_foto.png', '$hashcode')");
         echo "<script>window.open('pacientes_lista.php?cad=s','_self')</script>";
     }
+    if(mysqli_insert_id($conn)){
+        $id = mysqli_insert_id($conn);
+        $selectHash = "SELECT id FROM paciente where cpf = '$cpf'";
+        $resultado2 = $conn->query($selectHash);
+        $row = mysqli_fetch_assoc($resultado2);
+        $paciente_id = $row['id'];
+
+        $cpf_sem_ponto = str_replace('.', '', $cpf); // remove os pontos do CPF
+        $cpf_tratado = substr($cpf_sem_ponto, 0, 5); // extrai os primeiros cinco dígitos do CPF sem ponto
+        $insereSenha = "INSERT INTO login_paci VALUES ('', '$cpf_tratado', '$paciente_id')";
+        $resultado3 = $conn->query($insereSenha);
+        
+        header('location: ../admin/listar_funcionarios.php');
+    } 
 }      
 ?>
 <!DOCTYPE html>
@@ -75,7 +107,7 @@
                     <div class="form-row">
                         <div class="form-group ">
                             <label for="card_SUS">Cartão do SUS</label>
-                            <input type="text" name="card_SUS" class="form-control" id="card_SUS" placeholder="Digite o cartão do SUS do paciente" onkeypress="$(this).mask('000.0000.0000-00');" required>
+                            <input type="text" name="card_SUS" class="form-control" id="card_SUS" placeholder="Digite o cartão do SUS do paciente" onkeypress="$(this).mask('000.0000.0000-00');">
                         </div>
                         <br>
                     </div>
