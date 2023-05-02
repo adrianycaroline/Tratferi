@@ -6,6 +6,7 @@
         $nome = $_POST['nome'];
         $data = $_POST['data'];
         $cpf = $_POST['cpf'];
+        $email = $_POST['email'];
         $coren = isset($_POST['coren']) ? $_POST['coren'] : '';
         $crm = isset($_POST['crm']) ? $_POST['crm'] : '';
         $rg = $_POST['rg'];
@@ -28,12 +29,18 @@
             echo "Já existe um funcionário com esse CPF!";
             exit;
         }
-
+        //inserir funcionario
         $insereFunc = "INSERT INTO funcionario 
         (nome, data_nasc, cpf, coren, crm, rg, cargo, funcao, periodo, salario, adm, imagem, hash, ativo)
         VALUES ('$nome','$data','$cpf','$coren','$crm','$rg','$cargo','$funcao','$periodo','$salario','$adm','user_sem_foto.png','$hashcode','1')";
 
         $resultado = $conn->query($insereFunc);
+        //inserir email do funcionário
+        $id_func = mysqli_insert_id($conn);
+        $insereEmail = "INSERT INTO email_func (id, email, id_func) VALUES('', '$email', '$id_func')";
+        
+        $conexao = $conn;
+        $resultadoEmail = $conexao->query($insereEmail);
 
         if(mysqli_insert_id($conn)){
             $id = mysqli_insert_id($conn);
@@ -46,7 +53,10 @@
             $cpf_tratado = substr($cpf_sem_ponto, 0, 5); // extrai os primeiros cinco dígitos do CPF sem ponto
             $insereSenha = "INSERT INTO login_func VALUES ('', '$cpf_tratado', '$funcionario_id')";
             $resultado3 = $conn->query($insereSenha);
-            
+            //primeira senha
+            $_SESSION['primeira_senha'] =  $cpf_tratado;
+            $_SESSION['email_func'] = $email;
+            include '../envia_cadastro.php';
             header('location: ../admin/listar_funcionarios.php');
         } 
     }
@@ -78,6 +88,11 @@
                         <div class="form-group">
                             <label for="nome">Nome Completo</label>
                             <input type="text" name="nome" maxlength="50" class="form-control" id="nome" placeholder="Digite o nome completo do funcionário" required>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="nome">Email</label>
+                            <input type="email" name="email" maxlength="50" class="form-control" id="email" placeholder="Digite o email do paciente completo " required>
                         </div>
                         <br>
                         <div class="form-group ">

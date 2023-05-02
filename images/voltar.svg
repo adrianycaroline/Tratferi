@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-2991f506-a074-4ea0-a202-15db572ee4d6" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 777.33 477.95">
+  <defs>
+    <style>
+      .uuid-0bf6d773-b9dc-45d9-9e37-76bbe41e6f58 {
+        fill: #fff;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <path class="uuid-0bf6d773-b9dc-45d9-9e37-76bbe41e6f58" d="M526.01,285.51h-243.78v144L.83,217.01,282.73,1.01V145.01c74.07-.17,148.14-.33,222.21-.5,85.98,4.36,156.97,67.07,170.55,148,12.22,72.84-24.24,147.45-91.29,185,37.48-28.55,52.4-77.72,37.12-121-14.16-40.12-51.82-68.24-95.31-71Z"/>
+</svg>
