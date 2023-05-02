@@ -51,7 +51,7 @@ body {
     <div id="collapseTwo" class="accordion-collapse collapse show" data-bs-parent="#accordionExample1" style="color:white">
       <div class="accordion-body" style="color:white; background-color:#01a1ff;">
         <p>
-        Quando entrar na nossa rede de serviços o primeiro passo é fazer login pelo seu cpf e a senha que vc escolheu algum problema nesses passos ? nos informe entre em <a href="contato.php#" style="color:#1d5f96">Contate-nos</p></a> 
+        Quando entrar na nossa rede de serviços o primeiro passo é fazer login pelo seu cpf e a senha que vc escolheu algum problema nesses passos ? nos informe entre em <a href="contato.php#" style="color:black">Contate-nos</p></a> 
       </div>
     </div>
   </div>
@@ -68,7 +68,7 @@ body {
     <div id="collapseThree" class="accordion-collapse collapse show" data-bs-parent="#accordionExample" style="color:white">
       <div class="accordion-body" style="color:white; background-color:#01a1ff;">
       <p>A conta não é exatamente o paciente que a cria,nosso site funciona para facilitar a comunicação e paciente e funcionario, 
-      tente comunicar com algum dos nossos funcionario no posto mais proximo ou mande um email:<a href="mailto:tratferi_site@outlook.com?subject=Contato do Site" style="color:#1d5f96;"> tratferi@outlook.com</p></a>    
+      tente comunicar com algum dos nossos funcionario no posto mais proximo ou mande um email:<a href="mailto:tratferi_site@outlook.com?subject=Contato do Site" style="color:black;"> tratferi@outlook.com</p></a>    
       </div>
     </div>
   </div>
@@ -84,7 +84,7 @@ body {
     </h2>
     <div id="collapseFour" class="accordion-collapse collapse show" data-bs-parent="#accordionExample" style="color:white">
       <div class="accordion-body" style="color:white; background-color:#01a1ff;">
-      <p>Talvez sua conta não esteja registrada ou ela não existe ce for exatamente esse problema tente ce comunicar pessoalmente ou mande um email para a gente no :<a href="mailto:tratferi_site@outlook.com?subject=Contato do Site" style="color:#1d5f96;"> tratferi@outlook.com</a> Ce não for exatamente isso nos contate aqui: <a href="contato.php#" style="color:#1d5f96;">Contate-nos</p></a>   
+      <p>Talvez sua conta não esteja registrada ou ela não existe ce for exatamente esse problema tente ce comunicar pessoalmente ou mande um email para a gente no :<a href="mailto:tratferi_site@outlook.com?subject=Contato do Site" style="color:black;"> tratferi@outlook.com</a> Ce não for exatamente isso nos contate aqui: <a href="contato.php#" style="color:black;">Contate-nos</p></a>   
       </div>
     </div>
   </div>
@@ -118,7 +118,7 @@ body {
     <div id="collapseSix" class="accordion-collapse collapse show" data-bs-parent="#accordionExample" style="color:white">
       <div class="accordion-body" style="color:white; background-color:#01a1ff;">
         <p>Nos ajude a melhorar nossos serviços,sua duvida pode ser a do proximo <br>
-        especifique sua duvida <a href="contato.php#" style="color:#1d5f96">Contate-nos<br></p></a>
+        especifique sua duvida <a href="contato.php#" style="color:black;">Contate-nos<br></p></a>
                
       </div>
     </div>

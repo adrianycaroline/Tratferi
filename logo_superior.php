@@ -15,7 +15,8 @@
 </style>
 <body>
     <a id="logo_superior" href="../index.php">
-        <img src="../images/logo.png" alt="logo" width="150">
+        <img src="../images/Setinha.webp" alt="logo" width="200">
+       
     </a>
 </body>
 </html>
