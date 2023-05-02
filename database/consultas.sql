@@ -31,7 +31,7 @@ select * from Login_func;
 
 
 -- deletar funcionarios
-DELETE funcionario p, email_funcionario e, end_funcionario end, tel_funcionario tel 
+DELETE funcionario p, email_funcionario e, end_funcionario end, tel_funcionario t
 FROM funcionario 
 JOIN tel_funcionario ON (p.id = t.id_func)
 JOIN e_funcionario ON (p.id = e.id_func)
