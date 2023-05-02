@@ -486,8 +486,7 @@
                     <div class="modal-body">
                         <!-- Formulário para trocar a foto de perfil -->
                         <form action="config_perfil.php" method="post" enctype="multipart/form-data">
-                            <p><b>ATENÇÃO:</b> Sua foto de perfil só pode ser alterada duas vezes a cada 2 semanas.</p>
-                            <p><b>ALTERAÇÕES RESTANTES:</b> 2</p>
+                            <h3 class="text-center">Alterar foto de perfil</h3>
                             <!-- Imagem Atual -->
                             <label for="imagem_perfil_atual">Foto de Perfil Atual:</label><br>
                             <img src="../fotos_usuarios/<?php echo $row['imagem']; ?>" width="30%" class="img-responsive" alt="" srcset="">
