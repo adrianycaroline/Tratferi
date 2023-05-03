@@ -41,7 +41,7 @@ include '../admin/acesso_com_fun.php';
                     <div class="form-row">
                         <div class="form-group ">
                             <label for="descricao">Descriçâo</label>
-                            <input type="text" name="descricao" class="form-control" id="descricao"required>
+                            <textarea type="text" name="comentario_contato" cols="30" rows="5" aria-describedby="basic-addon1" class="form-control" required></textarea>
                         </div>
                         <br>
                     </div>
