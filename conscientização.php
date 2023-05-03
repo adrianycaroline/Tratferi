@@ -62,6 +62,7 @@ body {
 </div>
 </div>
 </div> 
+<br>
   <!-- fim Card 1 -->
         <!-- card 2  -->
         <div id="card2">
@@ -98,6 +99,7 @@ body {
  </div>
 </div>
   </div>
+  <br>
         <!--Fim Card 2   -->
         <!-- Card 3  -->
         <div id="card3">
@@ -136,6 +138,7 @@ body {
   </div>
     </div>
  <!-- fim Card 3  -->
+ <br>
 </main>
 <?php include 'footer2.php'?>
 <!-- Responsivo -->
