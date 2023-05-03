@@ -23,6 +23,7 @@ body {
 </head>
 <body ng-app="meuApp">
 <?php include 'header_publico.php'?>
+<br>
 <main class="d-flex justify-content-center img-fluid"> 
 <!-- card 1  -->
 <div class="cards "id="cards">
