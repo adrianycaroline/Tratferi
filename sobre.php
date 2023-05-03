@@ -9,10 +9,11 @@
 </head>
 <body>
     <?php include 'header_publico.php';?>
+   
     <main>
         <div style="display: flex;">
             <div>
-                <img src="images/image.jpg" height="635px" width="800px" alt="">
+                <img src="images/image.jpg" class="img-responsive" height="635px" width="800px" style="border-radius: 50px;" alt="">
             </div>  
             <div class="justify-content center">
                 <br>
@@ -35,6 +36,13 @@
     <br>
     <?php include 'footer2.php';?>
 </body>
+<style>
+@media (max-width: 1023px) {
+    .img-fluid {
+      display: none;
+    }
+  }
+  </style> 
 <!-- link para bootstrap -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

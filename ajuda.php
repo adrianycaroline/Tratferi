@@ -131,11 +131,32 @@ body {
 
 
 <!-- faz os cards ficarem desativados ao entrar no site -->
-<script>document.addEventListener("DOMContentLoaded", function() {
+<script>
+document.addEventListener("DOMContentLoaded", function() {
   var collapseIds = ["collapseOne", "collapseTwo", "collapseThree", "collapseFour", "collapseFive", "collapseSix"];
   
   for (var i = 0; i < collapseIds.length; i++) {
     var collapse = document.getElementById(collapseIds[i]);
     collapse.classList.remove("show");
   }
-});</script>
+
+
+});
+
+function resizeElementOnWindowResize(elementId) {
+  const element = document.getElementById(elementId);
+  const windowHeight = window.innerHeight;
+  const elementHeight = element.clientHeight;
+  
+  window.addEventListener('resize', () => {
+    const newWindowHeight = window.innerHeight;
+    
+    if (newWindowHeight < windowHeight) {
+      const newElementHeight = elementHeight + (windowHeight - newWindowHeight);
+      element.style.height = `${newElementHeight}px`;
+    }
+  });
+}
+
+
+</script>
