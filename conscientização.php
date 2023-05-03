@@ -23,9 +23,10 @@ body {
 </head>
 <body ng-app="meuApp">
 <?php include 'header_publico.php'?>
+<br>
 <main class="d-flex justify-content-center img-fluid"> 
 <!-- card 1  -->
-<div class="cards">
+<div class="cards "id="cards">
     <div id="card1">
         <div class="card mb-3 card_focus">
           <div class="row no-gutters">
@@ -51,9 +52,9 @@ body {
                 </p>
                 <p class="card-text">
                   <small class="text-muted">Conscientização TRATFERI</small>
+                 
                 </p>	
-                <div class="d-inline-block mx-7 mt-2 "><div>
-                          
+                <div class="d-inline-block mx-7 mt-2 "><div>         
   </div>
 </div>
 </div>
@@ -61,6 +62,7 @@ body {
 </div>
 </div>
 </div> 
+<br>
   <!-- fim Card 1 -->
         <!-- card 2  -->
         <div id="card2">
@@ -88,11 +90,8 @@ body {
          que pouca, ou seja, quanto mais ativo o indivíduo,<br> 
   acredita-se que mais saudável ele seja.
 </p>
-  <p class="card-text">
-  <small class="text-muted">Conscientização TRATFERI</small>
-</p>
-
-
+  <p class="card-text"><small class="text-muted">Conscientização TRATFERI</small></p>
+  
 
 
 </div>
@@ -100,6 +99,7 @@ body {
  </div>
 </div>
   </div>
+  <br>
         <!--Fim Card 2   -->
         <!-- Card 3  -->
         <div id="card3">
@@ -138,16 +138,25 @@ body {
   </div>
     </div>
  <!-- fim Card 3  -->
+ <br>
 </main>
 <?php include 'footer2.php'?>
 <!-- Responsivo -->
 <script>
-  var app = angular.module("meuApp", []);
-  app.controller("meuControlador", function($scope) {
-    $scope.contador = 0;
-    $scope.iconeAzul = true;
-    if ($scope.contador > 0) {$scope.contador1 = ngdisable}
+function resizeElementOnWindowResize(cards) {
+  const element = document.getElementById(cards);
+  const windowHeight = window.innerHeight;
+  const elementHeight = element.clientHeight;
+  
+  window.addEventListener('resize', () => {
+    const newWindowHeight = window.innerHeight;
+    
+    if (newWindowHeight < windowHeight) {
+      const newElementHeight = elementHeight + (windowHeight - newWindowHeight);
+      element.style.height = `${newElementHeight}px`;
+    }
   });
+}
   
 </script>
 

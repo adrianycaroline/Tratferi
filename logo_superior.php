@@ -14,7 +14,7 @@
     }
 </style>
 <body>
-    <a id="logo_superior" href="../index.php">
+    <a id="logo_superior" href="javascript:window.history.go(-1)">
         <img src="../images/Setinha.webp" alt="logo" width="200">
        
     </a>

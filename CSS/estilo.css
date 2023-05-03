@@ -513,7 +513,8 @@ input:focus ~ :valid{
 }
 /* //////////////////// Cards Conscientização /////////////////////// */
 .cards{
-    width: 50%;
+    width: 80%;
+    
 }
 
 

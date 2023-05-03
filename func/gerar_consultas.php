@@ -32,29 +32,28 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group ">
-                            <label for="card_SUS">Descriçâo</label>
-                            <input type="text" name="card_SUS" class="form-control" id="card_SUS"required>
-                        </div>
-                        <br>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group ">
-                            <label for="cpf">Profissional esponsável</label>
-                            <input type="text" name="cpf" class="form-control" id="cpf" required>
+                            <label for="descricao">Descriçâo</label>
+                            <input type="text" name="descricao" class="form-control" id="descricao"required>
                         </div>
                         <br>
                     </div>
                     <div class="form-row">
                         <div class="form-group ">
-                            <label for="rg">Horário</label>
-                            <input type="text" name="rg" class="form-control" id="rg" required>
+                            <label for="pf_resp">Profissional responsável</label>
+                            <input type="text" name="pf_resp" class="form-control" id="pf_resp" required>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group ">
+                            <label for="horario">Horário</label>
+                            <input type="text" name="horario" class="form-control" id="horario" required>
                         </div>
                         <br>
                     </div>
                     <div class="form-group ">
-                            <label for="data_nasc">Data</label>
-                            <input type="date" name="datac" class="form-control" id="data" required>
+                            <label for="data">Data</label>
+                            <input type="date" name="data" class="form-control" id="data" required>
                     </div>
                     <br>
                     <label class="text-center">Prioridade:</label>
