@@ -1,6 +1,9 @@
 <?php
 include '../admin/acesso_com_fun.php';
- include '../connection/connect.php'; 
+include '../connection/connect.php'; 
+
+$lista = $conn->query("select * from consulta");
+$row = $lista->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -95,12 +98,14 @@ include '../admin/acesso_com_fun.php';
             </tr>
         </thead>
         <tbody style="background-color: #fff;">
-            <tr >
+        <?php if($lista){
+            do {?>
+            <tr>
                 <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?php echo $row['status'];?></td>
+                <td><?php echo $row['data_consulta'];?></td>
+                <td><?php echo $row['horario_consulta'];?></td>
+                <td><?php echo $row['horario_consulta'];?></td>
                 <td></td>
                 <td>
                     <button class="btn" style="background-color: #38B6FF;" role="button">
@@ -120,6 +125,8 @@ include '../admin/acesso_com_fun.php';
                     </button>
                 </td>
             </tr>
+            <?php }while($row = $lista->fetch_assoc());?>
+            <?php }?>
         </tbody>
     </table>
     <div>
