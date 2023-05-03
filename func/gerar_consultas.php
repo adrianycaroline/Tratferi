@@ -1,4 +1,5 @@
 <?php
+include '../admin/acesso_com_fun.php';
  include '../connection/connect.php'; 
 ?>
 <!DOCTYPE html>
@@ -9,7 +10,7 @@
     <meta http-equiv="refresh" content="200;URL= ../index.php">
     <link rel="stylesheet" href='../CSS/estilo.css'>
     <link rel="shortcut icon" href="../images/logo_minimizada.png" type="image/x-icon">
-    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
     <title>Cadastro</title>
 </head>
 <body class="fundo_areas">
@@ -27,6 +28,13 @@
                         <div class="form-group">
                             <label for="nome">Nome do paciente</label>
                             <input type="text" name="nome" maxlength="50" class="form-control" id="nome" placeholder="Digite o nome do paciente completo " required>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="form-row" style="display: flex; justify-content: center; flex-direction: column;">
+                        <div class="form-group">
+                            <label for="cpf">CPF</label>
+                            <input type="text" name="cpf" maxlength="50" class="form-control" id="cpf" placeholder="Digite o cpf do paciente" required>
                         </div>
                         <br>
                     </div>
