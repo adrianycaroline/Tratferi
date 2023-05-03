@@ -165,11 +165,9 @@ receita text not null,
 remedio varchar(25) not null,
 qntd_remedio text not null,
 data_retirada date not null,
-id_est int not null,
 id_func int not null,
 id_paci int not null,
 primary key(id),
-foreign key(id_est) references estoque_med (id),
 foreign key(id_func) references funcionario(id),
 foreign key(id_paci) references paciente(id));
 
