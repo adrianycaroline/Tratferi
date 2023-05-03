@@ -1,7 +1,7 @@
 <?php 
     include '../admin/acesso_com_fun.php';
     include '../connection/connect.php';
-
+    
     if($_POST){
         $nome = $_POST['nome'];
         $data = $_POST['data'];
@@ -53,9 +53,7 @@
             $cpf_tratado = substr($cpf_sem_ponto, 0, 5); // extrai os primeiros cinco dígitos do CPF sem ponto
             $insereSenha = "INSERT INTO login_func VALUES ('', '$cpf_tratado', '$funcionario_id')";
             $resultado3 = $conn->query($insereSenha);
-            //primeira senha
-            $_SESSION['primeira_senha'] =  $cpf_tratado;
-            $_SESSION['email_func'] = $email;
+            //enviar senha por email
             include '../envia_cadastro.php';
             header('location: ../admin/listar_funcionarios.php');
         } 
