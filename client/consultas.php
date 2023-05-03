@@ -6,6 +6,30 @@ include '../admin/acesso_com_pac.php';
  $row = $lista->fetch_assoc();
  $rows = $lista->num_rows;
 
+ if (isset($_POST['buscar_por_palavra'])) {
+    // Conexão com o banco de dados
+    $conn = mysqli_connect('localhost', 'usuario', 'senha', 'banco_de_dados');
+    if (!$conn) {
+        die("Falha na conexão com o banco de dados: " . mysqli_connect_error());
+    }
+    
+    // Recebe a palavra a ser pesquisada
+    $palavra = $_POST['palavra'];
+    
+    // Executa a consulta SQL
+    $sql = "SELECT * FROM tabela WHERE coluna LIKE '%$palavra%'";
+    $result = mysqli_query($conn, $sql);
+    
+    // Exibe os resultados
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<p>" . $row['coluna'] . "</p>";
+        }
+    } else {
+        echo "Nenhum resultado encontrado.";
+    }
+}
+
 // traduz o Dia da semana
 date_default_timezone_set('America/Sao_Paulo'); // define o fuso horário para São Paulo
     $diaDaSemana = date('l'); // obtém o dia da semana
@@ -67,7 +91,7 @@ date_default_timezone_set('America/Sao_Paulo'); // define o fuso horário para S
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" style="margin-left: 10px;">
             <div style="display: flex;">
                 <input type="text" name="palavra" id="palavra" class="form-control">
-                <button type="submit" class="btn btn-block btn-xs" name="submit" style="background-color: #38B6FF; font-size: 20px;">
+                <button type="submit" class="btn btn-block btn-xs" name="buscar_por_palavra" style="background-color: #38B6FF; font-size: 20px;">
                     <ion-icon name="search-outline"></ion-icon>
                 </button>
             </div>
