@@ -88,10 +88,7 @@
             </tr>
         </tbody>
     </table>
-    <div>
-        aaaaaaaaaaa
     </div>
 </div>
 </body>
-<?php include 'menu_cadastrar.php';?>
 </html>
