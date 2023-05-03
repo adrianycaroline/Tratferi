@@ -1,22 +1,51 @@
 <?php
- include '../connection/connect.php';
+    include '../admin/acesso_com_fun.php';
+    include '../connection/connect.php';
+    
  if($_POST){
+        
         // iniciar o cadastro
         $nome = $_POST['nome'];
         $data_nasc = $_POST['data_nasc'];
         // $now_format = $data->format('Y-m-d');
         $cpf = $_POST['cpf'];
+        $email = $_POST['email'];
         $rg = $_POST['rg'];
         $card_SUS = $_POST['card_SUS'];
         $hashcode = "TRAT-".uniqid()."-".mb_strimwidth($cpf,0,3);
-        if($sus == ""){
+        $cpf_sem_ponto = str_replace('.', '', $cpf); // remove os pontos do CPF
+        $cpf_tratado = substr($cpf_sem_ponto, 0, 5); // extrai os primeiros cinco dígitos do CPF sem ponto
+
+        if($card_SUS == ""){
+        //inserir paciente
         $loginRes = $conn->query("insert into paciente (nome, data_nasc, cpf, rg, card_SUS, imagem, hash) values('$nome', '$data_nasc', '$cpf', '$rg', '$card_SUS', 'user_sem_foto.png', '$hashcode')");
+        
+        //inserir email do paciente
+        $id_pac = mysqli_insert_id($conn);
+        $insereEmail = "INSERT INTO email_paciente (id, email, id_paci) VALUES('', '$email', '$id_pac')";
+        $conexao = $conn;
+        $resultadoEmail = $conexao->query($insereEmail);
+        
+        //enviar senha por email
+        include '../envia_cadastro.php';
         echo "<script>window.open('pacientes_lista.php?cad=s','_self')</script>"; 
         }
-        elseif($sus != ""){
-        $loginRes = $conn->query("insert into paciente (nome, data_nasc, cpf, rg, card_SUS, imagem, hash) values('$nome', '$data_nasc', '$cpf', '$rg', '$card_SUS', 'user_sem_foto.png', '$hashcode')");
-        echo "<script>window.open('pacientes_lista.php?cad=s','_self')</script>";
-    }
+
+        elseif($card_SUS != ""){
+        //inserir paciente
+        $loginRes = $conn->query("insert into paciente (nome, data_nasc, cpf, rg, card_SUS, imagem, hash) values('$nome', '$data_nasc', '$cpf', '$rg', '$card_SUS', 'null', '$hashcode')");
+        
+        //inserir email do paciente
+        $id_pac = mysqli_insert_id($conn);
+        $insereEmail = "INSERT INTO email_paciente (id, email, id_paci) VALUES('', '$email', '$id_pac')";
+        $conexao = $conn;
+        $resultadoEmail = $conexao->query($insereEmail);
+
+        //enviar senha por emailo
+        include '../envia_cadastro.php';
+        echo "<script>window.open('pacientes_lista.php?cad=s','_self')</script>"; 
+        }
+
     if(mysqli_insert_id($conn)){
         $id = mysqli_insert_id($conn);
         $selectHash = "SELECT id FROM paciente where cpf = '$cpf'";
@@ -29,7 +58,7 @@
         $insereSenha = "INSERT INTO login_paci VALUES ('', '$cpf_tratado', '$paciente_id')";
         $resultado3 = $conn->query($insereSenha);
         
-        header('location: ../admin/listar_funcionarios.php');
+        header('location: ../func/pacientes_lista.php?cad=s');
     } 
 }      
 ?>
@@ -41,7 +70,7 @@
     <meta http-equiv="refresh" content="200;URL= ../index.php">
     <link rel="stylesheet" href='../CSS/estilo.css'>
     <link rel="shortcut icon" href="../images/logo_minimizada.png" type="image/x-icon">
-    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -71,6 +100,11 @@
                             <input type="date" name="data_nasc" class="form-control" id="data_nasc" min="1940-01-01" max="<?php echo date('Y-m-d', strtotime('-18 years')); ?>" required>
                         </div>
                     </div>
+                    <br>
+                        <div class="form-group">
+                            <label for="nome">Email</label>
+                            <input type="email" name="email" maxlength="50" class="form-control" id="email" placeholder="Digite o email do paciente completo " required>
+                        </div>
                     <br>
                     <div class="form-row">
                         <div class="form-group ">

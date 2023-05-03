@@ -2,76 +2,496 @@
  include '../connection/connect.php'; 
 ?>
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="200;URL= ../index.php">
-    <link rel="stylesheet" href='../CSS/estilo.css'>
-    <link rel="shortcut icon" href="../images/logo_minimizada.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/estilo.css">
     <link rel="stylesheet" href="CSS/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-    <title>Cadastro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <title>Document</title>
 </head>
-<body class="fundo_areas">
-<div class="barra fixed-top" style="background-color: #38B6FF;">
-        <br> <br>
- </div>
- <br><br>
-<div class="container mt-4 d-flex justify-content-center">
-        <div class="card" style="width: 50%;">
-            <h1 class="card-header text-center" style="color: #38B6FF;">Gerar nova consulta</h1>
-            <div class="card-body">
-                <!-- Formulário de Cadastro de Funcionário -->
-                <form class="container" style="display: flex; justify-content: flex-start; flex-direction: column;" action="../func/cadastrar_paciente.php" method="post" name="form_funcionario_cadastro" enctype="multipart/form-data" onsubmit="return validaForm() && validaFormPeriodo()">
-                    <div class="form-row" style="display: flex; justify-content: center; flex-direction: column;">
-                        <div class="form-group">
-                            <label for="nome">Nome do paciente</label>
-                            <input type="text" name="nome" maxlength="50" class="form-control" id="nome" placeholder="Digite o nome do paciente completo " required>
-                        </div>
-                        <br>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group ">
-                            <label for="card_SUS">Descriçâo</label>
-                            <input type="text" name="card_SUS" class="form-control" id="card_SUS"required>
-                        </div>
-                        <br>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group ">
-                            <label for="cpf">Profissional esponsável</label>
-                            <input type="text" name="cpf" class="form-control" id="cpf" required>
-                        </div>
-                        <br>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group ">
-                            <label for="rg">Horário</label>
-                            <input type="text" name="rg" class="form-control" id="rg" required>
-                        </div>
-                        <br>
-                    </div>
-                    <div class="form-group ">
-                            <label for="data_nasc">Data</label>
-                            <input type="date" name="datac" class="form-control" id="data" required>
-                    </div>
-                    <br>
-                    <label class="text-center">Prioridade:</label>
-                    <br>
-                    <button class="btn" type="submit" style="background-color: #38B6FF;">Agendar consulta</button>
-                </form>
+<body class="container">
+    <!-- barra lateral -->
+    <div id="escondido">
+        <div class="d-flex flex-column flex-shrink-0 p-3 bg-azul"  style="position: fixed; top: 0; left: 0; bottom: 0; width: 280px; z-index: 9999;">
+            <div>
+                <figure style="display: flex;">
+                    <img src="../images/logoPesq.png" alt="Logo Tratferi" width="75vw"> 
+                    <a href="../index.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none" style="font-size: 32pt;">
+                        Tratferi
+                    </a> 
+                </figure>
             </div>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li>
+                    <a href="../func/index.php" class="nav-link" aria-current="page">
+                        <img src="../images/dashboard.svg" alt="" width="20vw">
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="../func/cadastrar_paciente.php" class="nav-link">
+                        <img src="../images/usuarios.svg" alt="" width="20vw">
+                        Cadastrar Pacientes
+                    </a>
+                </li>
+                <li>
+                    <a href="pacientes_lista.php" class="nav-link">
+                        <img src="../images/usuarios.svg" alt="" width="20vw">
+                        Pacientes Ativos
+                    </a>
+                </li>
+            </ul>
+            <hr>
+           
         </div>
     </div>
-    <!-- --------------------- -->
-        <?php include 'menu_cadastrar.php';?>
+   
+    <!-- fim -->
+<div class="barra fixed-top bg-azul">
+    <br> <br>
+</div>
+<br><br><br>
+<h1 style="margin-left: 270px;">Consultas</h1>
+    <div style="display: flex;">
+        <div class="border-bottom border-2 border-dark" style="width: 100%; margin-left: 270px;"></div>
+    </div>
+    <br>
+<div style="background-color: #DCDCDC; display: flex; margin-left: 200px; width: 90%; border-radius: 20px;">
+    <table class="table table-borderless container w-50" style="margin-left: 50px; margin-top: 15px;">
+        <thead>
+            <tr style="background-color: #38B6FF;">
+                <th scope="row" style="color: #fff;">Status</th>
+                <th scope="col" style="color: #fff;">Data</th>
+                <th scope="col" style="color: #fff;">Horario</th>
+                <th scope="col" style="color: #fff;">Ação</th>
+            </tr>
+        </thead>
+        <tbody style="background-color: #fff;">
+            <tr >
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td>
+                    <button class="btn" style="background-color: #38B6FF;" role="button">
+                        <span>Editar.</span>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td colspan="2"></td>
+                <td >
+                    <button class="btn btn-danger" role="button">
+                        <span>Excluir</span>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+    <table class="table table-borderless container w-50" style="margin-right: 70px; margin-top: 15px; border-radius: 20px;">
+        <thead>
+            <tr style="background-color: #38B6FF; font-weight: none;">
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th scope="row" style="color: #fff;">Descrição</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody style="background-color: #fff;">
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+<br>
+<div style="background-color: #DCDCDC; display: flex; margin-left: 200px; width: 90%; border-radius: 20px;">
+    <table class="table table-borderless container w-50" style="margin-left: 50px; margin-top: 15px;">
+        <thead>
+            <tr style="background-color: #38B6FF;">
+                <th scope="row" style="color: #fff;">Status</th>
+                <th scope="col" style="color: #fff;">Data</th>
+                <th scope="col" style="color: #fff;">Horario</th>
+                <th scope="col" style="color: #fff;">Ação</th>
+            </tr>
+        </thead>
+        <tbody style="background-color: #fff;">
+            <tr >
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td>
+                    <button class="btn" style="background-color: #38B6FF;" role="button">
+                        <span>Editar.</span>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td colspan="2"></td>
+                <td >
+                    <button class="btn btn-danger" role="button">
+                        <span>Excluir</span>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+    <table class="table table-borderless container w-50" style="margin-right: 70px; margin-top: 15px; border-radius: 20px;">
+        <thead>
+            <tr style="background-color: #38B6FF; font-weight: none;">
+            <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th scope="row" style="color: #fff;">Descrição</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody style="background-color: #fff;">
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
 </body>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </html>
