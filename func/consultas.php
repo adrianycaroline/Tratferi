@@ -13,7 +13,7 @@ include '../admin/acesso_com_fun.php';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <title>Consultas</title>
 </head>
-<body class="container">
+<body class="">
     <!-- barra lateral -->
     <div id="escondido">
         <div class="d-flex flex-column flex-shrink-0 p-3 bg-azul"  style="position: fixed; top: 0; left: 0; bottom: 0; width: 280px; z-index: 9999;">
@@ -70,29 +70,35 @@ include '../admin/acesso_com_fun.php';
     <br> <br>
 </div>
 <br><br><br>
-<h1 style="margin-left: 600px;">Consultas</h1>
-<a href="gerar_consultas.php" target="_self" class="btn btn-block btn-xs" style="background-color: #38B6FF; margin-left: 1170px; margin-top: -50px;" role="button">
-    <ion-icon name="add-circle-outline"></ion-icon>
-    <span class="hidden-xs">ADICIONAR</span>
-</a>
+<h1 style="margin-left: 950px; color: #1d5f96;">Consultas</h1>
+
     <div style="display: flex;">
-        <div class="border-bottom border-2 border-dark" style="width: 100%; margin-left: 270px;"></div>
+        <div class="border-bottom border-2 border-dark" style="width: 83%; margin-left: 300px;"></div>
     </div>
     <br>
-<div style="background-color: #DCDCDC; display: flex; margin-left: 200px; width: 90%; border-radius: 20px;">
-    <table class="table table-borderless container w-50" style="margin-left: 50px; margin-top: 15px;">
+<a href="gerar_consultas.php" target="_self" class="btn btn-block btn-xs" style="background-color: #38B6FF; margin-left: 300px;" role="button">
+    <ion-icon name="add-circle-outline"></ion-icon>
+    <span class="hidden-xs">ADICIONAR NOVA CONSULTA</span>
+</a>
+<br><br><br>
+<div style="background-color: #DCDCDC; display: flex;  width: 62%; margin-left: 500px; border-radius: 20px;">
+    <table class="table table-borderless container w-50" style="margin-left: 70px; margin-top: 15px;">
         <thead>
             <tr style="background-color: #38B6FF;">
                 <th scope="row" style="color: #fff;">Status</th>
                 <th scope="col" style="color: #fff;">Data</th>
                 <th scope="col" style="color: #fff;">Horario</th>
-                <th scope="col" style="color: #fff;">Profissional </th>
+                <th scope="col" style="color: #fff;">Profissional</th>
+                <th scope="col" style="color: #fff;">Paciente</th>
+                <th class="hidden" scope="col" style="color: #fff;">CPF</th>
                 <th scope="col" style="color: #fff;">Ação</th>
             </tr>
         </thead>
         <tbody style="background-color: #fff;">
             <tr >
                 <th scope="row"></th>
+                <td></td>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -106,6 +112,8 @@ include '../admin/acesso_com_fun.php';
                 <th scope="row"></th>
                 <td colspan="2"></td>
                 <td></td>
+                <td></td>
+                <td></td>
                 <td >
                     <button class="btn btn-danger" role="button">
                         <span>Excluir</span>
@@ -115,7 +123,7 @@ include '../admin/acesso_com_fun.php';
         </tbody>
     </table>
     <div>
-    <table class="table table-borderless container w-50" style="margin-right: 70px; margin-top: 15px; border-radius: 20px;">
+    <table class="table table-borderless container w-50" style="margin-right: 80px; margin-top: 15px; border-radius: 20px;">
         <thead>
             <tr style="background-color: #38B6FF; font-weight: none;">
                 <th></th>
@@ -300,225 +308,5 @@ include '../admin/acesso_com_fun.php';
 </div>
 </div>
 <br>
-<div style="background-color: #DCDCDC; display: flex; margin-left: 200px; width: 90%; border-radius: 20px;">
-    <table class="table table-borderless container w-50" style="margin-left: 50px; margin-top: 15px;">
-        <thead>
-            <tr style="background-color: #38B6FF;">
-                <th scope="row" style="color: #fff;">Status</th>
-                <th scope="col" style="color: #fff;">Data</th>
-                <th scope="col" style="color: #fff;">Horario</th>
-                <th scope="col" style="color: #fff;">Profissional</th>
-                <th scope="col" style="color: #fff;">Ação</th>
-            </tr>
-        </thead>
-        <tbody style="background-color: #fff;">
-            <tr >
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                    <button class="btn" style="background-color: #38B6FF;" role="button">
-                        <span>Editar.</span>
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row"></th>
-                <td colspan="2"></td>
-                <td></td>
-                <td >
-                    <button class="btn btn-danger" role="button">
-                        <span>Excluir</span>
-                    </button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <div>
-    <table class="table table-borderless container w-50" style="margin-right: 70px; margin-top: 15px; border-radius: 20px;">
-        <thead>
-            <tr style="background-color: #38B6FF; font-weight: none;">
-            <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th scope="row" style="color: #fff;">Descrição</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody style="background-color: #fff;">
-            <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-</div>
 </body>
 </html>
