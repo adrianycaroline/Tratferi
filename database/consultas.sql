@@ -38,3 +38,11 @@ JOIN e_funcionario ON (p.id = e.id_func)
 JOIN end_funcionario ON (p.id = end.id_func);
 WHERE p.id = $Id;
 
+
+BEGIN;
+DELETE FROM tel_func WHERE id_func = '10';
+DELETE FROM email_func WHERE id_func = '10';
+DELETE FROM end_func WHERE id_func = '10';
+DELETE FROM login_func WHERE id_func = '10';
+DELETE FROM funcionario WHERE id = '10';
+COMMIT;
