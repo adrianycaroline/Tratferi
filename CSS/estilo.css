@@ -821,6 +821,12 @@ margin-left: 30%;
           
     }
     
+/* responsivo donwload  */
+@media (max-width: 991px) {
+    .escondido5{
+            display: none;
+        } 
+    }
 
 #direitos{
 position: fixed;

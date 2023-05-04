@@ -42,13 +42,13 @@
                             </a>
                         </div>
                     </div>
-                    <div>
+                    <div class="escondido5">
                         <img src="images/tratferi_qrcode (1).svg" width="180px" alt="">
                     </div>
                 </div>
             </div>
             
-        <img class="celular img-responsive" src="images/celulares1.jpg" alt="">
+        <img class="celular img-responsive escondido5" src="images/celulares1.jpg" alt="">
         </div>
     </main>   
     <script>
