@@ -18,6 +18,9 @@ VALUES('1','daniel','2004/10/07','145.326.268-23','102.658','596.987','90.156.98
 insert into funcionario
 VALUES('2','andrey','2000/03/10','359.742.031-98','032.987','158.387','88.032.603-7','auxiliar enfermagem','realiza a coleta de sangue para exames, faz curativos simples, administra remédios, ajuda na higiene dos pacientes, entre outras funções.','manha','2429,00','2020/02/01','null','adm','user_sem_foto.png','TRAT2328935','1');
 
+insert into funcionario
+VALUES('3','felipe','2001/11-03','031.084.871-32','951.311','014.741','03.156.741-9','enfermeiro','realizar triagens, preencher prontuários, oferecer os primeiros atendimentos, coletar exames, administrar medicamentos e monitorar o estado de saúde dos pacientes.','manha','3136.00','2020-01-09','0000-00-00','func','user_sem_foto.png','TRAT2328935','2');
+
 select * from funcionario;
 
 
