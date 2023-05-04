@@ -40,16 +40,11 @@
                         TELEFONE
                     </a>
                 </li>
-                <li>
-                    <a class="nav-link" id="texto-navs" href="">
-                        RECURSOS ADICIONAIS
-                    </a>
-                </li>
             </nav>
             <hr>
             <!-- Botão de Voltar -->
             <div style="color: white;">
-                <a href="../admin/index.php" class="text-light" style="text-decoration: none; border: 1px solid white; border-radius: 20px; padding: 5px;">
+                <a href="javascript:window.history.go(-1)" class="text-light" style="text-decoration: none; border: 1px solid white; border-radius: 20px; padding: 5px;">
                     <ion-icon name="arrow-undo-outline"></ion-icon>Voltar
                 </a>
             </div>
