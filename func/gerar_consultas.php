@@ -1,4 +1,5 @@
 <?php
+include '../admin/acesso_com_fun.php';
  include '../connection/connect.php'; 
 ?>
 <!DOCTYPE html>
@@ -9,7 +10,7 @@
     <meta http-equiv="refresh" content="200;URL= ../index.php">
     <link rel="stylesheet" href='../CSS/estilo.css'>
     <link rel="shortcut icon" href="../images/logo_minimizada.png" type="image/x-icon">
-    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
     <title>Cadastro</title>
 </head>
 <body class="fundo_areas">
@@ -30,31 +31,37 @@
                         </div>
                         <br>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group ">
-                            <label for="card_SUS">Descriçâo</label>
-                            <input type="text" name="card_SUS" class="form-control" id="card_SUS"required>
-                        </div>
-                        <br>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group ">
-                            <label for="cpf">Profissional esponsável</label>
-                            <input type="text" name="cpf" class="form-control" id="cpf" required>
+                    <div class="form-row" style="display: flex; justify-content: center; flex-direction: column;">
+                        <div class="form-group">
+                            <label for="cpf">CPF</label>
+                            <input type="text" name="cpf" maxlength="50" class="form-control" id="cpf" placeholder="Digite o cpf do paciente" required>
                         </div>
                         <br>
                     </div>
                     <div class="form-row">
                         <div class="form-group ">
-                            <label for="rg">Horário</label>
-                            <input type="text" name="rg" class="form-control" id="rg" required>
+                            <label for="descricao">Descriçâo</label>
+                            <textarea type="text" name="comentario_contato" cols="30" rows="5" aria-describedby="basic-addon1" class="form-control" required></textarea>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group ">
+                            <label for="pf_resp">Profissional responsável</label>
+                            <input type="text" name="pf_resp" class="form-control" id="pf_resp" required>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group ">
+                            <label for="horario">Horário</label>
+                            <input type="text" name="horario" class="form-control" id="horario" required>
                         </div>
                         <br>
                     </div>
                     <div class="form-group ">
-                            <label for="data_nasc">Data</label>
-                            <input type="date" name="datac" class="form-control" id="data" required>
+                            <label for="data">Data</label>
+                            <input type="date" name="data" class="form-control" id="data" required>
                     </div>
                     <br>
                     <label class="text-center">Prioridade:</label>

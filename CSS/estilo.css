@@ -513,7 +513,8 @@ input:focus ~ :valid{
 }
 /* //////////////////// Cards Conscientização /////////////////////// */
 .cards{
-    width: 50%;
+    width: 80%;
+    
 }
 
 
@@ -768,10 +769,6 @@ background-color: white;
     border-radius: 2rem;
 }
 
-/* //////////////////// Card de joinha /////////////////////// */
-
-/* //////////////////// Fim Card de joinha /////////////////////// */
-
 /* ///////////////////////// MENU PERFIL ADM //////////////////////////// */
 #texto-navs{
     color: white;
@@ -815,11 +812,6 @@ margin-left: 30%;
     color: blue;
     border-color: blue;
   }
-  /* //////////////////// consultas ////////////////////// */
-  .borda_tbody{
-    border-radius: 30px;
-  }
-
-  /* ///////////////imagem sobre ////////////////// */
   
+
   

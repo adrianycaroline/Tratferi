@@ -1,6 +1,9 @@
 <?php
- include '../connection/connect.php';
+    include '../admin/acesso_com_fun.php';
+    include '../connection/connect.php';
+    
  if($_POST){
+        
         // iniciar o cadastro
         $nome = $_POST['nome'];
         $data_nasc = $_POST['data_nasc'];
@@ -13,7 +16,7 @@
         $cpf_sem_ponto = str_replace('.', '', $cpf); // remove os pontos do CPF
         $cpf_tratado = substr($cpf_sem_ponto, 0, 5); // extrai os primeiros cinco dígitos do CPF sem ponto
 
-        if($sus == ""){
+        if($card_SUS == ""){
         //inserir paciente
         $loginRes = $conn->query("insert into paciente (nome, data_nasc, cpf, rg, card_SUS, imagem, hash) values('$nome', '$data_nasc', '$cpf', '$rg', '$card_SUS', 'user_sem_foto.png', '$hashcode')");
         
@@ -23,12 +26,12 @@
         $conexao = $conn;
         $resultadoEmail = $conexao->query($insereEmail);
         
-        $_SESSION['primeira_senha'] =  $cpf_tratado;
+        //enviar senha por email
         include '../envia_cadastro.php';
         echo "<script>window.open('pacientes_lista.php?cad=s','_self')</script>"; 
         }
 
-        elseif($sus != ""){
+        elseif($card_SUS != ""){
         //inserir paciente
         $loginRes = $conn->query("insert into paciente (nome, data_nasc, cpf, rg, card_SUS, imagem, hash) values('$nome', '$data_nasc', '$cpf', '$rg', '$card_SUS', 'null', '$hashcode')");
         
@@ -38,7 +41,7 @@
         $conexao = $conn;
         $resultadoEmail = $conexao->query($insereEmail);
 
-        $_SESSION['primeira_senha'] =  $cpf_tratado;
+        //enviar senha por emailo
         include '../envia_cadastro.php';
         echo "<script>window.open('pacientes_lista.php?cad=s','_self')</script>"; 
         }
@@ -55,7 +58,7 @@
         $insereSenha = "INSERT INTO login_paci VALUES ('', '$cpf_tratado', '$paciente_id')";
         $resultado3 = $conn->query($insereSenha);
         
-        header('location: ../admin/listar_funcionarios.php');
+        header('location: ../func/pacientes_lista.php?cad=s');
     } 
 }      
 ?>

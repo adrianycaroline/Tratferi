@@ -11,8 +11,7 @@
 </head>
     <body>
         <?php
-        $senha = $_SESSION['primeira_senha'];
-        $email = $_SESSION['email_func'];
+        $senha = $cpf_tratado;
 
         use PHPMailer\PHPMailer\PHPMailer;
         use PHPMailer\PHPMailer\SMTP;
@@ -37,16 +36,15 @@ require 'lib/vendor/autoload.php';
             $mail->addAddress($email, ''); //ADM
             
             $mail->isHTML(true);                                 
-            $mail->Subject = "Mensagem de TratFeri";
-            $mail->Body = "Seu cadastro foi realizado com sucesso! sua senha é: $senha";
+            $mail->Subject = "Cadastro TratFeri";
+            $mail->Body = "Seu cadastro foi realizado com sucesso! Sua senha para primeiro acesso é: $senha.<br>".
+            "Após o primeiro login você deverá alterar sua senha.";
 
             $mail->send(); ?>
 
         <?php } catch (Exception $e) { ?>
             <!-- se não funcionar  -->
-            <h3 class="texto_contato"><a href="javascript:window.history.go(-1)" class="btn btn-primary">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>&nbsp;E-mail não enviado com sucesso. Tente novamente</h3>
+            <h3 class="texto_contato">E-mail não enviado com sucesso! Tente novamente</h3>
         <?php }?>
     </body>
 </html>
