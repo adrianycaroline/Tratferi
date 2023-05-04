@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
     <link rel="shortcut icon" href="images/logo_minimizada.png" type="image/x-icon">
     <title>Sobre - TRATFERI</title>
 </head>
@@ -12,10 +13,12 @@
    <br><br>
    <main>
   <div class="d-flex flex-wrap">
-    <div style="flex: 1; margin-right: 20px;">
-      <img class=" img-responsive img-fluid w-100 rounded mx-auto d-block" src="images/image.jpg" style="border-radius: 50px; max-width: 100%; height: auto; object-fit: contain;" alt="">
+    <!--responsivo sumir imagem -->
+    <div class="escondido4" style="flex: 1; margin-right: 20px;">
+      <img class="img-responsive img-fluid w-100 rounded mx-auto d-block" src="images/image.jpg" style="border-radius: 50px; max-width: 100%; height: auto; object-fit: contain;" alt="">
     </div>  
     <div style="flex: 1;">
+    <!-- texto sobre -->
       <h1 style="color:#1d5f96; text-align: center;">Sobre Nos</h1>
       <div style="border-bottom: 2px solid #000; width: 20%; margin: 0 auto;"></div>
       <br>
@@ -35,6 +38,7 @@ Ce existir alguma duvida acesse nossa aba de <a href="ajuda.php"></a>Ajuda lá e
 conosco qualquer duvida nos notifique.</p>
 
 <small style="color:#1d5f96; display:flex; justify-content:center; margin-top:15%;">Conte conosco TRATFERI</small>
+<!-- fim texto sobre -->
     
 <br>
     
