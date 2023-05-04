@@ -813,6 +813,21 @@ margin-left: 30%;
     border-color: blue;
   }
 
+/* responsivo sobre nos  */
+@media (max-width: 991px) {
+    .escondido4{
+            display: none;
+        }
+          
+    }
+    
+/* responsivo donwload  */
+@media (max-width: 991px) {
+    .escondido5{
+            display: none;
+        } 
+    }
+
 #direitos{
 position: fixed;
   bottom: 0;
@@ -822,4 +837,5 @@ position: fixed;
   padding: 10px;
   text-align: center;
 }
+
 

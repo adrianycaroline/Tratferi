@@ -1,8 +1,8 @@
 <?php
 include '../admin/acesso_com_fun.php';
 include '../connection/connect.php'; 
-
-$lista = $conn->query("select * from consulta");
+//informaões da consulta
+$lista = $conn->query("select * from consulta where status = 'Ativa'");
 $row = $lista->fetch_assoc();
 ?>
 <!DOCTYPE html>
@@ -12,7 +12,7 @@ $row = $lista->fetch_assoc();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../images/logo_minimizada.png" type="image/x-icon">
     <link rel="stylesheet" href="../CSS/estilo.css">
-    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <title>Consultas</title>
 </head>
@@ -87,7 +87,7 @@ $row = $lista->fetch_assoc();
 <div style="background-color: #DCDCDC; display: flex;  width: 62%; margin-left: 500px; border-radius: 20px;">
     <table class="table table-borderless container w-50" style="margin-left: 70px; margin-top: 15px;">
         <thead>
-            <tr style="background-color: #38B6FF;">
+            <tr style="background-color: #38B6FF;" class="text-center">
                 <th scope="row" style="color: #fff;">Status</th>
                 <th scope="col" style="color: #fff;">Data</th>
                 <th scope="col" style="color: #fff;">Horario</th>
@@ -99,29 +99,27 @@ $row = $lista->fetch_assoc();
         </thead>
         <tbody style="background-color: #fff;">
         <?php if($lista){
-            do {?>
+            do {
+                //informaões do funcionário
+                $idFunc = $row['id_func'];
+                $listaFunc = $conn->query("select * from funcionario where id ='$idFunc'");
+                $rowFunc = $listaFunc->fetch_assoc();
+                
+                //informaões do paciente
+                $idPac = $row['id_paci'];
+                $listaFunc = $conn->query("select * from paciente where id ='$idPac'");
+                $rowPac = $listaFunc->fetch_assoc();
+            ?>
             <tr>
-                <th scope="row"></th>
-                <td><?php echo $row['status'];?></td>
+                <th scope="row"><?php echo $row['status'];?></th>
                 <td><?php echo $row['data_consulta'];?></td>
                 <td><?php echo $row['horario_consulta'];?></td>
-                <td><?php echo $row['horario_consulta'];?></td>
-                <td></td>
+                <td><?php echo $rowFunc['nome'];?></td>
+                <td><?php echo $rowPac['nome'];?></td>
+                <td><?php echo $rowPac['cpf'];?></td>
                 <td>
                     <button class="btn" style="background-color: #38B6FF;" role="button">
-                        <span>Editar.</span>
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row"></th>
-                <td colspan="2"></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td >
-                    <button class="btn btn-danger" role="button">
-                        <span>Excluir</span>
+                        <span>Alterar</span>
                     </button>
                 </td>
             </tr>
@@ -132,7 +130,7 @@ $row = $lista->fetch_assoc();
     <div>
     <table class="table table-borderless container w-50" style="margin-right: 80px; margin-top: 15px; border-radius: 20px;">
         <thead>
-            <tr style="background-color: #38B6FF; font-weight: none;">
+        <tr style="background-color: #38B6FF; font-weight: none;" class="text-center">
                 <th></th>
                 <th></th>
                 <th></th>
@@ -156,6 +154,34 @@ $row = $lista->fetch_assoc();
             </tr>
         </thead>
         <tbody style="background-color: #fff;">
+        <?php if($lista) {
+            //informaões da consulta
+            $lista = $conn->query("select * from consulta where status = 'Ativa'");
+            $row = $lista->fetch_assoc();
+        do {    
+        ?>
+        <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
             <tr>
                 <th scope="row"></th>
                 <td></td>
@@ -167,6 +193,28 @@ $row = $lista->fetch_assoc();
                 <td></td>
                 <td></td>
                 <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><?php echo $row['descricao'];?></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -266,50 +314,8 @@ $row = $lista->fetch_assoc();
                 <td></td>
                 <td></td>
             </tr>
-            <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+        <?php }while($row = $lista->fetch_assoc());?>
+        <?php }?>
         </tbody>
     </table>
 </div>
