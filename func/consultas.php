@@ -99,7 +99,7 @@ $row = $lista->fetch_assoc();
         </thead>
         <tbody style="background-color: #fff;">
         <?php if($lista){
-            do {
+            do { 
                 //informaões do funcionário
                 $idFunc = $row['id_func'];
                 $listaFunc = $conn->query("select * from funcionario where id ='$idFunc'");

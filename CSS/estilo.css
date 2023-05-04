@@ -822,7 +822,7 @@ margin-left: 30%;
     }
     
 /* responsivo donwload  */
-@media (max-width: 991px) {
+@media (max-width: 768px) {
     .escondido5{
             display: none;
         } 
