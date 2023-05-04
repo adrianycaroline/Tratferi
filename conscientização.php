@@ -39,7 +39,7 @@ body {
               </div>
             </div>
             <div class="col-md-8">
-              <div class="card-body">
+              <div class="card-body container">
                 <h5 class="card-title" style="color:#1d5f96;" >Sobre Nossos serviços</h5>
                 <br>
                 <p class="card-text">

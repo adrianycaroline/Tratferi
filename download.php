@@ -50,7 +50,7 @@
                 </div>
             </div>
             
-        <img class="celular img-responsive escondido5" src="images/celulares1.jpg" alt="">
+        <img class="celular img-responsive escondido5" src="images/celulares1.png" alt="">
         </div>
     </main>  
     <div id=""><?php include 'footer2.php'?></div> 
