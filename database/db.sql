@@ -281,7 +281,7 @@ VIEW `perfil_paci` AS
 
 
 -- Descrições da tabela
-desc funcionario;
+desc funcionario;       
 
 desc tel_func;
 

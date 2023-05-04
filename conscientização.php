@@ -15,7 +15,7 @@
 <!-- Fundo Conscientização -->
 <style>
 body {
-        background: url('images/fundo_ajuda.png') no-repeat;  
+        background: url('images/fundo_consci.webp') no-repeat;  
         background-size: cover;
     }
 </style>
@@ -30,7 +30,7 @@ body {
     <div id="card1">
     <div class="card mb-3 card_focus">
           <div class="row no-gutters">
-            <div class="col-md-4">
+            <div class="col-md-4 h-100">
               <div class ="card text-white d-flex">
               <img src="images/celular.jpg" alt="Descrição da imagem" style="max-width: 60rem; height: 100%">
                 <div class="card-body"style="max-width: 100%; padding: 0%; height: 0%;">
