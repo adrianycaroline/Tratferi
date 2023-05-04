@@ -34,9 +34,15 @@
             </div>
             <ul class="nav nav-pills flex-column mb-auto">
                 <li>
+                    <a href="index.php" class="nav-link" aria-current="page" style="cursor: pointer;">
+                        <img src="../images/dashboard.svg" alt="" width="20vw">
+                        Dashboard
+                    </a>
+                </li>
+                <li>
                     <a data-toggle="modal" data-target="#modal_carteirinha" class="nav-link" aria-current="page" style="cursor: pointer;">
                         <img src="../images/Tratferi_qrcode.svg" alt="" width="20vw">
-                        Carteirnha
+                        Carteirinha
                     </a>
                 </li>
                 <li>
