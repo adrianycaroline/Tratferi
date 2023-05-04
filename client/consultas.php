@@ -87,9 +87,6 @@ date_default_timezone_set('America/Sao_Paulo'); // define o fuso horário para S
             <?php }while($row = $lista->fetch_assoc())?> <!-- Fim da Estrutura de repetição -->
         </tbody>
     </table>
-    <div class="text-center">
-        aaaaaaa
-    </div>
     <!-- Texto dos direitos reservados -->
     <div class="text-center" id="direitos">
         <p><img src="../images/logo_areas.png" width="20vw" alt="Logo do Tratferi" > TRATFERI - TODOS OS DIREITOS RESERVADOS.</p>
