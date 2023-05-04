@@ -9,39 +9,30 @@
 </head>
 <body>
     <?php include 'header_publico.php';?>
-   
-    <main>
-        <div style="display: flex;">
-            <div>
-                <img src="images/image.jpg" class="img-responsive" height="635px" width="800px" style="border-radius: 50px;" alt="">
-            </div>  
-            <div class="justify-content center">
-                <br>
-                <h1 class="text-center" style="color:#1d5f96;">Sobre Nos</h1>
-                <div class="border-bottom border-2 border-dark mx-auto" style="width: 20%; "></div>
-                <br>
-                <p>O TRATFERI, fundado em 2023 pelo grupo de Enfermagem do Senac Itaquera veio ao mundo como 
-                    uma idéia de aplicação Web e Software que auxiliasse os profissionais de saúde com os 
-                    pacientes, além de ser voltado para adultos que desejam consultar suas informações
-                    e progresso do atendimento. <br>
-                    Assim, o TRATFERI (Tratamento de Feridas) foi oficialmente produzido. Atendendo as
-                    melhores funcionalidades esse sistema é de grande ajuda a profissionais que precisam
-                    de respostas rápidas para certos atendimentos e até oferece um auxílio de ponta na
-                    organização e no atendimento.</p>
-                    <br>
-                    
-            </div>
-        </div>
-    </main>
+   <br>
+   <main>
+  <div style="display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; margin-right: 20px;">
+      <img src="images/image.jpg" style="border-radius: 50px; max-width: 100%;" alt="">
+    </div>  
+    <div style="flex: 1;">
+      <br>
+      <h1 style="color:#1d5f96; text-align: center;">Sobre Nos</h1>
+      <div style="border-bottom: 2px solid #000; width: 20%; margin: 0 auto;"></div>
+      <br>
+      <p style="text-align: justify;">O TRATFERI, fundado em 2023 pelo grupo de Enfermagem do Senac Itaquera veio ao mundo como uma ideia de aplicação Web e Software 
+      que auxiliasse os profissionais de saúde com os pacientes , além de ser voltado para adultos que desejam consultar suas informações e progresso do atendimento. Assim, o TRATFERI<br>
+       (Tratamento de Feridas) foi oficialmente produzido. Atendendo as melhores funcionalidades esse sistema é de grande ajuda a profissionais que precisam de respostas <br>
+       rápidas para certos atendimentos e até oferece um auxílio de ponta na organização e no atendimento.</p>
+      
+      <br>
+    </div>
+  </div>
+</main>
     <br>
     <?php include 'footer2.php';?>
 </body>
 <style>
-@media (max-width: 1023px) {
-    .img-fluid {
-      display: none;
-    }
-  }
   </style> 
 <!-- link para bootstrap -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
