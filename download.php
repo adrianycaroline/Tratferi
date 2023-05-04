@@ -53,7 +53,7 @@
         <img class="celular img-responsive escondido5" src="images/celulares1.jpg" alt="">
         </div>
     </main>  
-    <div id="direitos"><?php include 'footer2.php'?></div> 
+    <div id=""><?php include 'footer2.php'?></div> 
     <script>
         function makeResponsive() {
   const mainElement = document.querySelector('main');
