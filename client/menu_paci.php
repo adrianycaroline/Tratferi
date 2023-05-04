@@ -83,27 +83,50 @@
     <!-- //////////////////////// MODAIS ////////////////////////// -->
     <div class="modal fade modal-lg" id="modal_carteirinha" tabindex="-1" role="dialog" aria-labelledby="modal_carteirinha_centro" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content " style="border-radius: 40px; border: 4px solid #2b8af7;">
                 <div class="modal-title" id="modal_carteirinha_titulo">
                     <!-- imagem do usuário -->
-                    <div class="d-flex" style="margin: 20px;">
-                        <img style="border-radius: 20px;" src="../fotos_usuarios/<?php echo $_SESSION['Imagem'];?>" width="120vw" alt="">
-                        <h5 style="font-size: 20pt;"><?php echo $row['nome'];?></h5>
+                    <div style="display: flex; justify-content: center; margin-top: 10px;">
+                        <h2>-- CARTEIRINHA --</h2>
                     </div>
+                    <div class="d-flex" style="margin: 20px;">
+                        <div>
+                            <img style="border-radius: 20px;" src="../fotos_usuarios/<?php echo $_SESSION['Imagem'];?>" width="200vw" alt="Foto de Perfil">
+                        </div>
+                        <div style="margin-left: 20px;">
+                            <h2><?php echo $row['nome'];?></h2>
+                            <!-- Inputs com as informações -->
+                            <div style="display: flex;">
+                                <!-- Inputs do lado esquerdo -->
+                                <div style="display: flex; flex-direction: column;">
+                                    <small>Data de Nascimento</small>
+                                    <input type="text" value="<?php echo date('d/m/Y', strtotime($row['data_nasc'])); ?>" style="border-radius: 10px; margin-bottom: 10px;" disabled>
+                                    <small>CPF</small>
+                                    <input type="text" value="<?php echo $row['cpf']; ?>" style="border-radius: 10px;" disabled>
+                                </div>
+                                <!-- Inputs do lado direito -->
+                                <div style="display: flex; flex-direction: column; margin-left: 20px;">
+                                    <small>RG</small>
+                                    <input type="text" value="<?php echo $row['rg']; ?>" style="border-radius: 10px; margin-bottom: 10px;" disabled>
+                                    <small>Cartão do SUS</small>
+                                    <input type="text" value="<?php echo $row['card_SUS']; ?>" style="border-radius: 10px;" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Botão X de fechar Modal -->
                     <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
                     </button>
                 </div>
-                 <div class="modal-body">     
+                 <div class="modal-body">
                     <div style="display: flex; justify-content: end;">
-                      <button  type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                        <img style="opacity: 0.4;" src="../images/logo_carteirinha.png" width="100vw" alt="">
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
-    
-    <script src="../js/script.js"></script>
-    
-    </html>
+<script src="../js/script.js"></script> 
+</html>

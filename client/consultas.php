@@ -1,10 +1,10 @@
 <?php
-include '../admin/acesso_com_pac.php';
- include '../connection/connect.php'; 
+    include '../admin/acesso_com_pac.php';
+    include '../connection/connect.php'; 
 
- $lista = $conn->query("SELECT * FROM consulta LEFT JOIN funcionario ON (consulta.id_func = funcionario.id) where id_paci = ".$_SESSION['Id'].";"); //Seleciona todos os funcionarios que estejam ativos.
- $row = $lista->fetch_assoc();
- $rows = $lista->num_rows;
+    $lista = $conn->query("SELECT * FROM consulta LEFT JOIN funcionario ON (consulta.id_func = funcionario.id) where id_paci = ".$_SESSION['Id'].";"); //Seleciona todos os funcionarios que estejam ativos.
+    $row = $lista->fetch_assoc();
+    $rows = $lista->num_rows;
 
 
 // traduz o Dia da semana
@@ -40,9 +40,8 @@ date_default_timezone_set('America/Sao_Paulo'); // define o fuso horário para S
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../images/logo_minimizada.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
     <link rel="stylesheet" href="../CSS/estilo.css">
-    <link rel="stylesheet" href="CSS/bootstrap.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <title>Consultas</title>
 </head>
 <body class="container" onload="atualizarHoras()">
@@ -56,13 +55,13 @@ date_default_timezone_set('America/Sao_Paulo'); // define o fuso horário para S
         </div>
     </div>
 <br><br><br>
-<div style="margin-top: 20px;"> <!-- Define a margem do topo do layout -->
+<div style="margin-top: 20px; margin-left: 280px;"> <!-- Define a margem do topo do layout -->
     <h1>Consultas - <?php echo($_SESSION['nome']); ?></h1>
     <div class="border-bottom border-2 border-dark" style="width: 100%; "></div> <!-- linha divisória -->
     <br>
 </div>
     <br>
-    <table class="table table-hover table-condensed tb-opacidades TBconsulta" >
+    <table class="table table-hover table-condensed tb-opacidades TBconsulta" style="margin-left: 280px;">
         <thead style="background-color: #008DDF; color: white;">
             <th hidden>ID</th>
             <th scope="row">Status</th>
@@ -77,12 +76,12 @@ date_default_timezone_set('America/Sao_Paulo'); // define o fuso horário para S
             <?php do {?>
                 <tr>
                     <td hidden><?php echo $row['id'];?></td>
-                    <td><?php echo $row['status'];?></td>
-                    <td><?php echo $row['data_consulta'];?></td>
-                    <td><?php echo $row['horario_consulta'];?></td>
-                    <td><?php echo $row['hash'];?></td>
-                    <td><?php echo $row['descricao'];?></td>
-                    <td><?php echo $row['nome'];?></td> <!-- Nome do profissional -->
+                    <td><?php echo isset($row['status']) ? $row['status'] : '';?></td>
+                    <td><?php echo isset($row['data_consulta']) ? $row['data_consulta'] : '';?></td>
+                    <td><?php echo isset($row['horario_consulta']) ? $row['horario_consulta'] : '';?></td>
+                    <td><?php echo isset($row['hash']) ? $row['hash'] : '';?></td>
+                    <td><?php echo isset($row['descricao']) ? $row['descricao'] : '';?></td>
+                    <td><?php echo isset($row['nome']) ? $row['nome'] : '';?></td> <!-- Nome do profissional -->
                 </tr>
             <?php }while($row = $lista->fetch_assoc())?> <!-- Fim da Estrutura de repetição -->
         </tbody>
@@ -126,7 +125,4 @@ date_default_timezone_set('America/Sao_Paulo'); // define o fuso horário para S
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-</html>
-
-
 </html>
