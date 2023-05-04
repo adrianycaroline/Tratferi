@@ -11,7 +11,7 @@
     <?php include 'header_publico.php';?>
    <br><br>
    <main>
-  <div style="display: flex; flex-wrap: wrap;">
+  <div class="d-flex flex-wrap">
     <div style="flex: 1; margin-right: 20px;">
       <img class=" img-responsive img-fluid w-100 rounded mx-auto d-block" src="images/image.jpg" style="border-radius: 50px; max-width: 100%; height: auto; object-fit: contain;" alt="">
     </div>  
@@ -34,9 +34,9 @@ Ce existir alguma duvida acesse nossa aba de <a href="ajuda.php"></a>Ajuda lá e
 <a href="contato.php">Contato</a>.<br>
 conosco qualquer duvida nos notifique.</p>
 
-<small style="color:#1d5f96; display:flex; justify-content:center; margin-top:18%;">Conte conosco TRATFERI</small>
+<small style="color:#1d5f96; display:flex; justify-content:center; margin-top:15%;">Conte conosco TRATFERI</small>
     
-<br><br>
+<br>
     
 </div>
 </div>
@@ -48,7 +48,14 @@ conosco qualquer duvida nos notifique.</p>
 <br><br><br>
 <?php include 'footer2.php';?>
 </body>
-<!-- link para bootstrap e java  -->
+<style>
+@media (max-width: 1023px) {
+    .img-fluid {
+      display: none;
+    }
+  }
+  </style> 
+<!-- link para bootstrap -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-2.2.0.min-js" type="text/javascript"></script>
