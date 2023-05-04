@@ -47,10 +47,10 @@
             $dir_img = "../fotos_usuarios/$nome_img"; //Local onde a imagem vai ser armazenada
             move_uploaded_file($tmp_img, $dir_img); //Adciona o arquivo na pasta
             $imagem_perfil = $nome_img;
-            $updateSql = "UPDATE funcionario set imagem = '$nome_img' where id = ".$_SESSION['Id'].";"; //Adiciona a imagem no banco
+            $updateSql = "UPDATE paciente set imagem = '$nome_img' where id = ".$_SESSION['Id'].";"; //Adiciona a imagem no banco
         } else {
             $imagem_perfil = "user_sem_foto.png";
-            $updateSql = "UPDATE funcionario set imagem = '$imagem_perfil' where id = ".$_SESSION['Id'].";";
+            $updateSql = "UPDATE paciente set imagem = '$imagem_perfil' where id = ".$_SESSION['Id'].";";
         }
 
         $resultado = $conn->query($updateSql);
