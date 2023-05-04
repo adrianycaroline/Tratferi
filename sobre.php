@@ -9,11 +9,11 @@
 </head>
 <body>
     <?php include 'header_publico.php';?>
-   <br>
+   <br><br>
    <main>
   <div style="display: flex; flex-wrap: wrap;">
     <div style="flex: 1; margin-right: 20px;">
-      <img src="images/image.jpg" style="border-radius: 50px; max-width: 100%;" alt="">
+      <img class="w-100  img-responsive" src="images/image.jpg" style="border-radius: 50px; max-width: 100%;" alt="">
     </div>  
     <div style="flex: 1;">
       <br>
@@ -24,12 +24,13 @@
       que auxiliasse os profissionais de saúde com os pacientes , além de ser voltado para adultos que desejam consultar suas informações e progresso do atendimento. Assim, o TRATFERI<br>
        (Tratamento de Feridas) foi oficialmente produzido. Atendendo as melhores funcionalidades esse sistema é de grande ajuda a profissionais que precisam de respostas <br>
        rápidas para certos atendimentos e até oferece um auxílio de ponta na organização e no atendimento.</p>
-      
-      <br>
+<br><br><br>
+       <small class="justify-content:center;">Conte conosco TRATFERI</small>
+    <br><br>
     </div>
   </div>
 </main>
-    <br>
+<br><br><br>
     <?php include 'footer2.php';?>
 </body>
 <style>
