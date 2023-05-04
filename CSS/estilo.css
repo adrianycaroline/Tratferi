@@ -812,12 +812,16 @@ margin-left: 30%;
     color: blue;
     border-color: blue;
   }
-  
-  /* responsivo sobre nos  */
-@media (max-width: 991px) {
-.escondido4{
-        display: none;
-    }
-      
+
+
+#direitos{
+position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  padding: 10px;
+  text-align: center;
 }
+
 
