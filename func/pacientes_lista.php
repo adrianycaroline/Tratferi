@@ -49,6 +49,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
     <style>
         .logo-container {
             display: flex;
@@ -75,7 +77,7 @@
         </div>
     </main>
     <!-- Lista de pacientes -->
-    <div style="margin-left: 285px;">
+    <div style="margin-left: 280px;">
         <?php if(isset($_GET['cadastro']) && ($_GET['cadastro'] == 's')){?>
             <br><h2 class="text-success">Paciente Cadastrado Com Sucesso!</h2>
         <?php }?>
@@ -112,26 +114,27 @@
     </div>
     <br>
     <h1 class="card-header text-center" style="color: #1d5f96; margin-left: 230px;">Lista de Pacientes ativos</h1>
-    <div style="display: flex; justify-content: end;">
-            <div class="border-bottom border-2 " style="width: 30%; margin-right: 550px;"></div>
-        </div>
-            <section>
-                <table class="table table-hover table-condensed tb-opacidade" id="tabela_pacientes"> 
-                    <thead>
-                        <th class="hidden">ID</th>
-                        <th style="color: #1d5f96;">Nome</th>
-                        <th style="color: #1d5f96;">Data de Nascimento</th>
-                        <th style="color: #1d5f96;">CPF</th>
-                        <th style="color: #1d5f96;">Cartão do SUS</th>
-                        <th class="hidden">HashCode</th>
-                        <th class="d-flex">
-                            <a href="../func/cadastrar_paciente.php" target="_self" class="btn btn-block btn-xs" style="background-color: #38B6FF;" role="button">
-                                <ion-icon name="add-circle-outline"></ion-icon>
-                                <span class="hidden-xs">ADICIONAR</span>
-                            </a>
-                        </th>
-                    </thead>
-            
+    <div style="display: flex; justify-content: center;">
+            <div class="border-bottom border-2 " style="width: 30%;"></div>
+    </div>
+    <section style="margin-left: 280px;">
+        <table class="table table-hover table-condensed tb-opacidade" id="tabela_pacientes"> 
+            <thead>
+                <tr>
+                    <th class="hidden">ID</th>
+                    <th style="color: #1d5f96;">Nome</th>
+                    <th style="color: #1d5f96;">Data de Nascimento</th>
+                    <th style="color: #1d5f96;">CPF</th>
+                    <th style="color: #1d5f96;">Cartão do SUS</th>
+                    <th class="hidden">HashCode</th>
+                    <th class="d-flex">
+                        <a href="../func/cadastrar_paciente.php" target="_self" class="btn btn-block btn-xs" style="background-color: #38B6FF;" role="button">
+                            <ion-icon name="add-circle-outline"></ion-icon>
+                            <span class="hidden-xs">ADICIONAR</span>
+                        </a>
+                    </th>
+                </tr>
+            </thead>
             <tbody> <!-- início corpo da tabela -->
             <!-- início estrutura repetição -->
             <?php if($lista){
@@ -254,8 +257,11 @@
                 <?php }?>  
             </body>
             <script>
-                $(document).ready(function () {
-                    $('#tabela_pacientes').DataTable();
-                });
-            </script>
+    // Script para buscar o que for pesquisado (ele também já coloca o input de pesquisa e etc...)
+    $('#tabela_pacientes').DataTable({
+        "language":  {
+            "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Portuguese-Brasil.json"
+        }
+    });
+</script>
             </html>
