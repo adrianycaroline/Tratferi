@@ -58,7 +58,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link">
+                    <a href="anuncios.php" class="nav-link">
                         <img src="../images/anuncio.svg" alt="" width="20vw">
                         Anuncios
                     </a>
