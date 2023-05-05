@@ -15,7 +15,7 @@ include '../admin/acesso_com_fun.php';
 </head>
 <body class="fundo_areas">
 <div class="barra fixed-top" style="background-color: #38B6FF;">
-        <br> <br>
+        <br><br>
  </div>
  <br><br>
 <div class="container mt-4 d-flex justify-content-center">
@@ -23,7 +23,7 @@ include '../admin/acesso_com_fun.php';
             <h1 class="card-header text-center" style="color: #38B6FF;">Gerar nova consulta</h1>
             <div class="card-body">
                 <!-- Formulário de Cadastro de Funcionário -->
-                <form class="container" style="display: flex; justify-content: flex-start; flex-direction: column;" action="../func/cadastrar_paciente.php" method="post" name="form_funcionario_cadastro" enctype="multipart/form-data" onsubmit="return validaForm() && validaFormPeriodo()">
+                <form class="container" style="display: flex; justify-content: flex-start; flex-direction: column;" action="../func/gerar_consultas.php" method="post" name="form_funcionario_cadastro" enctype="multipart/form-data" onsubmit="return validaForm() && validaFormPeriodo()">
                     <div class="form-row" style="display: flex; justify-content: center; flex-direction: column;">
                         <div class="form-group">
                             <label for="nome">Nome do paciente</label>
@@ -67,12 +67,13 @@ include '../admin/acesso_com_fun.php';
                     <label class="text-center">Prioridade:</label>
                     <br>
                     <div class="btn-group d-flex gap-2" role="group" aria-label="Basic mixed styles example">
-                        <button type="button" class="btn btn-danger">Muito Grave</button>
-                        <button type="button" class="btn" style="background-color: #ffa500;">Urgente</button>
-                        <button type="button" class="btn" style="background-color: #ffff00;">Moderado</button>
-                        <button type="button" class="btn" style="background-color: #66CDAA; color: #000;">Menos grave</button>
-                        <button type="button" class="btn" style="background-color: #38B6FF;">Leve</button>
+                        <button type="button" onclick="botao_grave()" class="btn btn-danger">Muito Grave</button>
+                        <button type="button" onclick="botao_urgente()" class="btn" style="background-color: #ffa500;">Urgente</button>
+                        <button type="button" onclick="botao_moderado()" class="btn" style="background-color: #ffff00;">Moderado</button>
+                        <button type="button" onclick="botao_menos_grave()" class="btn" style="background-color: #66CDAA; color: #000;">Menos grave</button>
+                        <button type="button" onclick="botao_leve()" class="btn" style="background-color: #38B6FF;">Leve</button>
                     </div>
+                    <?php echo $_SESSION['button'];?>
                     <br>
                     <button class="btn" type="submit" style="background-color: #38B6FF;">Agendar consulta</button>
                 </form>
@@ -81,6 +82,23 @@ include '../admin/acesso_com_fun.php';
     </div>
     <!-- --------------------- -->
         <?php include 'menu_cadastrar.php';?>
+        <script>
+                   function  botao_grave() {
+                        $_SESSION['button'] = "grave";
+                    }
+                    function botao_urgente() {
+                        $_SESSION['button'] = "urgente";
+                    }
+                    function botao_moderado() {
+                        $_SESSION['button'] = "moderado";
+                    }
+                    function botao_menos_grave() {
+                        $_SESSION['button'] = "menos_grave";
+                    }
+                    function botao_leve() {
+                        $_SESSION['button'] = "leve";
+                    } 
+        </script>
 </body>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

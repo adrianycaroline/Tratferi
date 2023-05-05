@@ -1,7 +1,7 @@
 <?php
 include '../admin/acesso_com_fun.php';
 include '../connection/connect.php'; 
-//informaões da consulta
+//informações da consulta
 $lista = $conn->query("select * from consulta where status = 'Ativa'");
 $row = $lista->fetch_assoc();
 ?>
@@ -100,12 +100,12 @@ $row = $lista->fetch_assoc();
         <tbody style="background-color: #fff;">
         <?php if($lista){
             do { 
-                //informaões do funcionário
+                //informações do funcionário
                 $idFunc = $row['id_func'];
                 $listaFunc = $conn->query("select * from funcionario where id ='$idFunc'");
                 $rowFunc = $listaFunc->fetch_assoc();
                 
-                //informaões do paciente
+                //informações do paciente
                 $idPac = $row['id_paci'];
                 $listaFunc = $conn->query("select * from paciente where id ='$idPac'");
                 $rowPac = $listaFunc->fetch_assoc();
@@ -155,7 +155,7 @@ $row = $lista->fetch_assoc();
         </thead>
         <tbody style="background-color: #fff;">
         <?php if($lista) {
-            //informaões da consulta
+            //informações da consulta
             $lista = $conn->query("select * from consulta where status = 'Ativa'");
             $row = $lista->fetch_assoc();
         do {    
