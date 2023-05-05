@@ -45,7 +45,7 @@
                         </div>
                     </div>
                     <div class="escondido5">
-                        <img src="images/tratferi_qrcode (1).svg" width="180px" alt="">
+                        <img src="images/tratferi_qrcode (1).svg" width="170px" alt="">
                     </div>
                 </div>
             </div>
