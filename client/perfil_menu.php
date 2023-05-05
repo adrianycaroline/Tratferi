@@ -21,17 +21,17 @@
         <div>
             <nav class="nav">
                 <li class="container-navs-menu">
-                    <a class="nav-link" id="texto-navs" href="perfil/config_perfil.php">
+                    <a class="nav-link" id="texto-navs" href="config_perfil.php">
                         CONFIGURAÇÕES DO PERFIL
                     </a>
                 </li>
                 <li class="container-navs-menu">
-                    <a class="nav-link" id="texto-navs" href="perfil/pref_email.php">
+                    <a class="nav-link" id="texto-navs" href="pref_email.php">
                         PREFERÊNCIAS DE E-MAIL
                     </a>
                 </li>
                 <li class="container-navs-menu">
-                    <a class="nav-link" id="texto-navs" href="perfil/senha_segu.php">
+                    <a class="nav-link" id="texto-navs" href="senha_segu.php">
                         SENHA E SEGURANÇA
                     </a>
                 </li>

@@ -86,10 +86,6 @@ date_default_timezone_set('America/Sao_Paulo'); // define o fuso horário para S
             <?php }while($row = $lista->fetch_assoc())?> <!-- Fim da Estrutura de repetição -->
         </tbody>
     </table>
-    <!-- Texto dos direitos reservados -->
-    <div class="text-center" id="direitos">
-        <p><img src="../images/logo_areas.png" width="20vw" alt="Logo do Tratferi" > TRATFERI - TODOS OS DIREITOS RESERVADOS.</p>
-    </div>
 </body>
 <!-- Links para a Biblioteca de icones do Ionic Icons -->
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
