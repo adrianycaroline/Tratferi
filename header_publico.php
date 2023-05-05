@@ -57,7 +57,7 @@
                                 <!-- Login do Paciente -->
                             <?php }elseif((isset($_SESSION['login'])) && ($_SESSION['login'] == "tratferi")){?>
                                 <a href="client/index.php" class="nav-link" style="color: #fff; font-size: 20px;">
-                                    <?php echo strstr($_SESSION['nome'], ' ', true);?>
+                                    <?php echo $_SESSION['nome'];?>
                                     <img src="fotos_usuarios/<?php echo $_SESSION['Imagem']; ?>" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="40" height="40" class="rounded-circle ">
                                 </a>    
                                     <!-- Botão padrão Entrar -->
