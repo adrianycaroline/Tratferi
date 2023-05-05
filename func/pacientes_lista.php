@@ -45,6 +45,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    <style>
+        .logo-container {
+            display: flex;
+            margin: 10px;
+        }
+    </style>
     <title>Área do Funcionário</title>
 </head>
 <body onload="atualizarHoras()" class="fundo_adm">
@@ -105,8 +114,8 @@
     <div style="display: flex; justify-content: end;">
             <div class="border-bottom border-2 " style="width: 30%; margin-right: 550px;"></div>
         </div>
-            <section class="container">
-                <table class="table table-hover table-condensed tb-opacidade" style="margin-bottom: 320px; margin-left: 220px;"> 
+            <section>
+                <table class="table table-hover table-condensed tb-opacidade" id="tabela_pacientes"> 
                     <thead>
                         <th class="hidden">ID</th>
                         <th style="color: #1d5f96;">Nome</th>
@@ -160,13 +169,6 @@
                         </tbody><!-- final corpo da tabela -->
                     </table>
                 </section>
-                <style>
-                    .logo-container {
-    display: flex;
-    margin: 10px;
-}
-
-                </style>
                  <!-- Modal atualiza paciente -->
         <div class="modal fade" id="modal_atualiza" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_centro" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -228,21 +230,21 @@
             </div>
         </div>
         <!-- Código que busca o modal caso venha algo por GET  -->
-                <?php if(isset($_GET) && ($_GET['upd'] == "s")){?>
+                <?php if(isset($_GET['upd']) && ($_GET['upd'] == "s")){?>
                     <script>
                         $(document).ready(function() {
                             $('#modal_atualiza').modal('show');
                         });
                     </script>
                 <?php }?>
-                <?php if(isset($_GET) && ($_GET['upd'] == "n")){?>
+                <?php if(isset($_GET['upd']) && ($_GET['upd'] == "n")){?>
                     <script>
                         $(document).ready(function() {
                             $('#modal_atualiza_erro').modal('show');
                         });
                     </script>
                 <?php }?>  
-                <?php if(isset($_GET) && ($_GET['cad'] == "s")){?>
+                <?php if(isset($_GET['cad']) && ($_GET['cad'] == "s")){?>
                     <script>
                         $(document).ready(function() {
                             $('#modal_cadastro').modal('show');
@@ -250,4 +252,9 @@
                     </script>
                 <?php }?>  
             </body>
+            <script>
+                $(document).ready(function () {
+                    $('#tabela_pacientes').DataTable();
+                });
+            </script>
             </html>
