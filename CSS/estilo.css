@@ -835,10 +835,11 @@ margin-left: 30%;
 }
 
 
-
-#footerzin{
-
-margin-top: 5%;
-
+@media (max-width: 991px) {
+#accordionExample{
+width: 443px;
+margin-left: 3%;
+ } 
 
 }
+    
