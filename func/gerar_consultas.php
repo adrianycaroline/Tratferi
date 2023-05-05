@@ -1,6 +1,35 @@
 <?php
 include '../admin/acesso_com_fun.php';
- include '../connection/connect.php'; 
+include '../connection/connect.php'; 
+
+if($_POST){
+    //atribuindo valores a váriaveis
+    $nome_paci = $_POST['nome'];
+    $cpf = $_POST['cpf'];
+    $descricao = $_POST['comentario_contato'];
+    $pf_resp = $_POST['pf_resp'];
+    $horario = $_POST['horario'];
+    $data = $_POST['data'];
+    $prioridade = $_SESSION['button'];
+    $hashcode = "TRAT-".uniqid()."-".mb_strimwidth($cpf,0,3);
+
+    //consultando paciente
+    $consultaPac = "SELECT id FROM paciente where nome = '$nome_paci' and cpf = '$cpf'";
+    $idPac = $conn->query($consultaPac);
+
+    //consultando funcionario
+    $consultaFunc = "SELECT id FROM funcionario where nome = '$pf_resp'";
+    $idFunc = $conn->query($consultaFunc);
+
+    //inserir consulta
+    $consulta = "INSERT INTO consulta (id, data_consulta, horario_consulta, descricao, status, hash, id_paci, id_func) VALUES('', '$data', '$horario', '$descricao', '1', '$hashcode', '$idPac', '$idFunc')";
+    $resultado = $conn->query($consulta);
+    if(mysqli_insert_id($conn)){
+    echo "<script>window.open('../func/consultas.php?cons=s','_self')</script>"; 
+    }else{
+    echo "<script>window.open('../func/gerar_consultas.php?err=s','_self')</script>"; 
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -60,7 +89,7 @@ include '../admin/acesso_com_fun.php';
                     <div class="form-row">
                         <div class="form-group ">
                             <label for="horario">Horário</label>
-                            <input type="text" name="horario" class="form-control" id="horario" required>
+                            <input type="time" name="horario" class="form-control" id="horario" required>
                         </div>
                         <br>
                     </div>

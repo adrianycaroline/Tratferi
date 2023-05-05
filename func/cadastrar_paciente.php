@@ -50,7 +50,7 @@
         $id = mysqli_insert_id($conn);
         $selectHash = "SELECT id FROM paciente where cpf = '$cpf'";
         $resultado2 = $conn->query($selectHash);
-        $row = mysqli_fetch_assoc($resultado2);
+        $row = mysqli_fetch_assoc($resulado2);
         $paciente_id = $row['id'];
 
         $cpf_sem_ponto = str_replace('.', '', $cpf); // remove os pontos do CPF
