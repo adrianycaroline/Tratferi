@@ -27,7 +27,7 @@
             <br>
             <div class="border-bottom border-2 border-dark" style="width: 97%; margin-left: 15px; margin-bottom: 10px;"></div>
             <?php if ($rows > 0) { ?>
-                <table class="table table-hover table-condensed tb-opacidade">
+                <table class="table table-hover table-condensed tb-opacidade" id="tabela_arquivados">
                     <thead>
                         <th hidden>ID</th>
                         <th style="color: #1d5f96;">Nome</th>
@@ -54,12 +54,6 @@
                                     <ion-icon name="refresh-outline"></ion-icon>
                                     <span class="hidden-xs">RESTAURAR</span>
                                 </a>
-                                <button data-nome="<?php echo $row['nome']; ?>" 
-                                data-id="<?php echo $row['id']; ?>"
-                                class="delete btn btn-xs btn-block btn-danger">
-                                <ion-icon name="trash-outline"></ion-icon>
-                                <span class="hidden-xs">EXCLUIR</span>
-                            </button>
                             </td>
                         </tr>
                     <?php }while($row = $lista->fetch_assoc())?>
@@ -114,14 +108,4 @@
     });
 </script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick/slick.min.js"></script>
-<script type="text/javascript">
-    $('.delete').on('click',function(){
-        var nome = $(this).data('nome'); //busca o nome com a descrição (data-nome)
-        var id = $(this).data('id'); // busca o id (data-id)
-        //console.log(id + ' - ' + nome); //exibe no console
-        $('span.nome').text(nome); // insere o nome do item na confirmação
-        $('a.delete-yes').attr('href','usuario_excluir.php?id='+id); //chama o arquivo php para excluir o produto
-        $('#modalEdit').modal('show'); // chamar o modal
-    });
-</script>
 </html>
