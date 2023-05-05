@@ -16,7 +16,7 @@ $row = $lista->fetch_assoc();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <title>Consultas</title>
 </head>
-<body class="">
+<body class="fundo_adm">
    <?php include 'menu_fun.php' ?>
 <div class="barra fixed-top bg-azul">
     <br> <br>
@@ -34,7 +34,7 @@ $row = $lista->fetch_assoc();
 </a>
 <br><br><br>
 <div style="background-color: #DCDCDC; display: flex;  width: 75%; margin-left: 380px; border-radius: 20px;">
-    <table class="table table-borderless container w-100" style="margin-left: 60px; margin-top: 15px;">
+    <table class="table table-hover table-borderless container w-100" style="margin-left: 60px; margin-top: 15px;">
         <thead>
             <tr style="background-color: #38B6FF;" class="text-center">
                 <th scope="row" style="color: #fff;">Status</th>
