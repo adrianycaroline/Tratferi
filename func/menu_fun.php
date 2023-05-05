@@ -42,6 +42,11 @@
                         Pacientes Ativos
                     </a>
                 </li>
+                <br>
+                <!-- Botão de Voltar -->
+                <div style="color: white;">
+                    <a href="index.php" class="text-light" style="text-decoration: none; border: 1px solid white; border-radius: 20px; padding: 5px;">Voltar</a>
+                </div>
             </ul>
             <hr>
             <div class="dropdown">

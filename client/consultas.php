@@ -44,7 +44,7 @@ date_default_timezone_set('America/Sao_Paulo'); // define o fuso horário para S
     <link rel="stylesheet" href="../CSS/estilo.css">
     <title>Consultas</title>
 </head>
-<body class="container" onload="atualizarHoras()">
+<body class="fundo_adm" onload="atualizarHoras()">
     <?php include 'menu_paci.php';?>
     <div class="barra fixed-top bg-azul" style="margin-left: 280px;">
         <div class="text-light" style="display: flex; justify-content: end;">
@@ -56,22 +56,25 @@ date_default_timezone_set('America/Sao_Paulo'); // define o fuso horário para S
     </div>
 <br><br><br>
 <div style="margin-top: 20px; margin-left: 280px;"> <!-- Define a margem do topo do layout -->
-    <h1>Consultas - <?php echo($_SESSION['nome']); ?></h1>
-    <div class="border-bottom border-2 border-dark" style="width: 100%; "></div> <!-- linha divisória -->
+    <h1 style="margin-left: 100px; color: #1d5f96;">Consultas - <?php echo($_SESSION['nome']); ?></h1>
+    <div style="display: flex;">
+        <div class="border-bottom border-2 border-dark" style="width: 96%; margin-left: 30px;"></div>
+    </div>
     <br>
 </div>
     <br>
-    <table class="table table-hover table-condensed tb-opacidades TBconsulta" style="margin-left: 280px;">
-        <thead style="background-color: #008DDF; color: white;">
+<div style="background-color: #DCDCDC; display: flex;  width: 75%; margin-left: 380px; border-radius: 20px;">
+    <table class="table table-hover table-borderless container w-100" style="margin-left: 60px; margin-top: 15px;">
+        <thead style="background-color: #38B6FF; color: white;">
             <th hidden>ID</th>
             <th scope="row">Status</th>
             <th scope="col">Data</th>
             <th scope="col">Horario</th>
-            <th scope="col">Hashcode</th>
             <th scope="col">Descrição</th>
-            <th scope="col">Profissional </th>
+            <th scope="col">Profissional</th>
+            <th scope="col">Hashcode</th>
         </thead>
-        <tbody>
+        <tbody style="background-color: #fff;">
             <!-- Estrutura de Repetição -->
             <?php do {?>
                 <tr>
@@ -79,13 +82,14 @@ date_default_timezone_set('America/Sao_Paulo'); // define o fuso horário para S
                     <td><?php echo $row['status'];?></td>
                     <td><?php echo $row['data_consulta'];?></td>
                     <td><?php echo $row['horario_consulta'];?></td>
-                    <td><?php echo $row['hash'];?></td>
                     <td><?php echo $row['descricao'];?></td>
                     <td><?php echo $row['nome'];?></td> <!-- Nome do profissional -->
+                    <td><?php echo $row['hash'];?></td>
                 </tr>
             <?php }while($row = $lista->fetch_assoc())?> <!-- Fim da Estrutura de repetição -->
         </tbody>
     </table>
+</div>
 </body>
 <!-- Links para a Biblioteca de icones do Ionic Icons -->
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
