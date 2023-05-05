@@ -41,7 +41,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/estilo.css">
     <script src="../js/script.js"></script>
-    <title>Área do Funcionário</title>
+    <title>Área do Paciente - <?php echo($_SESSION['nome']); ?></title>
 </head>
 <body onload="atualizarHoras()">
 <div>
@@ -85,7 +85,7 @@
                         <p class="text-light" style="font-size: 28pt; margin-right: 15px;"><?php echo $quantidadeT;?></p>
                     </div>    
                     <div class="card-body">
-                        <h5 class="card-title text-light"><a href="" id="AdmOpcoesbtn">Tratamento</a></h5>
+                        <h5 class="card-title text-light"><a href="tratamento.php" id="AdmOpcoesbtn">Tratamento</a></h5>
                     </div>
                 </div>
             </div>
