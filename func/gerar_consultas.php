@@ -1,5 +1,5 @@
 <?php
-include '../admin/acesso_com_fun.php';
+ include '../admin/acesso_com_fun.php';
  include '../connection/connect.php'; 
 ?>
 <!DOCTYPE html>
@@ -16,7 +16,7 @@ include '../admin/acesso_com_fun.php';
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-    <title>Cadastro</title>
+    <title>Agendar Consultas</title>
 </head>
 <body class="fundo_areas">
 <div class="barra fixed-top" style="background-color: #38B6FF;">
