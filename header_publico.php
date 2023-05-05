@@ -32,7 +32,7 @@
                         </li>
                     </ul>
                     <div class="navbar-nav px-2">
-                        <div class="nav-item redondobtn ">
+                        <div class="nav-item d-flex redondobtn ">
                         <!-- Código para trocar o "entrar" pelo nome do usuário logado -->
                             <?php 
                                 session_start();
