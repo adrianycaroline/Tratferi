@@ -2,9 +2,6 @@
     include '../admin/acesso_com_pac.php';
     include '../connection/connect.php';
 
-    $lista = $conn->query("SELECT * FROM convenio LEFT JOIN paciente ON (paciente.id = convenio.id_paci) where convenio.id_paci = ".$_SESSION['Id'].";");
-    $row = $lista->fetch_assoc();
-    $rows = $lista->num_rows;
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

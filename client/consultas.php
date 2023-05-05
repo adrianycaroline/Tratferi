@@ -2,7 +2,7 @@
     include '../admin/acesso_com_pac.php';
     include '../connection/connect.php'; 
 
-    $lista = $conn->query("SELECT * FROM consulta LEFT JOIN funcionario ON (consulta.id_func = funcionario.id) where id_paci = ".$_SESSION['Id'].";"); //Seleciona todos os funcionarios que estejam ativos.
+    $lista = $conn->query("SELECT * FROM consulta INNER JOIN funcionario ON (consulta.id_func = funcionario.id) where id_paci = ".$_SESSION['Id'].";");
     $row = $lista->fetch_assoc();
     $rows = $lista->num_rows;
 
@@ -76,12 +76,12 @@ date_default_timezone_set('America/Sao_Paulo'); // define o fuso horário para S
             <?php do {?>
                 <tr>
                     <td hidden><?php echo $row['id'];?></td>
-                    <td><?php echo isset($row['status']) ? $row['status'] : '';?></td>
-                    <td><?php echo isset($row['data_consulta']) ? $row['data_consulta'] : '';?></td>
-                    <td><?php echo isset($row['horario_consulta']) ? $row['horario_consulta'] : '';?></td>
-                    <td><?php echo isset($row['hash']) ? $row['hash'] : '';?></td>
-                    <td><?php echo isset($row['descricao']) ? $row['descricao'] : '';?></td>
-                    <td><?php echo isset($row['nome']) ? $row['nome'] : '';?></td> <!-- Nome do profissional -->
+                    <td><?php echo $row['status'];?></td>
+                    <td><?php echo $row['data_consulta'];?></td>
+                    <td><?php echo $row['horario_consulta'];?></td>
+                    <td><?php echo $row['hash'];?></td>
+                    <td><?php echo $row['descricao'];?></td>
+                    <td><?php echo $row['nome'];?></td> <!-- Nome do profissional -->
                 </tr>
             <?php }while($row = $lista->fetch_assoc())?> <!-- Fim da Estrutura de repetição -->
         </tbody>
