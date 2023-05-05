@@ -53,8 +53,9 @@
         <img class="celular img-responsive escondido5" src="images/celulares1.png" alt="">
         </div>
     </main>  
-    <div id=""><?php include 'footer2.php'?></div> 
-    <script>
+    <div id="footerzin"><?php include 'footer2.php'?></div> 
+
+<script>
         function makeResponsive() {
   const mainElement = document.querySelector('main');
   if (window.innerWidth < 768) {
@@ -64,7 +65,7 @@
   }
 }
 
-window.addEventListener('resize', makeResponsive);
+windowaddEventListener('resize', makeResponsive);
 makeResponsive();
 const celularImg = document.querySelector('.celular');
 
@@ -93,7 +94,7 @@ window.addEventListener('resize', checkScreenSize);
     display: none;
   }
 }
-    </style>
-</body>
+</style>
 
+</body>
 </html>

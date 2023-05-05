@@ -37,11 +37,9 @@ Ce existir alguma duvida acesse nossa aba de <a href="ajuda.php"></a>Ajuda lá e
 <a href="contato.php">Contato</a>.<br>
 conosco qualquer duvida nos notifique.</p>
 
-<small style="color:#1d5f96; display:flex; justify-content:center; margin-top:15%;">Conte conosco TRATFERI</small>
+<small style="color:#1d5f96; display:flex; justify-content:center; margin-top:13%;">Conte conosco TRATFERI</small>
 <!-- fim texto sobre -->
-    
-<br>
-    
+
 </div>
 </div>
 </main>
