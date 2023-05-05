@@ -11,13 +11,13 @@
 </head>
 <body>
     <div>
-        <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #38B6FF;">
+        <nav class="navbar navbar-expand-lg fixed-top" id="header"style="background-color: #38B6FF;">
             <div class="container-fluid">
             <a class="navbar-brand" href="index.php#">
                     <img src="images/logo.png" class="img-responsive" alt="logo" width="150">
                 </a>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto me-auto d-flex gap-5">
+                    <ul class="navbar-nav ms-auto me-auto d-flex gap-4">
                     <li class="nav-item buttonBoxMenu" id="nav-item2-flutuante">
                             <a class="nav-link" href="index.php" style="color: #fff; font-size: 20px;">Home</a>
                         </li>
@@ -32,7 +32,7 @@
                         </li>
                     </ul>
                     <div class="navbar-nav px-2">
-                        <div class="nav-item redondobtn ">
+                        <div class="nav-item d-flex redondobtn ">
                         <!-- Código para trocar o "entrar" pelo nome do usuário logado -->
                             <?php 
                                 session_start();
