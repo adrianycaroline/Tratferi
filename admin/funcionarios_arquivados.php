@@ -13,6 +13,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/bootstrap.min.css">
     <link rel="stylesheet" href="../CSS/estilo.css">
+    <!-- Links do data Table -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
     <title>Lista de Funcionarios Arquivados</title>
 </head>
 <body class="fundo_adm">
@@ -29,15 +35,18 @@
             <?php if ($rows > 0) { ?>
                 <table class="table table-hover table-condensed tb-opacidade" id="tabela_arquivados">
                     <thead>
-                        <th hidden>ID</th>
-                        <th style="color: #1d5f96;">Nome</th>
-                    <th style="color: #1d5f96;">Nivel</th>
-                    <th style="color: #1d5f96;">CPF</th>
-                    <th style="color: #1d5f96;">Cargo</th>
-                    <th style="color: #1d5f96;">Salario</th>
-                    <th style="color: #1d5f96;">Periodo</th>
-                    <th>Hashcode</th>
-                </thead>
+                        <tr>
+                            <th hidden>ID</th>
+                            <th style="color: #1d5f96;">Nome</th>
+                            <th style="color: #1d5f96;">Nivel</th>
+                            <th style="color: #1d5f96;">CPF</th>
+                            <th style="color: #1d5f96;">Cargo</th>
+                            <th style="color: #1d5f96;">Salario</th>
+                            <th style="color: #1d5f96;">Periodo</th>
+                            <th style="color: #1d5f96;">Hashcode</th>
+                            <th></th>
+                        </tr>
+                    </thead>
                 <tbody>
                     <?php do {?>
                         <tr>
@@ -58,6 +67,19 @@
                         </tr>
                     <?php }while($row = $lista->fetch_assoc())?>
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <th hidden>ID</th>
+                        <th>Nome</th>
+                        <th>Nivel</th>
+                        <th>CPF</th>
+                        <th>Cargo</th>
+                        <th>Salario</th>
+                        <th>Periodo</th>
+                        <th>Hashcode</th>
+                        <th></th>
+                    </tr>
+                </tfoot>
             </table>
             <?php }else {?>
                 <div class="text-center">
@@ -91,6 +113,14 @@
         </div>
     </div>
 </body>
+<script>
+    // Script para buscar o que for pesquisado (ele também já coloca o input de pesquisa e etc...)
+    $('#tabela_arquivados').DataTable({
+        "language":  {
+            "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Portuguese-Brasil.json"
+        }
+    });
+</script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <!-- link para bootstrap -->
