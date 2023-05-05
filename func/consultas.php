@@ -87,7 +87,7 @@ $row = $lista->fetch_assoc();
 <div style="background-color: #DCDCDC; display: flex;  width: 75%; margin-left: 380px; border-radius: 20px;">
     <table class="table table-borderless container w-100" style="margin-left: 60px; margin-top: 15px;">
         <thead>
-            <tr style="background-color: #38B6FF;" class="">
+            <tr style="background-color: #38B6FF;" class="text-center">
                 <th scope="row" style="color: #fff;">Status</th>
                 <th scope="col" style="color: #fff;">Data</th>
                 <th scope="col" style="color: #fff;">Horario</th>
@@ -111,7 +111,7 @@ $row = $lista->fetch_assoc();
                 $listaFunc = $conn->query("select * from paciente where id ='$idPac'");
                 $rowPac = $listaFunc->fetch_assoc();
             ?>
-            <tr>
+            <tr class="text-center">
                 <th scope="row"><?php echo $row['status'];?></th>
                 <td><?php echo $row['data_consulta'];?></td>
                 <td><?php echo $row['horario_consulta'];?></td>
