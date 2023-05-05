@@ -84,8 +84,8 @@ $row = $lista->fetch_assoc();
     <span class="hidden-xs">ADICIONAR NOVA CONSULTA</span>
 </a>
 <br><br><br>
-<div style="background-color: #DCDCDC; display: flex;  width: 62%; margin-left: 500px; border-radius: 20px;">
-    <table class="table table-borderless container w-50" style="margin-left: 70px; margin-top: 15px;">
+<div style="background-color: #DCDCDC; display: flex;  width: 75%; margin-left: 380px; border-radius: 20px;">
+    <table class="table table-borderless container w-100" style="margin-left: 60px; margin-top: 15px;">
         <thead>
             <tr style="background-color: #38B6FF;" class="text-center">
                 <th scope="row" style="color: #fff;">Status</th>
@@ -94,6 +94,7 @@ $row = $lista->fetch_assoc();
                 <th scope="col" style="color: #fff;">Profissional</th>
                 <th scope="col" style="color: #fff;">Paciente</th>
                 <th class="hidden" scope="col" style="color: #fff;">CPF</th>
+                <th scope="col" style="color: #fff;">Descrição</th>
                 <th scope="col" style="color: #fff;">Ação</th>
             </tr>
         </thead>
@@ -117,6 +118,7 @@ $row = $lista->fetch_assoc();
                 <td><?php echo $rowFunc['nome'];?></td>
                 <td><?php echo $rowPac['nome'];?></td>
                 <td><?php echo $rowPac['cpf'];?></td>
+                <td><?php echo $row['descricao'];?></td>
                 <td>
                     <button class="btn" style="background-color: #38B6FF;" role="button">
                         <span>Alterar</span>
@@ -128,152 +130,6 @@ $row = $lista->fetch_assoc();
         </tbody>
     </table>
     <div>
-    <table class="table table-borderless container w-50" style="margin-right: 80px; margin-top: 15px; border-radius: 20px;">
-        <thead>
-        <tr style="background-color: #38B6FF; font-weight: none;" class="text-center">
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th scope="row" style="color: #fff;">Descrição</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody style="background-color: #fff;">
-        <?php if($lista) {
-            //informações da consulta
-            $lista = $conn->query("select * from consulta where status = 'Ativa'");
-            $row = $lista->fetch_assoc();
-        do {    
-        ?>
-        <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><?php echo $row['descricao'];?></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        <?php }while($row = $lista->fetch_assoc());?>
-        <?php }?>
-        </tbody>
-    </table>
 </div>
 </div>
 <br>
