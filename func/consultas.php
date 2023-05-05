@@ -87,7 +87,7 @@ $row = $lista->fetch_assoc();
 <div style="background-color: #DCDCDC; display: flex;  width: 75%; margin-left: 380px; border-radius: 20px;">
     <table class="table table-borderless container w-100" style="margin-left: 60px; margin-top: 15px;">
         <thead>
-            <tr style="background-color: #38B6FF;" class="text-center">
+            <tr style="background-color: #38B6FF;" class="">
                 <th scope="row" style="color: #fff;">Status</th>
                 <th scope="col" style="color: #fff;">Data</th>
                 <th scope="col" style="color: #fff;">Horario</th>
@@ -120,9 +120,11 @@ $row = $lista->fetch_assoc();
                 <td><?php echo $rowPac['cpf'];?></td>
                 <td><?php echo $row['descricao'];?></td>
                 <td>
-                    <button class="btn" style="background-color: #38B6FF;" role="button">
-                        <span>Alterar</span>
-                    </button>
+                <!-- botão alterar -->
+                    <a href="alterar_consulta.php?" role="button" class="btn btn-block btn-xs" style="background-color: #66CDAA;"> 
+                        <ion-icon name="refresh-outline"></ion-icon>
+                        <span class="hidden-xs">ALTERAR</span>
+                    </a>
                 </td>
             </tr>
             <?php }while($row = $lista->fetch_assoc());?>
