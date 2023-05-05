@@ -12,8 +12,7 @@
 <body>
 <footer>
     <!-- começo do rodape -->
-  
-    <div class="row panel-footer fundo-rodape" style="background-color: #1977ad; color: #fff;">
+    <div class="row panel-footer fundo-rodape" style="background-color: #1977ad; color: #fff; ">
        <!-- area de localização -->
        <div class="col-sm-6 col-md-4">
         <br>
@@ -44,13 +43,13 @@
        </div>
        <!-- final area de localização -->
        <div class="col-sm-6 col-md-4">
-           <div class="panel-footer" style="display: flex; justify-content: center;">
+           <div class="panel-footer"  id="footer" style="display: flex; justify-content: center;">
            <img src="images/logoPesq.png" class="img-responsive hide-on-mobile" width="170">
            </div>
        </div>
        <!-- area de contato  -->
        <br>
-       <div class="col-sm-6 col-md-4" >
+       <div class="col-sm-10 col-md-4" >
            <div class="panel-footer links" style="background: none; margin-left: 200px;">
            <br>
            <H4>Links <i class="bi bi-link-45deg"></i></H4>
