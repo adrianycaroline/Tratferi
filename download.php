@@ -45,12 +45,12 @@
                         </div>
                     </div>
                     <div class="escondido5">
-                        <img src="images/tratferi_qrcode (1).svg" width="180px" alt="">
+                        <img src="images/tratferi_qrcode (1).svg" width="170px" alt="">
                     </div>
                 </div>
             </div>
             
-        <img class="celular img-responsive escondido5" src="images/celulares1.png" alt="">
+        <img class="celular img-responsive escondido5" src="images/celulares1.webp" alt="">
         </div>
     </main>  
     <div id="footerzin"><?php include 'footer2.php'?></div> 
