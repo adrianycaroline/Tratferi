@@ -1,6 +1,7 @@
 <?php
     include '../admin/acesso_com_pac.php';
     include '../connection/connect.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -17,7 +18,7 @@
     <title>Barra Lateral</title>
 </head>
 <body>
-    <div id="escondido">
+    <div>
         <div class="d-flex flex-column flex-shrink-0 p-3 bg-azul"  style="position: fixed; top: 0; left: 0; bottom: 0; width: 280px;">
             <div>
                 <figure style="display: flex;">
@@ -30,11 +31,20 @@
             </div>
             <ul class="nav nav-pills flex-column mb-auto">
                 <li>
-                    <a href="#" class="nav-link" aria-current="page">
-                        <img src="../images/Tratferi_qrcode.svg" alt="" width="20vw">
-                        Carteirnha
+                    <a href="index.php" class="nav-link" aria-current="page" style="cursor: pointer;">
+                        <img src="../images/dashboard.svg" alt="" width="20vw">
+                        Dashboard
                     </a>
                 </li>
+                <!-- Verifica se a página é o index, se for mostra o botão carteirinha -->
+                <?php if (basename($_SERVER['PHP_SELF']) == 'index.php') {?>
+                <li>
+                    <a data-toggle="modal" data-target="#modal_carteirinha" class="nav-link" aria-current="page" style="cursor: pointer;">
+                        <img src="../images/Tratferi_qrcode.svg" alt="" width="20vw">
+                        Carteirinha
+                    </a>
+                </li>
+                <?php } else?>
                 <li>
                     <a href="consultas.php" class="nav-link">
                         <img src="../images/prontuario.svg" alt="" width="20vw">
@@ -42,25 +52,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link">
-                        <img src="../images/prontuario.svg" alt="" width="20vw">
-                        Agendamento
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link">
-                        <img src="../images/predio.svg" alt="" width="20vw">    
-                        Departamentos
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link">
+                    <a href="../ajuda.php" class="nav-link">
                         <img src="../images/coracao.svg" alt="" width="20vw">    
                         Ajuda
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link">
+                    <a href="anuncios.php" class="nav-link">
                         <img src="../images/anuncio.svg" alt="" width="20vw">
                         Anuncios
                     </a>
@@ -87,9 +85,7 @@
             </div>
         </div>
     </div>
-    
 </body>
-    
-    <script src="../js/script.js"></script>
-    
-    </html>
+<script src="../js/script.js"></script> 
+
+</html>

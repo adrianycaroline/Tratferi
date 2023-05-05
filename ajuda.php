@@ -16,7 +16,7 @@ body {
     }
 </style>
 <!-- Botão voltar -->
-<a href="Politica_Privacidade.php#">
+<a href="javascript:window.history.go(-1)">
   <img src="images/botão_volta.svg" style="width: 50px; margin-left: 4%; margin-top: 2%;">
 </a>
 <!-- fim Botão voltar -->

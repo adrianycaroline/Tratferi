@@ -24,6 +24,15 @@
             $diaDaSemana = 'Domingo';
             break;
     }
+
+    $listaC = $conn->query("SELECT COUNT(*) FROM consulta"); //Conta a quantidade de usuarios ativos.
+    $listaT = $conn->query("SELECT COUNT(*) FROM tratamento"); //Conta a quantidade de pacientes ativos.
+
+    $rowC = $listaC->fetch_row(); // Obtém o resultado da consulta
+    $quantidadeC = $rowC[0]; // Atribui o resultado a uma variável
+
+    $rowT = $listaT->fetch_row(); 
+    $quantidadeT = $rowT[0]; 
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -32,7 +41,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/estilo.css">
     <script src="../js/script.js"></script>
-    <title>Área do Funcionário</title>
+    <title>Área do Paciente - <?php echo($_SESSION['nome']); ?></title>
 </head>
 <body onload="atualizarHoras()">
 <div>
@@ -63,7 +72,7 @@
                 <div class="card card2 bg-azul2" style="width: 18rem; height: 12rem;">
                     <div class="d-flex" style="justify-content: space-between;">
                         <img src="../images/users.png" alt="Usuários" style="margin: 10px;" width="50vw">
-                        <p class="text-light" style="font-size: 28pt; margin-right: 15px;">3</p>
+                        <p class="text-light" style="font-size: 28pt; margin-right: 15px;"><?php echo $quantidadeC;?></p>
                     </div>
                     <div class="card-body">
                         <h5 class="card-title text-light"><a href="../client/consultas.php" id="AdmOpcoesbtn">Consultas</a></h5>
@@ -73,28 +82,10 @@
                 <div class="card card2 bg-azul2" style="width: 18rem; height: 12rem;">
                     <div class="d-flex" style="justify-content: space-between;">
                         <img src="../images/users.png" alt="Usuários" style="margin: 10px;" width="50vw">
-                        <p class="text-light" style="font-size: 28pt; margin-right: 15px;">3</p>
+                        <p class="text-light" style="font-size: 28pt; margin-right: 15px;"><?php echo $quantidadeT;?></p>
                     </div>    
                     <div class="card-body">
-                        <h5 class="card-title text-light"><a href="" id="AdmOpcoesbtn">Médicos Ativos</a></h5>
-                    </div>
-                </div>
-                <div class="card card2 bg-azul2" style="width: 18rem; height: 12rem;">
-                    <div class="d-flex" style="justify-content: space-between;">
-                        <img src="../images/users.png" alt="Usuários" style="margin: 10px;" width="50vw">
-                        <p class="text-light" style="font-size: 28pt; margin-right: 15px;">3</p>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-light"><a href="" id="AdmOpcoesbtn">Enfermeiros Ativos</a></h5>
-                    </div>
-                </div>
-                <div class="card card2 bg-azul2" style="width: 18rem; height: 12rem;">
-                    <div class="d-flex" style="justify-content: space-between;">
-                        <img src="../images/users.png" alt="Usuários" style="margin: 10px;" width="50vw">
-                        <p class="text-light" style="font-size: 28pt; margin-right: 15px;">3</p>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-light"><a href="" id="AdmOpcoesbtn">Farmacia</a></h5>
+                        <h5 class="card-title text-light"><a href="tratamento.php" id="AdmOpcoesbtn">Tratamento</a></h5>
                     </div>
                 </div>
             </div>

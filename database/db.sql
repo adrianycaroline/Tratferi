@@ -98,6 +98,7 @@ id int not null auto_increment,
 data_consulta date not null,
 horario_consulta datetime not null,
 descricao text not null,
+status enum ('Ativa','Finalizada','Nao realizada') not null,
 hash varchar(20) not null,
 id_paci int not null,
 id_func int not null,
@@ -286,7 +287,7 @@ VIEW `perfil_paci` AS
 
 
 -- Descrições da tabela
-desc funcionario;
+desc funcionario;       
 
 desc tel_func;
 

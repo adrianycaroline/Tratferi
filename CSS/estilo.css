@@ -769,10 +769,6 @@ background-color: white;
     border-radius: 2rem;
 }
 
-/* //////////////////// Card de joinha /////////////////////// */
-
-/* //////////////////// Fim Card de joinha /////////////////////// */
-
 /* ///////////////////////// MENU PERFIL ADM //////////////////////////// */
 #texto-navs{
     color: white;
@@ -816,6 +812,33 @@ margin-left: 30%;
     color: blue;
     border-color: blue;
   }
-  /* ///////////////imagem sobre ////////////////// */
-  
-  
+
+/* responsivo sobre nos  */
+@media (max-width: 991px) {
+    .escondido4{
+            display: none;
+        }
+          
+    }
+    
+/* responsivo donwload  */
+@media (max-width: 991px) {
+    .escondido5{
+            display: none;
+        } 
+    }
+
+
+/* ////////// MODAL CARTEIRINHA ///////////////// */
+#modal_carteirinha{
+    color: #2b8af7;
+}
+
+
+
+#footerzin{
+
+margin-top: 5%;
+
+
+}

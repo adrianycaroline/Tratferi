@@ -12,7 +12,8 @@
 <body>
 <footer>
     <!-- começo do rodape -->
-   <div class="row panel-footer fundo-rodape" style="background-color: #1977ad; color: #fff;">
+  
+    <div class="row panel-footer fundo-rodape" style="background-color: #1977ad; color: #fff;">
        <!-- area de localização -->
        <div class="col-sm-6 col-md-4">
         <br>

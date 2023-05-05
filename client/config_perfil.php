@@ -1,44 +1,45 @@
 <?php
     include '../admin/acesso_com_pac.php';
     include '../connection/connect.php';
-    
-   
+
+    // Alterar Dados pessoais
     if(isset($_POST['manter_dados'])){
-        $telefone = $_POST['telefone'];
-        $email = $_POST['email'];
+        //Endereço
+        $cep = $_POST['cep_end'];
         $logradouro = $_POST['logradouro'];
         $numero = $_POST['numero'];
         $cidade = $_POST['cidade'];
         $uf = $_POST['uf'];
-        $cep = $_POST['cep'];
-        
-        $insereTel = "UPDATE tel_paciente
-        set telefone = '$telefone',
+        //contato
+        $telefone = $_POST['telefone'];
+        $email = $_POST['email'];
+
+        $sql_Tel = "UPDATE tel_paciente
+        set telefone = '$telefone'
         where id_paci = ".$_SESSION['Id'].";";
-        $conn->query($insereTel);
 
-
-        $insereEmail = "UPDATE email_paciente 
-        set email = '$email'
-        where id_paci = ".$_SESSION['Id'].";";
-        $conn->query($insereEmail);
-            
-        var_dump($insereEmail);
-
-        $insereEnd = "UPDATE end_paciente 
+        $sql_End = "UPDATE end_paciente
         set logradouro = '$logradouro',
         numero = '$numero',
         cidade = '$cidade',
         uf = '$uf',
-        cep = '$cep',
+        cep = '$cep'
         where id_paci = ".$_SESSION['Id'].";";
 
-            $resultado = $conn->query($insereEnd);
-        if($resultado){
-            // header('location: config_perfil.php');
+        $sql_Email = "UPDATE email_paciente
+        set email = '$email'
+        where id_paci = ".$_SESSION['Id'].";";
+
+        $resultadoTel = $conn->query($sql_Tel);
+        $resultadoEnd = $conn->query($sql_End);
+        $resultadoEmail = $conn->query($sql_Email);
+        
+        if($resultadoTel && $resultadoEnd && $resultadoEmail){
+            header('location: config_perfil.php');
         }
-    }   
-            //Código para a foto funcionar
+        
+    }
+    //Código para a foto funcionar
     if(isset($_POST['alterar'])){ //Seleciona o formulário da foto
         if($_FILES['imagem_perfil']['name']) {
             $nome_img = $_FILES['imagem_perfil']['name']; //Pega o nome do arquivo selecionado
@@ -46,10 +47,10 @@
             $dir_img = "../fotos_usuarios/$nome_img"; //Local onde a imagem vai ser armazenada
             move_uploaded_file($tmp_img, $dir_img); //Adciona o arquivo na pasta
             $imagem_perfil = $nome_img;
-            $updateSql = "UPDATE funcionario set imagem = '$nome_img' where id = ".$_SESSION['Id'].";"; //Adiciona a imagem no banco
+            $updateSql = "UPDATE paciente set imagem = '$nome_img' where id = ".$_SESSION['Id'].";"; //Adiciona a imagem no banco
         } else {
             $imagem_perfil = "user_sem_foto.png";
-            $updateSql = "UPDATE funcionario set imagem = '$imagem_perfil' where id = ".$_SESSION['Id'].";";
+            $updateSql = "UPDATE paciente set imagem = '$imagem_perfil' where id = ".$_SESSION['Id'].";";
         }
 
         $resultado = $conn->query($updateSql);
@@ -59,7 +60,26 @@
         }
     }
     
-            
+    //código busca o cep
+    if(isset($_POST['cep'])){
+        $cep = $_POST['cep'];
+        $url = "https://viacep.com.br/ws/$cep/json/";
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        $data = json_decode($response, true);
+    
+        if(isset($data['erro'])){
+            header('location: config_perfil.php?cep=n');
+        } else {
+            $logradouro = isset($data['logradouro']) ? $data['logradouro'] : '';
+            $cidade = isset($data['localidade']) ? $data['localidade'] : '';
+            $uf = isset($data['uf']) ? $data['uf'] : '';
+        }
+    }
+
+    
             
     $lista = $conn->query("SELECT * FROM perfil_paci where id = ".$_SESSION['Id'].";");
     $row = $lista->fetch_assoc();
@@ -95,52 +115,10 @@
                                 <b><p>ID:</b> <?php echo $row['hash']; ?></p>
                                 <!-- Input do Nome -->
                                 <div class="input-group">
-                                    <input required="" type="text" name="text" placeholder="<?php echo $row['nome']; ?>" autocomplete="off" class="input" disabled>
+                                    <input required="" type="text" name="text" placeholder="<?php echo $row['nome']; ?>" autocomplete="off" class="input4" disabled>
                                     <label class="user-label" style="color: #38B6FF;">Nome</label>
-                                    <a role="button" id="editar" data-toggle="modal" data-target="#modal_nome" style="background-color: #38B6FF;">
-                                        <ion-icon name="pencil-outline"></ion-icon>
-                                    </a>
                                 </div>
                                 <br>
-                                <!-- Modal alterar nome  -->
-                                <div class="modal fade" id="modal_nome" tabindex="-1" role="dialog" aria-labelledby="modal_nome_centro" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-title" id="modal_nome_titulo" style="display: flex; justify-content: center; align-items: center;">
-                                                <img src="../images/logo_areas.png" width="100vw" alt="">
-                                            </div>
-                                            <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
-                                            </button>
-                                            <div class="modal-body">
-                                                <h5 style="color: #1d5f96;">Confirmar mudança de nome de exibição</h5>
-                                                <p><b>Observe: </b> Se você alterou o nome de exibição da TRATFERI, não poderá alterá-lo novamente por 2 semanas após confirmar essa alteração.</p>
-                                                <p><b> Nome de exibição atual: </b><?php echo $row['nome'];?></p> <br>
-                                                    <div class="group">
-                                                        <input required="" name="novo_nome" id="novo_nome" type="text" class="input2">
-                                                        <span class="highlight"></span>
-                                                        <span class="bar"></span>
-                                                        <label>NOVO NOME DE EXIBIÇÃO</label>
-                                                    </div>
-                                                    <br><br>
-                                                    <div class="group">
-                                                        <input required="" name="confirma_novo_nome" id="confirma_novo_nome" type="text" class="input2">
-                                                        <span class="highlight"></span>
-                                                        <span class="bar"></span>
-                                                        <label>CONFIRME NOME DE EXIBIÇÃO</label>
-                                                    </div>
-                                                    <br><br>
-                                                        <input type="checkbox" class="form-check-input"> Entendo que após esta alteração, não poderei alterar meu nome de exibição novamente por duas semanas.
-                                                    <br> <br>
-                                                <div style="margin-left: 10px;">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Descartar Alterações</button>
-                                                    <button type="button" class="btn" style="background-color: #38B6FF;">Manter Alterações</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
                             </div> 
                             <!-- Dropdown da foto de perfil -->
                             <div style="margin-left: 100px;">
@@ -187,52 +165,56 @@
                             </div>
                         </div>
                         <br>
-                        <form action="../client/config_perfil.php" method="post" style="margin-right: 15px;" enctype="multipart/form-data">
-                            <div class="d-flex">                              
-                            </div>
-                            <br>
-                            <!-- Começo da área de Endereço  -->
+                        <!-- Fomrulário de busca por CEP -->
+                        <div>
+                            <h4 style="color: #1d5f96;" id="titulo_endereco">ENDEREÇO</h4>
+                            <form action="config_perfil.php" method="post" enctype="multipart/form-data">    
+                                <!-- Input do cep  -->
+                                <div id="group" style="margin-top: 20px; flex-direction: row;">
+                                    <div>
+                                        <input required="" name="cep" id="cep" type="text" class="input" value="<?php echo $row['cep'];?>">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label style="color: #38B6FF;">CEP</label>
+                                    </div>    
+                                    <button type="submit" id="cepBTN" onclick="buscarEndereco()">
+                                        <ion-icon name="search-outline"></ion-icon>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Começo da área de Endereço  -->
+                        <form action="config_perfil.php" method="post" enctype="multipart/form-data" onsubmit="return validaForm()">
                             <div>
-                                <h4 style="color: #1d5f96;">ENDEREÇO</h4>
-                                <br>
-                                <div class="d-flex">
-                                    <!-- Input do telefone  -->
-                                    <div class="group">
+                                <div style="display: flex; flex-wrap: wrap;">
+                                    <input name="cep_end" id="cep_end" value="<?php if(isset($cep)) { echo $cep; } ?>" type="text" hidden>
+                                    <!-- Input do logradouro  -->
+                                    <div class="group" style="margin-top: 20px;">
                                         <input required="" name="logradouro" id="logradouro" type="text" class="input" value="<?php echo $row['logradouro'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label for="logradouro" style="color: #38B6FF;">Logradouro</label>
+                                        <label style="color: #38B6FF;">Logradouro</label>
                                     </div>
                                     <!-- Input do numero da casa -->
-                                    <div class="group">
+                                    <div class="group" style="margin-top: 20px;">
                                         <input required="" name="numero" id="numero" type="text" class="input"value="<?php echo $row['numero'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label for="numero" style="color: #38B6FF;">Numero</label>
+                                        <label style="color: #38B6FF;">Numero</label>
                                     </div>
                                     <!-- Input da Cidade  -->
-                                    <div class="group">
+                                    <div class="group" style="margin-top: 20px;">
                                         <input required="" name="cidade" id="cidade" type="text" class="input"value="<?php echo $row['cidade'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label for="cidade" style="color: #38B6FF;">Cidade</label>
+                                        <label style="color: #38B6FF;">Cidade</label>
                                     </div>
                                     <!-- Input do UF  -->
-                                    <div class="group">
+                                    <div class="group" style="margin-top: 20px;">
                                         <input required="" name="uf" id="uf" type="text" class="input"value="<?php echo $row['uf'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label for="uf" style="color: #38B6FF;">UF</label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="d-flex">
-                                    <!-- Input do cep  -->
-                                    <div class="group">
-                                        <input required="" name="cep" id="cep" type="text" class="input"value="<?php echo $row['cep'];?>">
-                                        <span class="highlight"></span>
-                                        <span class="bar"></span>
-                                        <label for="cep" style="color: #38B6FF;">CEP</label>
+                                        <label style="color: #38B6FF;">UF</label>
                                     </div>
                                 </div>
                                 <br>
@@ -240,28 +222,26 @@
                             <!-- Começo da área de Telefone e Email  -->
                             <div>
                                 <h4 id="contato" style="color: #1d5f96;">CONTATO</h4>
-                                <br>
-                                <div class="d-flex">
+                                <div style="display: flex; flex-wrap: wrap;">
                                     <!-- Input do telefone  -->
-                                    <div class="group">
+                                    <div class="group" style="margin-top: 20px;">
                                         <input required="" name="telefone" id="telefone" type="tel" class="input" value="<?php echo $row['telefone'];?>" onkeypress="$(this).mask('(00)00000-0000');">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label for="telefone" style="color: #38B6FF;">Telefone</label>
+                                        <label style="color: #38B6FF;">Telefone</label>
                                     </div>
                                     <!-- Input do Email  -->
-                                    <div class="group">
+                                    <div class="group" style="margin-top: 20px;">
                                         <input required="" name="email" id="email" type="email" class="input" value="<?php echo $row['email'];?>">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label for="email" style="color: #38B6FF;">Email</label>
+                                        <label style="color: #38B6FF;">Email</label>
                                     </div>
                                 </div>
                                 <br>
                                 <!-- Botões de Descartar e Manter Alterações -->
                                 <div>
                                     <button type="button" class="btn btn-secondary">Descartar Alterações</button>
-
                                     <button name="manter_dados" type="submit" class="btn" style="background-color: #38B6FF;">Manter Alterações</button>
                                 </div>
                                 <br>
@@ -278,6 +258,9 @@
         </div>
         <!-- fim configurações de perfil  -->
     </div>
+
+    <!-- //////////////////////////// TODOS OS MODAIS ///////////////////////////////////////// -->
+
     <div class="modal fade" id="modal_foto" tabindex="-1" role="dialog" aria-labelledby="modal_foto_centro" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -290,8 +273,9 @@
                     <div class="modal-body">
                         <!-- Formulário para trocar a foto de perfil -->
                         <form action="config_perfil.php" method="post" enctype="multipart/form-data">
-                            <p><b>ATENÇÃO:</b> Sua foto de perfil só pode ser alterada duas vezes a cada 2 semanas.</p>
-                            <p><b>ALTERAÇÕES RESTANTES:</b> 2</p>
+                            <div class="text-center">
+                                <h3>Alterar Foto</h3>
+                            </div>    
                             <!-- Imagem Atual -->
                             <label for="imagem_perfil_atual">Foto de Perfil Atual:</label><br>
                             <img src="../fotos_usuarios/<?php echo $row['imagem']; ?>" width="30%" class="img-responsive" alt="" srcset="">
@@ -309,6 +293,35 @@
                 </div>
             </div>
         </div>
+
+        <!-- Modal não encontrou cep -->
+        <div class="modal fade" id="modal_cep_n" tabindex="-1" role="dialog" aria-labelledby="modal_cep_n_centro" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-title" id="modal_cep_n_titulo" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                        <img c src="../images/logo_areas.png" width="100vw" alt="">
+                        <h5>Buscar CEP</h5>
+                        <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-center">Erro ao buscar CEP. Verifique se o CEP digitado está correto.</p>        
+                        <div style="display: flex; justify-content: end;">
+                            <button  type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- código para o Modal não encontrou cep -->
+        <?php if(isset($_GET['cep']) && ($_GET['cep'] == "n")){?>
+            <script>
+                $(document).ready(function() {
+                    $('#modal_cep_n').modal('show');
+                });
+            </script>
+        <?php }?>  
 </body>
 
 <!-- Links para a Biblioteca de icones do Ionic Icons -->
@@ -345,4 +358,20 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+<script>
+    document.getElementById('logradouro').value = '<?php echo $logradouro; ?>'; 
+    document.getElementById('cidade').value = '<?php echo $cidade; ?>';
+    document.getElementById('uf').value = '<?php echo $uf; ?>';
+    document.getElementById('numero').value = 'Digite o número'
+</script>
+<script>
+    function validaForm() {
+        var numero = document.getElementById("numero");
+        if (numero.value === "Digite o número") {
+            alert("Por favor, digite um número de endereço válido .");
+            return false;
+        }
+        return true;
+    }
+    </script>
 </html>

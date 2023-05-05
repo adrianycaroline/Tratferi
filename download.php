@@ -15,7 +15,9 @@
         <br><br>
         <div style="display: flex; justify-content: space-between;">
             <div  class="text-center center">
-                <h1 style="color: #38B6FF;">Faça o Download do app</h1>
+                <h1 style="color:#1d5f96;">Faça o Download do app</h1>
+                <div style="border-bottom: 2px solid #000; width: 100%; margin: 0 auto;"></div>
+               <br>
                 <p>
                    O aplicativo do Tratferi está disponível para <br>
                     os sistemas operacionais Android e IOS 
@@ -42,16 +44,18 @@
                             </a>
                         </div>
                     </div>
-                    <div>
+                    <div class="escondido5">
                         <img src="images/tratferi_qrcode (1).svg" width="180px" alt="">
                     </div>
                 </div>
             </div>
             
-        <img class="celular img-responsive" src="images/celulares1.jpg" alt="">
+        <img class="celular img-responsive escondido5" src="images/celulares1.png" alt="">
         </div>
-    </main>   
-    <script>
+    </main>  
+    <div id="footerzin"><?php include 'footer2.php'?></div> 
+
+<script>
         function makeResponsive() {
   const mainElement = document.querySelector('main');
   if (window.innerWidth < 768) {
@@ -61,7 +65,7 @@
   }
 }
 
-window.addEventListener('resize', makeResponsive);
+windowaddEventListener('resize', makeResponsive);
 makeResponsive();
 const celularImg = document.querySelector('.celular');
 
@@ -90,7 +94,7 @@ window.addEventListener('resize', checkScreenSize);
     display: none;
   }
 }
-    </style>
+</style>
+
 </body>
-<?php include 'footer2.php'?>
 </html>
