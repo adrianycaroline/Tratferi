@@ -11,6 +11,11 @@ include '../admin/acesso_com_fun.php';
     <link rel="stylesheet" href='../CSS/estilo.css'>
     <link rel="shortcut icon" href="../images/logo_minimizada.png" type="image/x-icon">
     <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <title>Cadastro</title>
 </head>
 <body class="fundo_areas">
@@ -67,38 +72,115 @@ include '../admin/acesso_com_fun.php';
                     <label class="text-center">Prioridade:</label>
                     <br>
                     <div class="btn-group d-flex gap-2" role="group" aria-label="Basic mixed styles example">
-                        <button type="button" onclick="botao_grave()" class="btn btn-danger">Muito Grave</button>
-                        <button type="button" onclick="botao_urgente()" class="btn" style="background-color: #ffa500;">Urgente</button>
-                        <button type="button" onclick="botao_moderado()" class="btn" style="background-color: #ffff00;">Moderado</button>
-                        <button type="button" onclick="botao_menos_grave()" class="btn" style="background-color: #66CDAA; color: #000;">Menos grave</button>
-                        <button type="button" onclick="botao_leve()" class="btn" style="background-color: #38B6FF;">Leve</button>
+                        <p type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal_grave">Muito Grave</p>
+                        <p type="button" class="btn" style="background-color: #ffa500;" data-toggle="modal" data-target="#modal_urgente">Urgente</p>
+                        <p type="button" class="btn" style="background-color: #ffff00;" data-toggle="modal" data-target="#modal_moderado">Moderado</p>
+                        <p type="button" class="btn" style="background-color: #66CDAA; color: #000;" data-toggle="modal" data-target="#modal_menos_grave">Menos grave</p>
+                        <p type="button" class="btn" style="background-color: #38B6FF;" data-toggle="modal" data-target="#modal_leve">Leve</p>
                     </div>
-                    <?php echo $_SESSION['button'];?>
                     <br>
                     <button class="btn" type="submit" style="background-color: #38B6FF;">Agendar consulta</button>
                 </form>
             </div>
         </div>
     </div>
+    <!-- Modal muito grave -->
+    <div class="modal fade" id="modal_grave" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_centro" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="modal_cadastro_titulo">CADASTRO</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                 </button>
+                                </div>
+                    <div class="modal-body">
+                        <?php echo "Prioridade ".$_SESSION['button'] = "Muito Grave"." selecionada";?>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                    </div>
+                    </div>
+                    </div>
+    </div>
+    <!-- Modal urgente -->
+    <div class="modal fade" id="modal_urgente" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_centro" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="modal_cadastro_titulo">CADASTRO</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                 </button>
+                                </div>
+                    <div class="modal-body">
+                        <?php echo "Prioridade ".$_SESSION['button'] = "Urgente"." selecionada";?>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                    </div>
+                    </div>
+                    </div>
+    </div>
+    <!-- Modal moderado -->
+    <div class="modal fade" id="modal_moderado" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_centro" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="modal_cadastro_titulo">CADASTRO</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                 </button>
+                                </div>
+                    <div class="modal-body">
+                        <?php echo "Prioridade ".$_SESSION['button'] = "Moderado"." selecionada";?>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                    </div>
+                    </div>
+                    </div>
+    </div>
+      <!-- Modal menos grave -->
+      <div class="modal fade" id="modal_menos_grave" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_centro" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="modal_cadastro_titulo">CADASTRO</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                 </button>
+                                </div>
+                    <div class="modal-body">
+                        <?php echo "Prioridade ".$_SESSION['button'] = "Menos Grave"." selecionada";?>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                    </div>
+                    </div>
+                    </div>
+    </div>
+          <!-- Modal leve -->
+          <div class="modal fade" id="modal_leve" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_centro" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="modal_cadastro_titulo">CADASTRO</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                 </button>
+                                </div>
+                    <div class="modal-body">
+                        <?php echo "Prioridade ".$_SESSION['button'] = "Leve"." selecionada";?>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                    </div>
+                    </div>
+                    </div>
+    </div>
     <!-- --------------------- -->
         <?php include 'menu_cadastrar.php';?>
-        <script>
-                   function  botao_grave() {
-                        $_SESSION['button'] = "grave";
-                    }
-                    function botao_urgente() {
-                        $_SESSION['button'] = "urgente";
-                    }
-                    function botao_moderado() {
-                        $_SESSION['button'] = "moderado";
-                    }
-                    function botao_menos_grave() {
-                        $_SESSION['button'] = "menos_grave";
-                    }
-                    function botao_leve() {
-                        $_SESSION['button'] = "leve";
-                    } 
-        </script>
 </body>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
