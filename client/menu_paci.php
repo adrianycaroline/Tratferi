@@ -52,7 +52,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link">
+                    <a href="../ajuda.php" class="nav-link">
                         <img src="../images/coracao.svg" alt="" width="20vw">    
                         Ajuda
                     </a>
