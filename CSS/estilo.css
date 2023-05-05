@@ -828,18 +828,17 @@ margin-left: 30%;
         } 
     }
 
-#direitos{
-position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  padding: 10px;
-  text-align: center;
-}
-
 
 /* ////////// MODAL CARTEIRINHA ///////////////// */
 #modal_carteirinha{
     color: #2b8af7;
+}
+
+
+
+#footerzin{
+
+margin-top: 5%;
+
+
 }
