@@ -136,7 +136,13 @@ id_paci int not null,
 primary key(id),
 foreign key (id_paci) references paciente(id));
 
-
+create table SUS(
+id int not null auto_increment,
+cpf varchar(14) not null,
+carteira_sus varchar(25) not null,
+id_paci int not null,
+primary key(id),
+foreign key (id_paci) references paciente(id));
 
 create table tratamento(
 id int not null auto_increment,
