@@ -51,7 +51,14 @@
 
             $cpf_sem_ponto = str_replace('.', '', $cpf); // remove os pontos do CPF
             $cpf_tratado = substr($cpf_sem_ponto, 0, 5); // extrai os primeiros cinco dígitos do CPF sem ponto
-            $insereSenha = "INSERT INTO login_func VALUES ('', '$cpf_tratado', '$funcionario_id')";
+            // Gera o hash MD5 da senha
+            $senha_criptografada = md5($cpf_tratado);
+            // Codifica o hash MD5 em Base64
+            $senha_base64 = base64_encode($senha_criptografada);
+            // Combina o hash MD5 e a codificação Base64 em uma string única
+            $senha_final = $senha_criptografada . ':' . $senha_base64;
+            // Insere a senha no banco
+            $insereSenha = "INSERT INTO login_func VALUES ('', '$senha_final', '$funcionario_id')";
             $resultado3 = $conn->query($insereSenha);
             //enviar senha por email
             include '../envia_cadastro.php';
