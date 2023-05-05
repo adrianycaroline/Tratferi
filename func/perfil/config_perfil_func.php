@@ -7,7 +7,7 @@
     $rows = $lista->num_rows;
 
     //Código para a foto funcionar
-    if(isset($_POST['alterar'])){ //Seleciona o formulário da foto
+    if(isset($_POST['alterar_foto'])){ //Seleciona o formulário da foto
         if($_FILES['imagem_perfil']['name']) {
             $nome_img = $_FILES['imagem_perfil']['name']; //Pega o nome do arquivo selecionado
             $tmp_img = $_FILES['imagem_perfil']['tmp_name'];
@@ -22,23 +22,10 @@
 
         $resultado = $conn->query($updateSql);
         if($resultado){
+            $_SESSION['Imagem'] = $nome_img; // Atualiza o valor da imagem na sessão
             header('location: config_perfil_func.php');
         }
-    }
-    if(isset($_POST['alterar_nome'])){
-        $novo_nome = $_POST['novo_nome'];
-        $confirma_nome = $_POST['confirma_novo_nome'];
-        if($novo_nome == $confirma_nome){
-            $updateSqlNome = "UPDATE funcionario SET nome = '$novo_nome' WHERE id = ".$_SESSION['Id'].";";
-
-            $resultadoNome = $conn->query($updateSqlNome);
-            if($resultadoNome){
-                header('location: config_perfil_func.php');
-            }
-        }else{
-            header('location: config_perfil_func.php?upd=n');
-        }
-    }
+    }   
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -267,48 +254,6 @@
 
         <!-- ///////////////////////////////// TODOS OS MODAIS /////////////////////////////////////  -->
 
-        <!-- Modal alterar nome  -->
-        <div class="modal fade" id="modal_nome" tabindex="-1" role="dialog" aria-labelledby="modal_nome_centro" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-title" id="modal_nome_titulo" style="display: flex; justify-content: center; align-items: center;">
-                        <img src="../../images/logo_areas.png" width="100vw" alt="">
-                    </div>
-                    <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
-                    </button>
-                    <div class="modal-body">
-                        <h5 style="color: #1d5f96;">Confirmar mudança de nome de exibição</h5>
-                        <p><b>Observe: </b> Se você alterou o nome de exibição da TRATFERI, não poderá alterá-lo novamente por 2 semanas após confirmar essa alteração.</p>
-                        <p><b> Nome de exibição atual: </b><?php echo $row['nome'];?></p> <br>
-                        <form action="config_perfil.php" method="post" enctype="multipart/form-data">
-                            <div class="group">
-                                <input required="" name="novo_nome" id="novo_nome" type="text" class="input2">
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
-                                <label>NOVO NOME DE EXIBIÇÃO</label>
-                            </div>
-                            <br><br>
-                            <div class="group">
-                                <input required="" name="confirma_novo_nome" id="confirma_novo_nome" type="text" class="input2">
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
-                                <label>CONFIRME NOME DE EXIBIÇÃO</label>
-                            </div>
-                            <br><br>
-                                <input type="checkbox" class="form-check-input" required> Entendo que após esta alteração, não poderei alterar meu nome de exibição novamente por duas semanas.
-                            <br> <br>
-                            <div style="margin-left: 10px;">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Descartar Alterações</button>
-                                <button type="submit" name="alterar_nome" class="btn" style="background-color: #38B6FF;">Manter Alterações</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Fim do modal alterar nome -->
-
         <!-- Modal não atualiza nome-->
         <div class="modal fade" id="modal_atualiza_erro" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_centro" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -405,7 +350,7 @@
                     </button>
                     <div class="modal-body">
                         <!-- Formulário para trocar a foto de perfil -->
-                        <form action="config_perfil.php" method="post" enctype="multipart/form-data">
+                        <form action="config_perfil_func.php" method="post" enctype="multipart/form-data">
                             <p><b>ATENÇÃO:</b> Sua foto de perfil só pode ser alterada duas vezes a cada 2 semanas.</p>
                             <p><b>ALTERAÇÕES RESTANTES:</b> 2</p>
                             <!-- Imagem Atual -->
@@ -418,7 +363,7 @@
                             <input type="file" name="imagem_perfil" id="imagem_perfil" class="form-control" accept="image/*"><!-- Input que escolhe a foto de perfil -->
                             <br>
                             <div class="text-center">
-                                <button class="btn btn-primary" name="alterar" type="submit">Alterar</button>
+                                <button class="btn" style="background-color: #38B6FF;" name="alterar_foto" type="submit">Alterar</button>
                             </div>
                         </form>
                     </div>

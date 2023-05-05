@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="../../images/logo_minimizada.png" type="image/x-icon">
     <link rel="stylesheet" href="../../CSS/estilo.css">
     <link rel="stylesheet" href="../../CSS/bootstrap.min.css">
-    <title>Menu Perfil ADM</title>
+    <title>Menu Perfil Func</title>
 </head>
 <body ng-app="">
     <div class="d-flex flex-column flex-shrink-0 p-3 bg-azul"  style="position: fixed; top: 0; left: 0; bottom: 0; width: 280px;">
