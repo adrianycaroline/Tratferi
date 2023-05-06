@@ -843,3 +843,10 @@ margin-left: 3%;
 
 }
     
+
+/* ////////////////////////////////////// TRATAMENTO ///////////////////////////////// */
+.TxaTratamento{
+    background-color: #d1d1d1;
+    border: 1px solid #d1d1d1;
+    border-radius: 10px;
+}

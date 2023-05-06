@@ -151,11 +151,14 @@ anotacao_func text not null,
 acompanhamento text not null,
 medicamento_usado varchar(50) not null,
 finalizacao varchar(50) not null,
+area enum("Frente",'Verso') not null,
 id_func int not null,
 id_paci int not null,
+id_ferida int not null,
 primary key(id),
 foreign key(id_func) references funcionario(id),
-foreign key(id_paci) references paciente(id));
+foreign key(id_paci) references paciente(id),
+foreign key(id_ferida) references ferida(id));
 
 
 create table estoque_med(

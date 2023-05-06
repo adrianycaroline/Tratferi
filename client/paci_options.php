@@ -85,7 +85,7 @@
                         <p class="text-light" style="font-size: 28pt; margin-right: 15px;"><?php echo $quantidadeT;?></p>
                     </div>    
                     <div class="card-body">
-                        <h5 class="card-title text-light"><a href="tratamento.php" id="AdmOpcoesbtn">Tratamento</a></h5>
+                        <h5 class="card-title text-light"><a href="listar_tratamentos.php" id="AdmOpcoesbtn">Tratamento</a></h5>
                     </div>
                 </div>
             </div>
