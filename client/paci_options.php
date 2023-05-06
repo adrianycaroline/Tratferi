@@ -26,7 +26,7 @@
     }
 
     $listaC = $conn->query("SELECT COUNT(*) FROM consulta"); //Conta a quantidade de usuarios ativos.
-    $listaT = $conn->query("SELECT COUNT(*) FROM tratamento"); //Conta a quantidade de pacientes ativos.
+    $listaT = $conn->query("SELECT COUNT(*) FROM tratamento where id_paci = ".$_SESSION['Id'].";"); //Conta a quantidade de pacientes ativos.
 
     $rowC = $listaC->fetch_row(); // Obtém o resultado da consulta
     $quantidadeC = $rowC[0]; // Atribui o resultado a uma variável
@@ -85,7 +85,7 @@
                         <p class="text-light" style="font-size: 28pt; margin-right: 15px;"><?php echo $quantidadeT;?></p>
                     </div>    
                     <div class="card-body">
-                        <h5 class="card-title text-light"><a href="listar_tratamentos.php" id="AdmOpcoesbtn">Tratamento</a></h5>
+                        <h5 class="card-title text-light"><a href="tratamento.php" id="AdmOpcoesbtn">Tratamento</a></h5>
                     </div>
                 </div>
             </div>

@@ -1,8 +1,11 @@
 <?php 
     include '../admin/acesso_com_pac.php';
-    include '../connection/connect.php';    
-
-    $lista = $conn->query("SELECT * FROM tratamento LEFT JOIN ferida on tratamento.id_ferida = ferida.id where tratamento.id_paci = ".$_SESSION['Id'].";");
+    include '../connection/connect.php';
+    $lista = $conn->query("SELECT *, funcionario.nome as nome_func, paciente.nome as nome_paci FROM tratamento 
+    LEFT JOIN ferida on tratamento.id_ferida = ferida.id 
+    LEFT JOIN funcionario on tratamento.id_func = funcionario.id 
+    LEFT JOIN paciente on tratamento.id_paci = paciente.id
+    WHERE tratamento.id_paci = ".$_SESSION['Id']." LIMIT 1;");
     $row = $lista->fetch_assoc();
     $rows = $lista->num_rows;
 
@@ -86,7 +89,7 @@
             </div>
         </div>
             <br>
-            <h2 style="margin-left: 20px;">Tratamento</h2>
+            <h1 style="margin-left: 20px;">Tratamento</h1>
             <br>
             <div class="border-bottom border-2 border-dark" style="width: 97%; margin-left: 15px; margin-bottom: 10px;"></div>
         <main>
@@ -108,6 +111,9 @@
                                 <!-- Text Exsudato -->
                                 <h5 style="color: #2b8af7;">Exsudato:</h5>
                                 <textarea class="TxaTratamento" name="" id="" cols="40" rows="4" disabled><?php echo $row['exsudato'];?></textarea>
+                                <!-- Profissional que atendeu -->
+                                <h5>Profissional Responsável:</h5>
+                                <p style="font-size: 14pt;"><?php echo $row['nome_func']?></p>
                             </div>
                             <div style="margin-left: 100px; margin-right: 100px;">
                                 <h5 style="color: #2b8af7;">Odor:</h5>
@@ -117,7 +123,7 @@
                                 <h5 style="color: #2b8af7;">Medidas:</h5>
                                 <textarea class="TxaTratamento" name="" id="" cols="40" rows="4" disabled><?php echo $row['medidas'];?></textarea>
                                 <h5 style="color: #2b8af7;">Descrição da Região afetada:</h5>
-                                <textarea class="TxaTratamento" name="" id="" cols="40" rows="4" disabled></textarea>
+                                <textarea class="TxaTratamento" name="" id="" cols="40" rows="4" disabled><?php echo $row['anotacao_func'];?></textarea>
                                 <div style="font-size: 14pt;">
                                     <label>
                                         <input disabled value="lado" type="radio" name="lado" id="lado" value="Frente" <?php echo ($row['area'] == 'Frente') ? 'checked' : ''; ?>> Frente
@@ -151,8 +157,6 @@
         </main>
     </div>
 </body>
-<!-- Link do Corpo -->
-<script src="../js/corpo_paci.js"></script>
 <script src="../js/script.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 </html>
