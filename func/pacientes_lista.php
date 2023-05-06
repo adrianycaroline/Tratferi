@@ -78,29 +78,6 @@
     </main>
     <!-- Lista de pacientes -->
     <div style="margin-left: 280px;">
-        <?php if(isset($_GET['cadastro']) && ($_GET['cadastro'] == 's')){?>
-            <br><h2 class="text-success">Paciente Cadastrado Com Sucesso!</h2>
-        <?php }?>
-
-        <?php if(isset($_GET['pac'])){
-
-            try{
-            $id = $_GET['pac'];   
-            $excluir = $conn->query("delete from paciente where id = $id");;?>
-            <br><h2 class="text-success">Paciente Excluido Com Sucesso!</h2>
-            <?php // realizando a consulta navamente 
-             $lista = $conn->query("select id, nome, data_nasc, cpf, card_SUS, hash from paciente;");
-             $row = $lista->fetch_assoc();
-             $numRow = mysqli_num_rows($lista);?> 
-
-        <?php }catch(Exception){?>
-            <br><h2 class="text-danger">O Paciente Não Poderá Ser Excluido Contendo Dados Pessoais Associados A Ele!</h2>
-            <?php // realizando a consulta navamente 
-             $lista = $conn->query("select id, nome, data_nasc, cpf, card_SUS, hash from paciente;");
-             $row = $lista->fetch_assoc();
-             $numRow = mysqli_num_rows($lista);?> 
-            <?php }?>
-        <?php }?>
         <div class="barra fixed-top bg-azul">
             <br> <br>
         </div>

@@ -73,7 +73,6 @@ include '../admin/acesso_com_fun.php';
                         <button type="button" onclick="botao_menos_grave()" class="btn" style="background-color: #66CDAA; color: #000;">Menos grave</button>
                         <button type="button" onclick="botao_leve()" class="btn" style="background-color: #38B6FF;">Leve</button>
                     </div>
-                    <?php echo $_SESSION['button'];?>
                     <br>
                     <button class="btn" type="submit" style="background-color: #38B6FF;">Alterar consulta</button>
                 </form>
