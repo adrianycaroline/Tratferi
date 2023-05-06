@@ -13,26 +13,30 @@ if($_POST){
     $prioridade = $_SESSION['button'];
     $hashcode = "TRAT-".uniqid()."-".mb_strimwidth($cpf,0,3);
 
+    try{
     //consultando paciente
     $consultaPac = "SELECT id FROM paciente where nome = '$nome_paci' and cpf = '$cpf'";
-    $idPac = $conn->query($consultaPac);
+    $resultadoPac = $conn->query($consultaPac);
+    $row = mysqli_fetch_assoc($resultadoPac);
+    $idPac = $row['id'];
 
     //consultando funcionario
     $consultaFunc = "SELECT id FROM funcionario where nome = '$pf_resp'";
-    $idFunc = $conn->query($consultaFunc);
+    $resultadoFunc = $conn->query($consultaFunc);
+    $row = mysqli_fetch_assoc($resultadoFunc);
+    $idFunc = $row['id'];
 
     //inserir consulta
     $consulta = "INSERT INTO consulta (id, data_consulta, horario_consulta, descricao, status, hash, id_paci, id_func) VALUES('', '$data', '$horario', '$descricao', '1', '$hashcode', '$idPac', '$idFunc')";
     $resultado = $conn->query($consulta);
     if(mysqli_insert_id($conn)){
     echo "<script>window.open('../func/consultas.php?cons=s','_self')</script>"; 
-    }else{
-    echo "<script>window.open('../func/gerar_consultas.php?err=s','_self')</script>"; 
+    }
+    //caso de erro
+    }catch(Exception $e){
+    echo "<script>window.open('../func/gerar_consultas.php?cons=n','_self')</script>"; 
     }
 }
-
- include '../admin/acesso_com_fun.php';
- include '../connection/connect.php'; 
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -213,6 +217,34 @@ if($_POST){
     </div>
     <!-- --------------------- -->
         <?php include 'menu_cadastrar.php';?>
+    <!-- Modal de erro ao realizar consulta -->
+    <div class="modal fade" id="modal_erro" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_centro" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-title" id="modal_cadastro_titulo" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                                    <img c src="../images/logo_areas.png" width="100vw" alt="">
+                                    <h5>Consulta</h5>
+                                <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
+                                </button>
+                                </div>
+                    <div class="modal-body">
+                            <p class="text-center">Não foi possível realizar a consulta! Tente novamente</p>        
+                        <div style="display: flex; justify-content: end;">
+                            <button  type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- Código que busca o modal caso venha algo por GET  -->
+                <?php if(isset($_GET['cons']) && ($_GET['cons'] == "n")){?>
+                    <script>
+                        $(document).ready(function() {
+                            $('#modal_erro').modal('show');
+                        });
+                    </script>
+                <?php }?>
 </body>
     <!-- Links para jquery -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
