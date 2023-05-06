@@ -11,29 +11,29 @@ insert into funcionario
 VALUES('4','joao','1999/11/25','953.148.348-71','731.871','348.321','78.136.468-1','Cirurgião geral','especialista treinado para o manejo cirúrgico das afecções mais diversas do organismo como um todo, resolvendo todas as questões de atendimento primário e secundário, com ênfase no trauma, urgência e emergência além da captação de órgãos..','tarde','8461,00','2010/01/09','2019/11/11','func','user_sem_foto.png','4664','0','null');
 
 insert into funcionario
-VALUES('5','mario','1998/06/05','841.168.031-94','324.014','494.684','34.887.341-5','clínico gera','responsável por diagnosticar doenças, desde as mais simples até as mais complexas.','manha','8461,00','2017/01/09','null','func','user_sem_foto.png','5664','1','null');
+VALUES('5','mario','1998/06/05','841.168.031-94','324.014','494.684','34.887.341-5','clínico gera','responsável por diagnosticar doenças, desde as mais simples até as mais complexas.','manha','8461,00','2017/01/09','null','func','null','5664','1','null');
 
 insert into funcionario
-VALUES('6','daniel','2000/10/07','097.631.712-22','568.445','911.200','52.641.785-9','clínico gera','responsável por diagnosticar doenças, desde as mais simples até as mais complexas.','tarde','8461,00','2017/01/09','null','func','user_sem_foto.png','6484','1','null');
+VALUES('6','mariano','2000/10/07','097.631.712-22','568.445','911.200','52.641.785-9','clínico gera','responsável por diagnosticar doenças, desde as mais simples até as mais complexas.','tarde','8461,00','2017/01/09','null','func','null','6484','1','null');
 
 insert into funcionario
-VALUES('7','maria','1998/06/05','257.987.099-97','784.565','988.655','98.795.521-7','clínico gera','responsável por diagnosticar doenças, desde as mais simples até as mais complexas.','noite','8461,00','2017/01/09','null','func','user_sem_foto.png','7664','1','null');
-
-
-
-insert into funcionario
-VALUES('8','texeira','2000/07/05','111.222.333-44','000.000','000.000','10.547.241-4','Desenvolvedor de sistemas','Responsavel por cuidar do sistema e cadastro de novos funcionarios e novos adm','noite','11000,00','2017/01/09','null','adm','user_sem_foto.png','8664','1','null');
-
-insert into funcionario
-VALUES('9','paula','1999/11/01','323.454.686-45','000.000','000.000','10.654.486-7','Desenvolvedor de sistemas','Responsavel por cuidar do sistema e cadastro de novos funcionarios','noite','5000,00','2017/01/09','null','adm','user_sem_foto.png','9664','1','null');
+VALUES('7','maria','1998/06/05','257.987.099-97','784.565','988.655','98.795.521-7','clínico gera','responsável por diagnosticar doenças, desde as mais simples até as mais complexas.','noite','8461,00','2017/01/09','null','func','null','7664','1','null');
 
 
 
 insert into funcionario
-VALUES('10','joao','1999/11/01','874.777.845-93','000.000','000.000','12.568.101-9','Desenvolvedor de sistemas','Responsavel','manha','2000,00','2018/01/01','null','adm','user_sem_foto.png','102664','1','null');
+VALUES('8','texeira','2000/07/05','111.222.333-44','000.000','000.000','10.547.241-4','Desenvolvedor de sistemas','Responsavel por cuidar do sistema e cadastro de novos funcionarios e novos adm','noite','11000,00','2017/01/09','null','adm','null','8664','1','null');
 
 insert into funcionario
-VALUES('11','mario','1999/08/11','315.100.002-31','545.345','213.211','01.365.545-5','estagioario de enfermagem','Fazer tarefas designadas a ele','tarde','1000,00','2022/11/01','null','func','user_sem_foto.png','112664','1','null');
+VALUES('9','paula','1999/11/01','323.454.686-45','000.000','000.000','10.654.486-7','Desenvolvedor de sistemas','Responsavel por cuidar do sistema e cadastro de novos funcionarios','noite','5000,00','2017/01/09','null','adm','null','9664','1','null');
+
+
+
+insert into funcionario
+VALUES('10','joao','1999/11/01','874.777.845-93','000.000','000.000','12.568.101-9','Desenvolvedor de sistemas','Responsavel','manha','2000,00','2018/01/01','null','adm','null','102664','1','null');
+
+insert into funcionario
+VALUES('11','mario','1999/08/11','315.100.002-31','545.345','213.211','01.365.545-5','estagioario de enfermagem','Fazer tarefas designadas a ele','tarde','1000,00','2022/11/01','null','func','null','112664','1','null');
 
 
 
@@ -108,34 +108,34 @@ VALUES('7','rua alexandre','443','sao paulo','sp','22050-120','7');
 
 
 insert into paciente
-VALUES('1','Joao','2003/10/01','182.178.168-42','17.170.191-2','898.0034.0054.0716','user_sem_foto.png','645317');
+VALUES('1','Joao','2003/10/01','182.178.168-42','17.170.191-2','898.0034.0054.0716','null','645317');
 
 insert into paciente
-VALUES('2','Joana','1987/08/05','982.268.938-97','17.170.191-2','867.1134.9954.0912','user_sem_foto.png','245317');
+VALUES('2','Joana','1987/08/05','982.268.938-97','17.170.191-2','867.1134.9954.0912','null','245317');
 
 insert into paciente
-VALUES('3','Laura','1999/03/06','382.563.319-89','90.976.171-5','999.9824.0088.0512','user_sem_foto.png','345317');
+VALUES('3','Laura','1999/03/06','382.563.319-89','90.976.171-5','999.9824.0088.0512','null','345317');
 
 insert into paciente
-VALUES('4','Paulo','1981/06/09','971.782.658-99','90.976.171-5','258.8765.9948.0512','user_sem_foto.png','445317');
+VALUES('4','Paulo','1981/06/09','971.782.658-99','90.976.171-5','258.8765.9948.0512','null','445317');
 
 insert into paciente
-VALUES('5','Ribamar','1995/03/10','871.653.765-86','73.886.190-7','299.8865.9766.4303','user_sem_foto.png','545317');
+VALUES('5','Ribamar','1995/03/10','871.653.765-86','73.886.190-7','299.8865.9766.4303','null','545317');
 
 insert into paciente
-VALUES('6','Fred','1987/07/11','997.113.187-77','64.143.901-9','199.6665.1543.6863','user_sem_foto.png','615317');
+VALUES('6','Fred','1987/07/11','997.113.187-77','64.143.901-9','199.6665.1543.6863','null','615317');
 
 insert into paciente
-VALUES('7','Viviane','1997/10/12','765.965.738-12','97.116.186-0','399.7665.1126.8649','user_sem_foto.png','835317');
+VALUES('7','Viviane','1997/10/12','765.965.738-12','97.116.186-0','399.7665.1126.8649','null','835317');
 
 insert into paciente
-VALUES('8','Vagner','1981/26/02','508.951.268-00','57.570.171-7','999.8765.5043.1813','user_sem_foto.png','945317');
+VALUES('8','Vagner','1981/26/02','508.951.268-00','57.570.171-7','999.8765.5043.1813','null','945317');
 
 insert into paciente
-VALUES('9','Eurico','1978/08/10','907.453.178-99','15.243.190-9','297.7735.7376.1981','user_sem_foto.png','105317');
+VALUES('9','Eurico','1978/08/10','907.453.178-99','15.243.190-9','297.7735.7376.1981','null','105317');
 
 insert into paciente
-VALUES('10','Rodrygo','1980/05/08','899.845.145-55','17.130.187-5','127.8873.634.3522','user_sem_foto.png','115317'); 
+VALUES('10','Rodrygo','1980/05/08','899.845.145-55','17.130.187-5','127.8873.634.3522','null','115317'); 
 
 
 
@@ -235,30 +235,16 @@ insert into email_paciente
 VALUES('10','rodrygo22@gmail.com','10');
 
 
+insert into consulta 
+VALUES('1','2023/01/12','20:00','ferida grande com mau odor','Ativa','125431','1','2');
 
 insert into consulta 
-VALUES('','2023/01/12','20:00','ferida grande com mau odor','Ativa','125431','1','2');
+VALUES('2','2022/01/12','19:30','coloracao estranha na ferida','Finalizada','225431','7','1');
 
 insert into consulta 
-VALUES('','2022/01/12','19:30','coloracao estranha na ferida','Ativa','225431','7','1');
+VALUES('3','2022/01/12','19:00','inflamacao no local da ferida','Nao realizada','325431','7','3');
 
-insert into consulta 
-VALUES('3','2022/01/12','19:00','inflamacao no local da ferida','Ativa','325431','7','2');
 
-insert into consulta 
-VALUES('4','2022/02/07','07:30','execo de pus na ferida','Ativa','425431','5','6');
-
-insert into consulta 
-VALUES('5','2022/02/02','15:30','reacao a o medicamento','Ativa','525431','6','3');
-
-insert into consulta 
-VALUES('6','2022/12/20','13:00','acompanhamento do tratamento','Ativa','625431','6','1');
-
-insert into consulta 
-VALUES('7','2022/12/27','17:00','retirada de ponto da ferida','Ativa','725431','6','6');
-
-insert into consulta 
-VALUES('8','2023/01/05','08:00','acompanhamento do tratamento','Ativa','825431','5','7');
 
 
 insert into ferida
@@ -297,15 +283,14 @@ insert into convenio
 VALUES('3','NotreDame Intermedica','individual','871.653.765-86','01.3210255.651.30','5');
 
 
+insert into tratamento 
+VALUES ('1','possui fratura exposta','se recuperando da cirurgia','amoxicilina','prevista para 1 mes','Frente','2','1','1');
 
 insert into tratamento 
-VALUES ('1','possui fratura exposta','se recuperando da cirurgia','amoxicilina','prevista para 1 mes','1','1');
+VALUES ('2','queimadura severa','processo de cicatrizacao em andamento','dipirona','2 meses','Costa','2','1','2');
 
 insert into tratamento 
-VALUES ('2','queimadura severa','processo de cicatrizacao em andamento','dipirona','2 meses','3','8');
-
-insert into tratamento 
-VALUES ('3','cicatrizacao','se recuperando da cirurgia','amoxicilina','3 semanas','5','6');
+VALUES ('3','cicatrizacao','se recuperando da cirurgia','amoxicilina','3 semanas','Costa','5','6','3');
 
 
 
@@ -331,13 +316,13 @@ VALUES('6','oculos_protecao','Óculos de segurança modelo ampla-visão constitu
 
 
 insert into medicamento
-VALUES('1','dipirona em 8H em 8H','dipirona','2','2022/12/19','2','2','3');
+VALUES('1','dipirona em 8H em 8H','dipirona','2','2022/12/19','2','3');
 
 insert into medicamento
-VALUES('2','amoxicilina em 8H em 8H','amoxicilina','2','2023/02/19','2','1','3');
+VALUES('2','amoxicilina em 8H em 8H','amoxicilina','2','2023/02/19','1','3');
 
 insert into medicamento
-VALUES('3','dipirona em 8H em 8H','dipirona','2','2022/01/06','2','6','1');
+VALUES('3','dipirona em 8H em 8H','dipirona','2','2022/01/06','6','1');
 
 
 insert into Epis
