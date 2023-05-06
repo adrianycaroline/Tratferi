@@ -63,8 +63,8 @@ date_default_timezone_set('America/Sao_Paulo'); // define o fuso horário para S
     <br>
 </div>
     <br>
-<div style="background-color: #DCDCDC; display: flex;  width: 75%; margin-left: 380px; border-radius: 20px;">
-    <table class="table table-hover table-borderless container w-100" style="margin-left: 60px; margin-top: 15px;">
+<div style="background-color: #DCDCDC; display: flex;  width: 79%; margin-left: 300px; border-radius: 20px;">
+    <table class="table table-hover table-borderless container w-100" style=" margin-top: 15px;">
         <thead style="background-color: #38B6FF; color: white;">
             <th hidden>ID</th>
             <th scope="row">Status</th>

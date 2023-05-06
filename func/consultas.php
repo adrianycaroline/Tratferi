@@ -22,7 +22,7 @@ $row = $lista->fetch_assoc();
     <br> <br>
 </div>
 <br><br><br>
-<h1 style="margin-left: 950px; color: #1d5f96;">Consultas</h1>
+<h1 style="margin-left: 750px; color: #1d5f96;">Consultas</h1>
 
     <div style="display: flex;">
         <div class="border-bottom border-2 border-dark" style="width: 83%; margin-left: 300px;"></div>
@@ -33,8 +33,8 @@ $row = $lista->fetch_assoc();
     <span class="hidden-xs">ADICIONAR NOVA CONSULTA</span>
 </a>
 <br><br><br>
-<div style="background-color: #DCDCDC; display: flex;  width: 75%; margin-left: 380px; border-radius: 20px;">
-    <table class="table table-hover table-borderless container w-100" style="margin-left: 60px; margin-top: 15px;">
+<div style="background-color: #DCDCDC; display: flex;  width: 75%; margin-left: 300px; border-radius: 20px;">
+    <table class="table table-hover table-borderless container w-100" style=" margin-top: 15px;">
         <thead>
             <tr style="background-color: #38B6FF;" class="text-center">
                 <th scope="row" style="color: #fff;">Status</th>
