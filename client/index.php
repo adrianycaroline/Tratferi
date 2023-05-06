@@ -69,6 +69,36 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal não tem tratamento em andamento-->
+    <div class="modal fade" id="modal_sem_tratamento" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_centro" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-title" id="modal_cadastro_titulo" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <img c src="../images/logo_areas.png" width="100vw" alt="">
+                    <h5>ATENÇÃO!!!</h5>
+                    <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">Você não tem nenhum tratamento associado ainda. Passe pela consulta primeiro.</p>        
+                    <div style="display: flex; justify-content: end;">
+                        <button  type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- código para o modal não tem tratamento em andamento -->
+        <?php if(isset($_GET['paciente']) && ($_GET['paciente'] == "n")){?>
+            <script>
+                $(document).ready(function() {
+                    $('#modal_sem_tratamento').modal('show');
+                });
+            </script>
+        <?php }?>  
+        <!-- Fim do modal não tem tratamento em andamento -->
 </body>
 <!-- Links para a Biblioteca de icones do Ionic Icons -->
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

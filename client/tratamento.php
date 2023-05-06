@@ -7,8 +7,8 @@
     LEFT JOIN paciente on tratamento.id_paci = paciente.id
     WHERE tratamento.id_paci = ".$_SESSION['Id']." AND ferida.id_paci = ".$_SESSION['Id']." LIMIT 1;");
     if ($lista->num_rows > 0) {
-        $row = $lista->fetch_assoc();
         // Caso tenha resultados
+        $row = $lista->fetch_assoc();
     } else {
         // Caso não tenha resultados
         header('location: index.php?paciente=n');
