@@ -5,9 +5,14 @@
     LEFT JOIN ferida on tratamento.id_ferida = ferida.id 
     LEFT JOIN funcionario on tratamento.id_func = funcionario.id 
     LEFT JOIN paciente on tratamento.id_paci = paciente.id
-    WHERE tratamento.id_paci = ".$_SESSION['Id']." LIMIT 1;");
-    $row = $lista->fetch_assoc();
-    $rows = $lista->num_rows;
+    WHERE tratamento.id_paci = ".$_SESSION['Id']." AND ferida.id_paci = ".$_SESSION['Id']." LIMIT 1;");
+    if ($lista->num_rows > 0) {
+        $row = $lista->fetch_assoc();
+        // Caso tenha resultados
+    } else {
+        // Caso não tenha resultados
+        header('location: index.php?paciente=n');
+    }
 
     date_default_timezone_set('America/Sao_Paulo'); // define o fuso horário para São Paulo
     $diaDaSemana = date('l'); // obtém o dia da semana
