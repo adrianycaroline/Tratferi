@@ -18,7 +18,7 @@ $row = $lista->fetch_assoc();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
     <title>Consultas</title>
 </head>
 <body class="fundo_adm">
@@ -109,11 +109,63 @@ $row = $lista->fetch_assoc();
                 </div>
             </div>
         </div>
+<!-- Modal de consulta atualizada -->
+<div class="modal fade" id="modal_upd" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_centro" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-title" id="modal_cadastro_titulo" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                                    <img c src="../images/logo_areas.png" width="100vw" alt="">
+                                <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
+                                </button>
+                                </div>
+                    <div class="modal-body">
+                            <p class="text-center">Consulta Atualizada com sucesso!</p>        
+                        <div style="display: flex; justify-content: end;">
+                            <button  type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- Modal de consulta não atualizada -->
+<div class="modal fade" id="modal_erro" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_centro" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-title" id="modal_cadastro_titulo" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                                    <img c src="../images/logo_areas.png" width="100vw" alt="">
+                                <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
+                                </button>
+                                </div>
+                    <div class="modal-body">
+                            <p class="text-center">Não foi possível atualizar a consulta! Tente novamente</p>        
+                        <div style="display: flex; justify-content: end;">
+                            <button  type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 <!-- Código que busca o modal caso venha algo por GET  -->
 <?php if(isset($_GET['cons']) && ($_GET['cons'] == "s")){?>
                     <script>
                         $(document).ready(function() {
                             $('#modal_consulta').modal('show');
+                        });
+                    </script>
+<?php }?>
+<?php if(isset($_GET['upd']) && ($_GET['upd'] == "s")){?>
+                    <script>
+                        $(document).ready(function() {
+                            $('#modal_upd').modal('show');
+                        });
+                    </script>
+<?php }?>
+<?php if(isset($_GET['upd']) && ($_GET['upd'] == "n")){?>
+                    <script>
+                        $(document).ready(function() {
+                            $('#modal_erro').modal('show');
                         });
                     </script>
 <?php }?>

@@ -93,9 +93,7 @@
                         <br>
                     </div>
                     <br>
-                    
                     <button class="btn" style="background-color: #38B6FF;" name="atualizar" type="submit">Atualizar</button>
-                    
                 </form>
             </div>
         </div>
