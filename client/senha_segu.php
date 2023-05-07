@@ -280,6 +280,216 @@
             </script>
         <?php }?>  
     <!-- Fim do senha Atualizada -->
+
+    <!-- senha Atualizada Não-->
+    <div class="modal fade" id="modal_senha_Atualizada_n" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_centro" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-title" id="modal_cadastro_titulo" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <img c src="../images/logo_areas.png" width="100vw" alt="">
+                    <h5>ATENÇÃO!!</h5>
+                    <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">Erro ao atualizar a senha no banco de dados. Por Favor, contate um administrador técnico.</p>        
+                    <div style="display: flex; justify-content: end;">
+                        <button  type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- código para o senha Atualizada Não -->
+        <?php if(isset($_GET['senhaAtualizada']) && ($_GET['senhaAtualizada'] == "n")){?>
+            <script>
+                $(document).ready(function() {
+                    $('#modal_senha_Atualizada_n').modal('show');
+                });
+            </script>
+        <?php }?>  
+    <!-- Fim do senha Atualizada Não -->
+
+    <!-- senha atual diferente da do banco-->
+    <div class="modal fade" id="modal_senha_Atual" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_centro" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-title" id="modal_cadastro_titulo" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <img c src="../images/logo_areas.png" width="100vw" alt="">
+                    <h5>ATENÇÃO!!</h5>
+                    <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">A senha atual digitada está incorreta.</p>        
+                    <div style="display: flex; justify-content: end;">
+                        <button  type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- código para o senha atual diferente da do banco -->
+        <?php if(isset($_GET['senhaAtual']) && ($_GET['senhaAtual'] == "n")){?>
+            <script>
+                $(document).ready(function() {
+                    $('#modal_senha_Atual').modal('show');
+                });
+            </script>
+        <?php }?>  
+    <!-- Fim do senha atual diferente da do banco -->
+
+    <!-- senha igual as ultimas 5 usadas-->
+    <div class="modal fade" id="modal_senha_Usada" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_centro" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-title" id="modal_cadastro_titulo" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <img c src="../images/logo_areas.png" width="100vw" alt="">
+                    <h5>ATENÇÃO!!</h5>
+                    <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">A senha nova é igual às ultimas 5 usadas anteriormente.</p>        
+                    <div style="display: flex; justify-content: end;">
+                        <button  type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- código para o senha igual as ultimas 5 usadas -->
+        <?php if(isset($_GET['senhaUsada']) && ($_GET['senhaUsada'] == "n")){?>
+            <script>
+                $(document).ready(function() {
+                    $('#modal_senha_Usada').modal('show');
+                });
+            </script>
+        <?php }?>  
+    <!-- Fim do senha igual as ultimas 5 usadas -->
+
+    <!-- senha com menos de 7 caracteres-->
+    <div class="modal fade" id="modal_senha_Caracteres" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_centro" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-title" id="modal_cadastro_titulo" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <img c src="../images/logo_areas.png" width="100vw" alt="">
+                    <h5>ATENÇÃO!!</h5>
+                    <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">A senha nova possui menos de 7 caracteres.</p>        
+                    <div style="display: flex; justify-content: end;">
+                        <button  type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- código para o senha com menos de 7 caracteres -->
+        <?php if(isset($_GET['senhaCaracteres']) && ($_GET['senhaCaracteres'] == "n")){?>
+            <script>
+                $(document).ready(function() {
+                    $('#modal_senha_Caracteres').modal('show');
+                });
+            </script>
+        <?php }?>  
+    <!-- Fim do senha com menos de 7 caracteres -->
+
+    <!-- senha com pelo menos 1 numero-->
+    <div class="modal fade" id="modal_senha_Numero" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_centro" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-title" id="modal_cadastro_titulo" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <img c src="../images/logo_areas.png" width="100vw" alt="">
+                    <h5>ATENÇÃO!!</h5>
+                    <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">A senha nova não possui um numero, por favor utilize pelo menos um número para sua segurança.</p>        
+                    <div style="display: flex; justify-content: end;">
+                        <button  type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- código para o senha com pelo menos 1 numero -->
+        <?php if(isset($_GET['senhaNumero']) && ($_GET['senhaNumero'] == "n")){?>
+            <script>
+                $(document).ready(function() {
+                    $('#modal_senha_Numero').modal('show');
+                });
+            </script>
+        <?php }?>  
+    <!-- Fim do senha com pelo menos 1 numero -->
+
+    <!-- senha não pode ter espaço-->
+    <div class="modal fade" id="modal_senha_Espaco" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_centro" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-title" id="modal_cadastro_titulo" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <img c src="../images/logo_areas.png" width="100vw" alt="">
+                    <h5>ATENÇÃO!!</h5>
+                    <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">A senha nova não pode possuir espaços.</p>        
+                    <div style="display: flex; justify-content: end;">
+                        <button  type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- código para o senha não pode ter espaço -->
+        <?php if(isset($_GET['senhaEspaco']) && ($_GET['senhaEspaco'] == "n")){?>
+            <script>
+                $(document).ready(function() {
+                    $('#modal_senha_Espaco').modal('show');
+                });
+            </script>
+        <?php }?>  
+    <!-- Fim do senha não pode ter espaço -->
+
+    <!-- senhas novas iguais-->
+    <div class="modal fade" id="modal_senha_Nova_iguais" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_centro" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-title" id="modal_cadastro_titulo" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <img c src="../images/logo_areas.png" width="100vw" alt="">
+                    <h5>ATENÇÃO!!</h5>
+                    <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">A senha nova e a confirmação da mesma não são iguais. Por favor verifique se digitou corretamente a senha.</p>        
+                    <div style="display: flex; justify-content: end;">
+                        <button  type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- código para o senhas novas iguais -->
+        <?php if(isset($_GET['senhaNovasIguais']) && ($_GET['senhaNovasIguais'] == "n")){?>
+            <script>
+                $(document).ready(function() {
+                    $('#modal_senha_Nova_iguais').modal('show');
+                });
+            </script>
+        <?php }?>  
+    <!-- Fim do senhas novas iguais -->
 </body>
 <!-- Links para a Biblioteca de icones do Ionic Icons -->
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
