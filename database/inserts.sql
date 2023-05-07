@@ -108,34 +108,34 @@ VALUES('7','rua alexandre','443','sao paulo','sp','22050-120','7');
 
 
 insert into paciente
-VALUES('1','Joao','2003/10/01','182.178.168-42','17.170.191-2','898.0034.0054.0716','null','645317');
+VALUES('1','Joao','2003/10/01','182.178.168-42','17.170.191-2','898.0034.0054.0716','user_sem_foto.png','645317');
 
 insert into paciente
-VALUES('2','Joana','1987/08/05','982.268.938-97','17.170.191-2','867.1134.9954.0912','null','245317');
+VALUES('2','Joana','1987/08/05','982.268.938-97','17.170.191-2','867.1134.9954.0912','user_sem_foto.png','245317');
 
 insert into paciente
-VALUES('3','Laura','1999/03/06','382.563.319-89','90.976.171-5','999.9824.0088.0512','null','345317');
+VALUES('3','Laura','1999/03/06','382.563.319-89','90.976.171-5','999.9824.0088.0512','user_sem_foto.png','345317');
 
 insert into paciente
-VALUES('4','Paulo','1981/06/09','971.782.658-99','90.976.171-5','258.8765.9948.0512','null','445317');
+VALUES('4','Paulo','1981/06/09','971.782.658-99','90.976.171-5','258.8765.9948.0512','user_sem_foto.png','445317');
 
 insert into paciente
-VALUES('5','Ribamar','1995/03/10','871.653.765-86','73.886.190-7','299.8865.9766.4303','null','545317');
+VALUES('5','Ribamar','1995/03/10','871.653.765-86','73.886.190-7','299.8865.9766.4303','user_sem_foto.png','545317');
 
 insert into paciente
-VALUES('6','Fred','1987/07/11','997.113.187-77','64.143.901-9','199.6665.1543.6863','null','615317');
+VALUES('6','Fred','1987/07/11','997.113.187-77','64.143.901-9','199.6665.1543.6863','user_sem_foto.png','615317');
 
 insert into paciente
-VALUES('7','Viviane','1997/10/12','765.965.738-12','97.116.186-0','399.7665.1126.8649','null','835317');
+VALUES('7','Viviane','1997/10/12','765.965.738-12','97.116.186-0','399.7665.1126.8649','user_sem_foto.png','835317');
 
 insert into paciente
-VALUES('8','Vagner','1981/26/02','508.951.268-00','57.570.171-7','999.8765.5043.1813','null','945317');
+VALUES('8','Vagner','1981/26/02','508.951.268-00','57.570.171-7','999.8765.5043.1813','user_sem_foto.png','945317');
 
 insert into paciente
-VALUES('9','Eurico','1978/08/10','907.453.178-99','15.243.190-9','297.7735.7376.1981','null','105317');
+VALUES('9','Eurico','1978/08/10','907.453.178-99','15.243.190-9','297.7735.7376.1981','user_sem_foto.png','105317');
 
 insert into paciente
-VALUES('10','Rodrygo','1980/05/08','899.845.145-55','17.130.187-5','127.8873.634.3522','null','115317'); 
+VALUES('10','Rodrygo','1980/05/08','899.845.145-55','17.130.187-5','127.8873.634.3522','user_sem_foto.png','115317'); 
 
 
 
@@ -173,34 +173,34 @@ VALUES('10','(11)93873-3214','10');
 
 
 insert into end_paciente
-VALUES('1','av. itaquera','36','sao paulo','sp','15841-188','1');
+VALUES('1','av. itaquera','36','sao paulo','sp','15841-188','Não','1');
 
 insert into end_paciente
-VALUES('2','rua marinho','11','sao paulo','sp','31484-021','2');
+VALUES('2','rua marinho','11','sao paulo','sp','31484-021','Não','2');
 
 insert into end_paciente
-VALUES('3','rua carmo','1130','sao paulo','sp','36741-687','3');
+VALUES('3','rua carmo','1130','sao paulo','sp','36741-687','Não','3');
 
 insert into end_paciente
-VALUES('4','rua alexandre','685','sao paulo','sp','38413-017','4');
+VALUES('4','rua alexandre','685','sao paulo','sp','38413-017','Não','4');
 
 insert into end_paciente
-VALUES('5','rua america','66874','sao paulo','sp','15895-135','5');
+VALUES('5','rua america','66874','sao paulo','sp','15895-135','Não','5');
 
 insert into end_paciente
-VALUES('6','rua trovao','637','sao paulo','sp','07051-225','6');
+VALUES('6','rua trovao','637','sao paulo','sp','07051-225','Não','6');
 
 insert into end_paciente
-VALUES('7','rua miguel','2','sao paulo','sp','22354-786','7');
+VALUES('7','rua miguel','2','sao paulo','sp','22354-786','Não','7');
 
 insert into end_paciente
-VALUES('8','rua tatuape','3225','sao paulo','sp','10841-368','8');
+VALUES('8','rua tatuape','3225','sao paulo','sp','10841-368','Não','8');
 
 insert into end_paciente
-VALUES('9','rua tres ilhas','1166','sao paulo','sp','31568-315','9');
+VALUES('9','rua tres ilhas','1166','sao paulo','sp','31568-315','Não','9');
 
 insert into end_paciente
-VALUES('10','rua melancia','687','sao paulo','sp','32156-122','10');
+VALUES('10','rua melancia','687','sao paulo','sp','32156-122','Não','10');
 
 
 
@@ -248,13 +248,13 @@ VALUES('3','2022/01/12','19:00','inflamacao no local da ferida','Nao realizada',
 
 
 insert into ferida
-VALUES('1','queda de moto','2023/01/01','nenhum uso de outra medicacao','Pernas','inferior','alto','mau odor','esquerda','30','1','5');
+VALUES('1','queda de moto','2023/01/01','nenhum uso de outra medicacao','Pernas','inferior','alto','mau odor','esquerda','30','7','5');
 
 insert into ferida
-VALUES('2','queda de biciclete','2023/02/16','faz o uso de hormonios','Cabeça','superior','alto','sem mau odor','esquerda','21','2','3');
+VALUES('2','queda de biciclete','2023/02/16','faz o uso de hormonios','Cabeça','superior','alto','sem mau odor','esquerda','21','7','3');
 
 insert into ferida
-VALUES('3','corte com faca','2023/01/22','faz uso de insulina','Mãos','superior','baixo','mau odor','direita','16','3','2');
+VALUES('3','corte com faca','2023/01/22','faz uso de insulina','Mãos','superior','baixo','mau odor','direita','16','7','2');
 
 insert into ferida
 VALUES('4','mordida de cachorro','2022/12/18','nenhum uso de outra medicacao','Braços','superior','baixo','mau odor','direita','26','5','6');
@@ -266,7 +266,7 @@ insert into ferida
 VALUES('6','tiro','2023/01/04','nenhum uso de outra medicacao','Ombros','superior','baixo','sem mau odor','direita','5','6','1');
 
 insert into ferida
-VALUES('7','acidente de bike','2023/01/15','antidepressivo','Pernas','inferior','alto','sem mau odor','esquerda','30','7','2');
+VALUES('7','acidente de bike','2023/01/15','antidepressivo','Pernas','inferior','alto','sem mau odor','esquerda','30','6','2');
 
 insert into ferida
 VALUES('8','queimadura','2023/09/11','antidepressivo','Tronco','superior','alto','sem mau odor','centro esquerda','25','5','7');
@@ -350,7 +350,7 @@ VALUES ('','1234','11');
 
 
 insert into login_paci
-VALUES ('','1234','1');
+VALUES ('','PA181dc9bdb52d0TRAT-8849f','1');
 
 insert into login_paci
-VALUES ('','1234','2');
+VALUES ('','PA181dc9bdb52d0TRAT-8849f','2');

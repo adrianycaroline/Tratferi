@@ -49,3 +49,8 @@ DELETE FROM end_func WHERE id_func = '10';
 DELETE FROM login_func WHERE id_func = '10';
 DELETE FROM funcionario WHERE id = '10';
 COMMIT;
+
+-- TRADUÇÃO DAS CHAVES HASH 
+PA161b4f324bb43TRAT-8849f = Andrey123
+PA261b4f324bb43TRAT-d85ed = Andrey321
+PA181dc9bdb52d0TRAT-8849f = 1234

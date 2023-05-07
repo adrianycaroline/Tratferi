@@ -85,6 +85,7 @@ numero int(6) not null,
 cidade  varchar(50) not null,
 uf varchar(2) not null,
 cep varchar(9) not null,
+frmPreenchido enum('Sim', 'Não') not null,
 id_paci int not null,
 primary key(id),
 foreign key(id_paci) references paciente (id));

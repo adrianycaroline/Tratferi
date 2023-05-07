@@ -12,7 +12,7 @@
             $hash_md5_12 = substr($senhafinal, 0, 12);
 
         // Seleciona o cpf do usuário logado
-            $selectCpf = $conn->query("SELECT cpf FROM paciente WHERE id = '".$cpf_paciente."';");
+            $selectCpf = $conn->query("SELECT cpf FROM paciente WHERE cpf = '".$cpf_paciente."';");
             $cpf = $selectCpf->fetch_assoc()['cpf'];
         // remove o ponto do cpf
             $cpf_semPonto = str_replace('.', '', $cpf);
