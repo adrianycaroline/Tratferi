@@ -47,6 +47,7 @@ numero int(6) not null,
 cidade  varchar(50) not null,
 uf varchar(2) not null,
 cep varchar(14) not null,
+frmPreenchido enum('Sim', 'Não') not null,
 id_func int not null,
 primary key(id),
 foreign key(id_func) references funcionario(id));
