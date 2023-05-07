@@ -62,3 +62,6 @@ PA181dc9bdb52d0TRAT-8849f = 1234
 
 -- lembre-se que esse é do FUNCIONARIO NUMERO 1 (em outro não funciona)
 FU181dc9bdb52d0TRAT-6c0cb = 1234
+
+-- lembre-se que esse é do FUNCIONARIO NUMERO 1 (em outro não funciona)
+FU161b4f324bb43TRAT-6c0cb = Andrey321
