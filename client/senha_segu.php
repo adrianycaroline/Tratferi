@@ -1,3 +1,114 @@
+<?php 
+    include '../admin/acesso_com_pac.php';
+    include '../connection/connect.php';
+    
+    if (isset($_POST['mudar_senha'])) {
+        // definição das variáveis
+        $senhaAtual = $_POST['senhaAtual'];
+        $senhaNova = $_POST['senhaNova'];
+        $senhaNovaDenovo = $_POST['senhaNovaDenovo'];
+
+        // criptografia da senha 
+            $senhafinal = md5($senhaAtual);
+        // Limita a senha a 12 caracteres
+            $hash_md5_12 = substr($senhafinal, 0, 12);
+
+        // Seleciona o cpf do usuário logado
+            $selectCpf = $conn->query("SELECT cpf FROM paciente WHERE id = ".$_SESSION['Id'].";");
+            $cpf = $selectCpf->fetch_assoc()['cpf'];
+        // remove o ponto do cpf
+            $cpf_semPonto = str_replace('.', '', $cpf);
+        // pega só os 5 primeiros caracteres do cpf
+            $cpf_cortado = substr($cpf_semPonto, 0, 5);
+        // criptografa a os 5 primeiros caracteres do cpf
+            $cpf_quase_final = md5($cpf_cortado);
+        // limita o hash a 5 caracteres
+            $cpf_final = substr($cpf_quase_final, 0, 5);
+        // Cria uma criptografia da senha com 'PA' para indicar que é um paciente, o id do paciente,
+        // o hash da senha, TRAT para indicar que é da tratferi e os 5 primeiros caracteres do cpf
+            $senha_criptografada = 'PA' . $_SESSION['Id'] . $hash_md5_12 . 'TRAT-' . $cpf_final; 
+
+        // Descriptografa a senha do banco
+        $selectSenha = $conn->query("SELECT senha from login_paci WHERE id_paci = ".$_SESSION['Id'].";");
+        $senha_do_Banco = $selectSenha->fetch_assoc()['senha'];
+        
+
+
+        // Verifica se a senha atual digitada é igual a senha armazenada no banco
+        if ($senha_do_Banco == $senha_criptografada) {
+            
+            // verifica se a senha nova digitada é igual a confirmação da senha nova digitada
+            if ($senhaNova == $senhaNovaDenovo){
+                // verifica se a nova senha é diferente das últimas 5 senhas usadas
+                $resultado = $conn->query("SELECT senha FROM login_paci WHERE id_paci = ".$_SESSION['Id']." LIMIT 5;");
+                $senhas_usadas = array();
+                while ($row = $resultado->fetch_assoc()) {
+                    $senhas_usadas[] = $row['senha'];
+                }
+                
+                if (in_array($senhaNova, $senhas_usadas)) {
+                    header('location: senha_segu.php?senhaUsada=n');
+                    exit();
+                }
+                
+                // verifica se a nova senha tem mais de 7 caracteres
+                if (strlen($senhaNova) < 8) {
+                    header('location: senha_segu.php?senhaCaracteres=n');
+                    exit();
+                }
+                
+                // verifica se a nova senha contém pelo menos 1 número
+                if (!preg_match('/\d/', $senhaNova)) {
+                    header('location: senha_segu.php?senhaNumero=n');
+                    exit();
+                }
+                
+                // verifica se a nova senha contém espaços
+                if (strpos($senhaNova, ' ') !== false) {
+                    header('location: senha_segu.php?senhaEspaco=n');
+                    exit();
+                }
+
+                // criptografia da senha 
+                    $senhafinal = md5($senhaNova);
+                // Limita a senha a 12 caracteres
+                    $hash_md5_12 = substr($senhafinal, 0, 12);
+
+                // Seleciona o cpf do usuário logado
+                    $selectCpf = $conn->query("SELECT cpf FROM paciente WHERE id = ".$_SESSION['Id'].";");
+                    $cpf = $selectCpf->fetch_assoc()['cpf'];
+                // remove o ponto do cpf
+                    $cpf_semPonto = str_replace('.', '', $cpf);
+                // pega só os 5 primeiros caracteres do cpf
+                    $cpf_cortado = substr($cpf_semPonto, 0, 5);
+                // criptografa a os 5 primeiros caracteres do cpf
+                    $cpf_quase_final = md5($cpf_cortado);
+                // limita o hash a 5 caracteres 
+                    $cpf_final = substr($cpf_quase_final, 0, 5);
+                // Cria uma criptografia da senha com 'PA' para indicar que é um paciente, o id do paciente,
+                // o hash da senha, TRAT para indicar que é da tratferi e os 5 primeiros caracteres do cpf
+                    $senha_criptografada = 'PA' . $_SESSION['Id'] . $hash_md5_12 . 'TRAT-' . $cpf_final; 
+                
+                // Atualiza a senha do usuário logado
+                $updateSenha = "UPDATE login_paci SET senha = '".$senha_criptografada."' WHERE id_paci = ".$_SESSION['Id'].";";
+                $confirmaUpdate = $conn->query($updateSenha);
+                
+                // se o update der resultado atualiza a página
+                if($confirmaUpdate){
+                    header('location: senha_segu.php?senhaAtualizada=s');
+                }else{
+                    header('location: senha_segu.php?senhaAtualizada=n');
+                }
+            }else{
+                // se as senhas novas digitadas não forem iguais abre modal
+                header('location: senha_segu.php?senhasNovasIguais=n');
+            }
+        }else{
+            // Se a senha atual digitada não for igual a do banco abre o modal
+            header('location: senha_segu.php?senhaAtual=n');
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,6 +118,11 @@
     <link rel="stylesheet" href="../CSS/estilo.css">
     <link rel="stylesheet" href="../CSS/estilo_perfil.css">
     <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <!-- Dependencias para o modal abrir -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <title>Senha e Segurança - <?php echo $_SESSION['nome'];?></title>
 </head>
 <body class="fundo_adm">
@@ -22,46 +138,48 @@
                 <div class="border-bottom border-2 border-dark" style="width: 97%; margin-left: 15px; margin-bottom: 10px;"></div>
             </div>
             <br>
-            <div class="d-flex">
-                <div>
-                    <h5>SENHA ATUAL</h5>
-                    <small>OBRIGATÓRIO</small>
-                    <br>
-                    <div class="group">
-                        <input required="" name="senhaAtual" id="senhaAtual" type="text" class="input2">
+            <form action="senha_segu.php" method="post" enctype="multipart/form-data">
+                <div class="d-flex">
+                    <div>
+                        <h5>SENHA ATUAL</h5>
+                        <small>OBRIGATÓRIO</small>
+                        <br>
+                        <div class="group">
+                            <input required="" name="senhaAtual" id="senhaAtual" type="text" class="input2">
+                        </div>
+                        <br>
+                        <h5>NOVA SENHA</h5>
+                        <small>OBRIGATÓRIO</small>
+                        <br>
+                        <div class="group">
+                            <input required="" name="senhaNova" id="senhaNova" type="text" class="input2">
+                        </div>
+                        <br>
+                        <h5>DIGITE A NOVA SENHA NOVAMENTE</h5>
+                        <small>OBRIGATÓRIO</small>
+                        <br>
+                        <div class="group">
+                            <input required="" name="senhaNovaDenovo" id="senhaNovaDenovo" type="text" class="input2">
+                        </div>
                     </div>
-                    <br>
-                    <h5>NOVA SENHA</h5>
-                    <small>OBRIGATÓRIO</small>
-                    <br>
-                    <div class="group">
-                        <input required="" name="senhaNova" id="senhaNova" type="text" class="input2">
-                    </div>
-                    <br>
-                    <h5>DIGITE A NOVA SENHA NOVAMENTE</h5>
-                    <small>OBRIGATÓRIO</small>
-                    <br>
-                    <div class="group">
-                        <input required="" name="senhaNovaDenovo" id="senhaNovaDenovo" type="text" class="input2">
-                    </div>
-                </div>
-                <div style="margin-left: 100px; border-left: 1px solid black; padding-left: 20px;">
-                    <h5>SUA SENHA</h5>
-                    <br><br>
-                    <div style="font-size: 11pt;">
-                        <p>Sua senha precisa ser diferente das últimas 5 senhas usadas</p>
-                        <p>Sua senha precisa ter mais de 7 caracteres</p>
-                        <p>Sua senha precisa ter pelo menos 1 número</p>
+                    <div style="margin-left: 100px; border-left: 1px solid black; padding-left: 20px;">
+                        <h5>SUA SENHA</h5>
+                        <br><br>
+                        <div style="font-size: 11pt;">
+                            <p>Sua senha precisa ser diferente das últimas 5 senhas usadas</p>
+                            <p>Sua senha precisa ter mais de 7 caracteres</p>
+                            <p>Sua senha precisa ter pelo menos 1 número</p>
                         <p>Sua senha não pode conter espaços</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <br>
-            <br>
-            <div>
-                <button type="button" class="btn btn-secondary">Descartar Alterações</button>
-                <button type="button" class="btn btn-primary">Manter Alterações</button>
-            </div>
+                <br>
+                <br>
+                <div>
+                    <button type="button" class="btn btn-secondary">Descartar Alterações</button>
+                    <button type="submit" name="mudar_senha" class="btn btn-primary">Manter Alterações</button>
+                </div>
+            </form>
             <br>
             <br>
             <hr width="">
@@ -130,6 +248,38 @@
             </div>
         </div>
     </div>
+
+    <!-- ///////////////////////////////// MODAIS /////////////////////////////////// -->
+
+    <!-- senha Atualizada-->
+    <div class="modal fade" id="modal_senha_Atualizada" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_centro" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-title" id="modal_cadastro_titulo" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <img c src="../images/logo_areas.png" width="100vw" alt="">
+                    <h5>SUCESSO!!</h5>
+                    <button style="background-color: white; border: none;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><ion-icon style="color: black; font-size: 2vw;" name="close-outline"></ion-icon></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">Sua senha foi alterada com sucesso.</p>        
+                    <div style="display: flex; justify-content: end;">
+                        <button  type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- código para o senha Atualizada -->
+        <?php if(isset($_GET['senhaAtualizada']) && ($_GET['senhaAtualizada'] == "s")){?>
+            <script>
+                $(document).ready(function() {
+                    $('#modal_senha_Atualizada').modal('show');
+                });
+            </script>
+        <?php }?>  
+    <!-- Fim do senha Atualizada -->
 </body>
 <!-- Links para a Biblioteca de icones do Ionic Icons -->
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
