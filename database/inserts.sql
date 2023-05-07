@@ -337,7 +337,7 @@ VALUES('3','1','2','6');
 
 
 insert into login_func
-VALUES ('','1234','1');
+VALUES ('','FU181dc9bdb52d0TRAT-6c0cb','1');
 
 insert into login_func
 VALUES ('','1234','2');
@@ -353,4 +353,4 @@ insert into login_paci
 VALUES ('','PA181dc9bdb52d0TRAT-8849f','1');
 
 insert into login_paci
-VALUES ('','PA181dc9bdb52d0TRAT-8849f','2');
+VALUES ('','1234','2');

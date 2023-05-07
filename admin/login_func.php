@@ -3,12 +3,37 @@
 
     //Iniciar a verificação do login
       if($_POST){
-        $cpf = $_POST['cpf'];
-        $senha = $_POST['senha'];
+        $cpf_enviado = $_POST['cpf'];
+        $senha_enviada = $_POST['senha'];
+
+        // criptografa a senha no modelo hash md5 criado
+        // criptografia da senha 
+        $senhafinal = md5($senha_enviada);
+        // Limita a senha a 12 caracteres
+            $hash_md5_12 = substr($senhafinal, 0, 12);
+
+        // Seleciona o cpf do usuário logado
+            $selectCpf = $conn->query("SELECT cpf, id FROM funcionario WHERE cpf = '".$cpf_enviado."';");
+            $dadosPaciente = $selectCpf->fetch_assoc();
+            $selectCp_cpf = $dadosPaciente['cpf'];
+            $selectCpfId = $dadosPaciente['id'];
+        // remove o ponto do cpf
+            $cpf_semPonto = str_replace('.', '', $selectCp_cpf);
+        // pega só os 5 primeiros caracteres do cpf
+            $cpf_cortado = substr($cpf_semPonto, 0, 5);
+        // criptografa a os 5 primeiros caracteres do cpf
+            $cpf_quase_final = md5($cpf_cortado);
+        // limita o hash a 5 caracteres
+            $cpf_final = substr($cpf_quase_final, 0, 5);
+        // Cria uma criptografia da senha com 'PA' para indicar que é um paciente, o id do paciente,
+        // o hash da senha, TRAT para indicar que é da tratferi e os 5 primeiros caracteres do cpf
+            $senha_criptografada = 'FU' . $selectCpfId . $hash_md5_12 . 'TRAT-' . $cpf_final;  
+
+
         $loginRes = $conn->query("SELECT funcionario.id as id, funcionario.imagem as imagem, 
         funcionario.nome as nome, funcionario.cpf as cpf, funcionario.adm as adm, Login_func.senha as senha 
         FROM Login_func
-        inner join funcionario ON (Login_func.id_func = funcionario.id) where cpf = '$cpf' AND senha = '$senha'");
+        inner join funcionario ON (Login_func.id_func = funcionario.id) where cpf = '$cpf_enviado' AND senha = '$senha_criptografada'");
         $rowLogin = $loginRes->fetch_assoc();
         $numRow = mysqli_num_rows($loginRes);
         // se a sessão existir ou não

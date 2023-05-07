@@ -51,6 +51,14 @@ DELETE FROM funcionario WHERE id = '10';
 COMMIT;
 
 -- TRADUÇÃO DAS CHAVES HASH 
+------------------------------------------------------------------------------------------------
+-- lembre-se que esse é do PACIENTE NUMERO 1 (em outro não funciona)
 PA161b4f324bb43TRAT-8849f = Andrey123
+-- lembre-se que esse é do PACIENTE NUMERO 2 (em outro não funciona)
 PA261b4f324bb43TRAT-d85ed = Andrey321
+
+-- lembre-se que esse é do PACIENTE NUMERO 1 (em outro não funciona)
 PA181dc9bdb52d0TRAT-8849f = 1234
+
+-- lembre-se que esse é do FUNCIONARIO NUMERO 1 (em outro não funciona)
+FU181dc9bdb52d0TRAT-6c0cb = 1234

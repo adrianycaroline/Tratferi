@@ -2,8 +2,8 @@
  include '../connection/connect.php';
        // iniciar a verificação do login
        if($_POST){
-         $cpf_enviado = $_POST['cpf'];
-         $senha_enviada = $_POST['password'];
+        $cpf_enviado = $_POST['cpf'];
+        $senha_enviada = $_POST['password'];
 
         // criptografa a senha no modelo hash md5 criado
         // criptografia da senha 
@@ -41,7 +41,6 @@
             $_SESSION['Id'] = $rowLogin['id'];
             $_SESSION['Imagem'] = $rowLogin['imagem'];
             if($rowLogin['cpf'] == $cpf_enviado){
-                 
                  echo "<script>window.open('../client/index.php','_self')</script>";
             }
         }else {
