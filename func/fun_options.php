@@ -40,8 +40,8 @@
     <title>Área do Funcionário</title>
 </head>
 <body>
-<div>
-    <main id="escondido2"  style="bottom: 0;">
+<div style="margin-left: 280px;">
+    <main style="bottom: 0; ">
         <div class="bg-azul"> 
             <figure id="img-bloqueado" style="position:absolute; cursor: pointer;">
                 <img src="../images/menu-svgrepo-com.svg" style="margin-left: 5px;" width="40vw" alt="" srcset="">
@@ -52,36 +52,6 @@
                     <span id="horas"></span>
                 </div>
             </div>
-        </div>
-        <div id="menu-dropdown" style="display: none;">
-            <!-- conteúdo do menu dropdown -->
-            <div class="d-flex flex-column flex-shrink-0 p-3 bg-azul"  style="position: fixed; top: 0; left: 0; bottom: 0; width: 80px; overflow-y: auto;">
-            <ul class="nav nav-pills flex-column mb-auto">
-                <li>
-                    <a href="index.php" class="nav-link" aria-current="page">
-                        <img src="../images/dashboard.svg" alt="" width="20vw">
-                    </a>
-                </li>
-                <li>
-                    <a href="cadastrar_paciente.php" class="nav-link">
-                        <img src="../images/usuarios.svg" alt="" width="20vw">
-                    </a>
-                </li>
-                <li>
-                    <a href="pacientes_lista.php" class="nav-link">
-                        <img src="../images/usuarios.svg" alt="" width="20vw">
-                    </a>
-                </li>
-            </ul>
-            <hr>
-            <div class="dropdown">
-                <img  id="dropdownMenuFuncRespon" type="button"  data-toggle="dropdown" aria-haspopup="true" src="https://github.com/mdo.png" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="32" height="32" style="border-radius: 20px;">
-                <div class="dropdown-menu funcRespon" aria-labelledby="dropdownMenuButton" >
-                    <a class="dropdown-item" href="../admin/perfil_adm_index.php"><ion-icon name="person-outline"></ion-icon></a>
-                    <a class="dropdown-item" href="../admin/logout_Fun.php"><ion-icon name="exit-outline"></ion-icon></a>
-                </div>
-            </div>
-        </div>
         </div>
         <div>
             <figure style="display: flex; margin: 10px;">
@@ -134,44 +104,6 @@
             </div>
         </div>
     </main>
+</div>
 </body>
-<script>
-const imgBloqueado = document.getElementById('img-bloqueado');
-const menuDropdown = document.getElementById('menu-dropdown');
-const escondido2 = document.getElementById('escondido2');
-let menuAberto = false;
-
-imgBloqueado.addEventListener('click', function() {
-    if (menuAberto) {
-        menuDropdown.style.display = 'none';
-        escondido2.style.marginLeft = '0px';
-        menuAberto = false;
-        window.location.reload();
-    }else{
-        menuDropdown.style.display = 'block';
-        escondido2.style.marginLeft = '80px';
-        menuAberto = true;
-        window.addEventListener("resize", function(){
-            if (window.innerWidth > 926) {
-                window.location.reload();
-            }
-        });
-    }
-});
-</script>
-<script>
-const dropdownMenuFuncRespon = document.getElementById('dropdownMenuFuncRespon');
-const dropdownMenufuncionarioRes = document.querySelector('.funcRespon');
-
-dropdownMenuFuncRespon.addEventListener('click', () => {
-  dropdownMenufuncionarioRes.classList.toggle('show');
-});
-
-//caso o usuario clique fora ele fecha o dropdown
-document.addEventListener('click', (event) => {
-    if (!dropdownMenuFuncRespon.contains(event.target)) {
-      dropdownMenufuncionarioRes.classList.remove('show');
-    }
-});
-</script>
 </html>
