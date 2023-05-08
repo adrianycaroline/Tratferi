@@ -93,8 +93,6 @@ foreign key(id_paci) references paciente (id));
 
 
 
-
-
 create table consulta(
 id int not null auto_increment,
 data_consulta date not null,
@@ -198,7 +196,7 @@ foreign key(id_func)references funcionario(id));
 
 create table Login_paci(
 id int not null auto_increment,
-senha varchar(25) not null,
+senha varchar(26) not null,
 id_paci int null,
 primary key(id),
 foreign key(id_paci)references paciente(id));
