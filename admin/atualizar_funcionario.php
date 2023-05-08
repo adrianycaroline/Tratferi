@@ -35,7 +35,9 @@
                 where id = $id";
             $resultado = $conn->query($updateSql);
             if($resultado){
-                header('location: ../admin/listar_funcionarios.php');
+                header('location: ../admin/listar_funcionarios.php?upd=s');
+            }else{
+                header('location: ../admin/listar_funcionarios.php?upd=n');
             }
         }
         if($_GET){

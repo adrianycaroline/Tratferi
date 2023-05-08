@@ -69,7 +69,7 @@
             
             //enviar senha por email
             include '../envia_cadastro.php';
-            header('location: ../admin/listar_funcionarios.php');
+            header('location: ../admin/listar_funcionarios.php?cad=s');
         } 
     }
 ?>
