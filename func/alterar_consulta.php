@@ -112,22 +112,12 @@ if($_GET['id']){
                             <input type="date" name="data" class="form-control" id="data" value="<?php echo $row['data_consulta']?>" required>
                     </div>
                     <br>
-                    <label class="text-center">Status da Consulta (campo obrigatório mesmo sem haver mudanças!):</label>
+                    <label class="text-center" style="color: #1d5f96;">Status da Consulta (campo obrigatório mesmo sem haver mudanças!):</label>
                     <br>
                     <div class="btn-group d-flex gap-2" role="group" aria-label="Basic mixed styles example">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_ativa">Ativa</button>
-                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal_finalizada">Finalizada</button>
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal_nao">Não Realizada</button>
-                    </div>
-                    <br>
-                    <label class="text-center">Prioridade:</label>
-                    <br>
-                    <div class="btn-group d-flex gap-2" role="group" aria-label="Basic mixed styles example">
-                        <button type="button" onclick="botao_grave()" class="btn btn-danger">Muito Grave</button>
-                        <button type="button" onclick="botao_urgente()" class="btn" style="background-color: #ffa500;">Urgente</button>
-                        <button type="button" onclick="botao_moderado()" class="btn" style="background-color: #ffff00;">Moderado</button>
-                        <button type="button" onclick="botao_menos_grave()" class="btn" style="background-color: #66CDAA; color: #000;">Menos grave</button>
-                        <button type="button" onclick="botao_leve()" class="btn" style="background-color: #38B6FF;">Leve</button>
+                        <button type="button" class="btn" style="background-color: #ffa500;" data-toggle="modal" data-target="#modal_ativa">Ativa</button>
+                        <button type="button" class="btn" style="background-color: #66CDAA; " data-toggle="modal" data-target="#modal_finalizada">Finalizada</button>
+                        <button type="button" class="btn btn-danger" style="color: #000;" data-toggle="modal" data-target="#modal_nao">Não Realizada</button>
                     </div>
                     <br>
                     <button class="btn" style="background-color: #38B6FF;" name="atualizar" type="submit">Alterar consulta</button>

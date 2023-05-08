@@ -87,11 +87,11 @@
         </div>
     </div>
     <br>
-    <h1 class="card-header text-center" style="color: #1d5f96; margin-left: 230px;">Lista de Pacientes ativos</h1>
+    <h1 class="card-header text-center" style="color: #1d5f96; margin-left: 200px;">Lista de Pacientes ativos</h1>
     <div style="display: flex; justify-content: center;">
-            <div class="border-bottom border-2 " style="width: 30%;"></div>
+            <div class="border-bottom border-2 " style="width: 30%; margin-left: 160px;"></div>
     </div>
-    <section style="margin-left: 280px;">
+    <section class="" style="margin-left: 150px;">
         <table class="table table-hover table-condensed tb-opacidade" id="tabela_pacientes"> 
             <thead>
                 <tr>

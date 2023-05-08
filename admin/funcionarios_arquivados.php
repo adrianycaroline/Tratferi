@@ -83,7 +83,7 @@
             </table>
             <?php }else {?>
                 <div class="text-center">
-                    <h3>NÃO EXISTEM FUNCIONARIOS ARQUIVADOS.</h3>
+                    <h3 style="color: #1d5f96;">NÃO EXISTEM FUNCIONARIOS ARQUIVADOS.</h3>
                 </div>
             <?php }?>
         </main>

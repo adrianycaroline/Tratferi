@@ -98,7 +98,7 @@ foreign key(id_paci) references paciente (id));
 create table consulta(
 id int not null auto_increment,
 data_consulta date not null,
-horario_consulta datetime not null,
+horario_consulta time not null,
 descricao text not null,
 status enum ('Ativa','Finalizada','Nao realizada') not null,
 hash varchar(20) not null,
