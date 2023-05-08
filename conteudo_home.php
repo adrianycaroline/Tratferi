@@ -30,8 +30,13 @@
 </div>
 <!-- fim do banner  -->
 
-
-  <div style="background-color: #ccfafb;">
+<style>
+body {
+        background: url('images/fundo_consci.webp') no-repeat;  
+        background-size: cover;
+    }
+</style>
+  <div >
     <br>
     <br>
     <!-- começo dos cards  -->
