@@ -26,6 +26,26 @@
         $conexao = $conn;
         $resultadoEmail = $conexao->query($insereEmail);
         
+    
+        $cpf_sem_ponto = str_replace('.', '', $cpf); // remove os pontos do CPF
+        $cpf_tratado = substr($cpf_sem_ponto, 0, 5); // extrai os primeiros cinco dígitos do CPF sem ponto
+
+        // criptografia da senha
+        $senhafinal = md5($cpf_tratado);
+        // Limita a senha a 12 caracteres
+        $hash_md5_12 = substr($senhafinal, 0, 12);
+
+        // limita o hash a 5 caracteres
+        $cpf_final = substr($senhafinal, 0, 5);
+
+        // Cria uma criptografia da senha com 'PA' para indicar que é um paciente, o id do paciente,
+        // o hash da senha, TRAT para indicar que é da tratferi e os 5 primeiros caracteres do cpf
+        $senha_criptografada = 'PA' . $id_pac . $hash_md5_12 . 'TRAT-' . $cpf_final; 
+
+        // Insere a senha no banco
+        $insereSenha = "INSERT INTO login_paci VALUES ('', '$senha_criptografada', '$id_pac')";
+        $resultado3 = $conn->query($insereSenha);
+        
         //enviar senha por email
         include '../envia_cadastro.php';
         echo "<script>window.open('pacientes_lista.php?cad=s','_self')</script>"; 
@@ -41,25 +61,29 @@
         $conexao = $conn;
         $resultadoEmail = $conexao->query($insereEmail);
 
+        $cpf_sem_ponto = str_replace('.', '', $cpf); // remove os pontos do CPF
+        $cpf_tratado = substr($cpf_sem_ponto, 0, 5); // extrai os primeiros cinco dígitos do CPF sem ponto
+
+        // criptografia da senha
+        $senhafinal = md5($cpf_tratado);
+        // Limita a senha a 12 caracteres
+        $hash_md5_12 = substr($senhafinal, 0, 12);
+
+        // limita o hash a 5 caracteres
+        $cpf_final = substr($senhafinal, 0, 5);
+
+        // Cria uma criptografia da senha com 'PA' para indicar que é um paciente, o id do paciente,
+        // o hash da senha, TRAT para indicar que é da tratferi e os 5 primeiros caracteres do cpf
+        $senha_criptografada = 'PA' . $id_pac . $hash_md5_12 . 'TRAT-' . $cpf_final; 
+
+        // Insere a senha no banco
+        $insereSenha = "INSERT INTO login_paci VALUES ('', '$senha_criptografada', '$id_pac')";
+        $resultado3 = $conn->query($insereSenha);
+
         //enviar senha por emailo
         include '../envia_cadastro.php';
         echo "<script>window.open('pacientes_lista.php?cad=s','_self')</script>"; 
         }
-
-    if(mysqli_insert_id($conn)){
-        $id = mysqli_insert_id($conn);
-        $selectHash = "SELECT id FROM paciente where cpf = '$cpf'";
-        $resultado2 = $conn->query($selectHash);
-        $row = mysqli_fetch_assoc($resulado2);
-        $paciente_id = $row['id'];
-
-        $cpf_sem_ponto = str_replace('.', '', $cpf); // remove os pontos do CPF
-        $cpf_tratado = substr($cpf_sem_ponto, 0, 5); // extrai os primeiros cinco dígitos do CPF sem ponto
-        $insereSenha = "INSERT INTO login_paci VALUES ('', '$cpf_tratado', '$paciente_id')";
-        $resultado3 = $conn->query($insereSenha);
-        
-        header('location: ../func/pacientes_lista.php?cad=s');
-    } 
 }      
 ?>
 <!DOCTYPE html>

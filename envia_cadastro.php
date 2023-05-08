@@ -11,7 +11,7 @@
 </head>
     <body>
         <?php
-        $senha = $cpf_tratado;
+        $senha = $hash_md5_12;
 
         use PHPMailer\PHPMailer\PHPMailer;
         use PHPMailer\PHPMailer\SMTP;
