@@ -37,7 +37,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/estilo.css">
-    <link rel="stylesheet" href="../CSS/dropdown.css">
     <title>Área do Funcionário</title>
 </head>
 <body>
@@ -102,7 +101,7 @@
                         <p class="text-light" style="font-size: 28pt; margin-right: 15px;"><?php echo $quantidadeP ?></p>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-light"><a href="pacientes_lista.php" class="text-white">Pacientes Ativos</a></h5>
+                        <h5 class="card-title text-light"><a href="pacientes_lista.php" class="text-white" style="text-decoration: none;">Pacientes Ativos</a></h5>
                     
                     </div>
                 </div>
@@ -112,7 +111,7 @@
                         <p class="text-light" style="font-size: 28pt; margin-right: 15px;">2</p>
                     </div>    
                     <div class="card-body">
-                        <h5 class="card-title text-light"><a href="consultas.php" class="text-white">Consultas</a></h5>
+                        <h5 class="card-title text-light"><a href="consultas.php" class="text-white" style="text-decoration: none;">Consultas</a></h5>
                     </div>
                 </div>
                 <div class="card bg-azul2" style="width: 18rem; height: 12rem;">
@@ -121,7 +120,15 @@
                         <p class="text-light" style="font-size: 28pt; margin-right: 15px;">3</p>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-light"><a href="medicamentos.php" class="text-white">Medicamentos</a></h5>
+                        <h5 class="card-title text-light"><a href="medicamentos.php" class="text-white" style="text-decoration: none;">Medicamentos</a></h5>
+                    </div>
+                </div>
+                <div class="card bg-azul2" style="width: 18rem; height: 12rem;">
+                    <div class="d-flex" style="justify-content: space-between;">
+                        <img src="../images/users.png" alt="Usuários" style="margin: 10px;" width="50vw">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-light"><a href="tratamento.php" class="text-white" style="text-decoration: none;">Tratamentos</a></h5>
                     </div>
                 </div>
             </div>

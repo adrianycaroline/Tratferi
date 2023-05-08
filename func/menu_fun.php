@@ -43,10 +43,6 @@
                     </a>
                 </li>
                 <br>
-                <!-- Botão de Voltar -->
-                <div style="color: white;">
-                    <a href="index.php" class="text-light" style="text-decoration: none; border: 1px solid white; border-radius: 20px; padding: 5px;">Voltar</a>
-                </div>
             </ul>
             <hr>
             <div class="dropdown">
@@ -55,7 +51,7 @@
                 <button class="dropdown-toggle bg-azul border-0" style="color: white;" type="button" id="dropdownMenuFunc" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 </button>
                 <div class="dropdown-menu func" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="perfil/config_perfil_func.php?upd"><ion-icon name="person-outline"></ion-icon>Perfil</a>
+                    <a class="dropdown-item" href="../perfil_func/config_perfil_func.php?upd"><ion-icon name="person-outline"></ion-icon>Perfil</a>
                     <a class="dropdown-item" href="../admin/logout_Fun.php"><ion-icon name="exit-outline"></ion-icon>Sair</a>
                 </div>
             </div>
