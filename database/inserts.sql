@@ -340,7 +340,7 @@ insert into login_func
 VALUES ('','FU181dc9bdb52d0TRAT-6c0cb','1');
 
 insert into login_func
-VALUES ('','1234','2');
+VALUES ('','FU281dc9bdb52d0TRAT-55c41','2');
 
 insert into login_func
 VALUES ('','1234','10');
