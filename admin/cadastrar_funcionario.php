@@ -61,7 +61,7 @@
 
         // Cria uma criptografia da senha com 'PA' para indicar que é um paciente, o id do paciente,
         // o hash da senha, TRAT para indicar que é da tratferi e os 5 primeiros caracteres do cpf
-        $senha_criptografada = 'PA' . $id_func . $hash_md5_12 . 'TRAT-' . $cpf_final; 
+        $senha_criptografada = 'FU' . $id_func . $hash_md5_12 . 'TRAT-' . $cpf_final; 
 
         // Insere a senha no banco
         $insereSenha = "INSERT INTO login_func VALUES ('', '$senha_criptografada', '$funcionario_id')";

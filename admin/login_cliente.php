@@ -9,7 +9,7 @@
         // criptografia da senha 
         $senhafinal = md5($senha_enviada);
         // Limita a senha a 12 caracteres
-            $hash_md5_12 = substr($senhafinal, 0, 12);
+        $hash_md5_12 = substr($senhafinal, 0, 12);
 
         // Seleciona o cpf do usuário logado
             $selectCpf = $conn->query("SELECT cpf, id FROM paciente WHERE cpf = '".$cpf_enviado."';");
