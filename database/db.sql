@@ -205,7 +205,7 @@ foreign key(id_paci)references paciente(id));
 
 create table Login_func(
 id int not null auto_increment primary key,
-senha varchar(25) not null,
+senha varchar(26) not null,
 id_func int not null,
 foreign key(id_func)references funcionario(id)
 );

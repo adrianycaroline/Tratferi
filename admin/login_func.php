@@ -6,21 +6,22 @@
         $cpf_enviado = $_POST['cpf'];
         $senha_enviada = $_POST['senha'];
 
-        // criptografa a senha no modelo hash md5 criado
-        // criptografia da senha 
-        $senhafinal = md5($senha_enviada);
-        // Limita a senha a 12 caracteres
-            $hash_md5_12 = substr($senhafinal, 0, 12);
-
         // Seleciona o cpf do usuário logado
             $selectCpf = $conn->query("SELECT cpf, id FROM funcionario WHERE cpf = '".$cpf_enviado."';");
-            $dadosPaciente = $selectCpf->fetch_assoc();
-            $selectCp_cpf = $dadosPaciente['cpf'];
-            $selectCpfId = $dadosPaciente['id'];
+            $dadosFunc= $selectCpf->fetch_assoc();
+            $selectCp_cpf = $dadosFunc['cpf'];
+            $selectCpfId = $dadosFunc['id'];
+        
+        // criptografia da senha
+        $senhafinal = md5($senha_enviada);
+        // Limita a senha a 12 caracteres
+        $hash_md5_12 = substr($senhafinal, 0, 12);
+        
         // remove o ponto do cpf
             $cpf_semPonto = str_replace('.', '', $selectCp_cpf);
         // pega só os 5 primeiros caracteres do cpf
             $cpf_cortado = substr($cpf_semPonto, 0, 5);
+
         // criptografa a os 5 primeiros caracteres do cpf
             $cpf_quase_final = md5($cpf_cortado);
         // limita o hash a 5 caracteres
