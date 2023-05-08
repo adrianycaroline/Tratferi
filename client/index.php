@@ -9,7 +9,6 @@
 
     $formulario_preenchido = $row['preenchido'];
 
-
     if(isset($_POST['dados_endereco_primeiro_acesso'])){
         //Endereço
         $cep = $_POST['cep_end'];

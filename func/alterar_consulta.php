@@ -10,7 +10,7 @@ include '../connection/connect.php';
     $pf_resp = $_POST['pf_resp'];
     $horario = $_POST['horario'];
     $data = $_POST['data'];
-    $status = $_SESSION['status'];
+    $status = $_POST['status'];
 
     try{
     //consultando funcionario
@@ -112,12 +112,16 @@ if($_GET['id']){
                             <input type="date" name="data" class="form-control" id="data" value="<?php echo $row['data_consulta']?>" required>
                     </div>
                     <br>
-                    <label class="text-center" style="color: #1d5f96;">Status da Consulta (campo obrigatório mesmo sem haver mudanças!):</label>
+                    <label class="text-center" style="color: #1d5f96;">Status da Consulta</label>
                     <br>
-                    <div class="btn-group d-flex gap-2" role="group" aria-label="Basic mixed styles example">
-                        <button type="button" class="btn" style="background-color: #ffa500;" data-toggle="modal" data-target="#modal_ativa">Ativa</button>
-                        <button type="button" class="btn" style="background-color: #66CDAA; " data-toggle="modal" data-target="#modal_finalizada">Finalizada</button>
-                        <button type="button" class="btn btn-danger" style="color: #000;" data-toggle="modal" data-target="#modal_nao">Não Realizada</button>
+                    <div class="form-row">
+                            <div class="form-group">
+                                <select class="form-control" name="status" id="status">
+                                    <option value="Ativa">Ativa</option>
+                                    <option value="Finalizada">Finalizada</option>
+                                    <option value="Nao realizada">Não Realizada</option>
+                                </select>
+                            </div>
                     </div>
                     <br>
                     <button class="btn" style="background-color: #38B6FF;" name="atualizar" type="submit">Alterar consulta</button>
@@ -127,66 +131,6 @@ if($_GET['id']){
     </div>
     <!-- --------------------- -->
         <?php include 'menu_cadastrar.php';?>
-    <!-- modal_ativa -->
-    <div class="modal fade" id="modal_ativa" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_centro" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <h5 class="modal-title" id="modal_cadastro_titulo">Status da Consulta</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                 </button>
-                                </div>
-                    <div class="modal-body">
-                        <?php $_SESSION['status'] = 1;?>
-                        <?php echo "Consulta Ativa selecionada!";?>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
-                    </div>
-                    </div>
-                    </div>
-    </div>
-    <!-- modal_finalizada -->
-    <div class="modal fade" id="modal_finalizada" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_centro" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <h5 class="modal-title" id="modal_cadastro_titulo">Status da Consulta</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                 </button>
-                                </div>
-                    <div class="modal-body">
-                        <?php $_SESSION['status'] = 2;?>
-                        <?php echo "Consulta Finalizada selecionada!";?>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
-                    </div>
-                    </div>
-                    </div>
-    </div>
-    <!--modal_nao -->
-    <div class="modal fade" id="modal_nao" tabindex="-1" role="dialog" aria-labelledby="modal_cadastro_centro" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <h5 class="modal-title" id="modal_cadastro_titulo">Status da Consulta</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                 </button>
-                                </div>
-                    <div class="modal-body">
-                        <?php $_SESSION['status'] = 3;?>
-                        <?php echo "Consulta Não Realizada selecionada!";?>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
-                    </div>
-                    </div>
-                    </div>
-    </div>
 </body>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
