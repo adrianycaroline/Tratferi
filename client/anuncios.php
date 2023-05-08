@@ -52,6 +52,7 @@
             </div>
         </div>
     </div>
+    
     <div class="container" style="display: flex; flex-wrap: wrap; flex-direction: column;">
         <h1 class="mt-5 mb-4">Anúncios</h1>
         <div class="row">

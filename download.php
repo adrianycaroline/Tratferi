@@ -49,9 +49,9 @@
                     </div>
                 </div>
             </div>
-            
         <img class="celular img-responsive escondido5" src="images/celulares1.webp" alt="">
         </div>
+        <br><br><br>
     </main>  
     <div id="footerzin"><?php include 'footer2.php'?></div> 
 
@@ -83,18 +83,6 @@ checkScreenSize();
 // Verifique o tamanho da tela quando a janela for redimensionada
 window.addEventListener('resize', checkScreenSize);
     </script>
-    <style>
-        main.responsive {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-@media (max-width: 1023px) {
-  .hide {
-    display: none;
-  }
-}
-</style>
 
 </body>
 </html>
