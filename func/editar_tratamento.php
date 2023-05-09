@@ -10,6 +10,7 @@
         // header('location: index.php?paciente=n');
     }
 
+
     
     date_default_timezone_set('America/Sao_Paulo'); // define o fuso horário para São Paulo
     $diaDaSemana = date('l'); // obtém o dia da semana
@@ -64,23 +65,34 @@
         $id_paci = $row_PaciId['id'];
                                     
         // Insert da Ferida
-        $insert_ferida = "INSERT INTO ferida
-        (forma_adquirida, tempo_ferida, regiao, membro, exsudato, odor, lateralidade, medidas, id_paci, id_func)
-        VALUES ('$forma_adquirida','$tempo','$area','$membro','$exsudato','$odor','$lateralidade','$medidas', '$id_paci','".$_SESSION['Id']."')";
+        $update_ferida = "UPDATE ferida
+        set forma_adquirida = '$forma_adquirida', 
+        tempo_ferida = '$tempo', 
+        regiao = '$area', 
+        membro = '$membro', 
+        exsudato = '$exsudato', 
+        odor = '$odor', 
+        lateralidade = '$lateralidade', 
+        medidas = '$medidas'
+        where id_paci = $id_paci";
 
-        $insert_ferida_result = $conn->query($insert_ferida);
+        $update_ferida_result = $conn->query($update_ferida);
 
         // Obtém o ID gerado na última inserção
         $id_ferida = mysqli_insert_id($conn);
 
         // insere o tratamento com o id_ferida
-        $insert_tratamento = "INSERT INTO tratamento
-        (anotacao_func, acompanhamento, medicamento_usado, finalizacao, area, id_func, id_paci, id_ferida)
-        VALUES ('$anotacao','$acompanhamento','$medicamento','$finalizacao','$lado','".$_SESSION['Id']."', '$id_paci','$id_ferida')";
+        $update_tratamento = "UPDATE tratamento
+        set anotacao_func = '$anotacao', 
+        acompanhamento = '$acompanhamento', 
+        medicamento_usado = '$medicamento', 
+        finalizacao = '$finalizacao', 
+        area = '$lado'
+        where id_ferida = $id_ferida";
 
-        $insert_tratamento_result = $conn->query($insert_tratamento);
+        $update_tratamento_result = $conn->query($update_tratamento);
 
-        if($insert_tratamento_result && $insert_ferida_result){
+        if($update_tratamento_result && $update_ferida_result){
             header('location: listar_tratamento.php?tratamento=s');
         }else{
             header('location: listar_tratamento.php?tratamento=n');
@@ -93,7 +105,7 @@
         $id_tratamento = 0;
     }
         
-    $listaTrata = $conn->query("SELECT *, funcionario.nome as nome_func, paciente.id as id_do_paci FROM tratamento 
+    $listaTrata = $conn->query("SELECT *, funcionario.nome as nome_func, paciente.id as id_do_paci, paciente.nome as nome_paci FROM tratamento 
     LEFT JOIN ferida on tratamento.id_ferida = ferida.id 
     LEFT JOIN funcionario on tratamento.id_func = funcionario.id 
     LEFT JOIN paciente on tratamento.id_paci = paciente.id
@@ -133,7 +145,7 @@
         <main>
             <div style="margin: 20px;"> <!-- Afasta o conteúdo das bordas -->
                 <div style="border: 4px solid #2b8af7; border-radius: 35px; background-color: white;">
-                    <form action="tratamento.php" method="post" enctype="multipart/form-data" style="margin: 40px;">
+                    <form action="editar_tratamento.php" method="post" enctype="multipart/form-data" style="margin: 40px;">
                         <!-- Começo do conteúdo principal -->
                         <div class="d-flex" style="justify-content: center;">
                             <div style="margin-right: 70px;">
