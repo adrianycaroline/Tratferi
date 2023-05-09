@@ -39,10 +39,7 @@
                             ?>
                             <!-- Login do Funcionário e Administrador -->
                             <?php if((isset($_SESSION['login'])) && ($_SESSION['login'] != "tratferi")) {?> 
-                                <?php if($_SESSION['login'] == "tratferiFun") {?> <!-- Verifica se é Func -->
-
-                                    <a href="func/index.php" class="nav-link" style="color:#fff; font-size: 20px;">
-                                        <?php echo $_SESSION['nome'];?>
+                                <?php if($_SESSION['login'] == "tratferiFun") {?> <!-- Verifica se é Func -->   
                                     <a href="func/index.php" class="nav-link" style="color: #fff; font-size: 20px;">
                                         <?php echo strstr($_SESSION['nome'], ' ', true);?>
 

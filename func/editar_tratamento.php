@@ -1,14 +1,7 @@
 <?php 
     include '../admin/acesso_com_fun.php';
     include '../connection/connect.php';
-
-    $id_paciente = $_GET['id'];
-    
-    $lista = $conn->query("SELECT *, funcionario.nome as nome_func, paciente.nome as nome_paci FROM tratamento 
-    LEFT JOIN ferida on tratamento.id_ferida = ferida.id 
-    LEFT JOIN funcionario on tratamento.id_func = funcionario.id 
-    LEFT JOIN paciente on tratamento.id_paci = paciente.id
-    WHERE tratamento.id_paci = ".$id_paciente." AND ferida.id_paci = ".$id_paciente." LIMIT 1;");
+    $lista = $conn->query("SELECT * FROM paciente;");
     if ($lista->num_rows > 0) {
         // Caso tenha resultados
         $row = $lista->fetch_assoc();
@@ -17,44 +10,44 @@
         // header('location: index.php?paciente=n');
     }
 
-
+    
     date_default_timezone_set('America/Sao_Paulo'); // define o fuso horário para São Paulo
     $diaDaSemana = date('l'); // obtém o dia da semana
     switch($diaDaSemana) {
         case 'Monday':
             $diaDaSemana = 'Segunda-feira';
             break;
-        case 'Tuesday':
-            $diaDaSemana = 'Terça-feira';
-            break;
-        case 'Wednesday':
-            $diaDaSemana = 'Quarta-feira';
-            break;
-        case 'Thursday':
-            $diaDaSemana = 'Quinta-feira';
-            break;
-        case 'Friday':
-            $diaDaSemana = 'Sexta-feira';
-            break;
-        case 'Saturday':
-            $diaDaSemana = 'Sábado';
-            break;
-        case 'Sunday':
-            $diaDaSemana = 'Domingo';
-            break;
-    }
-
+            case 'Tuesday':
+                $diaDaSemana = 'Terça-feira';
+                break;
+                case 'Wednesday':
+                    $diaDaSemana = 'Quarta-feira';
+                    break;
+                    case 'Thursday':
+                        $diaDaSemana = 'Quinta-feira';
+                        break;
+                        case 'Friday':
+                            $diaDaSemana = 'Sexta-feira';
+                            break;
+                            case 'Saturday':
+                                $diaDaSemana = 'Sábado';
+                                break;
+                                case 'Sunday':
+                                    $diaDaSemana = 'Domingo';
+                                    break;
+                                }
+                                
     if(isset($_POST['concluir'])){
         // Variaveis gerais
         $paciente = $_POST['paciente'];
-
+                                    
         // variaveis do tratamento
         $medicamento = $_POST['medicamento'];
         $acompanhamento = $_POST['acompanhamento'];
         $finalizacao = $_POST['finalizacao'];
         $anotacao = $_POST['anotacao'];
         $lado = $_POST['lado'];
-        
+                                    
         // variaveis da ferida
         $forma_adquirida = $_POST['forma'];
         $tempo = $_POST['tempo'];
@@ -62,15 +55,14 @@
         $odor = $_POST['odor'];
         $lateralidade = $_POST['lateralidade'];
         $medidas = $_POST['medidas'];
-        $desc = $_POST['desc'];
         $area = $_POST['area'];
         $membro = $_POST['membro'];
-
+                                    
         // seleciona o id do paciente baseado no nome escolhido no select
         $selectIdPaci = $conn->query("SELECT id FROM paciente where nome = '".$paciente."';");
         $row_PaciId = $selectIdPaci->fetch_assoc();
         $id_paci = $row_PaciId['id'];
-
+                                    
         // Insert da Ferida
         $insert_ferida = "INSERT INTO ferida
         (forma_adquirida, tempo_ferida, regiao, membro, exsudato, odor, lateralidade, medidas, id_paci, id_func)
@@ -93,17 +85,29 @@
         }else{
             header('location: listar_tratamento.php?tratamento=n');
         }
-
     }
+
+    if($_GET){
+        $id_tratamento = $_GET['id'];
+    } else {
+        $id_tratamento = 0;
+    }
+        
+    $listaTrata = $conn->query("SELECT *, funcionario.nome as nome_func, paciente.id as id_do_paci FROM tratamento 
+    LEFT JOIN ferida on tratamento.id_ferida = ferida.id 
+    LEFT JOIN funcionario on tratamento.id_func = funcionario.id 
+    LEFT JOIN paciente on tratamento.id_paci = paciente.id
+    where tratamento.id = ".$id_tratamento.";");
+    $rowTrata = $listaTrata->fetch_assoc();
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../images/logo_minimizada.png" type="image/x-icon">
-    <link rel="stylesheet" href="../CSS/bootstrap.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="../images/logo_minimizada.png" type="image/x-icon">
+        <link rel="stylesheet" href="../CSS/bootstrap.css">
     <link rel="stylesheet" href="../CSS/estilo.css">
     <link rel="stylesheet" href="../CSS/corpo2.css">
     <title>Editar Tratamento</title>
@@ -134,22 +138,20 @@
                         <div class="d-flex" style="justify-content: center;">
                             <div style="margin-right: 70px;">
                                 <h5 style="color: #2b8af7;">Odor:</h5>
-                                <textarea class="TxaTratamento" name="odor" id="odor" cols="40" rows="4" required></textarea>
+                                <textarea class="TxaTratamento" name="odor" id="odor" cols="40" rows="4" required><?php echo $rowTrata['odor'];?></textarea>
                                 <h5 style="color: #2b8af7;">Lateralidade:</h5>
-                                <textarea class="TxaTratamento" name="lateralidade" id="lateralidade" cols="40" rows="4" required></textarea>
+                                <textarea class="TxaTratamento" name="lateralidade" id="lateralidade" cols="40" rows="4" required><?php echo $rowTrata['lateralidade'];?></textarea>
                                 <h5 style="color: #2b8af7;">Medidas:</h5>
-                                <textarea class="TxaTratamento" name="medidas" id="medidas" cols="40" rows="4" required></textarea>
-                                <h5 style="color: #2b8af7;">Descrição da Região afetada:</h5>
-                                <textarea class="TxaTratamento" name="desc" id="desc" cols="40" rows="4" required></textarea>
+                                <textarea class="TxaTratamento" name="medidas" id="medidas" cols="40" rows="4" required><?php echo $rowTrata['medidas'];?></textarea>
                                 <h5 style="color: #2b8af7;">Previsão de Finalização</h5>
-                                <textarea class="TxaTratamento" name="finalizacao" id="finalizacao" cols="40" rows="4" required></textarea>
-                            </div>
-                            <div>
+                                <textarea class="TxaTratamento" name="finalizacao" id="finalizacao" cols="40" rows="4" required><?php echo $rowTrata['finalizacao'];?></textarea>
                                 <!-- Text Adiquirida -->
                                 <h5 style="color: #2b8af7;">Forma Adquirida:</h5>
-                                <textarea class="TxaTratamento" name="forma" id="forma" cols="40" rows="4" required></textarea>
+                                <textarea class="TxaTratamento" name="forma" id="forma" cols="40" rows="4" required><?php echo $rowTrata['forma_adquirida'];?></textarea>
+                            </div>
+                            <div>
                                 <h5 style="color: #2b8af7;">Acompanhamento</h5>
-                                <textarea class="TxaTratamento" name="acompanhamento" id="acompanhamento" cols="40" rows="4" required></textarea>
+                                <textarea class="TxaTratamento" name="acompanhamento" id="acompanhamento" cols="40" rows="4" required><?php echo $rowTrata['acompanhamento'];?></textarea>
                                 <div>
                                     <div class="d-flex">
                                         <div>
@@ -171,7 +173,7 @@
                                             <select name="paciente" style="font-size: 14pt; border-radius: 10px;" required>
                                                 <?php 
                                                     while($row = $lista->fetch_assoc()) {
-                                                        echo '<option value="'.$row['nome_paci'].'">'.$row['nome_paci'].'</option>';
+                                                        echo '<option value="'.$row['nome'].'">'.$row['nome'].'</option>';
                                                     }
                                                 ?>
                                             </select>
@@ -179,10 +181,10 @@
                                         <div style="font-size: 14pt; margin-left: 15px;">
                                             <h5>Lado do Corpo:</h5>
                                             <label>
-                                                <input value="lado" type="radio" name="lado" id="lado" value="Frente" required> Frente
+                                                <input value="Frente" type="radio" name="lado" id="lado1" <?php echo ($rowTrata['area'] == 'Frente') ? 'checked' : ''; ?> required> Frente
                                             </label>
                                             <label>
-                                                <input value="lado" type="radio" name="lado" id="lado" value="Verso" required> Costas
+                                                <input value="Verso" type="radio" name="lado" id="lado2" <?php echo ($rowTrata['area'] == 'Verso') ? 'checked' : ''; ?> required> Costas
                                             </label>
                                         </div>
                                     </div>
@@ -190,22 +192,22 @@
                                     <div>
                                         <div>
                                             <h5>Dia da Lesão</h5>
-                                            <input type="date" name="tempo" id="tempo" style="border-radius: 10px;" required>
+                                            <input type="date" name="tempo" id="tempo" style="border-radius: 10px;" value="<?php echo $rowTrata['tempo_ferida'] ?>" required>
                                         </div>
                                         <br>
                                         <div>
                                             <h5>Tipo de Membro:</h5>
                                             <select name="membro" style="font-size: 14pt; border-radius: 10px;" required>
-                                                <option value="superior">Superior</option>
-                                                <option value="inferior">Inferior</option>
+                                                <option value="superior" <?php if($rowTrata['membro'] == 'superior') echo 'selected' ?>>Superior</option>
+                                                <option value="inferior" <?php if($rowTrata['membro'] == 'inferior') echo 'selected' ?>>Inferior</option>
                                             </select>
                                         </div>
                                         <br>
                                         <div>
                                             <h5>Exsudato</h5>
                                             <select name="exsudato" id="exsudato" style="font-size: 14pt; border-radius: 10px;" required>
-                                                <option value="alto">Alto</option>
-                                                <option value="baixo">Baixo</option>
+                                                <option value="alto" <?php if($rowTrata['exsudato'] == 'alto') echo 'selected' ?>>Alto</option>
+                                                <option value="baixo" <?php if($rowTrata['exsudato'] == 'baixo') echo 'selected' ?>>Baixo</option>
                                             </select>
                                         </div>
                                     </div>
@@ -226,9 +228,9 @@
                         <br>
                         <div class="text-center">
                             <h2>Anotações</h2>
-                            <textarea class="TxaTratamento" name="anotacao" id="anotacao" cols="150" rows="10" required></textarea>
+                            <textarea class="TxaTratamento" name="anotacao" id="anotacao" cols="150" rows="10" required><?php echo $rowTrata['anotacao_func'];?></textarea>
                             <br><br>
-                            <button class="btn btn-primary" type="submit" name="concluir">Criar</button>
+                            <button class="btn btn-primary" type="submit" name="concluir">Atualizar</button>
                         </div>
                     </form>
                 </div>
