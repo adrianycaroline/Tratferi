@@ -29,6 +29,11 @@
     $rowP = $listaP->fetch_row(); 
     $quantidadeP = $rowP[0]; 
 
+    $listaC = $conn->query("SELECT COUNT(*) FROM consulta"); //Conta a quantidade de usuarios ativos.
+   
+    $rowC = $listaC->fetch_row(); 
+    $quantidadeC = $rowC[0]; 
+
     
 ?>
 <!DOCTYPE html>
@@ -65,40 +70,38 @@
         <div>
             <br>
             <div style="display: flex; flex-wrap: wrap; margin-left: 20px;">
-                <div class="card bg-azul2" style="width: 18rem; height: 12rem;">
+                <div class="card card2 bg-azul2" style="width: 18rem; height: 12rem;">
                     <div class="d-flex" style="justify-content: space-between;">
                         <img src="../images/users.png" alt="Usuários" style="margin: 10px;" width="50vw">
-                        <p class="text-light" style="font-size: 28pt; margin-right: 15px;"><?php echo $quantidadeP ?></p>
+                        <p class="text-light" style="font-size: 28pt; margin-right: 15px;"><?php echo $quantidadeP; ?></p>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-light"><a href="pacientes_lista.php" class="text-white" style="text-decoration: none;">Pacientes Ativos</a></h5>
-                    
+                        <h5 class="card-title text-light"><a href="pacientes_lista.php" class="text-white" style="text-decoration: none;" id="AdmOpcoesbtn">Pacientes Ativos</a></h5> 
                     </div>
                 </div>
-                <div class="card bg-azul2" style="width: 18rem; height: 12rem;">
+                <div class="card card2 bg-azul2" style="width: 18rem; height: 12rem;">
                     <div class="d-flex" style="justify-content: space-between;">
                         <img src="../images/users.png" alt="Usuários" style="margin: 10px;" width="50vw">
-                        <p class="text-light" style="font-size: 28pt; margin-right: 15px;">2</p>
+                        <p class="text-light" style="font-size: 28pt; margin-right: 15px;"><?php echo $quantidadeC; ?></p>
                     </div>    
                     <div class="card-body">
-                        <h5 class="card-title text-light"><a href="consultas.php" class="text-white" style="text-decoration: none;">Consultas</a></h5>
+                        <h5 class="card-title text-light"><a href="consultas.php" class="text-white" style="text-decoration: none;" id="AdmOpcoesbtn">Consultas</a></h5>
                     </div>
                 </div>
-                <div class="card bg-azul2" style="width: 18rem; height: 12rem;">
-                    <div class="d-flex" style="justify-content: space-between;">
-                        <img src="../images/users.png" alt="Usuários" style="margin: 10px;" width="50vw">
-                        <p class="text-light" style="font-size: 28pt; margin-right: 15px;">3</p>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-light"><a href="medicamentos.php" class="text-white" style="text-decoration: none;">Medicamentos</a></h5>
-                    </div>
-                </div>
-                <div class="card bg-azul2" style="width: 18rem; height: 12rem;">
+                <div class="card card2 bg-azul2" style="width: 18rem; height: 12rem;">
                     <div class="d-flex" style="justify-content: space-between;">
                         <img src="../images/users.png" alt="Usuários" style="margin: 10px;" width="50vw">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-light"><a href="listar_tratamento.php" class="text-white" style="text-decoration: none;">Tratamentos</a></h5>
+                        <h5 class="card-title text-light"><a href="medicamentos.php" class="text-white" style="text-decoration: none;" id="AdmOpcoesbtn">Medicamentos</a></h5>
+                    </div>
+                </div>
+                <div class="card card2 bg-azul2" style="width: 18rem; height: 12rem;">
+                    <div class="d-flex" style="justify-content: space-between;">
+                        <img src="../images/users.png" alt="Usuários" style="margin: 10px;" width="50vw">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-light"><a href="listar_tratamento.php" class="text-white" style="text-decoration: none;" id="AdmOpcoesbtn">Tratamentos</a></h5>
                     </div>
                 </div>
             </div>
