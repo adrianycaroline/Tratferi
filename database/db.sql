@@ -112,7 +112,6 @@ create table ferida(
 id int not null auto_increment,
 forma_adquirida text not null,
 tempo_ferida date not null,
-uso_medicacao text not null,
 regiao text not null,
 membro varchar(15) not null,
 exsudato text not null,

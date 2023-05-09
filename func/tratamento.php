@@ -36,7 +36,57 @@
             break;
     }
 
+    if(isset($_POST['concluir'])){
+        // Variaveis gerais
+        $paciente = $_POST['paciente'];
 
+        // variaveis do tratamento
+        $medicamento = $_POST['medicamento'];
+        $acompanhamento = $_POST['acompanhamento'];
+        $finalizacao = $_POST['finalizacao'];
+        $anotacao = $_POST['anotacao'];
+        $lado = $_POST['lado'];
+        
+        // variaveis da ferida
+        $forma_adquirida = $_POST['forma'];
+        $tempo = $_POST['tempo'];
+        $exsudato = $_POST['exsudato'];
+        $odor = $_POST['odor'];
+        $lateralidade = $_POST['lateralidade'];
+        $medidas = $_POST['medidas'];
+        $desc = $_POST['desc'];
+        $area = $_POST['area'];
+        $membro = $_POST['membro'];
+
+        // seleciona o id do paciente baseado no nome escolhido no select
+        $selectIdPaci = $conn->query("SELECT id FROM paciente where nome = '".$paciente."';");
+        $row_PaciId = $selectIdPaci->fetch_assoc();
+        $id_paci = $row_PaciId['id'];
+
+        // Insert da Ferida
+        $insert_ferida = "INSERT INTO ferida
+        (forma_adquirida, tempo_ferida, regiao, membro, exsudato, odor, lateralidade, medidas, id_paci, id_func)
+        VALUES ('$forma_adquirida','$tempo','$area','$membro','$exsudato','$odor','$lateralidade','$medidas', '$id_paci','".$_SESSION['Id']."')";
+
+        $insert_ferida_result = $conn->query($insert_ferida);
+
+        // Obtém o ID gerado na última inserção
+        $id_ferida = mysqli_insert_id($conn);
+
+        // insere o tratamento com o id_ferida
+        $insert_tratamento = "INSERT INTO tratamento
+        (anotacao_func, acompanhamento, medicamento_usado, finalizacao, area, id_func, id_paci, id_ferida)
+        VALUES ('$anotacao','$acompanhamento','$medicamento','$finalizacao','$lado','".$_SESSION['Id']."', '$id_paci','$id_ferida')";
+
+        $insert_tratamento_result = $conn->query($insert_tratamento);
+
+        if($insert_tratamento_result && $insert_ferida_result){
+            header('location: index.php?tratamento=s');
+        }else{
+            header('location: index.php?tratamento=n');
+        }
+
+    }
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +98,7 @@
     <link rel="stylesheet" href="../CSS/bootstrap.css">
     <link rel="stylesheet" href="../CSS/estilo.css">
     <link rel="stylesheet" href="../CSS/corpo2.css">
-    <title>Especificações Tratamento - <?php echo($_SESSION['nome']); ?></title>
+    <title>Novo Tratamento</title>
 </head>
 <body onload="atualizarHoras()" class="fundo_areas">
     <?php include 'menu_fun.php'; ?>
@@ -71,50 +121,89 @@
         <main>
             <div style="margin: 20px;"> <!-- Afasta o conteúdo das bordas -->
                 <div style="border: 4px solid #2b8af7; border-radius: 35px; background-color: white;">
-                    <div style="margin: 40px;">
+                    <form action="tratamento.php" method="post" enctype="multipart/form-data" style="margin: 40px;">
                         <!-- Começo do conteúdo principal -->
                         <div class="d-flex" style="justify-content: center;">
+                            <div style="margin-right: 70px;">
+                                <h5 style="color: #2b8af7;">Odor:</h5>
+                                <textarea class="TxaTratamento" name="odor" id="odor" cols="40" rows="4"></textarea>
+                                <h5 style="color: #2b8af7;">Lateralidade:</h5>
+                                <textarea class="TxaTratamento" name="lateralidade" id="lateralidade" cols="40" rows="4"></textarea>
+                                <h5 style="color: #2b8af7;">Medidas:</h5>
+                                <textarea class="TxaTratamento" name="medidas" id="medidas" cols="40" rows="4"></textarea>
+                                <h5 style="color: #2b8af7;">Descrição da Região afetada:</h5>
+                                <textarea class="TxaTratamento" name="desc" id="desc" cols="40" rows="4"></textarea>
+                                <h5 style="color: #2b8af7;">Previsão de Finalização</h5>
+                                <textarea class="TxaTratamento" name="finalizacao" id="finalizacao" cols="40" rows="4"></textarea>
+                            </div>
                             <div>
                                 <!-- Text Adiquirida -->
                                 <h5 style="color: #2b8af7;">Forma Adquirida:</h5>
-                                <textarea class="TxaTratamento" name="" id="" cols="40" rows="4"></textarea>
-                                <!-- Text Tempo desde a lesão -->
-                                <h5 style="color: #2b8af7;">Tempo desde a lesão:</h5>
-                                <textarea class="TxaTratamento" name="" id="" cols="40" rows="4"></textarea>
-                                <!-- Text Medicação a se utilizar -->
-                                <h5 style="color: #2b8af7;">Medicação a se utilizar:</h5>
-                                <textarea class="TxaTratamento" name="" maxlength="50" id="" cols="40" rows="4"></textarea>
-                                <!-- Text Exsudato -->
-                                <h5 style="color: #2b8af7;">Exsudato:</h5>
-                                <textarea class="TxaTratamento" name="" id="" cols="40" rows="4"></textarea>
-                                <!-- Profissional que atendeu -->
-                                <h5>Paciente:</h5>
-                                <select style="font-size: 14pt; border-radius: 10px;">
-                                    <?php 
-                                        while($row = $lista->fetch_assoc()) {
-                                        echo '<option value="'.$row['nome'].'">'.$row['nome'].'</option>';
-                                        }?>
-                                </select>
-                            </div>
-                            <div style="margin-left: 100px; margin-right: 100px;">
-                                <h5 style="color: #2b8af7;">Odor:</h5>
-                                <textarea class="TxaTratamento" name="" id="" cols="40" rows="4"></textarea>
-                                <h5 style="color: #2b8af7;">Lateralidade:</h5>
-                                <textarea class="TxaTratamento" name="" id="" cols="40" rows="4"></textarea>
-                                <h5 style="color: #2b8af7;">Medidas:</h5>
-                                <textarea class="TxaTratamento" name="" id="" cols="40" rows="4"></textarea>
-                                <h5 style="color: #2b8af7;">Descrição da Região afetada:</h5>
-                                <textarea class="TxaTratamento" name="" id="" cols="40" rows="4"></textarea>
-                                <div style="font-size: 14pt;">
-                                    <label>
-                                        <input value="lado" type="radio" name="lado" id="lado" value="Frente"> Frente
-                                    </label>
-                                    <label>
-                                        <input value="lado" type="radio" name="lado" id="lado" value="Verso"> Costas
-                                    </label>
+                                <textarea class="TxaTratamento" name="forma" id="forma" cols="40" rows="4"></textarea>
+                                <h5 style="color: #2b8af7;">Acompanhamento</h5>
+                                <textarea class="TxaTratamento" name="acompanhamento" id="acompanhamento" cols="40" rows="4"></textarea>
+                                <div>
+                                    <div class="d-flex">
+                                        <div>
+                                            <!-- Text Medicação a se utilizar -->
+                                            <h5>Medicação:</h5>
+                                            <select name="medicamento" id="medicamento" style="font-size: 14pt; border-radius: 10px;">
+                                                <?php 
+                                                    //seleciona os medicamentos 
+                                                    $medicamentos = $conn->query("SELECT * FROM medicamento;");
+                                                
+                                                    while($row_med = $medicamentos->fetch_assoc()) {
+                                                        echo '<option value="'.$row_med['remedio'].'">'.$row_med['remedio'].'</option>';
+                                                    }
+                                                ?>
+                                            </select>
+                                            <br><br>
+                                            <!-- Paciente -->
+                                            <h5>Paciente:</h5>
+                                            <select name="paciente" style="font-size: 14pt; border-radius: 10px;">
+                                                <?php 
+                                                    while($row = $lista->fetch_assoc()) {
+                                                        echo '<option value="'.$row['nome'].'">'.$row['nome'].'</option>';
+                                                    }
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <div style="font-size: 14pt; margin-left: 15px;">
+                                            <h5>Lado do Corpo:</h5>
+                                            <label>
+                                                <input value="lado" type="radio" name="lado" id="lado" value="Frente"> Frente
+                                            </label>
+                                            <label>
+                                                <input value="lado" type="radio" name="lado" id="lado" value="Verso"> Costas
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <div>
+                                            <h5>Dia da Lesão</h5>
+                                            <input type="date" name="tempo" id="tempo" style="border-radius: 10px;">
+                                        </div>
+                                        <br>
+                                        <div>
+                                            <h5>Tipo de Membro:</h5>
+                                            <select name="membro" style="font-size: 14pt; border-radius: 10px;">
+                                                <option value="superior">Superior</option>
+                                                <option value="inferior">Inferior</option>
+                                            </select>
+                                        </div>
+                                        <br>
+                                        <div>
+                                            <h5>Exsudato</h5>
+                                            <select name="exsudato" id="exsudato" style="font-size: 14pt; border-radius: 10px;">
+                                                <option value="alto">Alto</option>
+                                                <option value="baixo">Baixo</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div>
+                            <div style="margin-left: 50px;">
                                 <div>
                                     <h5 style="color: #2b8af7;">Membro/ Região Afetada</h5>
                                     <?php include 'corpo.php';?>
@@ -122,15 +211,18 @@
                                 <div id="area">
                                     Area: <br>
                                     <span id="data"></span>
+                                    <input type="hidden" name="area" id="area_input">
                                 </div>
                             </div>
                         </div>
                         <br>
                         <div class="text-center">
                             <h2>Anotações</h2>
-                            <textarea class="TxaTratamento" name="" id="" cols="150" rows="10"></textarea>
+                            <textarea class="TxaTratamento" name="anotacao" id="anotacao" cols="150" rows="10"></textarea>
+                            <br><br>
+                            <button class="btn btn-primary" type="submit" name="concluir">Criar</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </main>

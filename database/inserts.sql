@@ -248,28 +248,28 @@ VALUES('3','2022/01/12','19:00','inflamacao no local da ferida','Nao realizada',
 
 
 insert into ferida
-VALUES('1','queda de moto','2023/01/01','nenhum uso de outra medicacao','Pernas','inferior','alto','mau odor','esquerda','30','7','5');
+VALUES('1','queda de moto','2023/01/01','Pernas','inferior','alto','mau odor','esquerda','30','7','5');
 
 insert into ferida
-VALUES('2','queda de biciclete','2023/02/16','faz o uso de hormonios','Cabeça','superior','alto','sem mau odor','esquerda','21','7','3');
+VALUES('2','queda de biciclete','2023/02/16','Cabeça','superior','alto','sem mau odor','esquerda','21','7','3');
 
 insert into ferida
-VALUES('3','corte com faca','2023/01/22','faz uso de insulina','Mãos','superior','baixo','mau odor','direita','16','7','2');
+VALUES('3','corte com faca','2023/01/22','Mãos','superior','baixo','mau odor','direita','16','7','2');
 
 insert into ferida
-VALUES('4','mordida de cachorro','2022/12/18','nenhum uso de outra medicacao','Braços','superior','baixo','mau odor','direita','26','5','6');
+VALUES('4','mordida de cachorro','2022/12/18','Braços','superior','baixo','mau odor','direita','26','5','6');
 
 insert into ferida
-VALUES('5','queda de moto','2023/01/22','esteroides anabolizantes','Braços','superior','baixo','mau odor','esquerda','10','6','3');
+VALUES('5','queda de moto','2023/01/22','Braços','superior','baixo','mau odor','esquerda','10','6','3');
 
 insert into ferida
-VALUES('6','tiro','2023/01/04','nenhum uso de outra medicacao','Ombros','superior','baixo','sem mau odor','direita','5','6','1');
+VALUES('6','tiro','2023/01/04','Ombros','superior','baixo','sem mau odor','direita','5','6','1');
 
 insert into ferida
-VALUES('7','acidente de bike','2023/01/15','antidepressivo','Pernas','inferior','alto','sem mau odor','esquerda','30','6','2');
+VALUES('7','acidente de bike','2023/01/15','Pernas','inferior','alto','sem mau odor','esquerda','30','6','2');
 
 insert into ferida
-VALUES('8','queimadura','2023/09/11','antidepressivo','Tronco','superior','alto','sem mau odor','centro esquerda','25','5','7');
+VALUES('8','queimadura','2023/09/11','Tronco','superior','alto','sem mau odor','centro esquerda','25','5','7');
 
 
 
