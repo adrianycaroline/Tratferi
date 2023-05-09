@@ -1,6 +1,20 @@
 <?php
-include '../admin/acesso_com_fun.php';
- include '../connection/connect.php'; 
+    include '../admin/acesso_com_fun.php';
+    include '../connection/connect.php'; 
+
+    $lista = $conn->query("SELECT * FROM medicamento");
+    $row = $lista->fetch_assoc();
+
+    if(isset($_POST['buscar'])){
+        $pesquisa = $_POST['pesquisa'];
+    
+    // realiza a busca no banco de dados
+        $query = "SELECT * FROM medicamento WHERE remedio LIKE '%$pesquisa%'";
+        $result = $conn->query($query);
+    
+    
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -21,25 +35,46 @@ include '../admin/acesso_com_fun.php';
     <div class="barra fixed-top bg-azul">
     <br> <br>
 </div>
+    <div style="margin-top: 90px; margin-left: 300px;">
+        <h1>Medicamentos</h1>
+    </div>
     <!-- fim -->
-    <div style="background-color:  #38B6FF; display: flex; margin-left: 300px; margin-top: 320px; width: 80%; border-radius: 20px;">
-        <br><br>
+    <div style="background-color:  #38B6FF; display: flex; margin-left: 300px; margin-top: 70px; width: 80%; border-radius: 20px;">
+        <form method="post" style="margin-left: 20px; display: flex;">
+            <input type="text" name="pesquisa" id="pesquisa" value="digite o que você quer procurar..." style="background: none; border: none; width: 1415px;">
+            <button type="submit" name="buscar" style="background-color:  #38B6FF; border-radius: 20px; padding: 5px; color: white; border: 2px solid black;">Buscar</button>
+        </form>
     </div>
-    &nbsp;
-    <div style="background-color: #DCDCDC; display: flex; margin-left: 300px; width: 80%; border-radius: 20px;">
-        <br><br><br><br>
-    </div>
-    <br>
-    <div style="background-color: #DCDCDC; display: flex; margin-left: 300px; width: 80%; border-radius: 20px;">
-        <br><br><br><br>
-    </div>
-    <br>
-    <div style="background-color: #DCDCDC; display: flex; margin-left: 300px; width: 80%; border-radius: 20px;">
-        <br><br><br><br>
-    </div>
-    <br>
-    <div style="background-color: #DCDCDC; display: flex; margin-left: 300px; width: 80%; border-radius: 20px;">
-        <br><br><br><br>
-    </div>
+    <table style="margin-left: 300px;" class="table table-hover table-condensed tb-opacidade">
+        <thead>
+            <tr>
+                <th>Receita</th>
+                <th>Remédio</th>
+                <th>Quantidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <?php do { ?>
+                    <tr>
+                        <td class="hidden">
+                            <?php echo $row['id']; ?>
+                        </td>
+                        <td>
+                            <?php echo $row['receita']; ?>
+                            <span class="visible-xs"></span>
+                            <span class="hidden-xs"></span>
+                        </td>
+                        <td>
+                            <?php echo $row['remedio']; ?>
+                        </td>
+                        <td>
+                            <?php echo $row['qntd_remedio']; ?>
+                        </td>
+                    </tr>
+                <?php } while($row = $result->fetch_assoc()) ?>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
