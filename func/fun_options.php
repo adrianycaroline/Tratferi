@@ -98,7 +98,7 @@
                         <img src="../images/users.png" alt="Usuários" style="margin: 10px;" width="50vw">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-light"><a href="tratamento.php" class="text-white" style="text-decoration: none;">Tratamentos</a></h5>
+                        <h5 class="card-title text-light"><a href="listar_tratamento.php" class="text-white" style="text-decoration: none;">Tratamentos</a></h5>
                     </div>
                 </div>
             </div>
