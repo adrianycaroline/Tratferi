@@ -847,10 +847,13 @@ margin-left: 3%;
 /* ////////////////////////////////////// TRATAMENTO ///////////////////////////////// */
 .TxaTratamento{
     background-color: #d1d1d1;
-    border: 1px solid #d1d1d1;
+    border: 1px solid #38B6FF;
     border-radius: 10px;
 }
-
+textarea.TxaTratamento:focus{
+    outline: 0;
+    border: 3px solid #38B6FF;
+}
 
 /* coraçãozin conscientização */
 
