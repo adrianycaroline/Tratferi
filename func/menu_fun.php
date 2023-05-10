@@ -9,7 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/bootstrap.min.css">
     <link rel="stylesheet" href="../CSS/estilo.css">
-    <link rel="stylesheet" href="../CSS/dropdown.css">
+    <!-- Jquery para o modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <title>Barra Lateral</title>
 </head>
 <body>
@@ -46,12 +50,14 @@
             </ul>
             <hr>
             <div class="dropdown">
-                <img src="../fotos_usuarios/<?php echo $_SESSION['Imagem']; ?>" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="32" height="32" class="rounded-circle me-2">
+                <a href="../perfil_func/config_perfil.php?upd" style="text-decoration: none; color: white;">
+                    <img src="../fotos_usuarios/<?php echo $_SESSION['Imagem']; ?>" alt="Foto de Perfil - <?php echo $_SESSION['nome']?>" width="32" height="32" class="rounded-circle me-2">
+                </a>
                 <strong><a style="text-decoration: none; color: white;"><?php echo $_SESSION['nome'];?></a></strong>
                 <button class="dropdown-toggle bg-azul border-0" style="color: white;" type="button" id="dropdownMenuFunc" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 </button>
                 <div class="dropdown-menu func" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="../perfil_func/config_perfil_func.php?upd"><ion-icon name="person-outline"></ion-icon>Perfil</a>
+                    <a class="dropdown-item" href="../perfil_func/config_perfil.php?upd"><ion-icon name="person-outline"></ion-icon>Perfil</a>
                     <a class="dropdown-item" href="../admin/logout_Fun.php"><ion-icon name="exit-outline"></ion-icon>Sair</a>
                 </div>
             </div>
@@ -62,19 +68,4 @@
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script src="../js/script.js"></script>
-<script src="../js/dropdown.js"></script>
-<script>
-const dropdownMenuFunc = document.getElementById('dropdownMenuFunc');
-const dropdownMenufuncionario = document.querySelector('.func');
-dropdownMenuFunc.addEventListener('click', () => {
-  dropdownMenufuncionario.classList.toggle('show');
-});
-
-//caso o usuario clique fora ele fecha o dropdown
-document.addEventListener('click', (event) => {
-    if (!dropdownMenuFunc.contains(event.target)) {
-      dropdownMenufuncionario.classList.remove('show');
-    }
-});
-</script>
 </html>
