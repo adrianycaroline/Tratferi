@@ -32,6 +32,14 @@
     <div style="margin-top: 90px; margin-left: 300px;">
         <h1>Medicamentos</h1>
     </div>
+    <div style="display: flex;">
+        <div class="border-bottom border-2 border-dark" style="width: 83%; margin-left: 300px;"></div>
+    </div>
+    <br>
+    <a href="cadastra_medicamento.php" target="_self" class="btn btn-block btn-xs" style="background-color: #38B6FF; margin-left: 300px;" role="button">
+        <ion-icon name="add-circle-outline"></ion-icon>
+        <span class="hidden-xs">ADICIONAR NOVO MEDICAMENTO</span>
+    </a>
     <div style="margin-left: 300px; margin-top: 70px;">
         <table class="table table-hover table-condensed tb-opacidade" id="tabela_medicamentos">
             <thead style="background-color: #38B6FF;"> 
