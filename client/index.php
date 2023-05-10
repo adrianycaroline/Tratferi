@@ -7,7 +7,7 @@
     $row = $lista->fetch_assoc();
     $rows = $lista->num_rows;
 
-    $formulario_preenchido = isset($row['preenchido']);
+    $formulario_preenchido = $row['preenchido'];
 
     if(isset($_POST['dados_endereco_primeiro_acesso'])){
         //Endereço
