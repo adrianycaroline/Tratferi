@@ -5,7 +5,7 @@
     LEFT JOIN ferida on tratamento.id_ferida = ferida.id 
     LEFT JOIN funcionario on tratamento.id_func = funcionario.id 
     LEFT JOIN paciente on tratamento.id_paci = paciente.id
-    WHERE tratamento.id_paci = ".$_SESSION['Id']." AND ferida.id_paci = ".$_SESSION['Id']." LIMIT 1;");
+    WHERE tratamento.id_paci = ".$_SESSION['Id'].";");
     if ($lista->num_rows > 0) {
         // Caso tenha resultados
         $row = $lista->fetch_assoc();
@@ -103,39 +103,81 @@
                     <div style="margin: 40px;">
                         <!-- Começo do conteúdo principal -->
                         <div class="d-flex" style="justify-content: center;">
-                            <div>
+                        <div style="margin-right: 70px;">
+                                <h5 style="color: #2b8af7;">Odor:</h5>
+                                <textarea class="TxaTratamento" name="odor" id="odor" cols="40" rows="4" disabled><?php echo $row['odor'];?></textarea>
+                                <h5 style="color: #2b8af7;">Lateralidade:</h5>
+                                <textarea class="TxaTratamento" name="lateralidade" id="lateralidade" cols="40" rows="4" disabled><?php echo $row['lateralidade'];?></textarea>
+                                <h5 style="color: #2b8af7;">Medidas:</h5>
+                                <textarea class="TxaTratamento" name="medidas" id="medidas" cols="40" rows="4" disabled><?php echo $row['medidas'];?></textarea>
+                                <h5 style="color: #2b8af7;">Previsão de Finalização</h5>
+                                <textarea class="TxaTratamento" name="finalizacao" id="finalizacao" cols="40" rows="4" disabled><?php echo $row['finalizacao'];?></textarea>
                                 <!-- Text Adiquirida -->
                                 <h5 style="color: #2b8af7;">Forma Adquirida:</h5>
-                                <textarea class="TxaTratamento" name="" id="" cols="40" rows="4" disabled><?php echo $row['forma_adquirida'];?></textarea>
-                                <!-- Text Tempo desde a lesão -->
-                                <h5 style="color: #2b8af7;">Tempo desde a lesão:</h5>
-                                <textarea class="TxaTratamento" name="" id="" cols="40" rows="4" disabled><?php echo $tempoDecorrido;?></textarea>
-                                <!-- Text Medicação a se utilizar -->
-                                <h5 style="color: #2b8af7;">Medicação a se utilizar:</h5>
-                                <textarea class="TxaTratamento" name="" id="" cols="40" rows="4" disabled><?php echo $row['medicamento_usado'];?></textarea>
-                                <!-- Text Exsudato -->
-                                <h5 style="color: #2b8af7;">Exsudato:</h5>
-                                <textarea class="TxaTratamento" name="" id="" cols="40" rows="4" disabled><?php echo $row['exsudato'];?></textarea>
-                                <!-- Profissional que atendeu -->
-                                <h5>Profissional Responsável:</h5>
-                                <p style="font-size: 14pt;"><?php echo $row['nome_func']?></p>
+                                <textarea class="TxaTratamento" name="forma" id="forma" cols="40" rows="4" disabled><?php echo $row['forma_adquirida'];?></textarea>
                             </div>
-                            <div style="margin-left: 100px; margin-right: 100px;">
-                                <h5 style="color: #2b8af7;">Odor:</h5>
-                                <textarea class="TxaTratamento" name="" id="" cols="40" rows="4" disabled><?php echo $row['odor'];?></textarea>
-                                <h5 style="color: #2b8af7;">Lateralidade:</h5>
-                                <textarea class="TxaTratamento" name="" id="" cols="40" rows="4" disabled><?php echo $row['lateralidade'];?></textarea>
-                                <h5 style="color: #2b8af7;">Medidas:</h5>
-                                <textarea class="TxaTratamento" name="" id="" cols="40" rows="4" disabled><?php echo $row['medidas'];?></textarea>
-                                <h5 style="color: #2b8af7;">Descrição da Região afetada:</h5>
-                                <textarea class="TxaTratamento" name="" id="" cols="40" rows="4" disabled><?php echo $row['anotacao_func'];?></textarea>
-                                <div style="font-size: 14pt;">
-                                    <label>
-                                        <input disabled value="lado" type="radio" name="lado" id="lado" value="Frente" <?php echo ($row['area'] == 'Frente') ? 'checked' : ''; ?>> Frente
-                                    </label>
-                                    <label>
-                                        <input disabled value="lado" type="radio" name="lado" id="lado" value="Verso" <?php echo ($row['area'] == 'Verso') ? 'checked' : ''; ?>> Costas
-                                    </label>
+                            <div>
+                                <h5 style="color: #2b8af7;">Acompanhamento</h5>
+                                <textarea class="TxaTratamento" name="acompanhamento" id="acompanhamento" cols="40" rows="4" disabled><?php echo $row['acompanhamento'];?></textarea>
+                                <div>
+                                    <div class="d-flex">
+                                        <div>
+                                            <!-- Text Medicação a se utilizar -->
+                                            <h5>Medicação:</h5>
+                                            <select name="medicamento" id="medicamento" style="font-size: 14pt; border-radius: 10px;" disabled>
+                                                <?php 
+                                                    //seleciona os medicamentos 
+                                                    $medicamentos = $conn->query("SELECT * FROM medicamento;");
+                                                
+                                                    while($row_med = $medicamentos->fetch_assoc()) {
+                                                        echo '<option value="'.$row_med['remedio'].'">'.$row_med['remedio'].'</option>';
+                                                    }
+                                                ?>
+                                            </select>
+                                            <br><br>
+                                            <!-- Paciente -->
+                                            <h5>Funcionario:</h5>
+                                            <select name="paciente" style="font-size: 14pt; border-radius: 10px;" disabled>
+                                                <?php 
+                                                    while($row = $lista->fetch_assoc()) {
+                                                        echo '<option value="'.$row['nome_func'].'">'.$row['nome_func'].'</option>';
+                                                    }
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <div style="font-size: 14pt; margin-left: 15px;">
+                                            <h5>Lado do Corpo:</h5>
+                                            <label>
+                                                <input value="Frente" type="radio" name="lado" id="lado1" <?php echo ($row['area'] == 'Frente') ? 'checked' : ''; ?> disabled> Frente
+                                            </label>
+                                            <label>
+                                                <input value="Verso" type="radio" name="lado" id="lado2" <?php echo ($row['area'] == 'Verso') ? 'checked' : ''; ?> disabled> Costas
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <div>
+                                            <h5>Dia da Lesão</h5>
+                                            <input type="date" name="tempo" id="tempo" style="border-radius: 10px;" value="<?php echo $row['tempo_ferida'] ?>" disabled>
+                                        </div>
+                                        <br>
+                                        <div>
+                                            <h5>Tipo de Membro:</h5>
+                                            <select name="membro" style="font-size: 14pt; border-radius: 10px;" disabled>
+                                                <option value="superior" <?php if($row['membro'] == 'superior') echo 'selected' ?>>Superior</option>
+                                                <option value="inferior" <?php if($row['membro'] == 'inferior') echo 'selected' ?>>Inferior</option>
+                                            </select>
+                                        </div>
+                                        <br>
+                                        <div>
+                                            <h5>Exsudato</h5>
+                                            <select name="exsudato" id="exsudato" style="font-size: 14pt; border-radius: 10px;" disabled>
+                                                <option value="alto" <?php if($row['exsudato'] == 'alto') echo 'selected' ?>>Alto</option>
+                                                <option value="baixo" <?php if($row['exsudato'] == 'baixo') echo 'selected' ?>>Baixo</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div>
