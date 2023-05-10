@@ -148,10 +148,10 @@
                                         <div style="font-size: 14pt; margin-left: 15px;">
                                             <h5>Lado do Corpo:</h5>
                                             <label>
-                                                <input value="Frente" type="radio" name="lado" id="lado1" <?php echo ($row['area'] == 'Frente') ? 'checked' : ''; ?> disabled> Frente
+                                                <input value="Frente" type="radio" name="lado" id="lado1" <?php echo (isset($row['area']) && $row['area'] == 'Frente') ? 'checked' : ''; ?> disabled> Frente
                                             </label>
                                             <label>
-                                                <input value="Verso" type="radio" name="lado" id="lado2" <?php echo ($row['area'] == 'Verso') ? 'checked' : ''; ?> disabled> Costas
+                                                <input value="Verso" type="radio" name="lado" id="lado2" <?php echo (isset($row['area']) && $row['area'] == 'Verso') ? 'checked' : ''; ?> disabled> Costas
                                             </label>
                                         </div>
                                     </div>
@@ -165,16 +165,16 @@
                                         <div>
                                             <h5>Tipo de Membro:</h5>
                                             <select name="membro" style="font-size: 14pt; border-radius: 10px;" disabled>
-                                                <option value="superior" <?php if($row['membro'] == 'superior') echo 'selected' ?>>Superior</option>
-                                                <option value="inferior" <?php if($row['membro'] == 'inferior') echo 'selected' ?>>Inferior</option>
+                                                <option value="superior" <?php if (isset($row['membro']) && $row['membro'] == 'superior') echo 'selected' ?>>Superior</option>
+                                                <option value="inferior" <?php if (isset($row['membro']) && $row['membro'] == 'inferior') echo 'selected' ?>>Inferior</option>
                                             </select>
                                         </div>
                                         <br>
                                         <div>
                                             <h5>Exsudato</h5>
                                             <select name="exsudato" id="exsudato" style="font-size: 14pt; border-radius: 10px;" disabled>
-                                                <option value="alto" <?php if($row['exsudato'] == 'alto') echo 'selected' ?>>Alto</option>
-                                                <option value="baixo" <?php if($row['exsudato'] == 'baixo') echo 'selected' ?>>Baixo</option>
+                                                <option value="alto" <?php if (isset($row['exsudato']) && $row['exsudato'] == 'alto') echo 'selected' ?>>Alto</option>
+                                                <option value="baixo" <?php if (isset($row['exsudato']) && $row['exsudato'] == 'baixo') echo 'selected' ?>>Baixo</option>
                                             </select>
                                         </div>
                                     </div>
@@ -198,6 +198,10 @@
                             </div>
                         </div>
                         <br>
+                        <div class="text-center">
+                            <h2>Anotações</h2>
+                            <textarea class="TxaTratamento" name="anotacao" id="anotacao" cols="150" rows="10" disabled><?php echo isset($row['anotacao_func']);?></textarea>
+                        </div>
                     </div>
                 </div>
             </div>

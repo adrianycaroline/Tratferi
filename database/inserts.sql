@@ -287,10 +287,10 @@ insert into tratamento
 VALUES ('1','possui fratura exposta','se recuperando da cirurgia','amoxicilina','prevista para 1 mes','Frente','2','1','1');
 
 insert into tratamento 
-VALUES ('2','queimadura severa','processo de cicatrizacao em andamento','dipirona','2 meses','Costa','2','1','2');
+VALUES ('2','queimadura severa','processo de cicatrizacao em andamento','dipirona','2 meses','Verso','2','1','2');
 
 insert into tratamento 
-VALUES ('3','cicatrizacao','se recuperando da cirurgia','amoxicilina','3 semanas','Costa','5','6','3');
+VALUES ('3','cicatrizacao','se recuperando da cirurgia','amoxicilina','3 semanas','Verso','5','6','3');
 
 
 
