@@ -139,7 +139,7 @@
             </div>
         </div>
             <br>
-            <h1 style="margin-left: 20px;">Editar Tratamento</h1>
+            <h1 style="margin-left: 20px; color: #1d5f96;">Editar Tratamento</h1>
             <br>
             <div class="border-bottom border-2 border-dark" style="width: 97%; margin-left: 15px; margin-bottom: 10px;"></div>
         <main>
@@ -149,26 +149,26 @@
                         <!-- Começo do conteúdo principal -->
                         <div class="d-flex" style="justify-content: center;">
                             <div style="margin-right: 70px;">
-                                <h5 style="color: #2b8af7;">Odor:</h5>
+                                <h5 style="color: #38B6FF;">Odor:</h5>
                                 <textarea class="TxaTratamento" name="odor" id="odor" cols="40" rows="4" required><?php echo $rowTrata['odor'];?></textarea>
-                                <h5 style="color: #2b8af7;">Lateralidade:</h5>
+                                <h5 style="color: #38B6FF;">Lateralidade:</h5>
                                 <textarea class="TxaTratamento" name="lateralidade" id="lateralidade" cols="40" rows="4" required><?php echo $rowTrata['lateralidade'];?></textarea>
-                                <h5 style="color: #2b8af7;">Medidas:</h5>
+                                <h5 style="color: #38B6FF;">Medidas:</h5>
                                 <textarea class="TxaTratamento" name="medidas" id="medidas" cols="40" rows="4" required><?php echo $rowTrata['medidas'];?></textarea>
-                                <h5 style="color: #2b8af7;">Previsão de Finalização</h5>
+                                <h5 style="color: #38B6FF;">Previsão de Finalização</h5>
                                 <textarea class="TxaTratamento" name="finalizacao" id="finalizacao" cols="40" rows="4" required><?php echo $rowTrata['finalizacao'];?></textarea>
                                 <!-- Text Adiquirida -->
-                                <h5 style="color: #2b8af7;">Forma Adquirida:</h5>
+                                <h5 style="color: #38B6FF;">Forma Adquirida:</h5>
                                 <textarea class="TxaTratamento" name="forma" id="forma" cols="40" rows="4" required><?php echo $rowTrata['forma_adquirida'];?></textarea>
                             </div>
                             <div>
-                                <h5 style="color: #2b8af7;">Acompanhamento</h5>
+                                <h5 style="color: #38B6FF;">Acompanhamento</h5>
                                 <textarea class="TxaTratamento" name="acompanhamento" id="acompanhamento" cols="40" rows="4" required><?php echo $rowTrata['acompanhamento'];?></textarea>
                                 <div>
                                     <div class="d-flex">
                                         <div>
                                             <!-- Text Medicação a se utilizar -->
-                                            <h5>Medicação:</h5>
+                                            <h5 style="color: #1d5f96;">Medicação:</h5>
                                             <select name="medicamento" id="medicamento" style="font-size: 14pt; border-radius: 10px;" required>
                                                 <?php 
                                                     //seleciona os medicamentos 
@@ -181,7 +181,7 @@
                                             </select>
                                             <br><br>
                                             <!-- Paciente -->
-                                            <h5>Paciente:</h5>
+                                            <h5 style="color: #1d5f96;">Paciente:</h5>
                                             <select name="paciente" style="font-size: 14pt; border-radius: 10px;" required>
                                                 <?php 
                                                     while($row = $lista->fetch_assoc()) {
@@ -191,7 +191,7 @@
                                             </select>
                                         </div>
                                         <div style="font-size: 14pt; margin-left: 15px;">
-                                            <h5>Lado do Corpo:</h5>
+                                            <h5 style="color: #1d5f96;">Lado do Corpo:</h5>
                                             <label>
                                                 <input value="Frente" type="radio" name="lado" id="lado1" <?php echo ($rowTrata['area'] == 'Frente') ? 'checked' : ''; ?> required> Frente
                                             </label>
@@ -203,12 +203,12 @@
                                     <br>
                                     <div>
                                         <div>
-                                            <h5>Dia da Lesão</h5>
+                                            <h5 style="color: #1d5f96;">Dia da Lesão</h5>
                                             <input type="date" name="tempo" id="tempo" style="border-radius: 10px;" value="<?php echo $rowTrata['tempo_ferida'] ?>" required>
                                         </div>
                                         <br>
                                         <div>
-                                            <h5>Tipo de Membro:</h5>
+                                            <h5 style="color: #1d5f96;">Tipo de Membro:</h5>
                                             <select name="membro" style="font-size: 14pt; border-radius: 10px;" required>
                                                 <option value="superior" <?php if($rowTrata['membro'] == 'superior') echo 'selected' ?>>Superior</option>
                                                 <option value="inferior" <?php if($rowTrata['membro'] == 'inferior') echo 'selected' ?>>Inferior</option>
@@ -216,7 +216,7 @@
                                         </div>
                                         <br>
                                         <div>
-                                            <h5>Exsudato</h5>
+                                            <h5 style="color: #1d5f96;">Exsudato</h5>
                                             <select name="exsudato" id="exsudato" style="font-size: 14pt; border-radius: 10px;" required>
                                                 <option value="alto" <?php if($rowTrata['exsudato'] == 'alto') echo 'selected' ?>>Alto</option>
                                                 <option value="baixo" <?php if($rowTrata['exsudato'] == 'baixo') echo 'selected' ?>>Baixo</option>
@@ -227,7 +227,7 @@
                             </div>
                             <div style="margin-left: 50px;">
                                 <div>
-                                    <h5 style="color: #2b8af7;">Membro/ Região Afetada</h5>
+                                    <h5 style="color: #38B6FF;">Membro/ Região Afetada</h5>
                                     <?php include 'corpo.php';?>
                                 </div>
                                 <div id="area">
@@ -239,10 +239,10 @@
                         </div>
                         <br>
                         <div class="text-center">
-                            <h2>Anotações</h2>
+                            <h2 style="color: #1d5f96;">Anotações</h2>
                             <textarea class="TxaTratamento" name="anotacao" id="anotacao" cols="150" rows="10" required><?php echo $rowTrata['anotacao_func'];?></textarea>
                             <br><br>
-                            <button class="btn btn-primary" type="submit" name="concluir">Atualizar</button>
+                            <button class="btn" style="background-color: #38B6FF;" type="submit" name="concluir">Atualizar</button>
                         </div>
                     </form>
                 </div>
