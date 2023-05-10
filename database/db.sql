@@ -170,10 +170,10 @@ primary key(id));
 
 create table medicamento(
 id int not null auto_increment,
-receita text not null,
+nome varchar(50) not null,
 remedio varchar(25) not null,
-qntd_remedio text not null,
-data_retirada date not null,
+dosagem varchar(20) not null,
+descricao TEXT not null,
 id_func int not null,
 id_paci int not null,
 primary key(id),

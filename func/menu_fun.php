@@ -13,7 +13,7 @@
     <title>Barra Lateral</title>
 </head>
 <body>
-    <div id="escondido">
+    <div>
         <div class="d-flex flex-column flex-shrink-0 p-3 bg-azul"  style="position: fixed; top: 0; left: 0; bottom: 0; width: 280px; z-index: 9999;">
             <div>
                 <figure style="display: flex;">

@@ -315,14 +315,36 @@ VALUES('6','oculos_protecao','Óculos de segurança modelo ampla-visão constitu
 
 
 
-insert into medicamento
-VALUES('1','dipirona em 8H em 8H','dipirona','2','2022/12/19','2','3');
+INSERT INTO medicamento
+VALUES ('','Paracetamol', 'Tylenol', '500mg', 'Analgésico', 1, 1);
 
-insert into medicamento
-VALUES('2','amoxicilina em 8H em 8H','amoxicilina','2','2023/02/19','1','3');
+INSERT INTO medicamento
+VALUES ('','Amoxicilina', 'Amoxil', '500mg', 'Antibiótico', 2, 2);
 
-insert into medicamento
-VALUES('3','dipirona em 8H em 8H','dipirona','2','2022/01/06','6','1');
+INSERT INTO medicamento
+VALUES ('','Dipirona', 'Novalgina', '500mg', 'Analgésico e antitérmico', 3, 3);
+
+INSERT INTO medicamento
+VALUES ('','Cetoprofeno', 'Profenid', '100mg', 'Anti-inflamatório', 4, 4);
+
+INSERT INTO medicamento
+VALUES ('','Omeprazol', 'Losec', '20mg', 'Antiácido e antiulceroso', 5, 5);
+
+INSERT INTO medicamento
+VALUES ('','Tylenol', 'Paracetamol', '500mg', 'Analgésico', 2, 1);
+
+INSERT INTO medicamento
+VALUES ('','Allegra', 'Fexofenadina', '180mg', 'Antialérgico', 1, 3);
+
+INSERT INTO medicamento
+VALUES ('','Lantus', 'Insulina Glargina', '100 UI/mL', 'Tratamento de Diabetes Tipo 1 e 2', 3, 2);
+
+INSERT INTO medicamento
+VALUES ('','Rivotril', 'Clonazepam', '2mg', 'Ansiolítico', '2023-11-15', 2, 3);
+
+INSERT INTO medicamento
+VALUES ('','Sinvastatina', 'Sinvastatina', '20mg', 'Redução do Colesterol', '2024-08-25', 1, 2);
+
 
 
 insert into Epis
